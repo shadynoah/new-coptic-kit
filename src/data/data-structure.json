@@ -1,0 +1,334 @@
+{
+    "bible": [
+        {
+            "key": "1",
+            "bookName": "Genesis",
+            "numberOfChapters": 50
+        },
+        {
+            "key": "2",
+            "bookName": "Exodus",
+            "numberOfChapters": 40
+        },
+        {
+            "key": "3",
+            "bookName": "Leviticus",
+            "numberOfChapters": 27
+        },
+        {
+            "key": "4",
+            "bookName": "Numbers",
+            "numberOfChapters": 36
+        },
+        {
+            "key": "5",
+            "bookName": "Deuteronomy",
+            "numberOfChapters": 34
+        },
+        {
+            "key": "6",
+            "bookName": "Joshua",
+            "numberOfChapters": 24
+        },
+        {
+            "key": "7",
+            "bookName": "Judges",
+            "numberOfChapters": 21
+        },
+        {
+            "key": "8",
+            "bookName": "Ruth",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "9",
+            "bookName": "1 Samuel",
+            "numberOfChapters": 31
+        },
+        {
+            "key": "10",
+            "bookName": "2 Samuel",
+            "numberOfChapters": 24
+        },
+        {
+            "key": "11",
+            "bookName": "1 Kings",
+            "numberOfChapters": 22
+        },
+        {
+            "key": "12",
+            "bookName": "2 Kings",
+            "numberOfChapters": 25
+        },
+        {
+            "key": "13",
+            "bookName": "1 Chronicles",
+            "numberOfChapters": 29
+        },
+        {
+            "key": "14",
+            "bookName": "2 Chronicles",
+            "numberOfChapters": 36
+        },
+        {
+            "key": "15",
+            "bookName": "Ezra",
+            "numberOfChapters": 10
+        },
+        {
+            "key": "16",
+            "bookName": "Nehemiah",
+            "numberOfChapters": 13
+        },
+        {
+            "key": "17",
+            "bookName": "Esther",
+            "numberOfChapters": 10
+        },
+        {
+            "key": "18",
+            "bookName": "Job",
+            "numberOfChapters": 42
+        },
+        {
+            "key": "19",
+            "bookName": "Psalm",
+            "numberOfChapters": 150
+        },
+        {
+            "key": "20",
+            "bookName": "Proverbs",
+            "numberOfChapters": 31
+        },
+        {
+            "key": "21",
+            "bookName": "Ecclesiastes",
+            "numberOfChapters": 12
+        },
+        {
+            "key": "22",
+            "bookName": "Song of Solomon",
+            "numberOfChapters": 8
+        },
+        {
+            "key": "23",
+            "bookName": "Isaiah",
+            "numberOfChapters": 66
+        },
+        {
+            "key": "24",
+            "bookName": "Jeremiah",
+            "numberOfChapters": 52
+        },
+        {
+            "key": "25",
+            "bookName": "Lamentations",
+            "numberOfChapters": 5
+        },
+        {
+            "key": "26",
+            "bookName": "Ezekiel",
+            "numberOfChapters": 48
+        },
+        {
+            "key": "27",
+            "bookName": "Daniel",
+            "numberOfChapters": 12
+        },
+        {
+            "key": "28",
+            "bookName": "Hosea",
+            "numberOfChapters": 14
+        },
+        {
+            "key": "29",
+            "bookName": "Joel",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "30",
+            "bookName": "Amos",
+            "numberOfChapters": 9
+        },
+        {
+            "key": "31",
+            "bookName": "Obadiah",
+            "numberOfChapters": 1
+        },
+        {
+            "key": "32",
+            "bookName": "Jonah",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "33",
+            "bookName": "Micah",
+            "numberOfChapters": 7
+        },
+        {
+            "key": "34",
+            "bookName": "Nahum",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "35",
+            "bookName": "Habakkuk",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "36",
+            "bookName": "Zephaniah",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "37",
+            "bookName": "Haggai",
+            "numberOfChapters": 2
+        },
+        {
+            "key": "38",
+            "bookName": "Zechariah",
+            "numberOfChapters": 14
+        },
+        {
+            "key": "39",
+            "bookName": "Malachi",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "40",
+            "bookName": "Matthew",
+            "numberOfChapters": 28
+        },
+        {
+            "key": "41",
+            "bookName": "Mark",
+            "numberOfChapters": 16
+        },
+        {
+            "key": "42",
+            "bookName": "Luke",
+            "numberOfChapters": 24
+        },
+        {
+            "key": "43",
+            "bookName": "John",
+            "numberOfChapters": 21
+        },
+        {
+            "key": "44",
+            "bookName": "Acts",
+            "numberOfChapters": 28
+        },
+        {
+            "key": "45",
+            "bookName": "Romans",
+            "numberOfChapters": 16
+        },
+        {
+            "key": "46",
+            "bookName": "1 Corinthians",
+            "numberOfChapters": 16
+        },
+        {
+            "key": "47",
+            "bookName": "2 Corinthians",
+            "numberOfChapters": 13
+        },
+        {
+            "key": "48",
+            "bookName": "Galatians",
+            "numberOfChapters": 6
+        },
+        {
+            "key": "49",
+            "bookName": "Ephesians",
+            "numberOfChapters": 6
+        },
+        {
+            "key": "50",
+            "bookName": "Philippians",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "51",
+            "bookName": "Colossians",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "52",
+            "bookName": "1 Thessalonians",
+            "numberOfChapters": 5
+        },
+        {
+            "key": "53",
+            "bookName": "2 Thessalonians",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "54",
+            "bookName": "1 Timothy",
+            "numberOfChapters": 6
+        },
+        {
+            "key": "55",
+            "bookName": "2 Timothy",
+            "numberOfChapters": 4
+        },
+        {
+            "key": "56",
+            "bookName": "Titus",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "57",
+            "bookName": "Philemon",
+            "numberOfChapters": 1
+        },
+        {
+            "key": "58",
+            "bookName": "Hebrews",
+            "numberOfChapters": 13
+        },
+        {
+            "key": "59",
+            "bookName": "James",
+            "numberOfChapters": 5
+        },
+        {
+            "key": "60",
+            "bookName": "1 Peter",
+            "numberOfChapters": 5
+        },
+        {
+            "key": "61",
+            "bookName": "2 Peter",
+            "numberOfChapters": 3
+        },
+        {
+            "key": "62",
+            "bookName": "1 John",
+            "numberOfChapters": 5
+        },
+        {
+            "key": "63",
+            "bookName": "2 John",
+            "numberOfChapters": 1
+        },
+        {
+            "key": "64",
+            "bookName": "3 John",
+            "numberOfChapters": 1
+        },
+        {
+            "key": "65",
+            "bookName": "Jude",
+            "numberOfChapters": 1
+        },
+        {
+            "key": "66",
+            "bookName": "Revelation",
+            "numberOfChapters": 22
+        }
+    ]
+}
