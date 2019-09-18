@@ -94,12 +94,6 @@ class HomeScreenContainer extends Component {
             flex: 1
           }}
         >
-          {/* <TouchableHighlight onPress={() => console.warn("xx")}>
-            <Image
-              style={{ height: 130, width: 130 }}
-              source={require("../../../assets/images/bible.png")}
-            />
-          </TouchableHighlight> */}
           <TouchableOpacity
             onPress={() => NavigatorService.navigate("BookScreen")}
           >

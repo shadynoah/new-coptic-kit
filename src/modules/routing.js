@@ -15,31 +15,31 @@ import { AboutScreen } from "./screens/AboutScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 const Navigator = createStackNavigator(
   {
-    // BookScreen: {
-    //   screen: BookScreen
-    // },
-    // LinksScreen: {
-    //   screen: LinksScreen
-    // },
-    // ChapterScreen: {
-    //   screen: ChapterScreen
-    // },
-    // VerseScreen: {
-    //   screen: VerseScreen
-    // }
-    //,
-    // SettingScreen: {
-    //   screen: SettingScreen
-    // },
-    // NoteListScreen: {
-    //   screen: NoteListScreen
-    // },
-    // BookMarkScreen: {
-    //   screen: BookMarkScreen
-    // },
-    // AboutScreen: {
-    //   screen: AboutScreen
-    // },
+    BookScreen: {
+      screen: BookScreen
+    },
+    LinksScreen: {
+      screen: LinksScreen
+    },
+    ChapterScreen: {
+      screen: ChapterScreen
+    },
+    VerseScreen: {
+      screen: VerseScreen
+    }
+    ,
+    SettingScreen: {
+      screen: SettingScreen
+    },
+    NoteListScreen: {
+      screen: NoteListScreen
+    },
+    BookMarkScreen: {
+      screen: BookMarkScreen
+    },
+    AboutScreen: {
+      screen: AboutScreen
+    },
     HomeScreen: {
       screen: HomeScreen
     }

@@ -68,7 +68,7 @@ class BookScreenContainer extends Component {
           renderItem={({ item }) => <Text onPress={() => {
             //   console.log("========data arabic ====", JSON.stringify(dataAr))
             this.props.selectBook(item)
-         //   NavigatorService.navigate("ChapterScreen")
+           NavigatorService.navigate("ChapterScreen")
           }
           } style={styles.item}>{item.bookName}</Text>}
         />
