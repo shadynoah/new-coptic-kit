@@ -17,8 +17,8 @@ import {
   selectBook,
   loadChapterContent
 } from "../../state/content/action-creators";
-import Constants from 'expo-constants';
-import { Linking } from 'expo';
+import Constants from "expo-constants";
+import { Linking } from "expo";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -67,8 +67,8 @@ class HomeScreenContainer extends Component {
       widthT = (Dimensions.get("window").width * 0.1) / 1.5;
       heightT = (Dimensions.get("window").height * 0.1) / 1.5;
     } else {
-      widthT = (Dimensions.get("window").width * 0.1) / 3;
-      heightT = (Dimensions.get("window").height * 0.1) / 3;
+      widthT = Dimensions.get("window").width * 0.1;
+      heightT = Dimensions.get("window").height * 0.1;
     }
     const styles = StyleSheet.create({
       container: {
@@ -95,52 +95,60 @@ class HomeScreenContainer extends Component {
             flexDirection: "row"
           }}
         >
-              <TouchableOpacity
-            style={{ marginRight: 10 }}
-            onPress={() => Linking.openURL("https://www.facebook.com/")}
-          >
-            <Image
-              style={{ height: heightT, width: heightT }}
-              source={require("../../../assets/images/facebook.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{ marginRight: 10 }}
-            onPress={() => Linking.openURL("https://twitter.com/")}
-          >
-            <Image
-              style={{ height: heightT, width: heightT }}
-              source={require("../../../assets/images/twitter.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{ marginRight: 10 }}
-            onPress={() => Linking.openURL("https://www.youtube.com/")}
-          >
-            <Image
-              style={{ height: heightT, width: heightT }}
-              source={require("../../../assets/images/youtube.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{ marginRight: 10 }}
-            onPress={() => Linking.openURL("http://www.christambassadorsmission.com/")}
-          >
-            <Image
-              style={{ height: heightT, width: heightT }}
-              source={require("../../../assets/images/website.png")}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={{marginLeft: 20}}
-            onPress={() => NavigatorService.navigate("BookScreen")}
-          >
-            <Image
-              style={{ height: heightT, width: heightT }}
-              source={require("../../../assets/images/bible.png")}
-            />
-          </TouchableOpacity>
+          <View style={{ flex: 0.8, flexDirection: "row" }}>
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() => Linking.openURL("https://www.facebook.com/")}
+            >
+              <Image
+                style={{ height: heightT, width: heightT }}
+                source={require("../../../assets/images/facebook.png")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() => Linking.openURL("https://twitter.com/")}
+            >
+              <Image
+                style={{ height: heightT, width: heightT }}
+                source={require("../../../assets/images/twitter.png")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() => Linking.openURL("https://www.youtube.com/")}
+            >
+              <Image
+                style={{ height: heightT, width: heightT }}
+                source={require("../../../assets/images/youtube.png")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() =>
+                Linking.openURL("http://www.christambassadorsmission.com/")
+              }
+            >
+              <Image
+                style={{ height: heightT, width: heightT }}
+                source={require("../../../assets/images/website.png")}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={{ flex: 0.2 }}>
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => NavigatorService.navigate("BookScreen")}
+            >
+              <Image
+                style={{
+                  height: heightT + 0.3 * heightT,
+                  width: heightT + 0.3 * heightT
+                }}
+                source={require("../../../assets/images/bible.png")}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </ImageBackground>
     );
