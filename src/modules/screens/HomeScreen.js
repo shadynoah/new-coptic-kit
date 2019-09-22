@@ -18,6 +18,7 @@ import {
   loadChapterContent
 } from "../../state/content/action-creators";
 import Constants from 'expo-constants';
+import { Linking } from 'expo';
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -63,11 +64,11 @@ class HomeScreenContainer extends Component {
     let widthT;
     let heightT;
     if (deviceType !== "tablet") {
-      widthT = Dimensions.get("window").width * 0.1;
-      heightT = Dimensions.get("window").height * 0.1;
+      widthT = (Dimensions.get("window").width * 0.1) / 1.5;
+      heightT = (Dimensions.get("window").height * 0.1) / 1.5;
     } else {
-      widthT = Dimensions.get("window").width * 0.1;
-      heightT = Dimensions.get("window").height * 0.1;
+      widthT = (Dimensions.get("window").width * 0.1) / 3;
+      heightT = (Dimensions.get("window").height * 0.1) / 3;
     }
     const styles = StyleSheet.create({
       container: {
@@ -82,19 +83,57 @@ class HomeScreenContainer extends Component {
     });
     return (
       <ImageBackground
-        source={require("../../../assets/images/splash.png")}
+        source={require("../../../assets/images/newHome.png")}
         style={{ flex: 1 }}
         resizeMode="stretch"
       >
         <View
           style={{
-            justifyContent: "flex-end",
             alignItems: "flex-end",
             margin: 20,
-            flex: 1
+            flex: 1,
+            flexDirection: "row"
           }}
         >
+              <TouchableOpacity
+            style={{ marginRight: 10 }}
+            onPress={() => Linking.openURL("https://www.facebook.com/")}
+          >
+            <Image
+              style={{ height: heightT, width: heightT }}
+              source={require("../../../assets/images/facebook.png")}
+            />
+          </TouchableOpacity>
           <TouchableOpacity
+            style={{ marginRight: 10 }}
+            onPress={() => Linking.openURL("https://twitter.com/")}
+          >
+            <Image
+              style={{ height: heightT, width: heightT }}
+              source={require("../../../assets/images/twitter.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ marginRight: 10 }}
+            onPress={() => Linking.openURL("https://www.youtube.com/")}
+          >
+            <Image
+              style={{ height: heightT, width: heightT }}
+              source={require("../../../assets/images/youtube.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ marginRight: 10 }}
+            onPress={() => Linking.openURL("http://www.christambassadorsmission.com/")}
+          >
+            <Image
+              style={{ height: heightT, width: heightT }}
+              source={require("../../../assets/images/website.png")}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{marginLeft: 20}}
             onPress={() => NavigatorService.navigate("BookScreen")}
           >
             <Image
