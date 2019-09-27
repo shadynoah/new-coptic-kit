@@ -26,18 +26,6 @@ class HomeScreenContainer extends Component {
     title: "home",
     header: <Text style={style.hideText}></Text>
   };
-  // static navigationOptions = ({ theme }) => {
-  //   return {
-  //     title: "Home",
-  //     headerLeft: (
-  //       <Button
-  //         color={theme === "dark" ? "white" : "red"}
-  //         title="Press me"
-  //         onPress={() => alert("success!")}
-  //       />
-  //     )
-  //   };
-  // };
   static mapStatetToProps(state: State) {
     return {
       loading: state.content.loading,
@@ -61,26 +49,12 @@ class HomeScreenContainer extends Component {
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
         Constants.platform.android.userInterfaceIdiom);
-    let widthT;
     let heightT;
     if (deviceType !== "tablet") {
-      widthT = (Dimensions.get("window").width * 0.1) / 1.5;
       heightT = (Dimensions.get("window").height * 0.1) / 1.5;
     } else {
-      widthT = Dimensions.get("window").width * 0.1;
       heightT = Dimensions.get("window").height * 0.1;
     }
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        paddingTop: 22
-      },
-      item: {
-        padding: 10,
-        fontSize: 18,
-        height: 44
-      }
-    });
     return (
       <ImageBackground
         source={require("../../../assets/images/newHome.png")}

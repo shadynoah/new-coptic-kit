@@ -46,13 +46,13 @@ import { BaseModal } from "../components/base-modal";
 SidebarItem;
 import { SidebarItem } from "../components/sidebar-item";
 import { Helpers } from "../../services/utilities/helpers";
+import {MenuOptionList} from '../components/MenuOptionList' 
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
   constructor() {
     super();
     this.state = {
       fontSizeOfText: 20,
-      searchedText: "",
       selectedVerses: [],
       highlight: false,
       highlightedVerses: [],
@@ -270,7 +270,76 @@ class verseScreenContainer extends Component {
       );
     });
   }
+  increaseFontSize() {
+    let { fontSizeOfText } = this.state;
+    if (fontSizeOfText < 35)
+    this.setState({
+      fontSizeOfText:fontSizeOfText + 5
+    });
+  }
+  decreaseFontSize() {
+    let { fontSizeOfText } = this.state;
+    if (fontSizeOfText > 10)
+    this.setState({
+      fontSizeOfText: fontSizeOfText - 5
+    });
+  }
+  enableIsBookMark() {
+    console.log("enableIsBookMark")
+    this.setState({
+      isbookmark: true
+    })
+  }
+  disableIsBookMark() {
+    console.log("disableIsBookMark")
+    this.setState({
+      isbookmark: false
+    })
+  }
+ enableIsVisible(){
+   this.setState({
+     isVisible: true 
+   })
+ }
+ async onHighlight(){
+  let intersection = this.state.selectedVerses.filter(x =>
+    this.state.highlightedVerses.includes(x)
+  );
+  var xxx = this.convertStringToArray(
+    this.state.highlightedVerses
+  );
+  var union = _.union(xxx, this.state.selectedVerses);
+  var afterfilter = union.filter(
+    e => !intersection.find(a => e == a)
+  );
+  var xn = await this._retrieveData();
+  let all = this.convertStringToArray(xn) || [];
+  this.setState(
+    {
+      highlight: !this.state.highlight,
+      highlightedVerses: [...afterfilter]
+    },
+    () => {
+      this.setState({
+        selectedVerses: []
+      });
+    }
+  );
+  this._storeData(
+    "Highlight",
+    this.state.highlightedVerses
+  );
+  this._retrieveData();
+ }
   render() {
+    let {selectedBook,
+      numberOfSelectedChapter,
+      isArabic , deleteBookMark , insertBookMark
+    } = this.props;
+    let { isbookmark , 
+      fontSizeOfText , selectedVerses,
+      highlightedVerses , highlight
+    } = this.state;
     // const deviceWidth = Dimensions.get("window").width;
     // const deviceHeight = Platform.OS === "ios"
     //     ? Dimensions.get("window").height
@@ -500,298 +569,32 @@ class verseScreenContainer extends Component {
               }}
             >
               <Button transparent>
-                <Menu>
-                  <MenuTrigger customStyles={{ backgroundColor: "green" }}>
-                    <Icon
-                      style={{
-                        color: "#007AFF",
-                        fontSize: deviceType == "tablet" ? 30 : 25,
-                        marginRight: 8
-                      }}
-                      //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
-                      name="more"
-                      black
-                      transparent
-                    />
-                  </MenuTrigger>
+              <MenuOptionList
+             isbookmark ={isbookmark}
+             selectedBook = {selectedBook}
+             numberOfSelectedChapter = {numberOfSelectedChapter}
+             isArabic = {isArabic}
+             deleteBookMark = {deleteBookMark}
+             fontSizeOfText  = {fontSizeOfText}
+             selectedVerses =  { selectedVerses}
+             highlightedVerses= { highlightedVerses }
+             _retrieveData =  { this._retrieveData.bind(this)}
+             convertStringToArray = {this.convertStringToArray.bind(this)}
+             insertBookMark= {insertBookMark}
+             increaseFontSize = {this.increaseFontSize.bind(this)}
+             decreaseFontSize = {this.decreaseFontSize.bind(this)}
+             enableIsBookMark= {this.enableIsBookMark.bind(this)}
+             disableIsBookMark = {this.disableIsBookMark.bind(this)}
+             enableIsVisible = {this.enableIsVisible.bind(this)}
+             highlight= {highlight}
+             _storeData = {this._storeData.bind(this)}
+             _retrieveData = {this._retrieveData.bind(this)}
+             onHighlight = {this.onHighlight.bind(this)}
+             
 
-                  <MenuOptions
-                    optionsContainerStyle={{
-                      width: deviceType == "tablet" ? "30%" : "40%"
-                    }}
-                  >
-                    <MenuOption
-                      onSelect={() => {
-                        NavigatorService.navigate("BookScreen");
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>Home</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
-                            name="home"
-                            black
-                            transparent
-                            onPress={() => {
-                              NavigatorService.navigate("SettingScreen");
-                            }}
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={() => {
-                        let {
-                          selectedBook,
-                          numberOfSelectedChapter,
-                          isArabic
-                        } = this.props;
-                        if (this.state.isbookmark) {
-                          this.props.deleteBookMark(
-                            selectedBook.bookName,
-                            numberOfSelectedChapter
-                          );
-                          this.setState({
-                            isbookmark: false
-                          });
-                        } else {
-                          this.props.insertBookMark(
-                            selectedBook.bookName,
-                            numberOfSelectedChapter,
-                            isArabic
-                          );
-                          this.setState({
-                            isbookmark: true
-                          });
-                        }
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>bookmark</Text>
-                        </View>
-
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 32 : 22,
-                              marginRight: 5
-                            }}
-                            //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
-                            name="bookmark"
-                            transparent
-                            // onPress={() => {
-                            //     NavigatorService.navigate("SettingScreen")
-                            // }}
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={async () => {
-                        // console.log("======from sticky note====", this.state.selectedVerses)
-
-                        this.setState(
-                          {
-                            isVisible: true
-                          },
-                          () =>
-                            console.log(
-                              "======isvisible===",
-                              this.state.isVisible
-                            )
-                        );
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>Note</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black     style={{ fontSize: deviceType == 'tablet' ? 30 : 10, marginRight: 10 }}
-                            type="FontAwesome"
-                            name="sticky-note"
-                            transparent
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={() => {
-                        NavigatorService.navigate("SettingScreen");
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>settings</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
-                            name="settings"
-                            black
-                            transparent
-                            onPress={() => {
-                              NavigatorService.navigate("SettingScreen");
-                            }}
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={() => {
-                        if (this.state.fontSizeOfText < 35)
-                          this.setState({
-                            fontSizeOfText: this.state.fontSizeOfText + 5
-                          });
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>fontSize</Text>
-                        </View>
-                        <View style={{ flexDirection: "row", flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black     style={{ fontSize: deviceType == 'tablet' ? 30 : 10, marginRight: 10 }}
-                            type="FontAwesome"
-                            name="plus-circle"
-                            black
-                            transparent
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={() => {
-                        if (this.state.fontSizeOfText > 10)
-                          this.setState({
-                            fontSizeOfText: this.state.fontSizeOfText - 5
-                          });
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>fontSize</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black     style={{ fontSize: deviceType == 'tablet' ? 30 : 10, marginRight: 10 }}
-                            type="FontAwesome"
-                            name="minus-circle"
-                            black
-                            transparent
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={() => {
-                       // NavigatorService.navigate("AboutScreen");
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>About</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
-                            name="info-circle"
-                            type="FontAwesome"
-                            black
-                            transparent
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                    <MenuOption
-                      onSelect={async () => {
-                        // console.log("======from sticky note====", this.state.selectedVerses)
-                        let intersection = this.state.selectedVerses.filter(x =>
-                          this.state.highlightedVerses.includes(x)
-                        );
-                        var xxx = this.convertStringToArray(
-                          this.state.highlightedVerses
-                        );
-                        var union = _.union(xxx, this.state.selectedVerses);
-                        var afterfilter = union.filter(
-                          e => !intersection.find(a => e == a)
-                        );
-                        var xn = await this._retrieveData();
-                        let all = this.convertStringToArray(xn) || [];
-                        this.setState(
-                          {
-                            highlight: !this.state.highlight,
-                            highlightedVerses: [...afterfilter]
-                          },
-                          () => {
-                            this.setState({
-                              selectedVerses: []
-                            });
-                          }
-                        );
-                        this._storeData(
-                          "Highlight",
-                          this.state.highlightedVerses
-                        );
-                        this._retrieveData();
-                      }}
-                    >
-                      <View style={{ flexDirection: "row", flex: 1 }}>
-                        <View style={{ flex: 0.7 }}>
-                          <Text style={{ marginRight: 10 }}>highlight</Text>
-                        </View>
-                        <View style={{ flex: 0.3 }}>
-                          <Icon
-                            transparent
-                            style={{
-                              color: "#007AFF",
-                              fontSize: deviceType == "tablet" ? 30 : 20,
-                              marginRight: 5
-                            }}
-                            type="FontAwesome"
-                            name="paint-brush"
-                          />
-                        </View>
-                      </View>
-                    </MenuOption>
-                  </MenuOptions>
-                </Menu>
+                 />
+                         
+           
               </Button>
             </View>
           </View>
