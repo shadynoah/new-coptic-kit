@@ -19,6 +19,7 @@ import {
 } from "../../state/content/action-creators";
 import Constants from "expo-constants";
 import { Linking } from "expo";
+import * as FileSystem from 'expo-file-system';
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {

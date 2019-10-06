@@ -23,7 +23,8 @@ import {
 var data = require("../../data/content.json");
 var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
-import { SQLite } from 'expo-sqlite';
+import { SQLite } from "expo-sqlite";
+import * as FileSystem from "expo-file-system";
 
 const db = SQLite.openDatabase("db.db");
 export function toggleLoading() {
@@ -56,7 +57,11 @@ export async function loadChapterContent(
     let contentOfSelectedChapter = [];
     let index = 1;
     let indexar = 1;
-
+    let sample = await FileSystem.readAsStringAsync(
+      "file:///var/mobile/Containers/Data/Application/0D2E936D-D70E-4556-8801-81A48B172E8D/Documents/ExponentExperienceData/%2540shadymoner%252Fnew-coptic-ket/small.mp4"
+    );
+    console.log("samoke");
+    console.log(JSON.parse(sample));
     if (isArabic || isArabicBookMark == "true") {
       _.map(dataAr.books, book => {
         if (book.name == bookName) {
