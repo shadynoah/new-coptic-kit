@@ -113,9 +113,9 @@ export class MenuOptionList extends PureComponent {
                     //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
                     name="bookmark"
                     transparent
-                    // onPress={() => {
-                    //     NavigatorService.navigate("SettingScreen")
-                    // }}
+                    onPress={() => {
+                        NavigatorService.navigate("BookMarkScreen")
+                    }}
                   />
                 </View>
               </View>
