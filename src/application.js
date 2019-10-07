@@ -11,6 +11,7 @@ import {
   //Actions
   success
 } from "./state";
+import { AsyncStorage } from "react-native";
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {
   static current: Application;
@@ -29,26 +30,38 @@ export class Application {
     }
   }
   //---------------------------------------
-
-  async onStart() {
-    console.log("start");
-    const contentDirectoryInfo = await FileSystem.getInfoAsync(contentFilePath);
-    debugger;
-    FileSystem.downloadAsync(
-      "https://support.oneskyapp.com/hc/en-us/article_attachments/202761627/example_1.json",
-      FileSystem.documentDirectory + "small.mp4"
-    )
+  async IsContentDownloaded(languageKey) {
+    let res = await AsyncStorage.getItem(languageKey);
+    if (res) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  async downloadContentFile(link, language) {
+    FileSystem.downloadAsync(link, FileSystem.documentDirectory + language)
       .then(async ({ uri }) => {
-        console.log("Finished downloading to ", uri);
-        let x = await FileSystem.readAsStringAsync(uri);
-        console.log(typeof x);
-        let y = JSON.parse(x);
-        console.log(y);
-        console.log(typeof y);
+        await AsyncStorage.setItem(language, uri);
       })
       .catch(error => {
         console.error(error);
       });
+  }
+  async onStart() {
+    console.log("start");
+    if ((await this.IsContentDownloaded("English")) == false) {
+      await this.downloadContentFile(
+        "https://www.dropbox.com/s/lb7aitt612q76eq/test.json?dl=1",
+        "English"
+      );
+    }
+    if ((await this.IsContentDownloaded("Arabic")) == false) {
+      await this.downloadContentFile(
+        "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
+        "Arabic"
+      );
+    }
+
     // await Font.loadAsync({
     //     Roboto: require("native-base/Fonts/Roboto.ttf"),
     //     Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),

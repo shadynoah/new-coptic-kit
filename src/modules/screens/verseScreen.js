@@ -12,7 +12,7 @@ import {
   ImageBackground
 } from "react-native";
 import { Icon, Button, Item, Input, Toast, Text } from "native-base";
-import { SQLite } from 'expo-sqlite';
+import { SQLite } from "expo-sqlite";
 
 import { MonoText } from "../../../components/StyledText";
 import NavigatorService from "../../services/navigator.js";
@@ -30,7 +30,7 @@ import {
   deleteBookMark,
   insertNote
 } from "../../state/content/action-creators";
-import Constants from 'expo-constants';
+import Constants from "expo-constants";
 import _ from "lodash";
 import Modal from "react-native-modal";
 import { ModalTypesEnum } from "../../enums";
@@ -46,7 +46,7 @@ import { BaseModal } from "../components/base-modal";
 SidebarItem;
 import { SidebarItem } from "../components/sidebar-item";
 import { Helpers } from "../../services/utilities/helpers";
-import {MenuOptionList} from '../components/MenuOptionList' 
+import { MenuOptionList } from "../components/MenuOptionList";
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
   constructor() {
@@ -273,72 +273,69 @@ class verseScreenContainer extends Component {
   increaseFontSize() {
     let { fontSizeOfText } = this.state;
     if (fontSizeOfText < 35)
-    this.setState({
-      fontSizeOfText:fontSizeOfText + 5
-    });
+      this.setState({
+        fontSizeOfText: fontSizeOfText + 5
+      });
   }
   decreaseFontSize() {
     let { fontSizeOfText } = this.state;
     if (fontSizeOfText > 10)
-    this.setState({
-      fontSizeOfText: fontSizeOfText - 5
-    });
+      this.setState({
+        fontSizeOfText: fontSizeOfText - 5
+      });
   }
   enableIsBookMark() {
-    console.log("enableIsBookMark")
     this.setState({
       isbookmark: true
-    })
+    });
   }
   disableIsBookMark() {
-    console.log("disableIsBookMark")
     this.setState({
       isbookmark: false
-    })
+    });
   }
- enableIsVisible(){
-   this.setState({
-     isVisible: true 
-   })
- }
- async onHighlight(){
-  let intersection = this.state.selectedVerses.filter(x =>
-    this.state.highlightedVerses.includes(x)
-  );
-  var xxx = this.convertStringToArray(
-    this.state.highlightedVerses
-  );
-  var union = _.union(xxx, this.state.selectedVerses);
-  var afterfilter = union.filter(
-    e => !intersection.find(a => e == a)
-  );
-  var xn = await this._retrieveData();
-  let all = this.convertStringToArray(xn) || [];
-  this.setState(
-    {
-      highlight: !this.state.highlight,
-      highlightedVerses: [...afterfilter]
-    },
-    () => {
-      this.setState({
-        selectedVerses: []
-      });
-    }
-  );
-  this._storeData(
-    "Highlight",
-    this.state.highlightedVerses
-  );
-  this._retrieveData();
- }
+  enableIsVisible() {
+    this.setState({
+      isVisible: true
+    });
+  }
+  async onHighlight() {
+    let intersection = this.state.selectedVerses.filter(x =>
+      this.state.highlightedVerses.includes(x)
+    );
+    var xxx = this.convertStringToArray(this.state.highlightedVerses);
+    var union = _.union(xxx, this.state.selectedVerses);
+    var afterfilter = union.filter(e => !intersection.find(a => e == a));
+    var xn = await this._retrieveData();
+    let all = this.convertStringToArray(xn) || [];
+    this.setState(
+      {
+        highlight: !this.state.highlight,
+        highlightedVerses: [...afterfilter]
+      },
+      () => {
+        this.setState({
+          selectedVerses: []
+        });
+      }
+    );
+    this._storeData("Highlight", this.state.highlightedVerses);
+    this._retrieveData();
+  }
   render() {
-    let {selectedBook,
+    let {
+      selectedBook,
       numberOfSelectedChapter,
-      isArabic , deleteBookMark , insertBookMark
+      isArabic,
+      deleteBookMark,
+      insertBookMark
     } = this.props;
-    let { isbookmark , 
-      fontSizeOfText , selectedVerses,
-      highlightedVerses , highlight
+    let {
+      isbookmark,
+      fontSizeOfText,
+      selectedVerses,
+      highlightedVerses,
+      highlight
     } = this.state;
     // const deviceWidth = Dimensions.get("window").width;
     // const deviceHeight = Platform.OS === "ios"
@@ -473,6 +470,10 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter - 1
                     );
+                    this.props.loadChapterContent(
+                      this.props.selectedBook.bookName,
+                      this.props.numberOfSelectedChapter - 1
+                    );
                     this.setState(
                       {
                         refresh: false,
@@ -480,10 +481,6 @@ class verseScreenContainer extends Component {
                         highlightedVerses: []
                       },
                       () => this.setState({ refresh: true })
-                    );
-                    this.props.loadChapterContent(
-                      this.props.selectedBook.bookName,
-                      this.props.numberOfSelectedChapter - 1
                     );
                   }
                 }}
@@ -569,32 +566,28 @@ class verseScreenContainer extends Component {
               }}
             >
               <Button transparent>
-              <MenuOptionList
-             isbookmark ={isbookmark}
-             selectedBook = {selectedBook}
-             numberOfSelectedChapter = {numberOfSelectedChapter}
-             isArabic = {isArabic}
-             deleteBookMark = {deleteBookMark}
-             fontSizeOfText  = {fontSizeOfText}
-             selectedVerses =  { selectedVerses}
-             highlightedVerses= { highlightedVerses }
-             _retrieveData =  { this._retrieveData.bind(this)}
-             convertStringToArray = {this.convertStringToArray.bind(this)}
-             insertBookMark= {insertBookMark}
-             increaseFontSize = {this.increaseFontSize.bind(this)}
-             decreaseFontSize = {this.decreaseFontSize.bind(this)}
-             enableIsBookMark= {this.enableIsBookMark.bind(this)}
-             disableIsBookMark = {this.disableIsBookMark.bind(this)}
-             enableIsVisible = {this.enableIsVisible.bind(this)}
-             highlight= {highlight}
-             _storeData = {this._storeData.bind(this)}
-             _retrieveData = {this._retrieveData.bind(this)}
-             onHighlight = {this.onHighlight.bind(this)}
-             
-
-                 />
-                         
-           
+                <MenuOptionList
+                  isbookmark={isbookmark}
+                  selectedBook={selectedBook}
+                  numberOfSelectedChapter={numberOfSelectedChapter}
+                  isArabic={isArabic}
+                  deleteBookMark={deleteBookMark}
+                  fontSizeOfText={fontSizeOfText}
+                  selectedVerses={selectedVerses}
+                  highlightedVerses={highlightedVerses}
+                  _retrieveData={this._retrieveData.bind(this)}
+                  convertStringToArray={this.convertStringToArray.bind(this)}
+                  insertBookMark={insertBookMark}
+                  increaseFontSize={this.increaseFontSize.bind(this)}
+                  decreaseFontSize={this.decreaseFontSize.bind(this)}
+                  enableIsBookMark={this.enableIsBookMark.bind(this)}
+                  disableIsBookMark={this.disableIsBookMark.bind(this)}
+                  enableIsVisible={this.enableIsVisible.bind(this)}
+                  highlight={highlight}
+                  _storeData={this._storeData.bind(this)}
+                  _retrieveData={this._retrieveData.bind(this)}
+                  onHighlight={this.onHighlight.bind(this)}
+                />
               </Button>
             </View>
           </View>
