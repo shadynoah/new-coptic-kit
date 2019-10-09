@@ -54,19 +54,13 @@ export async function loadChapterContent(
 ) {
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
+    let englishContent;
     let contentOfSelectedChapter = [];
     let index = 1;
     let indexar = 1;
-    let englishContent = JSON.parse(
-      await FileSystem.readAsStringAsync(await AsyncStorage.getItem("English"))
-    );
-    let arabicContent = JSON.parse(
-      await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabic"))
-    );
-    // console.log("samoke");
-    // console.log(JSON.parse(sample));
-    if (isArabic || isArabicBookMark == "true") {
-      _.map(arabicContent.books, book => {
+    englishContent =  JSON.parse(await FileSystem.readAsStringAsync(await AsyncStorage.getItem("English")))
+    if ( (isArabic || isArabicBookMark == "true")  ) {
+      _.map(englishContent.books, book => {
         if (book.name == bookName) {
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {
@@ -83,7 +77,7 @@ export async function loadChapterContent(
         }
       });
     } else {
-      _.map(englishContent.books, book => {
+     _.map(englishContent.books, book => {
         if (book.name == bookName) {
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {

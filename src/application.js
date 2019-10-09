@@ -11,7 +11,7 @@ import {
   //Actions
   success
 } from "./state";
-import { AsyncStorage } from "react-native";
+import { AsyncStorage , Alert } from "react-native";
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {
   static current: Application;
@@ -49,18 +49,31 @@ export class Application {
   }
   async onStart() {
     console.log("start");
-    if ((await this.IsContentDownloaded("English")) == false) {
-      await this.downloadContentFile(
-        "https://www.dropbox.com/s/lb7aitt612q76eq/test.json?dl=1",
-        "English"
-      );
-    }
-    if ((await this.IsContentDownloaded("Arabic")) == false) {
-      await this.downloadContentFile(
-        "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
-        "Arabic"
-      );
-    }
+    FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
+      FileSystem.documentDirectory + "content"
+    )
+      .then(async ({ uri }) => {
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        console.log("----uri----" , uri);
+        AsyncStorage.setItem("English" , uri)
+      })
+      .catch(error => {
+        Alert.alert("Apaap", error);
+        console.error(error);
+      });
+    // if ((await this.IsContentDownloaded("English")) == false) {
+    //   await this.downloadContentFile(
+    //     "https://www.dropbox.com/s/lb7aitt612q76eq/test.json?dl=1",
+    //     "English"
+    //   );
+    // }
+    // if ((await this.IsContentDownloaded("Arabic")) == false) {
+    //   await this.downloadContentFile(
+    //     "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
+    //     "Arabic"
+    //   );
+    // }
 
     // await Font.loadAsync({
     //     Roboto: require("native-base/Fonts/Roboto.ttf"),
