@@ -87,6 +87,12 @@ export function contentReducer(
         isInsertedBookmark: false
       };
     }
+    case types.TOGGLE_IS_DOWNLOADING: {
+      return {
+        ...state,
+        isDownloadling: !state.isDownloadling
+      };
+    }
     case types.INSERT_BOOKMARK_SUCCESS:
     case types.DELETE_BOOKMARK_FAILED:
     default:

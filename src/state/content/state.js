@@ -12,6 +12,7 @@ export interface ContentState {
   isViewModal: boolean;
   selectedNote: Object;
   isInsertedBookmark: boolean;
+  isDownloadling: Boolean;
 }
 
 export const ContentInitialState: ContentState = {
@@ -27,7 +28,8 @@ export const ContentInitialState: ContentState = {
   fontSizeOfText: 20,
   isViewModal: false,
   selectedNote: {},
-  isInsertedBookmark: false
+  isInsertedBookmark: false,
+  isDownloadling: false
 };
 
 export interface IBOOK {

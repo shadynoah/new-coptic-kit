@@ -37,6 +37,7 @@ export function selectBook(book: IBOOK) {
   };
 }
 export function clearSelectedBook() {
+  console.log("clear");
   return {
     type: types.CLEAR_SELECTED_BOOK
   };
@@ -55,12 +56,16 @@ export async function loadChapterContent(
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
     let englishContent;
+    let arabicContent;
     let contentOfSelectedChapter = [];
     let index = 1;
     let indexar = 1;
-    englishContent =  JSON.parse(await FileSystem.readAsStringAsync(await AsyncStorage.getItem("English")))
-    if ( (isArabic || isArabicBookMark == "true")  ) {
-      _.map(englishContent.books, book => {
+
+    if (isArabic || isArabicBookMark == "true") {
+      arabicContent = JSON.parse(
+        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabic"))
+      );
+      _.map(arabicContent.books, book => {
         if (book.name == bookName) {
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {
@@ -77,7 +82,12 @@ export async function loadChapterContent(
         }
       });
     } else {
-     _.map(englishContent.books, book => {
+      englishContent = JSON.parse(
+        await FileSystem.readAsStringAsync(
+          await AsyncStorage.getItem("English")
+        )
+      );
+      _.map(englishContent.books, book => {
         if (book.name == bookName) {
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {
@@ -286,4 +296,11 @@ async function executeSql(sql, params = []) {
       );
     })
   );
+}
+
+export function toggleIsDownloading() {
+  console.log("toggleIsDownloading");
+  return {
+    type: types.TOGGLE_IS_DOWNLOADING
+  };
 }

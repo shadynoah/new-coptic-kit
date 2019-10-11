@@ -7,11 +7,11 @@ import * as FileSystem from "expo-file-system";
 import {
   State,
   reducer,
-
+  toggleIsDownloading,
   //Actions
   success
 } from "./state";
-import { AsyncStorage , Alert } from "react-native";
+import { AsyncStorage, Alert } from "react-native";
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {
   static current: Application;
@@ -38,42 +38,44 @@ export class Application {
       return false;
     }
   }
-  async downloadContentFile(link, language) {
-    FileSystem.downloadAsync(link, FileSystem.documentDirectory + language)
+  async downloadEnglish() {
+    await FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
+      FileSystem.documentDirectory + "content"
+    )
       .then(async ({ uri }) => {
-        await AsyncStorage.setItem(language, uri);
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        await AsyncStorage.setItem("English", uri);
+      })
+      .catch(error => {
+        Alert.alert("Apaap", error);
+        console.error(error);
+      });
+  }
+  async downloadArabic() {
+    await FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
+      FileSystem.documentDirectory + "contentAR"
+    )
+      .then(async ({ uri }) => {
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        AsyncStorage.setItem("Arabic", uri);
       })
       .catch(error => {
         console.error(error);
       });
   }
   async onStart() {
-    console.log("start");
-    FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
-      FileSystem.documentDirectory + "content"
-    )
-      .then(async ({ uri }) => {
-        // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        console.log("----uri----" , uri);
-        AsyncStorage.setItem("English" , uri)
-      })
-      .catch(error => {
-        Alert.alert("Apaap", error);
-        console.error(error);
-      });
-    // if ((await this.IsContentDownloaded("English")) == false) {
-    //   await this.downloadContentFile(
-    //     "https://www.dropbox.com/s/lb7aitt612q76eq/test.json?dl=1",
-    //     "English"
-    //   );
-    // }
-    // if ((await this.IsContentDownloaded("Arabic")) == false) {
-    //   await this.downloadContentFile(
-    //     "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
-    //     "Arabic"
-    //   );
-    // }
+    if ((await this.IsContentDownloaded("English")) == false) {
+      Application.current.store.dispatch(toggleIsDownloading());
+      await this.downloadEnglish();
+      Application.current.store.dispatch(toggleIsDownloading());
+    }
+    if ((await this.IsContentDownloaded("Arabic")) == false) {
+      Application.current.store.dispatch(toggleIsDownloading());
+      await this.downloadArabic();
+      Application.current.store.dispatch(toggleIsDownloading());
+    }
 
     // await Font.loadAsync({
     //     Roboto: require("native-base/Fonts/Roboto.ttf"),

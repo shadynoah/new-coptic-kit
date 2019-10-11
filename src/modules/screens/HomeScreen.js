@@ -19,10 +19,19 @@ import {
 } from "../../state/content/action-creators";
 import Constants from "expo-constants";
 import { Linking } from "expo";
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from "expo-file-system";
+import { AsyncStorage } from "react-native";
+import { LoadingContentModal } from "../components/loading-content-modal";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isDownloadling: false,
+      isFinished: true
+    };
+  }
   static navigationOptions = {
     title: "home",
     header: <Text style={style.hideText}></Text>
@@ -31,7 +40,8 @@ class HomeScreenContainer extends Component {
     return {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
-      isArabic: state.content.isArabic
+      isArabic: state.content.isArabic,
+      isDownloadling: state.content.isDownloadling
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -40,12 +50,30 @@ class HomeScreenContainer extends Component {
       dispatch
     );
   }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log("next props isdownlaod ---", nextProps.isDownloadling);
+    if (!nextProps.isDownloadling && prevState.isDownloadling) {
+      return { isDownloadling: false, isFinished: true };
+    } else if (nextProps.isDownloadling) {
+      return { isDownloadling: true };
+    } else if (!nextProps.isDownloadling) {
+      return { isDownloadling: false };
+    } else return null;
+  }
+
   componentDidMount() {
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
   }
+
   render() {
+    const loadingModal = this.state.isDownloadling ? (
+      <LoadingContentModal
+        isVisible={this.state.isDownloadling}
+        message="Loading data , please make sure you are connected to the internet..."
+      />
+    ) : null;
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
@@ -62,6 +90,7 @@ class HomeScreenContainer extends Component {
         style={{ flex: 1 }}
         resizeMode="stretch"
       >
+        {loadingModal}
         <View
           style={{
             alignItems: "flex-end",
@@ -113,7 +142,12 @@ class HomeScreenContainer extends Component {
           <View style={{ flex: 0.2 }}>
             <TouchableOpacity
               style={{ marginLeft: 20 }}
-              onPress={() => NavigatorService.navigate("BookScreen")}
+              onPress={async () => {
+                if (this.state.isFinished == true)
+                  NavigatorService.navigate("BookScreen");
+                // if (await AsyncStorage.getItem("English"))
+                //   NavigatorService.navigate("BookScreen");
+              }}
             >
               <Image
                 style={{
