@@ -51,7 +51,6 @@ class HomeScreenContainer extends Component {
     );
   }
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log("next props isdownlaod ---", nextProps.isDownloadling);
     if (!nextProps.isDownloadling && prevState.isDownloadling) {
       return { isDownloadling: false, isFinished: true };
     } else if (nextProps.isDownloadling) {

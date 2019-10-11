@@ -299,7 +299,6 @@ async function executeSql(sql, params = []) {
 }
 
 export function toggleIsDownloading() {
-  console.log("toggleIsDownloading");
   return {
     type: types.TOGGLE_IS_DOWNLOADING
   };
