@@ -8,10 +8,13 @@ import {
   State,
   reducer,
   toggleIsDownloading,
+  updateConnectionStatus,
   //Actions
   success
 } from "./state";
-import { AsyncStorage, Alert } from "react-native";
+import { AsyncStorage, Alert  } from "react-native";
+import NetInfo from '@react-native-community/netinfo';
+
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {
   static current: Application;
@@ -65,7 +68,20 @@ export class Application {
         console.error(error);
       });
   }
+  networkConnectionChange = isConnected => {
+    console.log("isconnected--" , isConnected )
+    Application.current.store.dispatch(updateConnectionStatus(isConnected));
+  };
   async onStart() {
+    NetInfo.fetch().then(state => {
+      console.log('Connection type', state.type);
+      console.log('Is connected?', state.isConnected);
+    });
+    NetInfo.addEventListener(state => {
+      console.log('Connection type', state.type);
+      console.log('Is connected?', state.isConnected);
+    });
+    
     if ((await this.IsContentDownloaded("English")) == false) {
       Application.current.store.dispatch(toggleIsDownloading());
       await this.downloadEnglish();

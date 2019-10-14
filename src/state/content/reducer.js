@@ -93,6 +93,11 @@ export function contentReducer(
         isDownloadling: !state.isDownloadling
       };
     }
+    case types.CONNECTION_STATUS:
+      return {
+          ...state,
+          isConnected: action.payload,
+      };
     case types.INSERT_BOOKMARK_SUCCESS:
     case types.DELETE_BOOKMARK_FAILED:
     default:

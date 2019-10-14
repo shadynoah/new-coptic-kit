@@ -303,3 +303,10 @@ export function toggleIsDownloading() {
     type: types.TOGGLE_IS_DOWNLOADING
   };
 }
+export  function updateConnectionStatus(status) {
+console.log("status from action creator" , status)
+  return {
+    type: types.CONNECTION_STATUS,
+    payload: status
+  };
+}

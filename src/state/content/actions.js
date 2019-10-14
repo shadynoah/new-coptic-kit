@@ -23,3 +23,4 @@ export const DELETE_BOOKMARK_FAILED = "[content] delete bookmark failed";
 export const INSERT_NOTE_SUCCESS = "[content] insert note succeeded";
 export const INSERT_NOTE_FAILED = "[content] insert note failed";
 export const TOGGLE_IS_DOWNLOADING = "[content] toggle is downloading ";
+export const CONNECTION_STATUS = "[content] detect connection status";

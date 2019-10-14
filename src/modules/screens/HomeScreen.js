@@ -41,7 +41,8 @@ class HomeScreenContainer extends Component {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
       isArabic: state.content.isArabic,
-      isDownloadling: state.content.isDownloadling
+      isDownloadling: state.content.isDownloadling,
+      isConnected: state.content.isConnected
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -67,6 +68,7 @@ class HomeScreenContainer extends Component {
   }
 
   render() {
+    console.log("is connected from homescreen--" , this.props.isConnected)
     const loadingModal = this.state.isDownloadling ? (
       <LoadingContentModal
         isVisible={this.state.isDownloadling}

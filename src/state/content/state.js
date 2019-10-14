@@ -13,6 +13,7 @@ export interface ContentState {
   selectedNote: Object;
   isInsertedBookmark: boolean;
   isDownloadling: Boolean;
+  isConnected:Boolean;
 }
 
 export const ContentInitialState: ContentState = {
@@ -29,7 +30,8 @@ export const ContentInitialState: ContentState = {
   isViewModal: false,
   selectedNote: {},
   isInsertedBookmark: false,
-  isDownloadling: false
+  isDownloadling: false,
+  isConnected: false
 };
 
 export interface IBOOK {
