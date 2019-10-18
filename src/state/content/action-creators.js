@@ -304,7 +304,7 @@ export function toggleIsDownloading() {
   };
 }
 export  function updateConnectionStatus(status) {
-console.log("status from action creator" , status)
+// console.log("status from action creator" , status)
   return {
     type: types.CONNECTION_STATUS,
     payload: status

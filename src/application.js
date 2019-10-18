@@ -69,18 +69,31 @@ export class Application {
       });
   }
   networkConnectionChange = isConnected => {
-    console.log("isconnected--" , isConnected )
+    // alert(isConnected)
+    // console.log("isconnected--" , isConnected )
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
-    NetInfo.fetch().then(state => {
-      console.log('Connection type', state.type);
-      console.log('Is connected?', state.isConnected);
-    });
-    NetInfo.addEventListener(state => {
-      console.log('Connection type', state.type);
-      console.log('Is connected?', state.isConnected);
-    });
+
+       // Listen for network status changes
+    NetInfo.isConnected.addEventListener(
+      "connectionChange",
+      this.networkConnectionChange
+    );
+    NetInfo.isConnected.fetch().done(isConnected => {
+      Application.current.store.dispatch(updateConnectionStatus(isConnected));
+  });
+    // NetInfo.fetch().then(state => {
+    //   console.log('Connection type', state.type);
+    //   console.log('Is connected?', state.isConnected);
+    // });
+    // NetInfo.addEventListener(state => {
+    //   console.log('Connection type', state.type);
+    //   console.log('Is connected from listener', state.isConnected);
+    //   alert(state.isConnected)
+    //   Application.current.store.dispatch(updateConnectionStatus(state.isConnected));
+
+    // });
     
     if ((await this.IsContentDownloaded("English")) == false) {
       Application.current.store.dispatch(toggleIsDownloading());

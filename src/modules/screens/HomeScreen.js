@@ -22,6 +22,8 @@ import { Linking } from "expo";
 import * as FileSystem from "expo-file-system";
 import { AsyncStorage } from "react-native";
 import { LoadingContentModal } from "../components/loading-content-modal";
+import { ModalTypesEnum } from "../../enums";
+import { BaseModal } from "../components/base-modal";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -29,7 +31,8 @@ class HomeScreenContainer extends Component {
     super();
     this.state = {
       isDownloadling: false,
-      isFinished: true
+      isFinished: true,
+      isWarningModalVisible: true 
     };
   }
   static navigationOptions = {
@@ -68,13 +71,31 @@ class HomeScreenContainer extends Component {
   }
 
   render() {
-    console.log("is connected from homescreen--" , this.props.isConnected)
+    // console.log("is connected from homescreen--" , this.props.isConnected)
+    // if(this.props.isConnected == false)
+    // alert("false home")
     const loadingModal = this.state.isDownloadling ? (
       <LoadingContentModal
         isVisible={this.state.isDownloadling}
         message="Loading data , please make sure you are connected to the internet..."
       />
     ) : null;
+    const warningLostConnectionModal = !this.props.isConnected ? (
+      <BaseModal
+      baseModalProperties={{
+        hadCloseHeader: true,
+        hasHeaderTitle: true,
+        headerTitle: "Note",
+        toggleModal:   () => this.setState({ isWarningModalVisible: false }),
+        modalText: "please connect to internet to download data" ,
+        hasFirstButton: true,
+        firstButtonText: "Okay",
+        onPressFirstBtn:  () => this.setState({ isWarningModalVisible: false }),
+        modalType: ModalTypesEnum.warningModal
+      }}
+      isVisible={!this.props.isConnected && this.state.isWarningModalVisible}
+    /> ) : null 
+
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
@@ -92,6 +113,7 @@ class HomeScreenContainer extends Component {
         resizeMode="stretch"
       >
         {loadingModal}
+        {warningLostConnectionModal}
         <View
           style={{
             alignItems: "flex-end",

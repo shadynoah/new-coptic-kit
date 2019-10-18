@@ -19,5 +19,6 @@ export const ModalTypesEnum = {
     modalHasTwoButtons: 1,
     modalHasOneButton: 2,
     modalWithOutButtons: 3,
-    modalHasThreeButtons: 4
+    modalHasThreeButtons: 4,
+    warningModal: 5
 }
