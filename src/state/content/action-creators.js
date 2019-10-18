@@ -63,7 +63,7 @@ export async function loadChapterContent(
 
     if (isArabic || isArabicBookMark == "true") {
       arabicContent = JSON.parse(
-        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabic"))
+        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabicb"))
       );
       _.map(arabicContent.books, book => {
         if (book.name == bookName) {
@@ -84,7 +84,7 @@ export async function loadChapterContent(
     } else {
       englishContent = JSON.parse(
         await FileSystem.readAsStringAsync(
-          await AsyncStorage.getItem("English")
+          await AsyncStorage.getItem("Englishb")
         )
       );
       _.map(englishContent.books, book => {

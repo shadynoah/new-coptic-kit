@@ -15,7 +15,8 @@ import { Dispatch, bindActionCreators } from "redux";
 import {
   toggleLoading,
   selectBook,
-  loadChapterContent
+  loadChapterContent,
+  toggleIsDownloading
 } from "../../state/content/action-creators";
 import Constants from "expo-constants";
 import { Linking } from "expo";
@@ -32,7 +33,7 @@ class HomeScreenContainer extends Component {
     this.state = {
       isDownloadling: false,
       isFinished: true,
-      isWarningModalVisible: true 
+      isWarningModalVisible: false 
     };
   }
   static navigationOptions = {
@@ -50,7 +51,7 @@ class HomeScreenContainer extends Component {
   }
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
-      { toggleLoading, selectBook, loadChapterContent },
+      { toggleLoading, selectBook, loadChapterContent , toggleIsDownloading },
       dispatch
     );
   }
@@ -69,7 +70,36 @@ class HomeScreenContainer extends Component {
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
   }
+  async downloadEnglish() {
+    await FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
+      FileSystem.documentDirectory + "content"
+    )
+      .then(async ({ uri }) => {
+        console.log("uri from downloadEnglish home  ")
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        await AsyncStorage.setItem("Englishb", uri);
+      })
+      .catch(error => {
+        Alert.alert("Apaap", error);
+        console.error(error);
+      });
+  }
+  async downloadArabic() {
+    await FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
+      FileSystem.documentDirectory + "contentAR"
+    )
+      .then(async ({ uri }) => {
+        console.log("uri from downloadArabic home  ")
 
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        AsyncStorage.setItem("Arabicb", uri);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
   render() {
     // console.log("is connected from homescreen--" , this.props.isConnected)
     // if(this.props.isConnected == false)
@@ -80,14 +110,14 @@ class HomeScreenContainer extends Component {
         message="Loading data , please make sure you are connected to the internet..."
       />
     ) : null;
-    const warningLostConnectionModal = !this.props.isConnected ? (
+    const warningLostConnectionModal = !this.props.isConnected && this.state.isWarningModalVisible ? (
       <BaseModal
       baseModalProperties={{
         hadCloseHeader: true,
         hasHeaderTitle: true,
         headerTitle: "Note",
         toggleModal:   () => this.setState({ isWarningModalVisible: false }),
-        modalText: "please connect to internet to download data" ,
+        modalText: "please connect to internet to download data and try again" ,
         hasFirstButton: true,
         firstButtonText: "Okay",
         onPressFirstBtn:  () => this.setState({ isWarningModalVisible: false }),
@@ -166,11 +196,43 @@ class HomeScreenContainer extends Component {
             <TouchableOpacity
               style={{ marginLeft: 20 }}
               onPress={async () => {
-                if (this.state.isFinished == true)
+                const { toggleIsDownloading , isConnected } = this.props;
+              
+              
+                  if( await AsyncStorage.getItem("English") == null )
+                  {
+                    if(!isConnected)
+                    {
+                      this.setState({
+                        isWarningModalVisible: true
+                      })
+                    }
+                    else {
+                      this.props.toggleIsDownloading();
+                      await this.downloadEnglish();
+                      this.props.toggleIsDownloading();
+                    }
+                  }
+                   if ( await AsyncStorage.getItem("Arabic") == null )
+                  {
+                    if(!isConnected)
+                    {
+                      this.setState({
+                        isWarningModalVisible: true
+                      })
+                    }
+                    else {
+                      this.props.toggleIsDownloading();
+                      await this.downloadArabic();
+                      this.props.toggleIsDownloading();
+                    }
+                      
+                  }
+                  else 
                   NavigatorService.navigate("BookScreen");
-                // if (await AsyncStorage.getItem("English"))
-                //   NavigatorService.navigate("BookScreen");
-              }}
+                }
+               
+              }
             >
               <Image
                 style={{
