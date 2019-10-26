@@ -87,7 +87,7 @@ class HomeScreenContainer extends Component {
       .then(async ({ uri }) => {
         console.log("uri from downloadEnglish home  ");
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        await AsyncStorage.setItem("Englishb", uri);
+        await AsyncStorage.setItem("English", uri);
       })
       .catch(error => {
         Alert.alert("Apaap", error);
@@ -103,7 +103,7 @@ class HomeScreenContainer extends Component {
         console.log("uri from downloadArabic home  ");
 
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        AsyncStorage.setItem("Arabicb", uri);
+        AsyncStorage.setItem("Arabic", uri);
       })
       .catch(error => {
         console.error(error);
