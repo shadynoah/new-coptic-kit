@@ -140,27 +140,28 @@ export class BaseModal extends PureComponent {
             </Button>
           </View>
         </View>;
+           case ModalTypesEnum.warningModal : 
+           return <View style={{
+           flexDirection: "row",
+           justifyContent: "space-between",
+           marginTop: 30
+         }}>
+           <View style={{ flex: .7 }}>
+             <Button
+               style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
+               full
+               rounded
+               disabled={this.props.baseModalProperties.firstButtonDisabled}
+               onPress={() => {
+                 this.props.baseModalProperties.onPressFirstBtn(this.state.textOfTextInput);
+               }}
+             >
+               <Text>{firstButtonText}</Text>
+             </Button>
+           </View>
+         </View>;
 
-      case ModalTypesEnum.warningModal : 
-        return <View style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginTop: 30
-      }}>
-        <View style={{ flex: .7 }}>
-          <Button
-            style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
-            full
-            rounded
-            disabled={this.props.baseModalProperties.firstButtonDisabled}
-            onPress={() => {
-              this.props.baseModalProperties.onPressFirstBtn(this.state.textOfTextInput);
-            }}
-          >
-            <Text>{firstButtonText}</Text>
-          </Button>
-        </View>
-      </View>;
+
 
       default:
         return <Text>there is problem in modal </Text>;
@@ -222,7 +223,23 @@ export class BaseModal extends PureComponent {
               {this.props.baseModalProperties.modalText}
             </Text>
           </View>
-        
+          <TextInput
+            style={styles.TextInputStyleClass}
+            underlineColorAndroid="transparent"
+            placeholder={"Write your Note."}
+            placeholderTextColor={"#9E9E9E"}
+            numberOfLines={10}
+            multiline={true}
+            defaultValue=''
+            onChangeText={(text) => {
+
+              this.setState({
+                textOfTextInput: text
+              })
+            }}
+
+
+          />
           {
             this.renderSwitch(this.props.baseModalProperties.modalType, firstButtonText, secondButtonText, thirdButtonText)
           }
