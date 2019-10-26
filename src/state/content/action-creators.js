@@ -63,7 +63,7 @@ export async function loadChapterContent(
 
     if (isArabic || isArabicBookMark == "true") {
       arabicContent = JSON.parse(
-        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabicb"))
+        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabic"))
       );
       _.map(arabicContent.books, book => {
         if (book.name == bookName) {
@@ -84,7 +84,7 @@ export async function loadChapterContent(
     } else {
       englishContent = JSON.parse(
         await FileSystem.readAsStringAsync(
-          await AsyncStorage.getItem("Englishb")
+          await AsyncStorage.getItem("English")
         )
       );
       _.map(englishContent.books, book => {
@@ -303,8 +303,8 @@ export function toggleIsDownloading() {
     type: types.TOGGLE_IS_DOWNLOADING
   };
 }
-export  function updateConnectionStatus(status) {
-// console.log("status from action creator" , status)
+export function updateConnectionStatus(status) {
+  // console.log("status from action creator" , status)
   return {
     type: types.CONNECTION_STATUS,
     payload: status

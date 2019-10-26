@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
-  Dimensions
+  Dimensions,
+  Button
 } from "react-native";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
@@ -16,7 +17,8 @@ import {
   toggleLoading,
   selectBook,
   loadChapterContent,
-  toggleIsDownloading
+  toggleIsDownloading,
+  toggleLanguage
 } from "../../state/content/action-creators";
 import Constants from "expo-constants";
 import { Linking } from "expo";
@@ -25,6 +27,7 @@ import { AsyncStorage } from "react-native";
 import { LoadingContentModal } from "../components/loading-content-modal";
 import { ModalTypesEnum } from "../../enums";
 import { BaseModal } from "../components/base-modal";
+import { Switch } from "native-base";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -33,7 +36,7 @@ class HomeScreenContainer extends Component {
     this.state = {
       isDownloadling: false,
       isFinished: true,
-      isWarningModalVisible: false 
+      isWarningModalVisible: false
     };
   }
   static navigationOptions = {
@@ -51,7 +54,13 @@ class HomeScreenContainer extends Component {
   }
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
-      { toggleLoading, selectBook, loadChapterContent , toggleIsDownloading },
+      {
+        toggleLoading,
+        selectBook,
+        loadChapterContent,
+        toggleIsDownloading,
+        toggleLanguage
+      },
       dispatch
     );
   }
@@ -76,9 +85,9 @@ class HomeScreenContainer extends Component {
       FileSystem.documentDirectory + "content"
     )
       .then(async ({ uri }) => {
-        console.log("uri from downloadEnglish home  ")
+        console.log("uri from downloadEnglish home  ");
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        await AsyncStorage.setItem("Englishb", uri);
+        await AsyncStorage.setItem("English", uri);
       })
       .catch(error => {
         Alert.alert("Apaap", error);
@@ -91,10 +100,10 @@ class HomeScreenContainer extends Component {
       FileSystem.documentDirectory + "contentAR"
     )
       .then(async ({ uri }) => {
-        console.log("uri from downloadArabic home  ")
+        console.log("uri from downloadArabic home  ");
 
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        AsyncStorage.setItem("Arabicb", uri);
+        AsyncStorage.setItem("Arabic", uri);
       })
       .catch(error => {
         console.error(error);
@@ -110,21 +119,27 @@ class HomeScreenContainer extends Component {
         message="Loading data , please make sure you are connected to the internet..."
       />
     ) : null;
-    const warningLostConnectionModal = !this.props.isConnected && this.state.isWarningModalVisible ? (
-      <BaseModal
-      baseModalProperties={{
-        hadCloseHeader: true,
-        hasHeaderTitle: true,
-        headerTitle: "Note",
-        toggleModal:   () => this.setState({ isWarningModalVisible: false }),
-        modalText: "please connect to internet to download data and try again" ,
-        hasFirstButton: true,
-        firstButtonText: "Okay",
-        onPressFirstBtn:  () => this.setState({ isWarningModalVisible: false }),
-        modalType: ModalTypesEnum.warningModal
-      }}
-      isVisible={!this.props.isConnected && this.state.isWarningModalVisible}
-    /> ) : null 
+    const warningLostConnectionModal =
+      !this.props.isConnected && this.state.isWarningModalVisible ? (
+        <BaseModal
+          baseModalProperties={{
+            hadCloseHeader: true,
+            hasHeaderTitle: true,
+            headerTitle: "Note",
+            toggleModal: () => this.setState({ isWarningModalVisible: false }),
+            modalText:
+              "please connect to internet to download data and try again",
+            hasFirstButton: true,
+            firstButtonText: "Okay",
+            onPressFirstBtn: () =>
+              this.setState({ isWarningModalVisible: false }),
+            modalType: ModalTypesEnum.warningModal
+          }}
+          isVisible={
+            !this.props.isConnected && this.state.isWarningModalVisible
+          }
+        />
+      ) : null;
 
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
@@ -144,6 +159,25 @@ class HomeScreenContainer extends Component {
       >
         {loadingModal}
         {warningLostConnectionModal}
+        <View
+          style={{
+            flex: 0.7,
+            justifyContent: "flex-end",
+            alignItems: "center"
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <Text style={{ color: "white", fontWeight: "900" }}>English</Text>
+            <Switch
+              style={{ marginLeft: 20, marginRight: 20 }}
+              onValueChange={value => {
+                this.props.toggleLanguage();
+              }}
+              value={this.props.isArabic}
+            />
+            <Text style={{ color: "white", fontWeight: "900" }}>عربي</Text>
+          </View>
+        </View>
         <View
           style={{
             alignItems: "flex-end",
@@ -192,47 +226,36 @@ class HomeScreenContainer extends Component {
               />
             </TouchableOpacity>
           </View>
+
           <View style={{ flex: 0.2 }}>
             <TouchableOpacity
               style={{ marginLeft: 20 }}
               onPress={async () => {
-                const { toggleIsDownloading , isConnected } = this.props;
-              
-              
-                  if( await AsyncStorage.getItem("English") == null )
-                  {
-                    if(!isConnected)
-                    {
-                      this.setState({
-                        isWarningModalVisible: true
-                      })
-                    }
-                    else {
-                      this.props.toggleIsDownloading();
-                      await this.downloadEnglish();
-                      this.props.toggleIsDownloading();
-                    }
+                const { toggleIsDownloading, isConnected } = this.props;
+
+                if ((await AsyncStorage.getItem("English")) == null) {
+                  if (!isConnected) {
+                    this.setState({
+                      isWarningModalVisible: true
+                    });
+                  } else {
+                    this.props.toggleIsDownloading();
+                    await this.downloadEnglish();
+                    this.props.toggleIsDownloading();
                   }
-                   if ( await AsyncStorage.getItem("Arabic") == null )
-                  {
-                    if(!isConnected)
-                    {
-                      this.setState({
-                        isWarningModalVisible: true
-                      })
-                    }
-                    else {
-                      this.props.toggleIsDownloading();
-                      await this.downloadArabic();
-                      this.props.toggleIsDownloading();
-                    }
-                      
-                  }
-                  else 
-                  NavigatorService.navigate("BookScreen");
                 }
-               
-              }
+                if ((await AsyncStorage.getItem("Arabic")) == null) {
+                  if (!isConnected) {
+                    this.setState({
+                      isWarningModalVisible: true
+                    });
+                  } else {
+                    this.props.toggleIsDownloading();
+                    await this.downloadArabic();
+                    this.props.toggleIsDownloading();
+                  }
+                } else NavigatorService.navigate("BookScreen");
+              }}
             >
               <Image
                 style={{
