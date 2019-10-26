@@ -24,8 +24,11 @@ const customData = require('../../data/data-structure.json');
 var myArray = { matta: 5, loca: 20 };
 import{Helpers} from '../../services/utilities/helpers'
 class chapterScreenContainer extends Component {
-    static navigationOptions = {
-        title: 'Chapter',
+    static navigationOptions = ({navigation}) => {
+        let params = navigation.state.params  || {}
+        return {
+            headerTitle : params.title
+        }
     };
     static mapStatetToProps(state: State) {
         return {
@@ -37,6 +40,12 @@ class chapterScreenContainer extends Component {
     }
     static mapDispatchToProps(dispatch: Dispatch) {
         return bindActionCreators({ toggleLoading, selectBook, selectChapter, loadChapterContent }, dispatch);
+    }
+    componentDidMount(){
+     const { navigation , isArabic } = this.props;
+     navigation.setParams({
+         title : isArabic ? "الاصحاحات" : "chapters"
+     })
     }
 
     props: {

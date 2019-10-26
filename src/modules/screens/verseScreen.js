@@ -62,8 +62,11 @@ class verseScreenContainer extends Component {
       isbookmark: false
     };
   }
-  static navigationOptions = {
-    title: "Verses"
+  static navigationOptions = ({navigation}) => {
+    let params = navigation.state.params || {};
+   return {
+     headerTitle: params.title
+   }
   };
   static mapStatetToProps(state: State) {
     return {
@@ -149,6 +152,9 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
+    this.props.navigation.setParams({
+      title: this.props.isArabic ? "الايات" : "verses"
+    })
     this.isBookMarkedChapter();
     // this.props.loadNotes()
     db.transaction(tx => {

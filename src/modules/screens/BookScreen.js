@@ -25,8 +25,12 @@ const customDataAr = require('../../data/data-structure-ar.json');
 var customDataEn = require('../../data/data-structure.json');
 var myArray = { matta: 5, loca: 20 };
 class BookScreenContainer extends Component {
-  static navigationOptions = {
-    title: 'Book',
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+    return {
+      headerTitle: params.isArabic
+      
+    };
   };
   static mapStatetToProps(state: State) {
     return {
@@ -39,6 +43,9 @@ class BookScreenContainer extends Component {
     return bindActionCreators({ toggleLoading, selectBook, loadChapterContent }, dispatch);
   }
   componentDidMount() {
+    this.props.navigation.setParams({
+      isArabic: this.props.isArabic ? "الاناجيل" : "Books"
+    })
   // console.log("-----Location------",Location)
   //   console.log("homee")
    // NotificationManager.registerForPushNotifications()
