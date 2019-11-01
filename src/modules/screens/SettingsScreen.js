@@ -138,7 +138,7 @@ class SettingScreenContainer extends Component {
               </Left>
             </ListItem>
             <ListItem>
-              <Text>English</Text>
+              <Text>English/Arabic</Text>
               <Left />
               <Body />
               <Right>

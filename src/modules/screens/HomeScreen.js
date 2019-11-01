@@ -37,7 +37,7 @@ class HomeScreenContainer extends Component {
       isDownloadling: false,
       isFinished: true,
       isWarningModalVisible: false,
-      _isArabic: false
+      isArabic: false
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -69,6 +69,14 @@ class HomeScreenContainer extends Component {
     );
   }
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isArabic !== prevState.isArabic) {
+      nextProps.navigation.setParams({
+        title: nextProps.isArabic ? "الرئيسية" : "Home"
+      });
+      return {
+        isArabic: nextProps.isArabic
+      };
+    }
     if (!nextProps.isDownloadling && prevState.isDownloadling) {
       return { isDownloadling: false, isFinished: true };
     } else if (nextProps.isDownloadling) {
@@ -79,6 +87,9 @@ class HomeScreenContainer extends Component {
   }
 
   componentDidMount() {
+    this.props.navigation.setParams({
+      title: this.props.isArabic ? "الرئيسية" : "Home"
+    });
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
@@ -176,7 +187,7 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
                 this.props.navigation.setParams({
-                  title: this.props.isArabic ? "Home" : " الرئيسية"
+                  title: this.props.isArabic ? "الرئيسية" : "Home"
                 });
                 this.props.toggleLanguage();
               }}

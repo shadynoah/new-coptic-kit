@@ -62,12 +62,14 @@ export class MenuOptionList extends PureComponent {
         >
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("BookScreen");
+              NavigatorService.navigate("HomeScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>Home</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "الرئيسية" : "Home"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
@@ -104,7 +106,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>bookmark</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "مُؤّشِر" : "bookmark"}
+                </Text>
               </View>
 
               <View style={{ flex: 0.3 }}>
@@ -126,14 +130,14 @@ export class MenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              // console.log("======from sticky note====", this.state.selectedVerses)
-
               enableIsVisible();
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>Note</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "مُلاحَظة" : "Note"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
@@ -156,7 +160,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>settings</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "الإعدادات" : "settings"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
@@ -182,7 +188,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>fontSize</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تكبير" : "fontSize"}
+                </Text>
               </View>
               <View style={{ flexDirection: "row", flex: 0.3 }}>
                 <Icon
@@ -206,7 +214,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>fontSize</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تصغير" : "fontSize"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
@@ -230,7 +240,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>About</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "من نحن" : "about"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
@@ -256,7 +268,9 @@ export class MenuOptionList extends PureComponent {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>highlight</Text>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تعليم ايات" : "higlight"}
+                </Text>
               </View>
               <View style={{ flex: 0.3 }}>
                 <Icon
