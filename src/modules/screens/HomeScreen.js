@@ -28,6 +28,7 @@ import { LoadingContentModal } from "../components/loading-content-modal";
 import { ModalTypesEnum } from "../../enums";
 import { BaseModal } from "../components/base-modal";
 import { Switch } from "native-base";
+import i18next from "i18next";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -40,7 +41,7 @@ class HomeScreenContainer extends Component {
     };
   }
   static navigationOptions = {
-    title: "home",
+    title: i18next.t("HomeScreen.title"),
     header: <Text style={style.hideText}></Text>
   };
   static mapStatetToProps(state: State) {

@@ -2,18 +2,19 @@ import React from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { AppLoading } from "expo";
 
-import { Asset } from 'expo-asset';
+import { Asset } from "expo-asset";
 
 import NavigatorService from "./src/services/navigator.js";
 import Navigators from "./src/modules/routing";
- import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { Application } from "./src/application";
 import { MenuProvider } from "react-native-popup-menu";
 // import firebase from "firebase";
 import { NotificationManager } from "./src/services/utilities/pushNotification";
-import { Notifications  } from "expo";
+import { Notifications } from "expo";
 import * as Font from "expo-font";
-
+import i18next from "i18next";
+var language = require("./src/language/languages.json");
 import "./src/fixtimerbug"; // <<<<<<<<<<<<<<<<<<
 
 export default class App extends React.Component {
@@ -52,9 +53,26 @@ export default class App extends React.Component {
   async componentDidMount() {
     await Application.run();
     this.setState({ isReady: true });
-    this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
+    // this._notificationSubscription = Notifications.addListener(
+    //   this._handleNotification
+    // );
+    i18next.init(
+      {
+        resources: {
+          en: {
+            translation: language.en
+          },
+          ar: {
+            translation: language.ar
+          }
+        }
+      },
+      function(err, t) {
+        // initialized and ready to go!
+        console.log(i18next.t("intializtion of i18 done"));
+      }
     );
+    i18next.changeLanguage("en", () => console.log("change happened"));
   }
   render() {
     if (!this.state.isReady || !Application.current) {
@@ -87,7 +105,7 @@ export default class App extends React.Component {
         require("./assets/images/bible.png"),
         require("./assets/images/logo.png"),
         require("./assets/images/homecrop.png")
-      ]),
+      ])
       // Font.loadAsync({
       //   // This is the font that we are using for our tab bar
       //   ...Icon.Ionicons.font,
