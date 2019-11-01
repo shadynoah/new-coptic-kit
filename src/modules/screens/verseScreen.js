@@ -480,14 +480,14 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter - 1
                     );
-                    this.setState(
-                      {
-                        refresh: false,
-                        selectedVerses: [],
-                        highlightedVerses: []
-                      },
-                      () => this.setState({ refresh: true })
-                    );
+                    // this.setState(
+                    //   {
+                    //     refresh: false,
+                    //     selectedVerses: [],
+                    //     highlightedVerses: []
+                    //   },
+                    //   () => this.setState({ refresh: true })
+                    // );
                   }
                 }}
               >
@@ -512,10 +512,10 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter + 1
                     );
-                    this.setState({
-                      selectedVerses: [],
-                      highlightedVerses: []
-                    });
+                    // this.setState({
+                    //   selectedVerses: [],
+                    //   highlightedVerses: []
+                    // });
 
                     this.props.loadChapterContent(
                       this.props.selectedBook.bookName,
