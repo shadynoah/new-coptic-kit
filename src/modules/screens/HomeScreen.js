@@ -36,12 +36,16 @@ class HomeScreenContainer extends Component {
     this.state = {
       isDownloadling: false,
       isFinished: true,
-      isWarningModalVisible: false
+      isWarningModalVisible: false,
+      _isArabic: false
     };
   }
-  static navigationOptions = {
-    title: "home",
-    header: <Text style={style.hideText}></Text>
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+    return {
+      title: params.title,
+      header: <Text style={style.hideText}></Text>
+    };
   };
   static mapStatetToProps(state: State) {
     return {
@@ -171,6 +175,9 @@ class HomeScreenContainer extends Component {
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
+                this.props.navigation.setParams({
+                  title: this.props.isArabic ? "Home" : " الرئيسية"
+                });
                 this.props.toggleLanguage();
               }}
               value={this.props.isArabic}

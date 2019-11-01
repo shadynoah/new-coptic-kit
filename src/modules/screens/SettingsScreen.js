@@ -37,17 +37,20 @@ var myArray = { matta: 5, loca: 20 };
 import { AsyncStorage } from "react-native";
 
 class SettingScreenContainer extends Component {
-  static navigationOptions = {
-    title: "Setting",
-    headerRight: (
-      <Button
-        title="Home"
-        onPress={() => NavigatorService.navigate("BookScreen")}
-        transparent
-      >
-        <Icon name="arrow-forward" />
-      </Button>
-    )
+  static navigationOptions = ({ navigation }) => {
+    let params = navigation.state.params || {};
+    return {
+      title: params.title,
+      headerRight: (
+        <Button
+          title={params.title == "Setting" ? "Home" : "الرئيسية"}
+          onPress={() => NavigatorService.navigate("BookScreen")}
+          transparent
+        >
+          <Icon name="arrow-forward" />
+        </Button>
+      )
+    };
   };
   static mapStatetToProps(state: State) {
     return {
@@ -57,24 +60,13 @@ class SettingScreenContainer extends Component {
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators({ toggleLanguage }, dispatch);
   }
-  _storeData = async () => {
-    try {
-      await AsyncStorage.setItem("TASKS", "I like to save itsdfdfdf.");
-    } catch (error) {
-      // Error saving data
-    }
-  };
-  _retrieveData = async () => {
-    try {
-      const value = await AsyncStorage.getItem("TASKS");
-      if (value !== null) {
-        // We have data!!
-        // console.log(value);
-      }
-    } catch (error) {
-      // Error retrieving data
-    }
-  };
+
+  componentDidMount() {
+    this.props.navigation.setParams({
+      title: this.props.isArabic ? "الإعدادات" : "Setting"
+    });
+  }
+
   sendPushNotification = async () => {
     const message = {
       to: "ExponentPushToken[hYG9yzDed5WQV0O28K-_nW]",
@@ -129,7 +121,7 @@ class SettingScreenContainer extends Component {
             </ListItem>
             <ListItem
               onPress={() => {
-              //  NavigatorService.navigate("BookMarkScreen");
+                //  NavigatorService.navigate("BookMarkScreen");
               }}
             >
               <Left>
@@ -153,8 +145,6 @@ class SettingScreenContainer extends Component {
                 <Switch
                   onValueChange={value => {
                     this.props.toggleLanguage();
-                    this._storeData();
-                    this._retrieveData();
                   }}
                   value={this.props.isArabic}
                 />
