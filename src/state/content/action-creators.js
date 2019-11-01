@@ -37,7 +37,6 @@ export function selectBook(book: IBOOK) {
   };
 }
 export function clearSelectedBook() {
-  console.log("clear");
   return {
     type: types.CLEAR_SELECTED_BOOK
   };
@@ -229,7 +228,7 @@ export async function insertBookMark(
         "INSERT into bookmark (bookName , chapterNumber , isArabic) values (?,?, ?)",
         [bookName, numberOfSelectedChapter, isArabic]
       ).then(() => {
-        console.log("insert bookmark succeeded");
+        // console.log("insert bookmark succeeded");
         dispatch({
           type: types.INSERT_BOOKMARK_SUCCESS
         });
@@ -248,7 +247,7 @@ export async function deleteBookMark(bookName, numberOfSelectedChapter) {
         "delete from bookmark where bookName = (?) and chapterNumber = (?)",
         [bookName, numberOfSelectedChapter]
       ).then(() => {
-        console.log("delete bookmark succeeded");
+        // console.log("delete bookmark succeeded");
         dispatch({
           type: types.DELETE_BOOKMARK_SUCESS
         });
@@ -273,7 +272,7 @@ export async function insertNote(
         "INSERT into items (title , versesText,bookName , chapterNumber , isArabic) values (?, ?,? ,? ,?)",
         [title, text, bookName, numberOfSelectedChapter, isArabic]
       ).then(() => {
-        console.log("insert note succeeded");
+        // console.log("insert note succeeded");
         dispatch({
           type: types.INSERT_NOTE_SUCCESS
         });

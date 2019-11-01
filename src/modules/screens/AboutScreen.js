@@ -22,11 +22,44 @@ import {
   ListItem,
   Body
 } from "native-base";
-export class AboutScreen extends React.Component {
-  static navigationOptions = {
-    title: "About"
+import { connect } from "react-redux";
+class AboutScreenContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isArabic: false
+    };
+  }
+  static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
+    return {
+      headerTitle: params.title,
+      title: params.title
+    };
   };
-
+  static mapStatetToProps(state: State) {
+    return {
+      isArabic: state.content.isArabic
+    };
+  }
+  componentDidMount() {
+    this.props.navigation.setParams({
+      title: this.props.isArabic ? "من نحن" : "About"
+    });
+    // console.log("-----Location------",Location)
+    //   console.log("homee")
+    // NotificationManager.registerForPushNotifications()
+  }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isArabic !== prevState.isArabic) {
+      nextProps.navigation.setParams({
+        title: nextProps.isArabic ? "من نحن" : "About"
+      });
+      return {
+        isArabic: nextProps.isArabic
+      };
+    } else return null;
+  }
   render() {
     return (
       <Content scrollEnabled={true}>
@@ -207,3 +240,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   }
 });
+export const AboutScreen = connect(
+  AboutScreenContainer.mapStatetToProps,
+  AboutScreenContainer.mapDispatchToProps
+)(AboutScreenContainer);
