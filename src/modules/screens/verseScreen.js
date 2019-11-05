@@ -366,18 +366,19 @@ class verseScreenContainer extends Component {
               baseModalProperties={{
                 hadCloseHeader: true,
                 hasHeaderTitle: true,
-                headerTitle: "Note",
+                headerTitle: this.props.isArabic ? "مُلاحَظة" : "Note",
                 toggleModal: () => this.setState({ isVisible: false }),
                 modalText:
                   this.props.selectedBook.bookName +
                   this.props.numberOfSelectedChapter.toString(),
                 hasFirstButton: true,
                 hasSecondButton: true,
-                secondButtonText: "Cancel",
+                secondButtonText: this.props.isArabic ? "إلغاء" : "Cancel",
                 onPressSecondBtn: () => this.setState({ isVisible: false }),
-                firstButtonText: "Save",
+                firstButtonText: this.props.isArabic ? "حفظ" : "Save",
                 onPressFirstBtn: this.saveNote,
-                modalType: ModalTypesEnum.modalHasTwoButtons
+                modalType: ModalTypesEnum.modalHasTwoButtons,
+                isArabic: this.props.isArabic
               }}
               isVisible={this.state.isVisible}
             />

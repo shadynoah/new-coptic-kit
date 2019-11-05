@@ -30,9 +30,8 @@ import { Dispatch } from "redux";
 import { bindActionCreators } from "redux";
 import { NavigationStackScreenOptions } from "react-navigation";
 import _ from "lodash";
-import {  ScreenOrientation } from "expo";
-import { SQLite } from 'expo-sqlite';
-import Constants from 'expo-constants';
+import { SQLite } from "expo-sqlite";
+import Constants from "expo-constants";
 import { BookMarkItem } from "../components/bookmark-item";
 const db = SQLite.openDatabase("db.db");
 import {
@@ -70,22 +69,26 @@ class BookMarkContainer extends Component {
 
   componentDidMount() {
     db.transaction(tx => {
-      tx.executeSql("select * from bookmark", [], (_, { rows }) => {
-        // console.log(JSON.stringify(rows))
-        // console.log("======object is ====", rows._array)
-        this.setState(
-          {
-            bookmarks: rows._array
-          }
-          // () => console.log("====from state of note list===", this.state.notes)
-        );
-      });
+      console.log(" from bookmarks", this.props.isArabic);
+      tx.executeSql(
+        "select * from bookmark where isArabic = (?)",
+        [this.props.isArabic],
+        (_, { rows }) => {
+          this.setState(
+            {
+              bookmarks: rows._array
+            }
+            // () => console.log("====from state of note list===", this.state.notes)
+          );
+        }
+      );
     }, null);
   }
   static mapStateToProps(state: State) {
     return {
       selectedBook: state.content.selectedBook,
-      numberOfSelectedChapter: state.content.numberOfSelectedChapter
+      numberOfSelectedChapter: state.content.numberOfSelectedChapter,
+      isArabic: state.content.isArabic
     };
   }
 
@@ -100,10 +103,6 @@ class BookMarkContainer extends Component {
   }
 
   componentWillMount() {
-    ScreenOrientation.allowAsync(
-      ScreenOrientation.Orientation.ALL_BUT_UPSIDE_DOWN
-    );
-
     this.checkDeviceType();
   }
 

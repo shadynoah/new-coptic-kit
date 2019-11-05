@@ -153,6 +153,7 @@ class HomeScreenContainer extends Component {
           isVisible={
             !this.props.isConnected && this.state.isWarningModalVisible
           }
+          isArabic={this.props.isArabic}
         />
       ) : null;
 

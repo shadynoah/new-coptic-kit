@@ -30,9 +30,8 @@ import { Dispatch } from "redux";
 import { bindActionCreators } from "redux";
 import { NavigationStackScreenOptions } from "react-navigation";
 import _ from "lodash";
-import { ScreenOrientation } from "expo";
-import { SQLite } from 'expo-sqlite';
-import Constants from 'expo-constants';
+import { SQLite } from "expo-sqlite";
+import Constants from "expo-constants";
 
 import { NoteItem } from "../components/note-list-item";
 const db = SQLite.openDatabase("db.db");
@@ -128,10 +127,6 @@ export class NoteListContainer extends Component {
   }
 
   componentWillMount() {
-    ScreenOrientation.allowAsync(
-      ScreenOrientation.Orientation.ALL_BUT_UPSIDE_DOWN
-    );
-
     this.checkDeviceType();
   }
 

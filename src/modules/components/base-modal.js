@@ -1,5 +1,11 @@
 import React, { PureComponent } from "react";
-import { ScrollView, Dimensions, StyleSheet, TextInput, Platform } from "react-native";
+import {
+  ScrollView,
+  Dimensions,
+  StyleSheet,
+  TextInput,
+  Platform
+} from "react-native";
 
 import {
   Container,
@@ -19,7 +25,7 @@ import {
   Spinner
 } from "native-base";
 import Modal from "react-native-modal";
-import { ModalTypesEnum } from '../../enums'
+import { ModalTypesEnum } from "../../enums";
 import PropTypes from "prop-types";
 const SUPPORTED_ORIENTATIONS = [
   "portrait",
@@ -42,7 +48,6 @@ export interface BaseModalProperties {
   hasThirdButton: boolean;
   thirdButtonText: string;
 
-
   modalText: string;
   modalType: number;
   firstButtonDisabled: false;
@@ -55,14 +60,14 @@ export interface BaseModalProperties {
   onPressFirstBtn: () => void;
   onPressSecondBtn: () => void;
   onPressThirdBtn: () => void;
+  isArabic: Boolean;
 }
 export class BaseModal extends PureComponent {
   constructor() {
     super();
     this.state = {
-      textOfTextInput: ''
-
-    }
+      textOfTextInput: ""
+    };
   }
   static defaultProps = {
     hadCloseHeader: false,
@@ -77,91 +82,111 @@ export class BaseModal extends PureComponent {
     showLoadingSpinnger: false,
     okButtonDisabled: false,
     cancelButtonDisabled: false,
-    showLoadingSpinnger: false
+    showLoadingSpinnger: false,
+    isArabic: false
   };
 
   props: {
-    baseModalProperties: BaseModalProperties;
+    baseModalProperties: BaseModalProperties
   };
-  renderSwitch(param, firstButtonText = "Yes", secondButtonText = "No", thirdButtonText) {
+  renderSwitch(
+    param,
+    firstButtonText = "Yes",
+    secondButtonText = "No",
+    thirdButtonText
+  ) {
     switch (param) {
       case ModalTypesEnum.modalHasOneButton:
-        return <View style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginTop: 30
-        }}>
-          <View style={{ flex: .7 }}>
-            <Button
-              style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
-              full
-              rounded
-              disabled={this.props.baseModalProperties.firstButtonDisabled}
-              onPress={() => {
-                this.props.baseModalProperties.onPressFirstBtn(this.state.textOfTextInput);
-              }}
-            >
-              <Text>{firstButtonText}</Text>
-            </Button>
+        return (
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 30
+            }}
+          >
+            <View style={{ flex: 0.7 }}>
+              <Button
+                style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
+                full
+                rounded
+                disabled={this.props.baseModalProperties.firstButtonDisabled}
+                onPress={() => {
+                  this.props.baseModalProperties.onPressFirstBtn(
+                    this.state.textOfTextInput
+                  );
+                }}
+              >
+                <Text>{firstButtonText}</Text>
+              </Button>
+            </View>
           </View>
-        </View>;
+        );
       case ModalTypesEnum.modalHasTwoButtons:
-        return <View style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginTop: 30
-        }}>
-          <View style={{ flex: .5 }}>
-            <Button
-              style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
-              full
-              rounded
-              disabled={this.props.baseModalProperties.firstButtonDisabled}
-              onPress={() => {
-                this.props.baseModalProperties.onPressFirstBtn(this.state.textOfTextInput);
-
-              }}
-            >
-              <Text>{firstButtonText}</Text>
-            </Button>
+        return (
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 30
+            }}
+          >
+            <View style={{ flex: 0.5 }}>
+              <Button
+                style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
+                full
+                rounded
+                disabled={this.props.baseModalProperties.firstButtonDisabled}
+                onPress={() => {
+                  this.props.baseModalProperties.onPressFirstBtn(
+                    this.state.textOfTextInput
+                  );
+                }}
+              >
+                <Text>{firstButtonText}</Text>
+              </Button>
+            </View>
+            <View style={{ flex: 0.5 }}>
+              <Button
+                style={{ margin: 10 }}
+                full
+                rounded
+                disabled={this.props.baseModalProperties.secondButtonDisabled}
+                onPress={() => {
+                  this.props.baseModalProperties.onPressSecondBtn();
+                }}
+              >
+                <Text>{secondButtonText}</Text>
+              </Button>
+            </View>
           </View>
-          <View style={{ flex: .5 }}>
-            <Button
-              style={{ margin: 10 }}
-              full
-              rounded
-              disabled={this.props.baseModalProperties.secondButtonDisabled}
-
-              onPress={() => {
-                this.props.baseModalProperties.onPressSecondBtn();
-              }}
-            >
-              <Text>{secondButtonText}</Text>
-            </Button>
+        );
+      case ModalTypesEnum.warningModal:
+        return (
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 30
+            }}
+          >
+            <View style={{ flex: 0.7 }}>
+              <Button
+                style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
+                full
+                rounded
+                disabled={this.props.baseModalProperties.firstButtonDisabled}
+                onPress={() => {
+                  this.props.baseModalProperties.onPressFirstBtn(
+                    this.state.textOfTextInput
+                  );
+                }}
+              >
+                <Text>{firstButtonText}</Text>
+              </Button>
+            </View>
           </View>
-        </View>;
-           case ModalTypesEnum.warningModal : 
-           return <View style={{
-           flexDirection: "row",
-           justifyContent: "space-between",
-           marginTop: 30
-         }}>
-           <View style={{ flex: .7 }}>
-             <Button
-               style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
-               full
-               rounded
-               disabled={this.props.baseModalProperties.firstButtonDisabled}
-               onPress={() => {
-                 this.props.baseModalProperties.onPressFirstBtn(this.state.textOfTextInput);
-               }}
-             >
-               <Text>{firstButtonText}</Text>
-             </Button>
-           </View>
-         </View>;
-
-
+        );
 
       default:
         return <Text>there is problem in modal </Text>;
@@ -169,7 +194,11 @@ export class BaseModal extends PureComponent {
   }
 
   render() {
-    var { firstButtonText, secondButtonText, thirdButtonText } = this.props.baseModalProperties
+    var {
+      firstButtonText,
+      secondButtonText,
+      thirdButtonText
+    } = this.props.baseModalProperties;
     // firstButtonText = firstButtonText ? firstButtonText : "Yes"
     // secondButtonText = secondButtonText ? secondButtonText : "No"
 
@@ -180,20 +209,24 @@ export class BaseModal extends PureComponent {
         isVisible={this.props.isVisible}
         supportedOrientations={SUPPORTED_ORIENTATIONS}
       >
-        <View style={{
-          padding: 10,
-          backgroundColor: "white",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 4,
-          borderColor: "rgba(0, 0, 0, 0.1)"
-        }}>
-          <View style={{
-            flexDirection: "row-reverse",
-            justifyContent: "center"
-          }}>
-            {
-              this.props.baseModalProperties.hadCloseHeader && <Right>
+        <View
+          style={{
+            padding: 10,
+            backgroundColor: "white",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 4,
+            borderColor: "rgba(0, 0, 0, 0.1)"
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row-reverse",
+              justifyContent: "center"
+            }}
+          >
+            {this.props.baseModalProperties.hadCloseHeader && (
+              <Right>
                 <Button
                   iconLeft
                   transparent
@@ -204,8 +237,7 @@ export class BaseModal extends PureComponent {
                   <Icon black name="close" />
                 </Button>
               </Right>
-            }
-
+            )}
 
             <Text modalHeaderTitleEnd black>
               {this.props.baseModalProperties.headerTitle}
@@ -226,25 +258,27 @@ export class BaseModal extends PureComponent {
           <TextInput
             style={styles.TextInputStyleClass}
             underlineColorAndroid="transparent"
-            placeholder={"Write your Note."}
+            placeholder={
+              this.props.baseModalProperties.isArabic
+                ? "اكتب ملاحظتك"
+                : "write your note"
+            }
             placeholderTextColor={"#9E9E9E"}
             numberOfLines={10}
             multiline={true}
-            defaultValue=''
-            onChangeText={(text) => {
-
+            defaultValue=""
+            onChangeText={text => {
               this.setState({
                 textOfTextInput: text
-              })
+              });
             }}
-
-
           />
-          {
-            this.renderSwitch(this.props.baseModalProperties.modalType, firstButtonText, secondButtonText, thirdButtonText)
-          }
-
-
+          {this.renderSwitch(
+            this.props.baseModalProperties.modalType,
+            firstButtonText,
+            secondButtonText,
+            thirdButtonText
+          )}
         </View>
       </Modal>
     );
@@ -263,30 +297,26 @@ BaseModal.propTypes = {
     modalType: PropTypes.number,
     onPressFirstBtn: PropTypes.func,
     onPressSecondBtn: PropTypes.func,
-    firstButtonText: PropTypes.string
+    firstButtonText: PropTypes.string,
+    isArabic: PropTypes.bool
   })
 };
 const styles = StyleSheet.create({
-
   MainContainer: {
-
     flex: 1,
-    paddingTop: (Platform.OS) === 'ios' ? 20 : 0,
-    justifyContent: 'center',
+    paddingTop: Platform.OS === "ios" ? 20 : 0,
+    justifyContent: "center",
     margin: 20
-
   },
 
   TextInputStyleClass: {
     padding: 15,
-    textAlign: 'left',
-    width: '95%',
+    textAlign: "left",
+    width: "95%",
     borderWidth: 2,
-    borderColor: '#9E9E9E',
+    borderColor: "#9E9E9E",
     borderRadius: 20,
     backgroundColor: "#FFFFFF",
-    height: '50%'
-
+    height: "50%"
   }
-
 });

@@ -112,20 +112,22 @@ class SettingScreenContainer extends Component {
             </Separator> */}
             <ListItem
               onPress={() => {
-                NavigatorService.navigate("BookScreen");
+                NavigatorService.navigate("HomeScreen");
               }}
             >
               <Left>
-                <Text>Home</Text>
+                <Text>{this.props.isArabic ? "الرئيسية" : "Home"}</Text>
               </Left>
             </ListItem>
             <ListItem
               onPress={() => {
-                //  NavigatorService.navigate("BookMarkScreen");
+                NavigatorService.navigate("BookMarkScreen");
               }}
             >
               <Left>
-                <Text>Bookmarks</Text>
+                <Text>
+                  {this.props.isArabic ? "إشارات مرجعية" : "Bookmarks"}
+                </Text>
               </Left>
             </ListItem>
             <ListItem
@@ -134,7 +136,7 @@ class SettingScreenContainer extends Component {
               }}
             >
               <Left>
-                <Text>Notes</Text>
+                <Text>{this.props.isArabic ? "ملاحظات" : "Notes"}</Text>
               </Left>
             </ListItem>
             <ListItem>
