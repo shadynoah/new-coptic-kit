@@ -2,289 +2,241 @@
     "bible": [
         {
             "key": "1",
-            "bookName": "Genesis",
             "numberOfChapters": 50,
             "bookName": "تكوين"
         },
         {
             "key": "2",
-            "bookName": "Exodus",
             "numberOfChapters": 40,
             "bookName": "خروج"
         },
         {
             "key": "3",
-            "bookName": "Leviticus",
             "numberOfChapters": 27,
             "bookName": "لاويين"
         },
         {
             "key": "4",
-            "bookName": "Numbers",
             "numberOfChapters": 36,
             "bookName": "عدد"
         },
         {
             "key": "5",
-            "bookName": "Deuteronomy",
             "numberOfChapters": 34,
             "bookName": "تثنية"
         },
         {
             "key": "6",
-            "bookName": "Joshua",
             "numberOfChapters": 24,
             "bookName": "يشوع"
         },
         {
             "key": "7",
-            "bookName": "Judges",
             "numberOfChapters": 21,
             "bookName": "قضاة"
         },
         {
             "key": "8",
-            "bookName": "Ruth",
             "numberOfChapters": 4,
             "bookName": "راعوث"
         },
         {
             "key": "9",
-            "bookName": "1 Samuel",
             "numberOfChapters": 31,
             "bookName": "1 صموئيل"
         },
         {
             "key": "10",
-            "bookName": "2 Samuel",
             "numberOfChapters": 24,
             "bookName": "2 صموئيل"
         },
         {
             "key": "11",
-            "bookName": "1 Kings",
             "numberOfChapters": 22,
             "bookName": "1 ملوك"
         },
         {
             "key": "12",
-            "bookName": "2 Kings",
             "numberOfChapters": 25,
             "bookName": "2 ملوك"
         },
         {
             "key": "13",
-            "bookName": "1 Chronicles",
             "numberOfChapters": 29,
             "bookName": "1 اخبار"
         },
         {
             "key": "14",
-            "bookName": "2 Chronicles",
             "numberOfChapters": 36,
             "bookName": "2 اخبار"
         },
         {
             "key": "15",
-            "bookName": "Ezra",
             "numberOfChapters": 10,
             "bookName": "عزرا"
         },
         {
             "key": "16",
-            "bookName": "Nehemiah",
             "numberOfChapters": 13,
             "bookName": "نحميا"
         },
         {
             "key": "17",
-            "bookName": "Esther",
             "numberOfChapters": 10,
             "bookName": "استير"
         },
         {
             "key": "18",
-            "bookName": "Job",
             "numberOfChapters": 42,
             "bookName": "ايوب"
         },
         {
             "key": "19",
-            "bookName": "Psalms",
             "numberOfChapters": 150,
             "bookName": "مزامير"
         },
         {
             "key": "20",
-            "bookName": "Proverbs",
             "numberOfChapters": 31,
             "bookName": "امثال"
         },
         {
             "key": "21",
-            "bookName": "Ecclesiastes",
             "numberOfChapters": 12,
             "bookName": "جامعة"
         },
         {
             "key": "22",
-            "bookName": "Song of Solomon",
             "numberOfChapters": 8,
             "bookName": "نشيد الانشاد"
         },
         {
             "key": "23",
-            "bookName": "Isaiah",
             "numberOfChapters": 66,
             "bookName": "اشعياء"
         },
         {
             "key": "24",
-            "bookName": "Jeremiah",
             "numberOfChapters": 52,
             "bookName": "ارميا"
         },
         {
             "key": "25",
-            "bookName": "Lamentations",
             "numberOfChapters": 5,
             "bookName": "مراثي"
         },
         {
             "key": "26",
-            "bookName": "Ezekiel",
             "numberOfChapters": 48,
             "bookName": "حزقيال"
         },
         {
             "key": "27",
-            "bookName": "Daniel",
             "numberOfChapters": 12,
             "bookName": "دانيال"
         },
         {
             "key": "28",
-            "bookName": "Hosea",
             "numberOfChapters": 14,
             "bookName": "هوشع"
         },
         {
             "key": "29",
-            "bookName": "Joel",
             "numberOfChapters": 3,
             "bookName": "يوئيل"
         },
         {
             "key": "30",
-            "bookName": "Amos",
             "numberOfChapters": 9,
             "bookName": "عاموس"
         },
         {
             "key": "31",
-            "bookName": "Obadiah",
             "numberOfChapters": 1,
             "bookName": "عوبديا"
         },
         {
             "key": "32",
-            "bookName": "Jonah",
             "numberOfChapters": 4,
             "bookName": "يونان"
         },
         {
             "key": "33",
-            "bookName": "Micah",
             "numberOfChapters": 7,
             "bookName": "ميخا"
         },
         {
             "key": "34",
-            "bookName": "Nahum",
             "numberOfChapters": 3,
             "bookName": "ناحوم"
         },
         {
             "key": "35",
-            "bookName": "Habakkuk",
             "numberOfChapters": 3,
             "bookName": "حبقوق"
         },
         {
             "key": "36",
-            "bookName": "Zephaniah",
             "numberOfChapters": 3,
             "bookName": "صفنيا"
         },
         {
             "key": "37",
-            "bookName": "Haggai",
             "numberOfChapters": 2,
             "bookName": "حجى"
         },
         {
             "key": "38",
-            "bookName": "Zechariah",
             "numberOfChapters": 14,
             "bookName": "زكريا"
         },
         {
             "key": "39",
-            "bookName": "Malachi",
             "numberOfChapters": 4,
             "bookName": "ملاخي"
         },
         {
             "key": "40",
-            "bookName": "Matthew",
             "numberOfChapters": 28,
             "bookName": "متى"
         },
         {
             "key": "41",
-            "bookName": "Mark",
             "numberOfChapters": 16,
             "bookName": "مرقس"
         },
         {
             "key": "42",
-            "bookName": "Luke",
             "numberOfChapters": 24,
             "bookName": "لوقا"
         },
         {
             "key": "43",
-            "bookName": "John",
             "numberOfChapters": 21,
             "bookName": "يوحنا"
         },
         {
             "key": "44",
-            "bookName": "Acts",
             "numberOfChapters": 28,
             "bookName": "اعمال"
         },
         {
             "key": "45",
-            "bookName": "Romans",
             "numberOfChapters": 16,
             "bookName": "رومية"
         },
         {
             "key": "46",
-            "bookName": "1 Corinthians",
             "numberOfChapters": 16,
             "bookName": "1 كورنثوس"
         },
         {
             "key": "47",
-            "bookName": "2 Corinthians",
             "numberOfChapters": 13,
             "bookName": "2 كورنثوس"
         },
         {
             "key": "48",
-            "bookName": "Galatians",
             "numberOfChapters": 6,
             "bookName": "غلاطية"
         },
@@ -296,103 +248,86 @@
         },
         {
             "key": "50",
-            "bookName": "Philippians",
             "numberOfChapters": 4,
             "bookName": "فيلبي"
         },
         {
             "key": "51",
-            "bookName": "Colossians",
             "numberOfChapters": 4,
             "bookName": "كولوسي"
         },
         {
             "key": "52",
-            "bookName": "1 Thessalonians",
             "numberOfChapters": 5,
             "bookName": "1 تسالونيكي"
         },
         {
             "key": "53",
-            "bookName": "2 Thessalonians",
             "numberOfChapters": 3,
             "bookName": "2 تسالونيكي"
         },
         {
             "key": "54",
-            "bookName": "1 Timothy",
             "numberOfChapters": 6,
             "bookName": "1 تيموثاوس"
         },
         {
             "key": "55",
-            "bookName": "2 Timothy",
             "numberOfChapters": 4,
             "bookName": "2 تيموثاوس"
         },
         {
             "key": "56",
-            "bookName": "Titus",
             "numberOfChapters": 3,
             "bookName": "تيطس"
         },
         {
             "key": "57",
-            "bookName": "Philemon",
             "numberOfChapters": 1,
             "bookName": "فليمون"
         },
         {
             "key": "58",
-            "bookName": "Hebrews",
             "numberOfChapters": 13,
             "bookName": "عبرانيين"
         },
         {
             "key": "59",
-            "bookName": "James",
             "numberOfChapters": 5,
             "bookName": "يعقوب"
         },
         {
             "key": "60",
-            "bookName": "1 Peter",
             "numberOfChapters": 5,
             "bookName": "1 بطرس"
         },
         {
             "key": "61",
-            "bookName": "2 Peter",
             "numberOfChapters": 3,
             "bookName": "2 بطرس"
         },
         {
             "key": "62",
-            "bookName": "1 John",
             "numberOfChapters": 5,
             "bookName": "1 يوحنا"
         },
         {
             "key": "63",
-            "bookName": "2 John",
             "numberOfChapters": 1,
             "bookName": "2 يوحنا"
         },
         {
             "key": "64",
-            "bookName": "3 John",
             "numberOfChapters": 1,
             "bookName": "3 يوحنا"
         },
         {
             "key": "65",
-            "bookName": "Jude",
             "numberOfChapters": 1,
             "bookName": "يهوذا"
         },
         {
             "key": "66",
-            "bookName": "Revelation",
             "numberOfChapters": 22,
             "bookName": "رؤيا"
         }
