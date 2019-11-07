@@ -12,8 +12,8 @@ import {
   //Actions
   success
 } from "./state";
-import { AsyncStorage, Alert  } from "react-native";
-import NetInfo from '@react-native-community/netinfo';
+import { AsyncStorage, Alert } from "react-native";
+import NetInfo from "@react-native-community/netinfo";
 
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {
@@ -57,12 +57,12 @@ export class Application {
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/y5rk2o8r2poucgj/content-ar.json?dl=1",
+      "https://www.dropbox.com/s/pizz2q494pqlb12/content-ar-u.json?dl=1",
       FileSystem.documentDirectory + "contentAR"
     )
       .then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        AsyncStorage.setItem("Arabic", uri);
+        AsyncStorage.setItem("ArabicUpdated", uri);
       })
       .catch(error => {
         console.error(error);
@@ -74,29 +74,27 @@ export class Application {
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
-  //await  AsyncStorage.clear();
-       // Listen for network status changes
+    // await AsyncStorage.clear();
+    // Listen for network status changes
     NetInfo.isConnected.addEventListener(
       "connectionChange",
       this.networkConnectionChange
     );
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
-      if(isConnected) {
+      if (isConnected) {
         if ((await this.IsContentDownloaded("English")) == false) {
           Application.current.store.dispatch(toggleIsDownloading());
           await this.downloadEnglish();
           Application.current.store.dispatch(toggleIsDownloading());
         }
-        if ((await this.IsContentDownloaded("Arabic")) == false) {
+        if ((await this.IsContentDownloaded("ArabicUpdated")) == false) {
           Application.current.store.dispatch(toggleIsDownloading());
           await this.downloadArabic();
           Application.current.store.dispatch(toggleIsDownloading());
         }
       }
-
-  });
-    
+    });
 
     // await Font.loadAsync({
     //     Roboto: require("native-base/Fonts/Roboto.ttf"),
