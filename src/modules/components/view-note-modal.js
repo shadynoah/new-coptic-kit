@@ -33,20 +33,21 @@ export class ViewNoteModal extends PureComponent {
     onToggleViewNoteModal: () => void,
     isViewModal: boolean,
     selectedNote: Note,
-    selectedTemplate: Template
+    selectedTemplate: Template,
+    isArabic: boolean
   };
 
   render() {
-      const defaultModal = {
-        backgroundColor: "#ecf0f1",
-        justifyContent: "space-between",
-        borderBottomColor: "#ecf0f1"
-      }
-      const  modalHeaderTitle = {
-        fontSize: 20,
+    const defaultModal = {
+      backgroundColor: "#ecf0f1",
+      justifyContent: "space-between",
+      borderBottomColor: "#ecf0f1"
+    };
+    const modalHeaderTitle = {
+      fontSize: 20,
       fontWeight: "bold",
       alignSelf: "center"
-      }
+    };
     return (
       <Modal
         animationType="slide"
@@ -58,7 +59,7 @@ export class ViewNoteModal extends PureComponent {
           <Header
             style={{
               backgroundColor: "#ecf0f1",
-              justifyContent: 'flex-start',
+              justifyContent: "flex-start",
               borderBottomColor: "#ecf0f1"
             }}
           >
@@ -66,15 +67,14 @@ export class ViewNoteModal extends PureComponent {
             <Body>
               <Text
                 style={{
-                    textAlign: 'center', // <-- the magic
-                    fontWeight: 'bold',
-                    fontSize: 18,
-                    marginTop: 0,
-                    width: 200
-                   
+                  textAlign: "center", // <-- the magic
+                  fontWeight: "bold",
+                  fontSize: 18,
+                  marginTop: 0,
+                  width: 200
                 }}
               >
-                View Note{" "}
+                {this.props.isArabic ? "عرض ملاحظة" : "View Note"}
               </Text>
             </Body>
             <Right>

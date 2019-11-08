@@ -58,29 +58,34 @@ export class NoteListContainer extends Component {
       noOfColumns: 1,
       selectedNoteStyle: "1",
       notes: [],
-      refresh: false
+      refresh: false,
+      isArabic: false
     };
   }
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
 
     return {
-      title: "Notes"
+      title: params.title
     };
   };
 
   componentDidMount() {
     db.transaction(tx => {
-      tx.executeSql("select * from items", [], (_, { rows }) => {
-        //   console.log(JSON.stringify(rows))
-        //  console.log("======object is ====", rows._array)
-        this.setState(
-          {
-            notes: rows._array
-          }
-          // () => console.log("====from state of note list===", this.state.notes)
-        );
-      });
+      tx.executeSql(
+        "select * from items where isArabic = (?) ",
+        [this.props.isArabic],
+        (_, { rows }) => {
+          //   console.log(JSON.stringify(rows))
+          //  console.log("======object is ====", rows._array)
+          this.setState(
+            {
+              notes: rows._array
+            }
+            // () => console.log("====from state of note list===", this.state.notes)
+          );
+        }
+      );
     }, null);
   }
   delete(item) {
@@ -112,7 +117,8 @@ export class NoteListContainer extends Component {
   static mapStateToProps(state: State) {
     return {
       isViewModal: state.content.isViewModal,
-      selectedNote: state.content.selectedNote
+      selectedNote: state.content.selectedNote,
+      isArabic: state.content.isArabic
     };
   }
 
@@ -125,10 +131,20 @@ export class NoteListContainer extends Component {
       dispatch
     );
   }
-
-  componentWillMount() {
-    this.checkDeviceType();
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isArabic !== prevState.isArabic) {
+      nextProps.navigation.setParams({
+        title: nextProps.isArabic ? "ملاحظات" : "Notes"
+      });
+      return {
+        isArabic: nextProps.isArabic
+      };
+    } else return null;
   }
+
+  // componentWillMount() {
+  //   this.checkDeviceType();
+  // }
 
   checkDeviceType = () => {
     // TO DO
@@ -144,6 +160,7 @@ export class NoteListContainer extends Component {
         toggleViewNoteModal={this.props.toggleViewNoteModal}
         isViewModal={this.props.isViewModal}
         selectedNote={this.props.selectedNote}
+        isArabic={this.props.isArabic}
       />
     );
 

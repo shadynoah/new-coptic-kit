@@ -38,10 +38,18 @@ export class NoteItem extends PureComponent {
           marginBottom: 20
         }}
       >
-        <View style={{ flex: 0.5 }}>
-          <Text style={{}}> {this.props.item.title} </Text>
+        <View style={{ flex: 0.5, flexDirection: "row" }}>
+          <Text
+            onPress={() => {
+              this.props.selectNote(this.props.item);
+              this.props.toggleViewNoteModal();
+            }}
+            style={{}}
+          >
+            <Text style={{}}> {this.props.item.title} </Text>
+          </Text>
         </View>
-        <View style={{ flexDirection: isArabic ? "row-reverse" : "row" }}>
+        <View style={{ flexDirection: "row-reverse" }}>
           <View
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
@@ -55,7 +63,6 @@ export class NoteItem extends PureComponent {
               }}
             />
             {/* to do updated with another condition this.props.note.noteStyle !== NoteStyleEnum.handWrittenNote && note.imageLines */}
-
             <Icon
               name="trash"
               color="red"

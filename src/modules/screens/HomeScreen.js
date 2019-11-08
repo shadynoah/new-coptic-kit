@@ -208,14 +208,18 @@ class HomeScreenContainer extends Component {
           <View style={{ flex: 0.8, flexDirection: "row" }}>
             <TouchableOpacity
               style={{ marginRight: 10 }}
-              onPress={() => Linking.openURL("https://www.facebook.com/")}
+              onPress={() =>
+                Linking.openURL(
+                  "https://m.facebook.com/story.php?story_fbid=710180122736668&id=241119892976029&sfnsn=mo"
+                )
+              }
             >
               <Image
                 style={{ height: heightT, width: heightT }}
                 source={require("../../../assets/images/facebook.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={{ marginRight: 10 }}
               onPress={() => Linking.openURL("https://twitter.com/")}
             >
@@ -223,10 +227,14 @@ class HomeScreenContainer extends Component {
                 style={{ height: heightT, width: heightT }}
                 source={require("../../../assets/images/twitter.png")}
               />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <TouchableOpacity
               style={{ marginRight: 10 }}
-              onPress={() => Linking.openURL("https://www.youtube.com/")}
+              onPress={() =>
+                Linking.openURL(
+                  "https://www.youtube.com/channel/UCMku6NsCd_W2dhBh9tcPIAQ/featured"
+                )
+              }
             >
               <Image
                 style={{ height: heightT, width: heightT }}
