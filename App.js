@@ -2,16 +2,16 @@ import React from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { AppLoading } from "expo";
 
-import { Asset } from 'expo-asset';
+import { Asset } from "expo-asset";
 
 import NavigatorService from "./src/services/navigator.js";
 import Navigators from "./src/modules/routing";
- import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { Application } from "./src/application";
 import { MenuProvider } from "react-native-popup-menu";
 // import firebase from "firebase";
 import { NotificationManager } from "./src/services/utilities/pushNotification";
-import { Notifications  } from "expo";
+import { Notifications } from "expo";
 import * as Font from "expo-font";
 
 import "./src/fixtimerbug"; // <<<<<<<<<<<<<<<<<<
@@ -85,9 +85,15 @@ export default class App extends React.Component {
       Asset.loadAsync([
         require("./assets/images/background.jpg"),
         require("./assets/images/bible.png"),
+        require("./assets/images/facebook.png"),
+        require("./assets/images/homecrop.png"),
         require("./assets/images/logo.png"),
-        require("./assets/images/homecrop.png")
-      ]),
+        require("./assets/images/newHome.png"),
+        require("./assets/images/newSplash.png"),
+        require("./assets/images/twitter.png"),
+        require("./assets/images/website.png"),
+        require("./assets/images/youtube.png")
+      ])
       // Font.loadAsync({
       //   // This is the font that we are using for our tab bar
       //   ...Icon.Ionicons.font,
