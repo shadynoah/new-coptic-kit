@@ -63,7 +63,7 @@ class BookMarkContainer extends Component {
     const params = navigation.state.params || {};
 
     return {
-      title: "BookMarks"
+      title: params.title
     };
   };
 
@@ -97,9 +97,15 @@ class BookMarkContainer extends Component {
       dispatch
     );
   }
-
-  componentWillMount() {
-    this.checkDeviceType();
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.isArabic !== prevState.isArabic) {
+      nextProps.navigation.setParams({
+        title: nextProps.isArabic ? "إشارات مرجعية" : "BookMarks"
+      });
+      return {
+        isArabic: nextProps.isArabic
+      };
+    } else return null;
   }
 
   checkDeviceType = () => {
