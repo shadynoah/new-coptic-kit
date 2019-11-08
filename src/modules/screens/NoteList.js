@@ -73,7 +73,7 @@ export class NoteListContainer extends Component {
   componentDidMount() {
     db.transaction(tx => {
       tx.executeSql(
-        "select * from items where isArabic = (?) ",
+        "select * from Notes where isArabic = (?) ",
         [this.props.isArabic],
         (_, { rows }) => {
           //   console.log(JSON.stringify(rows))
@@ -91,7 +91,7 @@ export class NoteListContainer extends Component {
   delete(item) {
     db.transaction(
       tx => {
-        tx.executeSql("delete from items where id = ?", [item.id]);
+        tx.executeSql("delete from Notes where id = ?", [item.id]);
       },
       null,
       () => {
@@ -99,7 +99,7 @@ export class NoteListContainer extends Component {
           refresh: false
         });
         db.transaction(tx => {
-          tx.executeSql("select * from items", [], (_, { rows }) => {
+          tx.executeSql("select * from Notes", [], (_, { rows }) => {
             // console.log(JSON.stringify(rows))
             // console.log("======object is ====", rows._array)
             this.setState(

@@ -95,11 +95,7 @@ export class MenuOptionList extends PureComponent {
                 deleteBookMark(selectedBook.bookName, numberOfSelectedChapter);
                 disableIsBookMark();
               } else {
-                insertBookMark(
-                  selectedBook.bookName,
-                  numberOfSelectedChapter,
-                  isArabic
-                );
+                insertBookMark(selectedBook, numberOfSelectedChapter, isArabic);
                 enableIsBookMark();
               }
             }}

@@ -69,17 +69,13 @@ class BookMarkContainer extends Component {
 
   componentDidMount() {
     db.transaction(tx => {
-      console.log(" from bookmarks", this.props.isArabic);
       tx.executeSql(
-        "select * from bookmark where isArabic = (?)",
+        "select * from bookmarks where isArabic = (?)",
         [this.props.isArabic],
         (_, { rows }) => {
-          this.setState(
-            {
-              bookmarks: rows._array
-            }
-            // () => console.log("====from state of note list===", this.state.notes)
-          );
+          this.setState({
+            bookmarks: rows._array
+          });
         }
       );
     }, null);
@@ -119,7 +115,7 @@ class BookMarkContainer extends Component {
     //console.log("------item from bookmark----" , item)
     db.transaction(
       tx => {
-        tx.executeSql("delete from bookmark where id = (?)", [item.id]);
+        tx.executeSql("delete from bookmarks where id = (?)", [item.id]);
       },
       null,
       () => {
@@ -127,19 +123,12 @@ class BookMarkContainer extends Component {
           refresh: false
         });
         db.transaction(tx => {
-          tx.executeSql("select * from bookmark", [], (_, { rows }) => {
+          tx.executeSql("select * from bookmarks", [], (_, { rows }) => {
             // console.log(JSON.stringify(rows))
             // console.log("======object is ====", rows._array)
-            this.setState(
-              {
-                bookmarks: rows._array
-              },
-              () =>
-                console.log(
-                  "====from state of note list===",
-                  this.state.bookmarks
-                )
-            );
+            this.setState({
+              bookmarks: rows._array
+            });
           });
         }, null);
       }

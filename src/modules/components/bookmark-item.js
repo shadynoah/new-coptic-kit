@@ -47,7 +47,7 @@ export class BookMarkItem extends PureComponent {
                 item.chapterNumber,
                 item.isArabic
               );
-              this.props.selectBook({ bookName: item.bookName });
+              this.props.selectBook(item);
               NavigatorService.navigate("VerseScreen");
             }}
             style={{}}

@@ -52,6 +52,8 @@ export async function loadChapterContent(
   chapterNumber,
   isArabicBookMark = false
 ) {
+  debugger;
+
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
     let englishContent;
@@ -123,7 +125,7 @@ export function toggleLanguage() {
 export function loadNotes() {
   var arrayOfNotes = [];
   db.transaction(tx => {
-    tx.executeSql("select * from items", [], (_, { rows }) => {
+    tx.executeSql("select * from Notes", [], (_, { rows }) => {
       // console.log(JSON.stringify(rows))
       arrayOfNotes = rows._array;
       // console.log("======object from action creator ====", rows._array)
@@ -167,17 +169,19 @@ export function selectNote(note) {
   };
 }
 export async function insertBookMark(
-  bookName,
+  selectedBook,
   numberOfSelectedChapter,
   isArabic
 ) {
   try {
+    const { bookName, numberOfChapters } = selectedBook;
+    console.log("--from insert bookmark---", selectedBook);
     return async dispatch => {
       await executeSql(
-        "INSERT into bookmark (bookName , chapterNumber , isArabic) values (?,?, ?)",
-        [bookName, numberOfSelectedChapter, isArabic]
+        "INSERT into bookmarks (bookName , chapterNumber , isArabic ,numberOfChapters) values (?,?,?, ?)",
+        [bookName, numberOfSelectedChapter, isArabic, numberOfChapters]
       ).then(() => {
-        // console.log("insert bookmark succeeded");
+        console.log("insert bookmark succeeded");
         dispatch({
           type: types.INSERT_BOOKMARK_SUCCESS
         });
@@ -193,7 +197,7 @@ export async function deleteBookMark(bookName, numberOfSelectedChapter) {
   try {
     return async dispatch => {
       await executeSql(
-        "delete from bookmark where bookName = (?) and chapterNumber = (?)",
+        "delete from bookmarks where bookName = (?) and chapterNumber = (?)",
         [bookName, numberOfSelectedChapter]
       ).then(() => {
         // console.log("delete bookmark succeeded");
@@ -218,7 +222,7 @@ export async function insertNote(
   try {
     return async dispatch => {
       await executeSql(
-        "INSERT into items (title , versesText,bookName , chapterNumber , isArabic) values (?, ?,? ,? ,?)",
+        "INSERT into Notes (title , versesText,bookName , chapterNumber , isArabic) values (?, ?,? ,? ,?)",
         [title, text, bookName, numberOfSelectedChapter, isArabic]
       ).then(() => {
         // console.log("insert note succeeded");

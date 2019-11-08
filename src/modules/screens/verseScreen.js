@@ -159,17 +159,17 @@ class verseScreenContainer extends Component {
     // this.props.loadNotes()
     db.transaction(tx => {
       // tx.executeSql(
-      //     'DROP TABLE items'
+      //     'DROP TABLE Notes'
       // );
       // tx.executeSql(
       //     'DROP TABLE bookmark'
 
       // );
       tx.executeSql(
-        "create table if not exists items (id integer primary key not null,title text, versesText text,bookName text , chapterNumber integer,isArabic boolean);"
+        "create table if not exists Notes (id integer primary key not null,title text, versesText text,bookName text , chapterNumber integer,isArabic boolean);"
       );
       tx.executeSql(
-        "create table if not exists bookmark (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean);"
+        "create table if not exists bookmarks (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean , numberOfChapters integer);"
       );
     });
     //    console.log("===from did mount")
@@ -253,9 +253,12 @@ class verseScreenContainer extends Component {
     bookName = this.props.selectedBook.bookName,
     chapterNumber = this.props.numberOfSelectedChapter
   ) {
+    // console.log("from isBookMarkedChapter bookName ", bookName);
+    // console.log("from  isBookMarkedChapter chapterNumber ", chapterNumber);
+
     db.transaction(tx => {
       tx.executeSql(
-        "select count(*) from bookmark where bookName = (?) and chapterNumber = (?)",
+        "select count(*) from bookmarks where bookName = (?) and chapterNumber = (?)",
         [bookName, chapterNumber],
         (_, { rows }) => {
           if (rows._array[0]["count(*)"] > 0) {
@@ -481,14 +484,6 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter - 1
                     );
-                    // this.setState(
-                    //   {
-                    //     refresh: false,
-                    //     selectedVerses: [],
-                    //     highlightedVerses: []
-                    //   },
-                    //   () => this.setState({ refresh: true })
-                    // );
                   }
                 }}
               >
@@ -513,11 +508,6 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter + 1
                     );
-                    // this.setState({
-                    //   selectedVerses: [],
-                    //   highlightedVerses: []
-                    // });
-
                     this.props.loadChapterContent(
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter + 1

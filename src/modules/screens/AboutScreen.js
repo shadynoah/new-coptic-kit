@@ -118,7 +118,9 @@ class AboutScreenContainer extends React.Component {
           </View>
           <ListItem
             onPress={() => {
-              Linking.openURL("https://www.facebook.com/");
+              Linking.openURL(
+                "https://m.facebook.com/story.php?story_fbid=710180122736668&id=241119892976029&sfnsn=mo"
+              );
             }}
           >
             <View>
@@ -136,7 +138,7 @@ class AboutScreenContainer extends React.Component {
           </ListItem>
           <ListItem
             onPress={() => {
-              Linking.openURL("https://www.soundcloud.com/");
+              Linking.openURL("https://soundcloud.com/user-987979301");
             }}
           >
             <View>
@@ -174,7 +176,9 @@ class AboutScreenContainer extends React.Component {
           </ListItem>
           <ListItem
             onPress={() => {
-              Linking.openURL("https://www.youtube.com/");
+              Linking.openURL(
+                "https://www.youtube.com/channel/UCMku6NsCd_W2dhBh9tcPIAQ/featured"
+              );
             }}
           >
             <View>
@@ -190,43 +194,57 @@ class AboutScreenContainer extends React.Component {
               <Text>follow on youtube</Text>
             </Body>
           </ListItem>
-          {/* <ListItem
-            icon
-            onPress={() => {
-              Linking.openURL("https://www.facebook.com/");
+          <View style={{ flexDirection: "row", justifyContent: "center" }}>
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              Christ Ambassador Mission welcome you
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              fontSize: 14
             }}
           >
-            <Left>
-              <Text>follow on facebook</Text>
-            </Left>
-            <Body>
-              <Icon name="facebook" type="FontAwesome" />
-            </Body>
-          </ListItem>
-          <ListItem
-            onPress={() => {
-              NavigatorService.navigate("NoteListScreen");
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              CAM is a non-profit organization
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              fontSize: 14
             }}
           >
-            <Left>
-              <Text>Notes</Text>
-            </Left>
-          </ListItem>
-          <ListItem>
-            <Text>English</Text>
-            <Left />
-            <Body />
-            <Right>
-              <Switch
-                onValueChange={value => {
-                  this.props.toggleLanguage();
-                  this._storeData();
-                  this._retrieveData();
-                }}
-                value={this.props.isArabic}
-              />
-            </Right>
-          </ListItem> */}
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              CAM helps students from needy families through Need Based
+              Scholarship Program
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              fontSize: 14
+            }}
+          >
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              through Need Based Scholarship Program CAM also provides meat and
+              monetary gifts
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              fontSize: 14
+            }}
+          >
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              to needy families in Egyptian in Christmas and Easter{" "}
+            </Text>
+          </View>
         </View>
       </Content>
     );
