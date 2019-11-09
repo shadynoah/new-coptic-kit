@@ -57,12 +57,12 @@ export class Application {
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/pizz2q494pqlb12/content-ar-u.json?dl=1",
+      "https://www.dropbox.com/s/isewiicvbmsm1hs/content-ar-u%20%281%29.json?dl=1",
       FileSystem.documentDirectory + "contentAR"
     )
       .then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        AsyncStorage.setItem("ArabicUpdated", uri);
+        AsyncStorage.setItem("ArabicUpdated1", uri);
       })
       .catch(error => {
         console.error(error);
@@ -88,7 +88,7 @@ export class Application {
           await this.downloadEnglish();
           Application.current.store.dispatch(toggleIsDownloading());
         }
-        if ((await this.IsContentDownloaded("ArabicUpdated")) == false) {
+        if ((await this.IsContentDownloaded("ArabicUpdated1")) == false) {
           Application.current.store.dispatch(toggleIsDownloading());
           await this.downloadArabic();
           Application.current.store.dispatch(toggleIsDownloading());

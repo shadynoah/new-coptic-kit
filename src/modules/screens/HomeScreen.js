@@ -111,14 +111,14 @@ class HomeScreenContainer extends Component {
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/pizz2q494pqlb12/content-ar-u.json?dl=1",
+      "https://www.dropbox.com/s/isewiicvbmsm1hs/content-ar-u%20%281%29.json?dl=1",
       FileSystem.documentDirectory + "contentAR"
     )
       .then(async ({ uri }) => {
         console.log("uri from downloadArabic home  ");
 
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        AsyncStorage.setItem("ArabicUpdated", uri);
+        AsyncStorage.setItem("ArabicUpdated1", uri);
       })
       .catch(error => {
         console.error(error);
@@ -271,7 +271,7 @@ class HomeScreenContainer extends Component {
                     this.props.toggleIsDownloading();
                   }
                 }
-                if ((await AsyncStorage.getItem("ArabicUpdated")) == null) {
+                if ((await AsyncStorage.getItem("ArabicUpdated1")) == null) {
                   if (!isConnected) {
                     this.setState({
                       isWarningModalVisible: true
