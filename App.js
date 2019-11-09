@@ -92,7 +92,8 @@ export default class App extends React.Component {
         require("./assets/images/newSplash.png"),
         require("./assets/images/twitter.png"),
         require("./assets/images/website.png"),
-        require("./assets/images/youtube.png")
+        require("./assets/images/youtube.png"),
+        require("./assets/images/soundcloud.png")
       ])
       // Font.loadAsync({
       //   // This is the font that we are using for our tab bar

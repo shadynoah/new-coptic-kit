@@ -219,15 +219,15 @@ class HomeScreenContainer extends Component {
                 source={require("../../../assets/images/facebook.png")}
               />
             </TouchableOpacity>
-            {/* <TouchableOpacity
+            <TouchableOpacity
               style={{ marginRight: 10 }}
-              onPress={() => Linking.openURL("https://twitter.com/")}
+              onPress={() => Linking.openURL("https://soundcloud.com/user-987979301")}
             >
               <Image
                 style={{ height: heightT, width: heightT }}
-                source={require("../../../assets/images/twitter.png")}
+                source={require("../../../assets/images/soundcloud.png")}
               />
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <TouchableOpacity
               style={{ marginRight: 10 }}
               onPress={() =>
