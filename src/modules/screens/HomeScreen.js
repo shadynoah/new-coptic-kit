@@ -221,7 +221,9 @@ class HomeScreenContainer extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{ marginRight: 10 }}
-              onPress={() => Linking.openURL("https://soundcloud.com/user-987979301")}
+              onPress={() =>
+                Linking.openURL("https://soundcloud.com/user-987979301")
+              }
             >
               <Image
                 style={{ height: heightT, width: heightT }}
@@ -256,7 +258,7 @@ class HomeScreenContainer extends Component {
 
           <View style={{ flex: 0.2 }}>
             <TouchableOpacity
-              style={{ marginLeft: 20 }}
+              style={{ marginLeft: 10 }}
               onPress={async () => {
                 const { toggleIsDownloading, isConnected } = this.props;
 

@@ -48,10 +48,11 @@ export class Application {
     )
       .then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        console.log("english done");
         await AsyncStorage.setItem("English", uri);
       })
       .catch(error => {
-        Alert.alert("Apaap", error);
+        alert("error");
         console.error(error);
       });
   }
@@ -62,9 +63,11 @@ export class Application {
     )
       .then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        console.log("arabic done");
         AsyncStorage.setItem("ArabicUpdated1", uri);
       })
       .catch(error => {
+        alert("Error");
         console.error(error);
       });
   }
@@ -74,7 +77,7 @@ export class Application {
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
-    // await AsyncStorage.clear();
+    //await AsyncStorage.clear();
     // Listen for network status changes
     NetInfo.isConnected.addEventListener(
       "connectionChange",

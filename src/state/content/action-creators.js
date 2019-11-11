@@ -52,8 +52,6 @@ export async function loadChapterContent(
   chapterNumber,
   isArabicBookMark = false
 ) {
-  debugger;
-
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
     let englishContent;
@@ -64,7 +62,9 @@ export async function loadChapterContent(
 
     if (isArabic || isArabicBookMark == "true") {
       arabicContent = JSON.parse(
-        await FileSystem.readAsStringAsync(await AsyncStorage.getItem("Arabic"))
+        await FileSystem.readAsStringAsync(
+          await AsyncStorage.getItem("ArabicUpdated1")
+        )
       );
       _.map(arabicContent.books, book => {
         if (book.name == bookName) {
