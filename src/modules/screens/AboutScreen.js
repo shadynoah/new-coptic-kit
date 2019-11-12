@@ -194,7 +194,13 @@ class AboutScreenContainer extends React.Component {
               <Text>follow on youtube</Text>
             </Body>
           </ListItem>
-          <View style={{ flexDirection: "row", justifyContent: "center" }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              paddingTop: 10
+            }}
+          >
             <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
               Christ Ambassador Mission welcome you
             </Text>
@@ -218,8 +224,7 @@ class AboutScreenContainer extends React.Component {
             }}
           >
             <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
-              CAM helps students from needy families through Need Based
-              Scholarship Program
+              CAM helps students from needy families through{" "}
             </Text>
           </View>
           <View
@@ -230,8 +235,7 @@ class AboutScreenContainer extends React.Component {
             }}
           >
             <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
-              through Need Based Scholarship Program CAM also provides meat and
-              monetary gifts
+              Need Based Scholarship Program CAM also{" "}
             </Text>
           </View>
           <View
@@ -242,7 +246,18 @@ class AboutScreenContainer extends React.Component {
             }}
           >
             <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
-              to needy families in Egyptian in Christmas and Easter{" "}
+              provides meat and monetary gifts to needy families
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              fontSize: 14
+            }}
+          >
+            <Text style={{ writingDirection: "rtl", fontSize: 17 }}>
+              in Egyptian in Christmas and Easter{" "}
             </Text>
           </View>
         </View>
