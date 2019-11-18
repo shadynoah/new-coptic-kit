@@ -119,7 +119,9 @@ class AboutScreenContainer extends React.Component {
           <ListItem
             onPress={() => {
               Linking.openURL(
-                "https://m.facebook.com/story.php?story_fbid=710180122736668&id=241119892976029&sfnsn=mo"
+                this.props.isArabic
+                  ? "https://m.facebook.com/القمص-جرجس-جبرائيل-241119892976029/"
+                  : "https://m.facebook.com/Fr-George-DMin-1693643244259588/"
               );
             }}
           >
