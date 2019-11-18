@@ -66,7 +66,7 @@ export class NoteListContainer extends Component {
     const params = navigation.state.params || {};
 
     return {
-      title: params.title
+      title: params.title || "Notes"
     };
   };
 
