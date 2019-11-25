@@ -25,6 +25,8 @@ import {
 } from "../../state/content/action-creators";
 import { IBOOK } from "../../state/content/state";
 import { NotificationManager } from "../../services/utilities/pushNotification";
+import { OutOfEditorMenuOptionList } from "../components/OutMenuOptionList";
+
 const customDataAr = require("../../data/data-structure-ar.json");
 var customDataEn = require("../../data/data-structure.json");
 var myArray = { matta: 5, loca: 20 };
@@ -91,6 +93,14 @@ class BookScreenContainer extends Component {
         style={{ flex: 1 }}
       >
         <View style={styles.container}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "flex-end"
+            }}
+          >
+            <OutOfEditorMenuOptionList isArabic={this.props.isArabic} />
+          </View>
           <FlatList
             initialNumToRender={15}
             data={this.props.isArabic ? customDataAr.bible : customDataEn.bible}

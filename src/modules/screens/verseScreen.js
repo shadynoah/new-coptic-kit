@@ -75,7 +75,8 @@ class verseScreenContainer extends Component {
       selectedChapter: state.content.selectedChapter,
       contentOfSelectedChapter: state.content.contentOfSelectedChapter,
       numberOfSelectedChapter: state.content.numberOfSelectedChapter,
-      isArabic: state.content.isArabic
+      isArabic: state.content.isArabic,
+      fontSizeOfTextdd: state.content.fontSizeOfText
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {

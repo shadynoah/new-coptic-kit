@@ -95,9 +95,17 @@ export function contentReducer(
     }
     case types.CONNECTION_STATUS:
       return {
-          ...state,
-          isConnected: action.payload,
+        ...state,
+        isConnected: action.payload
       };
+
+    case types.INCREASE_FONT_SIZE:
+    case types.DECREASE_FONT_SIZE: {
+      return {
+        ...state,
+        fontSizeOfText: action.payload
+      };
+    }
     case types.INSERT_BOOKMARK_SUCCESS:
     case types.DELETE_BOOKMARK_FAILED:
     default:
