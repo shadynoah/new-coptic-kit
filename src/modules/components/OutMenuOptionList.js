@@ -119,34 +119,6 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("SettingScreen");
-            }}
-          >
-            <View style={{ flexDirection: "row", flex: 1 }}>
-              <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "الإعدادات" : "settings"}
-                </Text>
-              </View>
-              <View style={{ flex: 0.3 }}>
-                <Icon
-                  style={{
-                    color: "#007AFF",
-                    fontSize: deviceType == "tablet" ? 30 : 20,
-                    marginRight: 5
-                  }}
-                  name="settings"
-                  black
-                  transparent
-                  onPress={() => {
-                    NavigatorService.navigate("SettingScreen");
-                  }}
-                />
-              </View>
-            </View>
-          </MenuOption>
-          <MenuOption
-            onSelect={() => {
               NavigatorService.navigate("AboutScreen");
             }}
           >
