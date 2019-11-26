@@ -21,7 +21,9 @@ import { Dispatch, bindActionCreators } from "redux";
 import {
   toggleLoading,
   selectBook,
-  loadChapterContent
+  loadChapterContent,
+  increaseFontSize,
+  decreaseFontSize
 } from "../../state/content/action-creators";
 import { IBOOK } from "../../state/content/state";
 import { NotificationManager } from "../../services/utilities/pushNotification";
@@ -34,7 +36,8 @@ class BookScreenContainer extends Component {
   constructor() {
     super();
     this.state = {
-      isArabic: false
+      isArabic: false,
+      fontSizeOfText: 20
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -48,12 +51,19 @@ class BookScreenContainer extends Component {
     return {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
-      isArabic: state.content.isArabic
+      isArabic: state.content.isArabic,
+      fontSizeOfText: state.content.fontSizeOfText
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
-      { toggleLoading, selectBook, loadChapterContent },
+      {
+        toggleLoading,
+        selectBook,
+        loadChapterContent,
+        increaseFontSize,
+        decreaseFontSize
+      },
       dispatch
     );
   }
@@ -73,9 +83,17 @@ class BookScreenContainer extends Component {
       return {
         isArabic: nextProps.isArabic
       };
+    }
+    if (nextProps.fontSizeOfText !== prevState.fontSizeOfText) {
+      console.log("new one");
+      console.log("nextProps.fontSizeOfText", nextProps.fontSizeOfText);
+      return {
+        fontSizeOfText: nextProps.fontSizeOfText
+      };
     } else return null;
   }
   render() {
+    console.log("this.stae.fontsizeoftext", this.state);
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -83,7 +101,7 @@ class BookScreenContainer extends Component {
       },
       item: {
         padding: 10,
-        fontSize: 18,
+        fontSize: this.state.fontSizeOfText,
         height: 44
       }
     });
@@ -99,23 +117,35 @@ class BookScreenContainer extends Component {
               justifyContent: "flex-end"
             }}
           >
-            <OutOfEditorMenuOptionList isArabic={this.props.isArabic} />
+            <OutOfEditorMenuOptionList
+              increaseFontSize={this.props.increaseFontSize}
+              isArabic={this.props.isArabic}
+              fontSizeOfText={this.props.fontSizeOfText}
+              decreaseFontSize={this.props.decreaseFontSize}
+            />
           </View>
           <FlatList
+            extraData={this.props.fontSizeOfText}
             initialNumToRender={15}
             data={this.props.isArabic ? customDataAr.bible : customDataEn.bible}
-            renderItem={({ item }) => (
-              <Text
-                onPress={() => {
-                  //   console.log("========data arabic ====", JSON.stringify(dataAr))
-                  this.props.selectBook(item);
-                  NavigatorService.navigate("ChapterScreen");
-                }}
-                style={styles.item}
-              >
-                {item.bookName}
-              </Text>
-            )}
+            renderItem={({ item }) => {
+              return (
+                <Text
+                  onPress={() => {
+                    //   console.log("========data arabic ====", JSON.stringify(dataAr))
+                    this.props.selectBook(item);
+                    NavigatorService.navigate("ChapterScreen");
+                  }}
+                  style={{
+                    padding: 10,
+                    fontSize: this.state.fontSizeOfText,
+                    height: 44
+                  }}
+                >
+                  {item.bookName}
+                </Text>
+              );
+            }}
           />
         </View>
       </ImageBackground>

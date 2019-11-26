@@ -119,6 +119,58 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
+              if (this.props.fontSizeOfText < 35) this.props.increaseFontSize();
+            }}
+          >
+            <View style={{ flexDirection: "row", flex: 1 }}>
+              <View style={{ flex: 0.7 }}>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تكبير" : "fontSize"}
+                </Text>
+              </View>
+              <View style={{ flexDirection: "row", flex: 0.3 }}>
+                <Icon
+                  style={{
+                    color: "#007AFF",
+                    fontSize: deviceType == "tablet" ? 30 : 20,
+                    marginRight: 5
+                  }}
+                  type="FontAwesome"
+                  name="plus-circle"
+                  black
+                  transparent
+                />
+              </View>
+            </View>
+          </MenuOption>
+          <MenuOption
+            onSelect={() => {
+              if (this.props.fontSizeOfText > 10) this.props.decreaseFontSize();
+            }}
+          >
+            <View style={{ flexDirection: "row", flex: 1 }}>
+              <View style={{ flex: 0.7 }}>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تصغير" : "fontSize"}
+                </Text>
+              </View>
+              <View style={{ flex: 0.3 }}>
+                <Icon
+                  style={{
+                    color: "#007AFF",
+                    fontSize: deviceType == "tablet" ? 30 : 20,
+                    marginRight: 5
+                  }}
+                  type="FontAwesome"
+                  name="minus-circle"
+                  black
+                  transparent
+                />
+              </View>
+            </View>
+          </MenuOption>
+          <MenuOption
+            onSelect={() => {
               NavigatorService.navigate("AboutScreen");
             }}
           >

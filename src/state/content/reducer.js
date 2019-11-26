@@ -99,11 +99,16 @@ export function contentReducer(
         isConnected: action.payload
       };
 
-    case types.INCREASE_FONT_SIZE:
+    case types.INCREASE_FONT_SIZE: {
+      return {
+        ...state,
+        fontSizeOfText: state.fontSizeOfText + 5
+      };
+    }
     case types.DECREASE_FONT_SIZE: {
       return {
         ...state,
-        fontSizeOfText: action.payload
+        fontSizeOfText: state.fontSizeOfText - 5
       };
     }
     case types.INSERT_BOOKMARK_SUCCESS:
