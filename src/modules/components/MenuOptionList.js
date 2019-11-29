@@ -149,7 +149,7 @@ export class MenuOptionList extends PureComponent {
               </View>
             </View>
           </MenuOption>
-          <MenuOption
+          {/* <MenuOption
             onSelect={() => {
               NavigatorService.navigate("SettingScreen");
             }}
@@ -176,8 +176,8 @@ export class MenuOptionList extends PureComponent {
                 />
               </View>
             </View>
-          </MenuOption>
-          <MenuOption
+          </MenuOption> */}
+          {/* <MenuOption
             onSelect={() => {
               increaseFontSize();
             }}
@@ -228,6 +228,32 @@ export class MenuOptionList extends PureComponent {
                 />
               </View>
             </View>
+          </MenuOption> */}
+            <MenuOption
+            onSelect={() => {
+              // console.log("======from sticky note====", this.state.selectedVerses)
+              onHighlight();
+            }}
+          >
+            <View style={{ flexDirection: "row", flex: 1 }}>
+              <View style={{ flex: 0.7 }}>
+                <Text style={{ marginRight: 10 }}>
+                  {isArabic ? "تعليم ايات" : "higlight"}
+                </Text>
+              </View>
+              <View style={{ flex: 0.3 }}>
+                <Icon
+                  transparent
+                  style={{
+                    color: "#007AFF",
+                    fontSize: deviceType == "tablet" ? 30 : 20,
+                    marginRight: 5
+                  }}
+                  type="FontAwesome"
+                  name="paint-brush"
+                />
+              </View>
+            </View>
           </MenuOption>
           <MenuOption
             onSelect={() => {
@@ -256,32 +282,7 @@ export class MenuOptionList extends PureComponent {
               </View>
             </View>
           </MenuOption>
-          <MenuOption
-            onSelect={() => {
-              // console.log("======from sticky note====", this.state.selectedVerses)
-              onHighlight();
-            }}
-          >
-            <View style={{ flexDirection: "row", flex: 1 }}>
-              <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "تعليم ايات" : "higlight"}
-                </Text>
-              </View>
-              <View style={{ flex: 0.3 }}>
-                <Icon
-                  transparent
-                  style={{
-                    color: "#007AFF",
-                    fontSize: deviceType == "tablet" ? 30 : 20,
-                    marginRight: 5
-                  }}
-                  type="FontAwesome"
-                  name="paint-brush"
-                />
-              </View>
-            </View>
-          </MenuOption>
+        
         </MenuOptions>
       </Menu>
     );

@@ -76,7 +76,7 @@ class verseScreenContainer extends Component {
       contentOfSelectedChapter: state.content.contentOfSelectedChapter,
       numberOfSelectedChapter: state.content.numberOfSelectedChapter,
       isArabic: state.content.isArabic,
-      fontSizeOfTextdd: state.content.fontSizeOfText
+      fontSizeOfText: state.content.fontSizeOfText
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -592,14 +592,14 @@ class verseScreenContainer extends Component {
 
           <ScrollView contentContainerStyle={{ margin: 15, paddingBottom: 30 }}>
             <Text
-              style={{ fontSize: this.state.fontSizeOfText, lineHeight: 30 }}
+              style={{ fontSize: this.props.fontSizeOfText, lineHeight: 30+this.props.fontSizeOfText*.3 }}
             >
               {_.map(this.props.contentOfSelectedChapter, verse => {
                 //passed as 16
 
                 return (
                   <Text
-                    style={{ fontSize: this.state.fontSizeOfText }}
+                    style={{ fontSize: this.props.fontSizeOfText }}
                     onPress={async () => {
                       if (this.state.selectedVerses.indexOf(verse.num) == -1) {
                         // console.log("=====this verses is note selelcted ====")
@@ -625,7 +625,7 @@ class verseScreenContainer extends Component {
                   >
                     <Text
                       style={{
-                        fontSize: this.state.fontSizeOfText,
+                        fontSize: this.props.fontSizeOfText,
                         fontWeight: "bold",
                         backgroundColor: this.validateVerse(verse.num)
                           .backgroundColor
@@ -639,7 +639,7 @@ class verseScreenContainer extends Component {
                     </Text>
                     <Text
                       style={{
-                        fontSize: this.state.fontSizeOfText,
+                        fontSize: this.props.fontSizeOfText,
                         backgroundColor: this.validateVerse(verse.num)
                           .backgroundColor,
                         textDecorationLine: this.validateVerse(verse.num)

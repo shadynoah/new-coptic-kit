@@ -85,15 +85,12 @@ class BookScreenContainer extends Component {
       };
     }
     if (nextProps.fontSizeOfText !== prevState.fontSizeOfText) {
-      console.log("new one");
-      console.log("nextProps.fontSizeOfText", nextProps.fontSizeOfText);
       return {
         fontSizeOfText: nextProps.fontSizeOfText
       };
     } else return null;
   }
   render() {
-    console.log("this.stae.fontsizeoftext", this.state);
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -139,7 +136,8 @@ class BookScreenContainer extends Component {
                   style={{
                     padding: 10,
                     fontSize: this.state.fontSizeOfText,
-                    height: 44
+                    height:  44 + this.state.fontSizeOfText*0.4,
+                   
                   }}
                 >
                   {item.bookName}

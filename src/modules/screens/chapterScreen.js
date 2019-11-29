@@ -45,7 +45,8 @@ class chapterScreenContainer extends Component {
     return {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
-      isArabic: state.content.isArabic
+      isArabic: state.content.isArabic,
+      fontSizeOfText:state.content.fontSizeOfText
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -120,7 +121,12 @@ class chapterScreenContainer extends Component {
                   );
                   NavigatorService.navigate("VerseScreen");
                 }}
-                style={styles.item}
+                style={{
+                  padding: 10,
+                  fontSize: this.props.fontSizeOfText,
+                  height:  44 + this.props.fontSizeOfText*0.4,
+                 
+                }}
               >
                 {item.name}
               </Text>
