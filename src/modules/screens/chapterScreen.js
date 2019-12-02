@@ -46,7 +46,7 @@ class chapterScreenContainer extends Component {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
       isArabic: state.content.isArabic,
-      fontSizeOfText:state.content.fontSizeOfText
+      fontSizeOfText: state.content.fontSizeOfText
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -124,8 +124,8 @@ class chapterScreenContainer extends Component {
                 style={{
                   padding: 10,
                   fontSize: this.props.fontSizeOfText,
-                  height:  44 + this.props.fontSizeOfText*0.4,
-                 
+                  height: 44 + this.props.fontSizeOfText * 0.4,
+                  writingDirection: this.props.isArabic ? "rtl" : "ltr"
                 }}
               >
                 {item.name}

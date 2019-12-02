@@ -136,8 +136,8 @@ class BookScreenContainer extends Component {
                   style={{
                     padding: 10,
                     fontSize: this.state.fontSizeOfText,
-                    height:  44 + this.state.fontSizeOfText*0.4,
-                   
+                    height: 44 + this.state.fontSizeOfText * 0.4,
+                    writingDirection: this.props.isArabic ? "rtl" : "ltr"
                   }}
                 >
                   {item.bookName}
