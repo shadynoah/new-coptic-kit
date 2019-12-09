@@ -69,7 +69,7 @@ class SettingScreenContainer extends Component {
 
   sendPushNotification = async () => {
     const message = {
-      to: "ExponentPushToken[hYG9yzDed5WQV0O28K-_nW]",
+      to: "ExponentPushToken[OKmMSEAgjlC_ZcljJSXpJT]",
       sound: "default",
       title: "I can do it ",
       body: "And here is the body!",
@@ -110,35 +110,7 @@ class SettingScreenContainer extends Component {
             {/* <Separator bordered>
               <Text>Account</Text>
             </Separator> */}
-            <ListItem
-              onPress={() => {
-                NavigatorService.navigate("HomeScreen");
-              }}
-            >
-              <Left>
-                <Text>{this.props.isArabic ? "الرئيسية" : "Home"}</Text>
-              </Left>
-            </ListItem>
-            <ListItem
-              onPress={() => {
-                NavigatorService.navigate("BookMarkScreen");
-              }}
-            >
-              <Left>
-                <Text>
-                  {this.props.isArabic ? "إشارات مرجعية" : "Bookmarks"}
-                </Text>
-              </Left>
-            </ListItem>
-            <ListItem
-              onPress={() => {
-                NavigatorService.navigate("NoteListScreen");
-              }}
-            >
-              <Left>
-                <Text>{this.props.isArabic ? "ملاحظات" : "Notes"}</Text>
-              </Left>
-            </ListItem>
+           
             <ListItem>
               <Text>English/Arabic</Text>
               <Left />
@@ -152,14 +124,17 @@ class SettingScreenContainer extends Component {
                 />
               </Right>
             </ListItem>
-            {/* To do push notifications
+            <Text>
+            To do push notifications
+            </Text>
+           
             <Input>
             </Input>
   <Button title='send' onPress = {()=> {
     this.sendPushNotification()
   }}>
     send
-  </Button> */}
+  </Button>
           </View>
         </Content>
       </ImageBackground>

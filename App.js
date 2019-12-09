@@ -9,7 +9,7 @@ import Navigators from "./src/modules/routing";
 import { Provider } from "react-redux";
 import { Application } from "./src/application";
 import { MenuProvider } from "react-native-popup-menu";
-// import firebase from "firebase";
+import * as firebase from 'firebase';
 import { NotificationManager } from "./src/services/utilities/pushNotification";
 import { Notifications } from "expo";
 import * as Font from "expo-font";
@@ -23,18 +23,18 @@ export default class App extends React.Component {
     notification: {}
   };
   async componentWillMount() {
-    // var firebaseConfig = {
-    //   apiKey: "AIzaSyB7TYD3p-bgkkDrz2qXm82sCPQ_UWSThiQ",
-    //   authDomain: "pushnotification-d6a2c.firebaseapp.com",
-    //   databaseURL: "https://pushnotification-d6a2c.firebaseio.com",
-    //   projectId: "pushnotification-d6a2c",
-    //   storageBucket: "",
-    //   messagingSenderId: "508579199556",
-    //   appId: "1:508579199556:web:065baa5f4ffb91ca"
-    // };
+    var firebaseConfig = {
+      apiKey: "AIzaSyB7TYD3p-bgkkDrz2qXm82sCPQ_UWSThiQ",
+      authDomain: "pushnotification-d6a2c.firebaseapp.com",
+      databaseURL: "https://pushnotification-d6a2c.firebaseio.com",
+      projectId: "pushnotification-d6a2c",
+      storageBucket: "",
+      messagingSenderId: "508579199556",
+      appId: "1:508579199556:web:065baa5f4ffb91ca"
+    };
     // Initialize Firebase
-    // firebase.initializeApp(firebaseConfig);
-    // NotificationManager.registerForPushNotifications();
+    firebase.initializeApp(firebaseConfig);
+    NotificationManager.registerForPushNotifications();
     await Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")

@@ -67,13 +67,13 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("BookMarkScreen");
+              NavigatorService.navigate("SettingScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "إشارات مرجعية" : "BookMarks"}
+                  {isArabic ? "إشارات مرجعية" : "setting"}
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
