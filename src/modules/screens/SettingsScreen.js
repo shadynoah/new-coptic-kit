@@ -30,10 +30,31 @@ import {
   Body,
   Input
 } from "native-base";
+import Collapsible from "react-native-collapsible";
+import Accordion from "react-native-collapsible/Accordion";
+import _ from "lodash";
+import { List, CheckBox } from "native-base";
 const customData = require("../../data/data-structure-ar.json");
+const SECTIONS = [
+  {
+    title: "Day 1",
+    content: ["Gensis 1", "Gensis 2"]
+  },
+  {
+    title: "Day 2",
+    content: ["Gensis 3", "Gensis 4"]
+  }
+];
 var myArray = { matta: 5, loca: 20 };
 import { AsyncStorage } from "react-native";
+const biblePlane = ["Gensis 1", "Gensis 2"];
 class SettingScreenContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      activeSections: []
+    };
+  }
   static navigationOptions = ({ navigation }) => {
     let params = navigation.state.params || {};
     return {
@@ -71,7 +92,7 @@ class SettingScreenContainer extends Component {
       title: "I can do it ",
       body: "And here is the body!",
       data: { data: "goes here" },
-      _displayInForeground : true,
+      _displayInForeground: true
     };
     const response = await fetch("https://exp.host/--/api/v2/push/send", {
       method: "POST",
@@ -84,6 +105,58 @@ class SettingScreenContainer extends Component {
     });
     const data = response._bodyInit;
     console.log(`Status & Response ID-> ${data}`);
+  };
+  _renderSectionTitle = section => {
+    return (
+      <View style={styles.content}>{/* <Text>{section.content}</Text> */}</View>
+    );
+  };
+
+  _renderHeader = section => {
+    return (
+      <View style={styles.header}>
+        <Text style={styles.headerText}>{section.title}</Text>
+      </View>
+    );
+  };
+
+  _renderContent = section => {
+    return (
+      <View style={styles.content}>
+        <List>
+          {_.map(section.content, (section, index) => {
+            return (
+              <View key={index}>
+                <ListItem
+                  onPress={() => {
+                    console.log("section press", section);
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: "row",
+                      justifyContent: "space-between"
+                    }}
+                  >
+                    <Text>{section}</Text>
+
+                    <CheckBox
+                      checked={true}
+                      onPress={() => console.log("xx")}
+                    />
+                  </View>
+                </ListItem>
+              </View>
+            );
+          })}
+        </List>
+      </View>
+    );
+  };
+
+  _updateSections = activeSections => {
+    this.setState({ activeSections });
   };
   render() {
     const styles = StyleSheet.create({
@@ -99,63 +172,14 @@ class SettingScreenContainer extends Component {
       }
     });
     return (
-      <ImageBackground
-        source={require("../../../assets/images/background.jpg")}
-        style={{ flex: 1 }}
-      >
-        <Content scrollEnabled={true}>
-          <View style={{ backgroundColor: "#FFF" }}>
-            {/* <Separator bordered>
-              <Text>Account</Text>
-            </Separator> */}
-           
-            <ListItem>
-              <Text>English/Arabic</Text>
-              <Left />
-              <Body />
-              <Right>
-                <Switch
-                  onValueChange={value => {
-                    this.props.toggleLanguage();
-                  }}
-                  value={this.props.isArabic}
-                />
-              </Right>
-            </ListItem>
-            <Text>
-            To do push notifications
-            </Text>
-           
-            <Input>
-            </Input>
-  <Button title='send' onPress = {()=> {
-     Notifications.createChannelAndroidAsync('chat-messages', {
-      name: 'Chat messages',
-      sound: true,
-      vibrate: true,
-      priority: 'high'
-    });
-  let notificationId = Notifications.scheduleLocalNotificationAsync(
-    {
-      title: "I'm Scheduled",
-      body: 'Wow, I can show up even when app is closed',
-       android:{
-         color:'blue',
-         channelId: "chat-messages",
-         icon: "https://www.dropbox.com/s/jwd3z293nk0czrm/newone.png?dl=0"
-       }
-    },
-    {
-      repeat: 'minute',
-      time: new Date().getTime() + 10000,
-    },
-  );
-  }}>
-    send
-  </Button>
-          </View>
-        </Content>
-      </ImageBackground>
+      <Accordion
+        sections={SECTIONS}
+        activeSections={this.state.activeSections}
+        renderSectionTitle={this._renderSectionTitle}
+        renderHeader={this._renderHeader}
+        renderContent={this._renderContent}
+        onChange={this._updateSections}
+      />
     );
   }
 }
@@ -164,3 +188,61 @@ export const SettingScreen = connect(
   SettingScreenContainer.mapStatetToProps,
   SettingScreenContainer.mapDispatchToProps
 )(SettingScreenContainer);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F5FCFF"
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 22,
+    fontWeight: "300",
+    marginBottom: 20
+  },
+  header: {
+    backgroundColor: "yellow",
+    padding: 10
+  },
+  headerText: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "500"
+  },
+  content: {
+    padding: 20,
+    backgroundColor: "#fff"
+  },
+  active: {
+    backgroundColor: "rgba(255,255,255,1)"
+  },
+  inactive: {
+    backgroundColor: "rgba(245,252,255,1)"
+  },
+  selectors: {
+    marginBottom: 10,
+    flexDirection: "row",
+    justifyContent: "center"
+  },
+  selector: {
+    backgroundColor: "#F5FCFF",
+    padding: 10
+  },
+  activeSelector: {
+    fontWeight: "bold"
+  },
+  selectTitle: {
+    fontSize: 14,
+    fontWeight: "500",
+    padding: 10
+  },
+  multipleToggle: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginVertical: 30,
+    alignItems: "center"
+  },
+  multipleToggle__title: {
+    fontSize: 16,
+    marginRight: 8
+  }
+});
