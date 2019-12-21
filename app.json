@@ -7,6 +7,10 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
+    "notification": {
+      "icon": "./assets/images/newone.png",
+      "color": "#D41422"
+    },
     "icon": "./assets/images/logo.png",
     "splash": {
       "image": "./assets/images/newSplash.png",

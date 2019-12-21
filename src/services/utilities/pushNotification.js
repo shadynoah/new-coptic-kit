@@ -68,7 +68,7 @@ export class NotificationManager {
         firebase.database().ref('test').on('value', function(snapshot) {
             console.log("snapshot=====" ,snapshot)
             if(snapshot.forEach(a =>{
-                console.log("===a===" ,a)
+                // console.log("===a===" ,a)
             }) )
             alert(snapshot.hasChild("age").valueOf())
            
@@ -88,10 +88,10 @@ export class NotificationManager {
               }).then( async()=> {
                 console.log("success")
                  await AsyncStorage.setItem("expoKeya" , token).then(res => {
-                     console.log("setItem done in ")
+                    //  console.log("setItem done in ")
                  })
              var x =    await AsyncStorage.getItem("expoKeya" )
-          console.log("-----get item push token from async storage---" ,x )
+        //   console.log("-----get item push token from async storage---" ,x )
               }).catch(()=>{
                 console.log("error")
               })
@@ -157,6 +157,13 @@ export class NotificationManager {
             }
         ]);
     } 
+    sendNotificationImmediately = async () => {
+        let notificationId = await Notifications.presentLocalNotificationAsync({
+          title: 'This is crazy',
+          body: 'Your mind will blow after reading this',
+        });
+        console.log(notificationId); // can be saved in AsyncStorage or send to server
+      };
     sendPushNotification = async () => {
     const message = {
       to: 'ExponentPushToken[OKmMSEAgjlC_ZcljJSXpJT]',

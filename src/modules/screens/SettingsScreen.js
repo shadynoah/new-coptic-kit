@@ -11,9 +11,7 @@ import {
   FlatList,
   ImageBackground
 } from "react-native";
-import { WebBrowser } from "expo";
-
-import { MonoText } from "../../../components/StyledText";
+import { Notifications } from "expo";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { connect } from "react-redux";
@@ -35,7 +33,6 @@ import {
 const customData = require("../../data/data-structure-ar.json");
 var myArray = { matta: 5, loca: 20 };
 import { AsyncStorage } from "react-native";
-
 class SettingScreenContainer extends Component {
   static navigationOptions = ({ navigation }) => {
     let params = navigation.state.params || {};
@@ -73,7 +70,8 @@ class SettingScreenContainer extends Component {
       sound: "default",
       title: "I can do it ",
       body: "And here is the body!",
-      data: { data: "goes here" }
+      data: { data: "goes here" },
+      _displayInForeground : true,
     };
     const response = await fetch("https://exp.host/--/api/v2/push/send", {
       method: "POST",
@@ -131,7 +129,27 @@ class SettingScreenContainer extends Component {
             <Input>
             </Input>
   <Button title='send' onPress = {()=> {
-    this.sendPushNotification()
+     Notifications.createChannelAndroidAsync('chat-messages', {
+      name: 'Chat messages',
+      sound: true,
+      vibrate: true,
+      priority: 'high'
+    });
+  let notificationId = Notifications.scheduleLocalNotificationAsync(
+    {
+      title: "I'm Scheduled",
+      body: 'Wow, I can show up even when app is closed',
+       android:{
+         color:'blue',
+         channelId: "chat-messages",
+         icon: "https://www.dropbox.com/s/jwd3z293nk0czrm/newone.png?dl=0"
+       }
+    },
+    {
+      repeat: 'minute',
+      time: new Date().getTime() + 10000,
+    },
+  );
   }}>
     send
   </Button>
