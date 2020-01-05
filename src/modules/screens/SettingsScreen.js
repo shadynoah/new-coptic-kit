@@ -7,9 +7,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Button,
   FlatList,
-  ImageBackground
+  ImageBackground,
 } from "react-native";
 import { Notifications } from "expo";
 import NavigatorService from "../../services/navigator.js";
@@ -17,7 +16,8 @@ import { State } from "../../state";
 import { connect } from "react-redux";
 import { Dispatch, bindActionCreators } from "redux";
 import { toggleLanguage } from "../../state/content/action-creators";
-import {
+import { selectDayOfPlan } from '../../state/plan/action-creators';
+import { 
   Right,
   Left,
   Item,
@@ -28,31 +28,38 @@ import {
   Separator,
   ListItem,
   Body,
-  Input
+  Input,
+  Button
 } from "native-base";
-import Collapsible from "react-native-collapsible";
-import Accordion from "react-native-collapsible/Accordion";
 import _ from "lodash";
-import { List, CheckBox } from "native-base";
-const customData = require("../../data/data-structure-ar.json");
+import { DaysToolBar } from '../../../components/DaysToolBar';
+const plan = require("../../data/plan.json")
+const renderItem = ({ item , index }) => (<Text key={index} >{item}</Text>);
+
 const SECTIONS = [
   {
+    id:1,
     title: "Day 1",
-    content: ["Gensis 1", "Gensis 2"]
+    content: [
+      {key: 'Devin' , data:"gensis 1"},
+      {key: 'Dan' , data: "gensis 2 "},
+    ]
   },
   {
-    title: "Day 2",
-    content: ["Gensis 3", "Gensis 4"]
+    id: 2,
+    title:"Day 2" , 
+    content: [
+      {key: "3" , data:"genesis 3" } , 
+      {key: "4" , data: "gensis 4" }
+    ]
   }
 ];
-var myArray = { matta: 5, loca: 20 };
-import { AsyncStorage } from "react-native";
-const biblePlane = ["Gensis 1", "Gensis 2"];
 class SettingScreenContainer extends Component {
   constructor() {
     super();
+    this.selectDay = this.selectDay.bind(this);
     this.state = {
-      activeSections: []
+      selectedDay:1
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -72,11 +79,14 @@ class SettingScreenContainer extends Component {
   };
   static mapStatetToProps(state: State) {
     return {
-      isArabic: state.content.isArabic
+      isArabic: state.content.isArabic,
+      planContent: state.plan.planContent,
+      selectedDay: state.plan.selectedDay,
+      selectedDayContent: state.plan.selectedDayContent
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
-    return bindActionCreators({ toggleLanguage }, dispatch);
+    return bindActionCreators({ toggleLanguage , selectDayOfPlan }, dispatch);
   }
 
   componentDidMount() {
@@ -84,81 +94,18 @@ class SettingScreenContainer extends Component {
       title: this.props.isArabic ? "الإعدادات" : "Setting"
     });
   }
+ 
+  selectDay = (dayNumber) => {
+   this.props.selectDayOfPlan(dayNumber)
+  }
+ 
 
-  sendPushNotification = async () => {
-    const message = {
-      to: "ExponentPushToken[OKmMSEAgjlC_ZcljJSXpJT]",
-      sound: "default",
-      title: "I can do it ",
-      body: "And here is the body!",
-      data: { data: "goes here" },
-      _displayInForeground: true
-    };
-    const response = await fetch("https://exp.host/--/api/v2/push/send", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Accept-encoding": "gzip, deflate",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(message)
-    });
-    const data = response._bodyInit;
-    console.log(`Status & Response ID-> ${data}`);
-  };
-  _renderSectionTitle = section => {
-    return (
-      <View style={styles.content}>{/* <Text>{section.content}</Text> */}</View>
-    );
-  };
-
-  _renderHeader = section => {
-    return (
-      <View style={styles.header}>
-        <Text style={styles.headerText}>{section.title}</Text>
-      </View>
-    );
-  };
-
-  _renderContent = section => {
-    return (
-      <View style={styles.content}>
-        <List>
-          {_.map(section.content, (section, index) => {
-            return (
-              <View key={index}>
-                <ListItem
-                  onPress={() => {
-                    console.log("section press", section);
-                  }}
-                >
-                  <View
-                    style={{
-                      flex: 1,
-                      flexDirection: "row",
-                      justifyContent: "space-between"
-                    }}
-                  >
-                    <Text>{section}</Text>
-
-                    <CheckBox
-                      checked={true}
-                      onPress={() => console.log("xx")}
-                    />
-                  </View>
-                </ListItem>
-              </View>
-            );
-          })}
-        </List>
-      </View>
-    );
-  };
-
-  _updateSections = activeSections => {
-    this.setState({ activeSections });
-  };
+  
   render() {
+    // console.log("plan content from screen" , this.props.planContent);
+    // console.log(this.state.selectedDay);
+    // console.log("selected day contentwww" , this.props.selectedDay);
+    // console.log("selected day contentwww" , this.props.selectedDayContent);
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -168,18 +115,32 @@ class SettingScreenContainer extends Component {
       item: {
         padding: 10,
         fontSize: 18,
-        height: 44
+        height: 60,
       }
     });
+  
     return (
-      <Accordion
-        sections={SECTIONS}
-        activeSections={this.state.activeSections}
-        renderSectionTitle={this._renderSectionTitle}
-        renderHeader={this._renderHeader}
-        renderContent={this._renderContent}
-        onChange={this._updateSections}
-      />
+      <ImageBackground
+      source={require("../../../assets/images/background.jpg")}
+      style={{ flex: 1 }}
+    >
+     <View>
+     <DaysToolBar 
+     selectDay= {this.selectDay.bind(this)}  
+     />
+   <View>
+   <FlatList
+          keyExtractor={(item, index) => index.toString()}
+          data={this.props.selectedDayContent}
+          renderItem={renderItem}
+          initialNumToRender={5}
+          maxToRenderPerBatch={10}
+          windowSize={10}
+        />
+   </View>
+    
+      </View>
+   </ImageBackground>
     );
   }
 }
@@ -188,61 +149,4 @@ export const SettingScreen = connect(
   SettingScreenContainer.mapStatetToProps,
   SettingScreenContainer.mapDispatchToProps
 )(SettingScreenContainer);
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F5FCFF"
-  },
-  title: {
-    textAlign: "center",
-    fontSize: 22,
-    fontWeight: "300",
-    marginBottom: 20
-  },
-  header: {
-    backgroundColor: "yellow",
-    padding: 10
-  },
-  headerText: {
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: "500"
-  },
-  content: {
-    padding: 20,
-    backgroundColor: "#fff"
-  },
-  active: {
-    backgroundColor: "rgba(255,255,255,1)"
-  },
-  inactive: {
-    backgroundColor: "rgba(245,252,255,1)"
-  },
-  selectors: {
-    marginBottom: 10,
-    flexDirection: "row",
-    justifyContent: "center"
-  },
-  selector: {
-    backgroundColor: "#F5FCFF",
-    padding: 10
-  },
-  activeSelector: {
-    fontWeight: "bold"
-  },
-  selectTitle: {
-    fontSize: 14,
-    fontWeight: "500",
-    padding: 10
-  },
-  multipleToggle: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginVertical: 30,
-    alignItems: "center"
-  },
-  multipleToggle__title: {
-    fontSize: 16,
-    marginRight: 8
-  }
-});
+

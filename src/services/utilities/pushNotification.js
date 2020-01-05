@@ -38,7 +38,7 @@ type PushMessage = {
 
 export class NotificationManager {
     static async registerForPushNotifications() {
-        console.log("registerForPushNotifications")
+        // console.log("registerForPushNotifications")
         const { status: existingStatus } = await Permissions.getAsync(
             Permissions.NOTIFICATIONS
         );
