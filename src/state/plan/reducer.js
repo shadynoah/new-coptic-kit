@@ -12,7 +12,7 @@ export function planReducer(
   action: any
 ): PlanState {
   switch (action.type) {
-    case types.LOAD_PLAN: {
+    case types.LOAD_PLAN_CHAPTERS: {
       return {
         ...state,
         planContent : action.payload
@@ -24,6 +24,19 @@ export function planReducer(
         selectedDay : action.payload.selectedDay,
         selectedDayContent: action.payload.selectedDayContent
       };
+    }
+    case types.MAKE_CHAPETER_CHECKED:{
+      return {
+        ...state,
+        checkedChaptersIndexes: action.payload
+
+      }
+    }
+    case types.LOAD_PLAN_CHECKED_LIST : {
+      return{
+        ...state,
+        checkedListOfDays: action.payload
+      }
     }
     default:
       return state;

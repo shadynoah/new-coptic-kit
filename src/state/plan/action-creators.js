@@ -22,13 +22,15 @@ import {
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
 import { SQLite } from "expo-sqlite";
+const db = SQLite.openDatabase("db.db");
+
 
 
 export function loadPlan() {
   // console.log("enter loadPlan");
   let payloadP = require("../../data/plan.json");
   return {
-    type: types.LOAD_PLAN,
+    type: types.LOAD_PLAN_CHAPTERS,
     payload: payloadP
   }
 }
@@ -47,72 +49,28 @@ export function selectDayOfPlan(dayNumber){
   }
 }
 
-// export async function loadChapterContent(
-//   bookName,
-//   chapterNumber,
-//   isArabicBookMark = false
-// ) {
-//   return async (dispatch, getState) => {
-//     var isArabic = getState().content.isArabic;
-//     let englishContent;
-//     let arabicContent;
-//     let contentOfSelectedChapter = [];
-//     let index = 1;
-//     let indexar = 1;
+export async function makeChapterChecked (indexOfChapter) {
+  return async (dispatch, getState) => {
+    let checkedChaptersIndexes = getState().plan.checkedChaptersIndexes;
+    if(_.indexOf(checkedChaptersIndexes , indexOfChapter) === -1)
+    checkedChaptersIndexes.push(indexOfChapter);
+    else 
+    checkedChaptersIndexes= _.filter(checkedChaptersIndexes , f => f !== indexOfChapter)
+    
+  dispatch(
+    {
+      type: types.MAKE_CHAPETER_CHECKED,
+      payload: checkedChaptersIndexes
+    }
+  ) 
+}
+}
 
-//     if (isArabic || isArabicBookMark == "true") {
-//       arabicContent = JSON.parse(
-//         await FileSystem.readAsStringAsync(
-//           await AsyncStorage.getItem("ArabicUpdated1")
-//         )
-//       );
-//       _.map(arabicContent.books, book => {
-//         if (book.name == bookName) {
-//           _.map(book.chapters, chapter => {
-//             if (chapter.num == chapterNumber) {
-//               contentOfSelectedChapter = _.map(chapter.verses, verse => {
-//                 // return <Text key={index}> <Text style={{ fontWeight: 'bold' }}>{index++}</Text> {verse.text}</Text>
-//                 return {
-//                   key: verse.num,
-//                   text: verse.text,
-//                   num: verse.num
-//                 };
-//               });
-//             }
-//           });
-//         }
-//       });
-//     } else {
-//       englishContent = JSON.parse(
-//         await FileSystem.readAsStringAsync(
-//           await AsyncStorage.getItem("English")
-//         )
-//       );
-//       _.map(englishContent.books, book => {
-//         if (book.name == bookName) {
-//           _.map(book.chapters, chapter => {
-//             if (chapter.num == chapterNumber) {
-//               contentOfSelectedChapter = _.map(chapter.verses, verse => {
-//                 // return <Text key={index}> <Text style={{ fontWeight: 'bold' }}>{index++}</Text> {verse.text}</Text>
-//                 return {
-//                   key: verse.num,
-//                   text: verse.text,
-//                   num: verse.num
-//                 };
-//               });
-//             }
-//           });
-//         }
-//       });
-//     }
-
-//     dispatch({
-//       type: types.LOAD_CHAPTER_CONTENT,
-//       payload: {
-//         contentOfSelectedChapter: contentOfSelectedChapter,
-//         chapterNumber: chapterNumber,
-//         bookName: bookName
-//       }
-//     });
-//   };
-// }
+export async function loadPlanCheckedList (){
+ let res = await AsyncStorage.getItem("plan")
+ console.log("from action creator" , res)
+  return {
+    type: types.LOAD_PLAN_CHECKED_LIST,
+    payload:res
+  }
+}

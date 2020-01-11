@@ -31,6 +31,7 @@ export class DaysToolBar extends Component {
     return false
   }
   render() {
+      // console.log("render DaysToolBar");
     return (
         <ScrollView  horizontal={true} style={{
             margin: 20 

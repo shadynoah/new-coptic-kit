@@ -2,11 +2,13 @@
     "plan": [
         {
             "key": 1,
-             "chapters" : ["gesis 1" , "gesis 2"]
+             "chapters" : ["Genisis 1" , "Genisis 2"],
+             "checked":false
         },
         {
             "key": 2,
-            "chapters" : ["gesis 3" , "gesis 4"]
+            "chapters" : ["Genisis 3" , "Genisis 4"],
+            "checked":false
         }
     ]
 }
