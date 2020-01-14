@@ -47,7 +47,7 @@ class SettingScreenContainer extends Component {
     this.selectDay = this.selectDay.bind(this);
     this.state = {
       selectedDay: 1,
-      checkedList: [false , false],
+      checkedList: [[true, false] , [false , true]] ,
       refresh:false
     };
   }
@@ -82,20 +82,7 @@ class SettingScreenContainer extends Component {
     );
   }
 
-  async componentDidMount() {
-   await AsyncStorage.setItem("plan" , `[
-      {
-        dayNumber:1,
-        dayChapters:["Genisis 1" , "Gensis 2"],
-        completedChapters :[false , true]
-      },
-      {
-        dayNumber:2,
-        dayChapters:["Genisis 3" , "Gensis 4"],
-        completedChapters :[true , false]
-      }
-    ]`);
-    AsyncStorage.getItem("plan").then(res => console.log("res is" , res))
+   componentDidMount() {
     this.selectDay(0);
     this.props.navigation.setParams({
       title: this.props.isArabic ? " خطه القراءه" : "BIble plan"
@@ -104,9 +91,9 @@ class SettingScreenContainer extends Component {
 
   selectDay = dayNumber => {
     this.props.selectDayOfPlan(dayNumber);
-    this.setState({
-      checkedList:[false, false]
-    })
+    // this.setState({
+    //   checkedList:[[true, true] , [false, true]]
+    // })
   };
   executeSql(sql, params = []) {
     return new Promise((resolve, reject) =>
@@ -121,6 +108,10 @@ class SettingScreenContainer extends Component {
     );
   }
   render() {
+    console.log("this.props.selectedday" , this.props.selectedDay);
+    console.log("this.state.checkedlist" , this.state.checkedList)
+    // const keyvalue = _.keyBy(this.state.checkedList ,on);
+    // console.log("keyvalue",keyvalue)
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -161,18 +152,32 @@ class SettingScreenContainer extends Component {
                       borderColor: "black"
                     }}
                     onPress={() => {
-                      let copy = this.state.checkedList;
+                      let copy = this.state.checkedList[this.props.selectedDay];
+                      console.log("copy====" , copy)
                       if(copy[index])
                        copy[index] = false;
                        else 
                        copy[index] = true;
-                      this.setState({
-                        checkedList: copy,
-                        refresh: !this.state.refresh
-                      })
+                       console.log("-----------copy is equal----", copy);
+
+                       this.setState(state => {
+                        const list = state.checkedList.map((item, index) => {
+                          if(index === this.props.selectedDay)
+                          return copy;
+                          else return item
+                        });
+                        console.log("new list is" , list)
+                        return {
+                          list,
+                           refresh: !this.state.refresh
+                        };
+                      });
+                      // this.setState({
+                      //   refresh: !this.state.refresh
+                      // })
                       this.props.makeChapterChecked(index);
                     }}
-                    checked={this.state.checkedList[index]}
+                    checked={this.state.checkedList[this.props.selectedDay][index]}
                   />
                   <Text key={index}>{item}</Text>
                 </View>
