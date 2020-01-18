@@ -1,45 +1,36 @@
 // @Flow
 
-import * as types from "./actions";
-
-import * as contentActions from "../content/actions";
-import NavigatorService from "../../services/navigator";
-import { State } from "../state";
+import { SQLite } from "expo-sqlite";
 import _ from "lodash";
-import React, { Component } from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Button,
-  FlatList
-} from "react-native";
 // var data = require("../../data/content.json");
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
-import { SQLite } from "expo-sqlite";
+import * as types from "./actions";
+import  { content } from '../../constants'
+
 const db = SQLite.openDatabase("db.db");
 
 
 
-export function loadPlan() {
+
+export async function loadPlan() {
   // console.log("enter loadPlan");
-  let payloadP = require("../../data/plan.json");
+  // let payloadP = require("../../data/plan.json");
+  // console.log("payloadP" ,payloadP)
+  // console.log("payloadPx",payloadPx)
+  let payloadPx =  JSON.parse(await AsyncStorage.getItem("plan"))
   return {
     type: types.LOAD_PLAN_CHAPTERS,
-    payload: payloadP
+    payload: payloadPx
   }
 }
 export function selectDayOfPlan(dayNumber){
   return async (dispatch, getState) => {
-   const planContent = getState().plan.planContent;
-   let content  = planContent.plan[dayNumber].chapters
+    const planContent = getState().plan.planContent;
+    console.log("plancontent from select day of plan" , planContent)
+   let content  = planContent[dayNumber].dayChapters
    let payload = {
-     selectedDay:dayNumber , 
+     selectedDay:dayNumber ,
      selectedDayContent : content
    }
     dispatch({
@@ -54,15 +45,15 @@ export async function makeChapterChecked (indexOfChapter) {
     let checkedChaptersIndexes = getState().plan.checkedChaptersIndexes;
     if(_.indexOf(checkedChaptersIndexes , indexOfChapter) === -1)
     checkedChaptersIndexes.push(indexOfChapter);
-    else 
+    else
     checkedChaptersIndexes= _.filter(checkedChaptersIndexes , f => f !== indexOfChapter)
-    
+
   dispatch(
     {
       type: types.MAKE_CHAPETER_CHECKED,
       payload: checkedChaptersIndexes
     }
-  ) 
+  )
 }
 }
 
@@ -73,4 +64,16 @@ export async function loadPlanCheckedList (){
     type: types.LOAD_PLAN_CHECKED_LIST,
     payload:res
   }
+}
+
+export async function insertPlanIntoLocalStorage(){
+  return async dispatch => {
+      await AsyncStorage.setItem("plan" , JSON.stringify(content));
+  }
+}
+export async function saveCheckedListIntoLocalStorage(list){
+  return async dispatch => {
+    console.log("list from saveCheckedListIntoLocalStorage " ,list)
+    await AsyncStorage.setItem("list" , JSON.stringify(list));
+}
 }

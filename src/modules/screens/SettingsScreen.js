@@ -12,10 +12,12 @@ import { bindActionCreators, Dispatch } from "redux";
 import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
-import { toggleLanguage } from "../../state/content/action-creators";
+import { toggleLanguage ,loadChapterContent } from "../../state/content/action-creators";
 import {
   makeChapterChecked,
-  selectDayOfPlan
+  selectDayOfPlan,
+  insertPlanIntoLocalStorage,
+  saveCheckedListIntoLocalStorage
 } from "../../state/plan/action-creators";
 import _ from "lodash";
 import { AsyncStorage } from "react-native";
@@ -47,7 +49,7 @@ class SettingScreenContainer extends Component {
     this.selectDay = this.selectDay.bind(this);
     this.state = {
       selectedDay: 1,
-      checkedList: [[true, false] , [false , true]] ,
+      checkedList: [[true , false] ,[false , true] , [true , true]] ,
       refresh:false
     };
   }
@@ -77,12 +79,23 @@ class SettingScreenContainer extends Component {
   }
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
-      { toggleLanguage, selectDayOfPlan, makeChapterChecked },
+      { toggleLanguage, selectDayOfPlan, makeChapterChecked , 
+        insertPlanIntoLocalStorage , saveCheckedListIntoLocalStorage ,
+        loadChapterContent
+      },
       dispatch
     );
   }
 
-   componentDidMount() {
+   async componentDidMount() {
+     await this.props.insertPlanIntoLocalStorage();
+    //  await AsyncStorage.remo("list" , JSON.stringify(this.state.checkedList))
+    // await AsyncStorage.setItem("list" , JSON.stringify(this.state.checkedList))
+   console.log("plan" , JSON.parse(await AsyncStorage.getItem("plan")) ) 
+  //  let x= JSON.parse(await AsyncStorage.getItem("list"))
+    this.setState({
+       checkedList: JSON.parse(await AsyncStorage.getItem("list"))
+    })
     this.selectDay(0);
     this.props.navigation.setParams({
       title: this.props.isArabic ? " خطه القراءه" : "BIble plan"
@@ -108,8 +121,8 @@ class SettingScreenContainer extends Component {
     );
   }
   render() {
-    console.log("this.props.selectedday" , this.props.selectedDay);
-    console.log("this.state.checkedlist" , this.state.checkedList)
+     console.log("this.props.selectedday" , this.props.selectedDayContent);
+    // console.log("this.state.checkedlist" , this.state.checkedList)
     // const keyvalue = _.keyBy(this.state.checkedList ,on);
     // console.log("keyvalue",keyvalue)
     const styles = StyleSheet.create({
@@ -152,6 +165,12 @@ class SettingScreenContainer extends Component {
                       borderColor: "black"
                     }}
                     onPress={() => {
+                      // this.props.loadChapterContent(
+                      //   "Genisis",
+                      //   1
+                      // );
+                      // NavigatorService.navigate("VerseScreen");
+
                       let copy = this.state.checkedList[this.props.selectedDay];
                       console.log("copy====" , copy)
                       if(copy[index])
@@ -159,9 +178,9 @@ class SettingScreenContainer extends Component {
                        else 
                        copy[index] = true;
                        console.log("-----------copy is equal----", copy);
-
+                       let list = []
                        this.setState(state => {
-                        const list = state.checkedList.map((item, index) => {
+                         list = state.checkedList.map((item, index) => {
                           if(index === this.props.selectedDay)
                           return copy;
                           else return item
@@ -171,7 +190,10 @@ class SettingScreenContainer extends Component {
                           list,
                            refresh: !this.state.refresh
                         };
-                      });
+                      },
+                     () => this.props.saveCheckedListIntoLocalStorage(list)
+                      );
+                    
                       // this.setState({
                       //   refresh: !this.state.refresh
                       // })
