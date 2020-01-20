@@ -57,9 +57,6 @@ export async function loadChapterContent(
     let englishContent;
     let arabicContent;
     let contentOfSelectedChapter = [];
-    let index = 1;
-    let indexar = 1;
-
     if (isArabic || isArabicBookMark == "true") {
       arabicContent = JSON.parse(
         await FileSystem.readAsStringAsync(

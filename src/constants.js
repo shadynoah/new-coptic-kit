@@ -3,24 +3,24 @@ export const content = [
         key:1,
         day:1,
         dayChapters:[
-            "Genisis 1",
-            "Gensis 2",
+            "Genesis 1",
+            "Matthew 2",
         ]
     },
     {
         key:2,
         day:2,
         dayChapters:[
-            "Genisis 3",
-            "Gensis 4",
+            "Genesis 3",
+            "Genesis 4",
         ]
     },
     {
         key:3,
         day:3,
         dayChapters:[
-            "Genisis 5",
-            "Gensis 6",
+            "Genesis 5",
+            "Genesis 6",
         ]
     }
 ]

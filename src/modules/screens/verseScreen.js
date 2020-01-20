@@ -1,52 +1,24 @@
-import React, { Component, Fragment } from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  TextInput,
-  FlatList,
-  Textarea,
-  ImageBackground
-} from "react-native";
-import { Icon, Button, Item, Input, Toast, Text } from "native-base";
-import { SQLite } from "expo-sqlite";
-
-import { MonoText } from "../../../components/StyledText";
-import NavigatorService from "../../services/navigator.js";
-import { State, IBOOK } from "../../state";
-import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
-import {
-  toggleLoading,
-  selectBook,
-  loadChapterContent,
-  selectChapter,
-  toggleLanguage,
-  loadNotes,
-  insertBookMark,
-  deleteBookMark,
-  insertNote
-} from "../../state/content/action-creators";
 import Constants from "expo-constants";
+import { SQLite } from "expo-sqlite";
 import _ from "lodash";
+import { Button, Icon, Text } from "native-base";
+import React, { Component } from "react";
+import { AsyncStorage, ImageBackground, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Modal from "react-native-modal";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
 import { ModalTypesEnum } from "../../enums";
-
-import { AsyncStorage, Dimensions } from "react-native";
-import {
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger
-} from "react-native-popup-menu";
-import { BaseModal } from "../components/base-modal";
-SidebarItem;
-import { SidebarItem } from "../components/sidebar-item";
 import { Helpers } from "../../services/utilities/helpers";
+import { State } from "../../state";
+import { deleteBookMark, insertBookMark, insertNote,
+   loadChapterContent, loadNotes, selectBook, selectChapter,
+    toggleLanguage, toggleLoading } from "../../state/content/action-creators";
+import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
+import { SidebarItem } from "../components/sidebar-item";
+import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
+
+SidebarItem;
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
   constructor() {
@@ -76,7 +48,9 @@ class verseScreenContainer extends Component {
       contentOfSelectedChapter: state.content.contentOfSelectedChapter,
       numberOfSelectedChapter: state.content.numberOfSelectedChapter,
       isArabic: state.content.isArabic,
-      fontSizeOfText: state.content.fontSizeOfText
+      fontSizeOfText: state.content.fontSizeOfText,
+      selectedDayContent : state.plan.selectedDayContent,
+      selectedChapterIndex: state.plan.selectedChapterIndex
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -90,7 +64,8 @@ class verseScreenContainer extends Component {
         loadNotes,
         insertBookMark,
         deleteBookMark,
-        insertNote
+        insertNote,
+        selectChapterOfDayPlan
       },
       dispatch
     );
@@ -239,17 +214,7 @@ class verseScreenContainer extends Component {
       isVisible: false
     });
   };
-  parseToArabic(number) {
-    if (!this.props.isArabic) return number;
-    else {
-      let str = number + "";
-      var id = ["۰", "۱", "۲", "۳", "٤", "٥", "٦", "۷", "۸", "۹"];
-
-      return str.replace(/[0-9]/g, function(w) {
-        return id[+w];
-      });
-    }
-  }
+ 
   isBookMarkedChapter(
     bookName = this.props.selectedBook.bookName,
     chapterNumber = this.props.numberOfSelectedChapter
@@ -333,6 +298,8 @@ class verseScreenContainer extends Component {
     this._retrieveData();
   }
   render() {
+    // console.log("selectedDayContent day content" , this.props.selectedDayContent);
+    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     let {
       selectedBook,
       numberOfSelectedChapter,
@@ -476,16 +443,43 @@ class verseScreenContainer extends Component {
                 black
                 transparent
                 onPress={() => {
-                  if (this.props.numberOfSelectedChapter - 1 > 0) {
-                    this.isBookMarkedChapter(
-                      this.props.selectedBook.bookName,
-                      this.props.numberOfSelectedChapter - 1
-                    );
-                    this.props.loadChapterContent(
-                      this.props.selectedBook.bookName,
-                      this.props.numberOfSelectedChapter - 1
-                    );
+                  if( this.props.selectedDayContent.length >0)
+                  {
+                    if(this.props.selectedChapterIndex - 1 >= 0)
+                    {
+                    
+                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex - 1 )
+
+                      let bookName = this.props.selectedDayContent[this.props.selectedChapterIndex-1].split(" ")[0];
+                     //  alert("bookName" + bookName);
+                     this.props.selectBook({
+                      "bookName": bookName,
+                     })
+                      let chapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex-1].split(" ")[1];
+                     //  alert("chapterNumber"  + chapterNumber);
+                     this.props.selectChapter(chapterNumber)
+                      this.props.loadChapterContent(
+                       bookName,
+                       chapterNumber
+                     );
+                    }
+                    else{
+                      alert("this is first chapter in this day")
+                    }
                   }
+                  else {
+                    if (this.props.numberOfSelectedChapter - 1 > 0) {
+                      this.isBookMarkedChapter(
+                        this.props.selectedBook.bookName,
+                        this.props.numberOfSelectedChapter - 1
+                      );
+                      this.props.loadChapterContent(
+                        this.props.selectedBook.bookName,
+                        this.props.numberOfSelectedChapter - 1
+                      );
+                    }
+                  }
+                 
                 }}
               >
                 <Icon black name="arrow-back" />
@@ -501,9 +495,9 @@ class verseScreenContainer extends Component {
               <Button
                 transparent
                 onPress={() => {
-                  console.log("selectedBook" ,selectedBook.bookName)
-                  console.log(" this.props.numberOfSelectedChapter + 1" , this.props.numberOfSelectedChapter + 1)
-
+                  // console.log("selectedBook" ,selectedBook.bookName)
+                  // console.log(" this.props.numberOfSelectedChapter + 1" , this.props.numberOfSelectedChapter + 1)
+                  
                   if (
                     this.props.numberOfSelectedChapter + 1 <=
                     this.props.selectedBook.numberOfChapters
@@ -516,6 +510,27 @@ class verseScreenContainer extends Component {
                       this.props.selectedBook.bookName,
                       this.props.numberOfSelectedChapter + 1
                     );
+                  }
+                  else {
+                   if(this.props.selectedChapterIndex + 1 < this.props.selectedDayContent.length)
+                   {
+                     this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex + 1 )
+                     let bookName = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ")[0];
+                    //  alert("bookName" + bookName);
+                    this.props.selectBook({
+                      "bookName": bookName,
+                     })
+                     let chapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ")[1];
+                    //  alert("chapterNumber"  + chapterNumber);
+                    this.props.selectChapter(chapterNumber)
+                     this.props.loadChapterContent(
+                      bookName,
+                      chapterNumber
+                    );
+                   }
+                   else {
+                     alert("this is last chapter in this day")
+                   }
                   }
                 }}
               >

@@ -7,6 +7,7 @@ import _ from "lodash";
 import { AsyncStorage } from "react-native";
 import * as types from "./actions";
 import  { content ,checkedList } from '../../constants'
+import { type } from './../state';
 
 const db = SQLite.openDatabase("db.db");
 
@@ -82,4 +83,15 @@ export async function saveCheckedListIntoLocalStorage(list){
     // console.log("list from saveCheckedListIntoLocalStorage " ,list)
     await AsyncStorage.setItem("list" , JSON.stringify(list));
 }
+}
+export  function selectChapterOfDayPlan (IndexOfChapter) {
+return {
+  type: types.SELECT_CHAPTER_OF_DAY_PLAN,
+  payload:IndexOfChapter
+}
+}
+export function clearDayContentOfPlan(){
+  return {
+    type: types.CLEAR_DAY_CONTENT_OF_PLAN
+  }
 }

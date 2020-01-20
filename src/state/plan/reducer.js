@@ -38,6 +38,18 @@ export function planReducer(
         checkedListOfDays: action.payload
       }
     }
+    case types.SELECT_CHAPTER_OF_DAY_PLAN :{
+      return {
+        ...state,
+        selectedChapterIndex: action.payload
+      }
+    }
+    case types.CLEAR_DAY_CONTENT_OF_PLAN:{
+      return{
+        ...state,
+        selectedDayContent: []
+      }
+    }
     default:
       return state;
   }

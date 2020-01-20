@@ -1,15 +1,17 @@
 export interface PlanState {
 selectedDay: number ,
 planContent: Object,
-selectedDayContent: Object,
+selectedDayContent: Array,
 checkedChaptersIndexes: Array,
-checkedListOfDays : Array
+checkedListOfDays : Array,
+selectedChapterIndex: Number
 }
 
 export const PlanInitialState: PlanState = {
   selectedDay: 1 , 
   planContent : {},
-  selectedDayContent:{},
+  selectedDayContent:[],
   checkedChaptersIndexes:[],
-  checkedListOfDays:[]
+  checkedListOfDays:[],
+  selectedChapterIndex : 0
 };

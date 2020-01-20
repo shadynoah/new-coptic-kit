@@ -45,7 +45,7 @@ const Navigator = createStackNavigator(
     }
   },
   {
-    initialRouteName: "SettingScreen"
+    initialRouteName: "HomeScreen"
   }
 );
 const Navigators = createAppContainer(Navigator);

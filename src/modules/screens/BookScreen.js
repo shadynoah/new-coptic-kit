@@ -25,6 +25,7 @@ import {
   increaseFontSize,
   decreaseFontSize
 } from "../../state/content/action-creators";
+import { clearDayContentOfPlan } from '../../state/plan/action-creators'
 import { IBOOK } from "../../state/content/state";
 import { NotificationManager } from "../../services/utilities/pushNotification";
 import { OutOfEditorMenuOptionList } from "../components/OutMenuOptionList";
@@ -62,7 +63,8 @@ class BookScreenContainer extends Component {
         selectBook,
         loadChapterContent,
         increaseFontSize,
-        decreaseFontSize
+        decreaseFontSize,
+        clearDayContentOfPlan
       },
       dispatch
     );
@@ -130,6 +132,8 @@ class BookScreenContainer extends Component {
                 <Text
                   onPress={() => {
                     //   console.log("========data arabic ====", JSON.stringify(dataAr))
+                    this.props.clearDayContentOfPlan();
+                    console.log("item of select book" , item)
                     this.props.selectBook(item);
                     NavigatorService.navigate("ChapterScreen");
                   }}

@@ -1,27 +1,13 @@
-import { Button, CheckBox, Icon, ListItem } from "native-base";
+import { Button, CheckBox, Icon } from "native-base";
 import React, { Component } from "react";
-import {
-  FlatList,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
+import { AsyncStorage, FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
-import { toggleLanguage ,loadChapterContent } from "../../state/content/action-creators";
-import {
-  makeChapterChecked,
-  selectDayOfPlan,
-  inializePlan,
-  saveCheckedListIntoLocalStorage,
-  initializeCheckedList
-} from "../../state/plan/action-creators";
-import _ from "lodash";
-import { AsyncStorage } from "react-native";
+import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
+import { inializePlan, initializeCheckedList, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
 
 
 const plan = require("../../data/plan.json");
@@ -31,16 +17,16 @@ const SECTIONS = [
     id: 1,
     title: "Day 1",
     content: [
-      { key: "Devin", data: "gensis 1" },
-      { key: "Dan", data: "gensis 2 " }
+      { key: "Devin", data: "Genesis 1" },
+      { key: "Dan", data: "Genesis 2 " }
     ]
   },
   {
     id: 2,
     title: "Day 2",
     content: [
-      { key: "3", data: "genesis 3" },
-      { key: "4", data: "gensis 4" }
+      { key: "3", data: "Genesis 3" },
+      { key: "4", data: "Genesis 4" }
     ]
   }
 ];
@@ -75,21 +61,25 @@ class SettingScreenContainer extends Component {
       planContent: state.plan.planContent,
       selectedDay: state.plan.selectedDay,
       selectedDayContent: state.plan.selectedDayContent,
-      checkedChaptersIndexes: state.plan.checkedChaptersIndexes
+      selectedChapterIndex: state.plan.selectedChapterIndex
+      
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
       { toggleLanguage, selectDayOfPlan, makeChapterChecked , 
         inializePlan , saveCheckedListIntoLocalStorage ,
-        loadChapterContent, initializeCheckedList
+        loadChapterContent, initializeCheckedList ,
+        selectBook , selectChapterOfDayPlan
       },
       dispatch
     );
   }
 
    async componentDidMount() {
-      // await AsyncStorage.removeItem("list")
+  //  await AsyncStorage.removeItem("plan")
+  //  await AsyncStorage.removeItem("list")
+
       if(await AsyncStorage.getItem("list")=== null)
       {
         this.props.initializeCheckedList()
@@ -127,6 +117,10 @@ class SettingScreenContainer extends Component {
     );
   }
   render() {
+    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex);
+    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
+
+    const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -151,7 +145,7 @@ class SettingScreenContainer extends Component {
             <FlatList
               keyExtractor={(item, index) => index.toString()}
               extraData ={this.state.refresh}
-              data={this.props.selectedDayContent}
+              data={selectedDayContent}
               renderItem={({ item, index }) => (
                 <View
                   style={{
@@ -167,15 +161,7 @@ class SettingScreenContainer extends Component {
                       borderColor: "black"
                     }}
                     onPress={() => {
-                      // this.props.loadChapterContent(
-                      //   "Genisis",
-                      //   1
-                      // );
-                      // this.props.loadChapterContent(
-                      //  "Genesis",
-                      //  1
-                      // );
-                    //  NavigatorService.navigate("VerseScreen");
+                  
 
                       let copy = this.state.checkedList[this.props.selectedDay];
                       // console.log("copy====" , copy)
@@ -207,7 +193,24 @@ class SettingScreenContainer extends Component {
                     }}
                     checked={this.state.checkedList[this.props.selectedDay][index]}
                   />
-                  <Text key={index}>{item}</Text>
+                  <Text key={index}
+                  onPress = {
+                    () =>{
+                      const bookName = selectedDayContent[index].split(" ")[0];
+                       const chapterNumber = selectedDayContent[index].split(" ")[1]
+                      console.log("chapterNumber []" , chapterNumber );
+                      selectChapterOfDayPlan(index)
+                      this.props.selectBook({
+                        "bookName": bookName,
+                      })
+                      this.props.loadChapterContent(
+                        bookName,
+                        chapterNumber
+                       );
+                     NavigatorService.navigate("VerseScreen");
+                    }
+                  }
+                  >{item}</Text>
                 </View>
 
                 // return a component using that data
