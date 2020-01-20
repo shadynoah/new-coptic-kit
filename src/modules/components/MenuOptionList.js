@@ -1,15 +1,14 @@
+import Constants from "expo-constants";
+import { Icon, Text } from "native-base";
 import React, { PureComponent } from "react";
 import { View } from "react-native";
-import _ from "lodash";
-import NavigatorService from "../../services/navigator.js";
 import {
   Menu,
-  MenuOptions,
   MenuOption,
+  MenuOptions,
   MenuTrigger
 } from "react-native-popup-menu";
-import Constants from "expo-constants";
-import { Icon, Button, Text, TabHeading } from "native-base";
+import NavigatorService from "../../services/navigator.js";
 
 export class MenuOptionList extends PureComponent {
   render() {
@@ -19,19 +18,10 @@ export class MenuOptionList extends PureComponent {
       numberOfSelectedChapter,
       isArabic,
       deleteBookMark,
-      fontSizeOfText,
-      selectedVerses,
-      highlightedVerses,
-      _retrieveData,
-      convertStringToArray,
       insertBookMark,
-      increaseFontSize,
-      decreaseFontSize,
       enableIsBookMark,
       disableIsBookMark,
       enableIsVisible,
-      highlight,
-      _storeData,
       onHighlight
     } = this.props;
     const deviceType =
@@ -82,9 +72,6 @@ export class MenuOptionList extends PureComponent {
                   name="home"
                   black
                   transparent
-                  onPress={() => {
-                    NavigatorService.navigate("SettingScreen");
-                  }}
                 />
               </View>
             </View>
@@ -117,9 +104,6 @@ export class MenuOptionList extends PureComponent {
                   //black   style={{ fontSize: deviceType == 'tablet' ? 30 : 20, marginRight: 20 }}
                   name="bookmark"
                   transparent
-                  onPress={() => {
-                    NavigatorService.navigate("BookMarkScreen");
-                  }}
                 />
               </View>
             </View>
@@ -149,87 +133,7 @@ export class MenuOptionList extends PureComponent {
               </View>
             </View>
           </MenuOption>
-          {/* <MenuOption
-            onSelect={() => {
-              NavigatorService.navigate("SettingScreen");
-            }}
-          >
-            <View style={{ flexDirection: "row", flex: 1 }}>
-              <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "الإعدادات" : "settings"}
-                </Text>
-              </View>
-              <View style={{ flex: 0.3 }}>
-                <Icon
-                  style={{
-                    color: "#007AFF",
-                    fontSize: deviceType == "tablet" ? 30 : 20,
-                    marginRight: 5
-                  }}
-                  name="settings"
-                  black
-                  transparent
-                  onPress={() => {
-                    NavigatorService.navigate("SettingScreen");
-                  }}
-                />
-              </View>
-            </View>
-          </MenuOption> */}
-          {/* <MenuOption
-            onSelect={() => {
-              increaseFontSize();
-            }}
-          >
-            <View style={{ flexDirection: "row", flex: 1 }}>
-              <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "تكبير" : "fontSize"}
-                </Text>
-              </View>
-              <View style={{ flexDirection: "row", flex: 0.3 }}>
-                <Icon
-                  style={{
-                    color: "#007AFF",
-                    fontSize: deviceType == "tablet" ? 30 : 20,
-                    marginRight: 5
-                  }}
-                  type="FontAwesome"
-                  name="plus-circle"
-                  black
-                  transparent
-                />
-              </View>
-            </View>
-          </MenuOption>
           <MenuOption
-            onSelect={() => {
-              decreaseFontSize();
-            }}
-          >
-            <View style={{ flexDirection: "row", flex: 1 }}>
-              <View style={{ flex: 0.7 }}>
-                <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "تصغير" : "fontSize"}
-                </Text>
-              </View>
-              <View style={{ flex: 0.3 }}>
-                <Icon
-                  style={{
-                    color: "#007AFF",
-                    fontSize: deviceType == "tablet" ? 30 : 20,
-                    marginRight: 5
-                  }}
-                  type="FontAwesome"
-                  name="minus-circle"
-                  black
-                  transparent
-                />
-              </View>
-            </View>
-          </MenuOption> */}
-            <MenuOption
             onSelect={() => {
               // console.log("======from sticky note====", this.state.selectedVerses)
               onHighlight();
@@ -282,7 +186,6 @@ export class MenuOptionList extends PureComponent {
               </View>
             </View>
           </MenuOption>
-        
         </MenuOptions>
       </Menu>
     );
