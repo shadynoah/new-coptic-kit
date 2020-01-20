@@ -24,3 +24,8 @@ export const content = [
         ]
     }
 ]
+export const checkedList = [
+    [false , false],
+    [false , false],
+    [false , false]
+]

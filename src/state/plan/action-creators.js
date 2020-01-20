@@ -6,7 +6,7 @@ import _ from "lodash";
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
 import * as types from "./actions";
-import  { content } from '../../constants'
+import  { content ,checkedList } from '../../constants'
 
 const db = SQLite.openDatabase("db.db");
 
@@ -27,7 +27,7 @@ export async function loadPlan() {
 export function selectDayOfPlan(dayNumber){
   return async (dispatch, getState) => {
     const planContent = getState().plan.planContent;
-    console.log("plancontent from select day of plan" , planContent)
+    // console.log("plancontent from select day of plan" , planContent)
    let content  = planContent[dayNumber].dayChapters
    let payload = {
      selectedDay:dayNumber ,
@@ -59,21 +59,27 @@ export async function makeChapterChecked (indexOfChapter) {
 
 export async function loadPlanCheckedList (){
  let res = await AsyncStorage.getItem("plan")
- console.log("from action creator" , res)
+//  console.log("from action creator" , res)
   return {
     type: types.LOAD_PLAN_CHECKED_LIST,
     payload:res
   }
 }
 
-export async function insertPlanIntoLocalStorage(){
+export async function inializePlan(){
   return async dispatch => {
       await AsyncStorage.setItem("plan" , JSON.stringify(content));
   }
 }
+export async function initializeCheckedList(){
+  return async dispatch => {
+    // console.log("list from saveCheckedListIntoLocalStorage " ,list)
+    await AsyncStorage.setItem("list" , JSON.stringify(checkedList));
+}
+}
 export async function saveCheckedListIntoLocalStorage(list){
   return async dispatch => {
-    console.log("list from saveCheckedListIntoLocalStorage " ,list)
+    // console.log("list from saveCheckedListIntoLocalStorage " ,list)
     await AsyncStorage.setItem("list" , JSON.stringify(list));
 }
 }

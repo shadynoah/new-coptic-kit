@@ -16,8 +16,9 @@ import { toggleLanguage ,loadChapterContent } from "../../state/content/action-c
 import {
   makeChapterChecked,
   selectDayOfPlan,
-  insertPlanIntoLocalStorage,
-  saveCheckedListIntoLocalStorage
+  inializePlan,
+  saveCheckedListIntoLocalStorage,
+  initializeCheckedList
 } from "../../state/plan/action-creators";
 import _ from "lodash";
 import { AsyncStorage } from "react-native";
@@ -49,7 +50,7 @@ class SettingScreenContainer extends Component {
     this.selectDay = this.selectDay.bind(this);
     this.state = {
       selectedDay: 1,
-      checkedList: [[true , false] ,[false , true] , [true , true]] ,
+      checkedList: [] ,
       refresh:false
     };
   }
@@ -80,25 +81,30 @@ class SettingScreenContainer extends Component {
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
       { toggleLanguage, selectDayOfPlan, makeChapterChecked , 
-        insertPlanIntoLocalStorage , saveCheckedListIntoLocalStorage ,
-        loadChapterContent
+        inializePlan , saveCheckedListIntoLocalStorage ,
+        loadChapterContent, initializeCheckedList
       },
       dispatch
     );
   }
 
    async componentDidMount() {
-     await this.props.insertPlanIntoLocalStorage();
+      // await AsyncStorage.removeItem("list")
+      if(await AsyncStorage.getItem("list")=== null)
+      {
+        this.props.initializeCheckedList()
+      }
+     await this.props.inializePlan();
     //  await AsyncStorage.remo("list" , JSON.stringify(this.state.checkedList))
     // await AsyncStorage.setItem("list" , JSON.stringify(this.state.checkedList))
-   console.log("plan" , JSON.parse(await AsyncStorage.getItem("plan")) ) 
+  //  console.log("plan" , JSON.parse(await AsyncStorage.getItem("plan")) ) 
   //  let x= JSON.parse(await AsyncStorage.getItem("list"))
     this.setState({
        checkedList: JSON.parse(await AsyncStorage.getItem("list"))
     })
     this.selectDay(0);
     this.props.navigation.setParams({
-      title: this.props.isArabic ? " خطه القراءه" : "BIble plan"
+      title: this.props.isArabic ? " خطه القراءه" : "bible plan"
     });
   }
 
@@ -121,10 +127,6 @@ class SettingScreenContainer extends Component {
     );
   }
   render() {
-     console.log("this.props.selectedday" , this.props.selectedDayContent);
-    // console.log("this.state.checkedlist" , this.state.checkedList)
-    // const keyvalue = _.keyBy(this.state.checkedList ,on);
-    // console.log("keyvalue",keyvalue)
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -169,15 +171,19 @@ class SettingScreenContainer extends Component {
                       //   "Genisis",
                       //   1
                       // );
-                      // NavigatorService.navigate("VerseScreen");
+                      // this.props.loadChapterContent(
+                      //  "Genesis",
+                      //  1
+                      // );
+                    //  NavigatorService.navigate("VerseScreen");
 
                       let copy = this.state.checkedList[this.props.selectedDay];
-                      console.log("copy====" , copy)
+                      // console.log("copy====" , copy)
                       if(copy[index])
                        copy[index] = false;
                        else 
                        copy[index] = true;
-                       console.log("-----------copy is equal----", copy);
+                      //  console.log("-----------copy is equal----", copy);
                        let list = []
                        this.setState(state => {
                          list = state.checkedList.map((item, index) => {
@@ -185,7 +191,7 @@ class SettingScreenContainer extends Component {
                           return copy;
                           else return item
                         });
-                        console.log("new list is" , list)
+                        // console.log("new list is" , list)
                         return {
                           list,
                            refresh: !this.state.refresh

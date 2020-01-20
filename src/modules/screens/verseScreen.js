@@ -501,6 +501,9 @@ class verseScreenContainer extends Component {
               <Button
                 transparent
                 onPress={() => {
+                  console.log("selectedBook" ,selectedBook.bookName)
+                  console.log(" this.props.numberOfSelectedChapter + 1" , this.props.numberOfSelectedChapter + 1)
+
                   if (
                     this.props.numberOfSelectedChapter + 1 <=
                     this.props.selectedBook.numberOfChapters
