@@ -115,8 +115,8 @@ class chapterScreenContainer extends Component {
               <Text
                 onPress={() => {
                   // this.props.selectChapter(item.number);
-                  console.log("this.props.selectedBook.bookName", this.props.selectedBook.bookName);
-                  console.log("item.number",  item.number)
+                  // console.log("this.props.selectedBook.bookName", this.props.selectedBook.bookName);
+                  // console.log("item.number",  item.number)
                   this.props.loadChapterContent(
                     this.props.selectedBook.bookName,
                     item.number

@@ -133,7 +133,7 @@ class BookScreenContainer extends Component {
                   onPress={() => {
                     //   console.log("========data arabic ====", JSON.stringify(dataAr))
                     this.props.clearDayContentOfPlan();
-                    console.log("item of select book" , item)
+                    // console.log("item of select book" , item)
                     this.props.selectBook(item);
                     NavigatorService.navigate("ChapterScreen");
                   }}
