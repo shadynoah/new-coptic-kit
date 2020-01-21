@@ -9,28 +9,7 @@ import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
 import { inializePlan, initializeCheckedList, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
 
-
-const plan = require("../../data/plan.json");
-
-const SECTIONS = [
-  {
-    id: 1,
-    title: "Day 1",
-    content: [
-      { key: "Devin", data: "Genesis 1" },
-      { key: "Dan", data: "Genesis 2 " }
-    ]
-  },
-  {
-    id: 2,
-    title: "Day 2",
-    content: [
-      { key: "3", data: "Genesis 3" },
-      { key: "4", data: "Genesis 4" }
-    ]
-  }
-];
-class SettingScreenContainer extends Component {
+class BiblePlanScreenContainer extends Component {
   constructor() {
     super();
     this.selectDay = this.selectDay.bind(this);
@@ -226,7 +205,7 @@ class SettingScreenContainer extends Component {
   }
 }
 
-export const SettingScreen = connect(
-  SettingScreenContainer.mapStatetToProps,
-  SettingScreenContainer.mapDispatchToProps
-)(SettingScreenContainer);
+export const BiblePlanScreen = connect(
+  BiblePlanScreenContainer.mapStatetToProps,
+  BiblePlanScreenContainer.mapDispatchToProps
+)(BiblePlanScreenContainer);

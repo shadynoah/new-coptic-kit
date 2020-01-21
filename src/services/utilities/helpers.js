@@ -1,3 +1,4 @@
+import _ from "lodash";
 export class Helpers {
   //choose action creators based on style of selectedNote
 
@@ -12,5 +13,16 @@ export class Helpers {
         return id[+w];
       });
     }
+  }
+  static validateVerse(highlightedVerses ,selectedVerses , verseNum) {
+    var res = {};
+    res.textDecorationLine = "none";
+    if (_.includes(highlightedVerses, verseNum)) {
+      res.backgroundColor = "#ffff00";
+    }
+    if (_.includes(selectedVerses, verseNum)) {
+      res.textDecorationLine = "underline";
+    }
+    return res;
   }
 }

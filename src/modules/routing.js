@@ -8,7 +8,7 @@ import { BookScreen } from "./screens/BookScreen";
 import LinksScreen from "./screens/LinksScreen";
 import { ChapterScreen } from "./screens/chapterScreen";
 import { VerseScreen } from "./screens/verseScreen";
-import { SettingScreen } from "./screens/SettingsScreen";
+import { BiblePlanScreen } from "./screens/BiblePlanScreen";
 import { NoteListScreen } from "./screens/NoteList";
 import { BookMarkScreen } from "./screens/BookMarkScreen";
 import { AboutScreen } from "./screens/AboutScreen";
@@ -26,10 +26,9 @@ const Navigator = createStackNavigator(
     },
     VerseScreen: {
       screen: VerseScreen
-    }
-    ,
-    SettingScreen: {
-      screen: SettingScreen
+    },
+    BiblePlanScreen: {
+      screen: BiblePlanScreen
     },
     NoteListScreen: {
       screen: NoteListScreen

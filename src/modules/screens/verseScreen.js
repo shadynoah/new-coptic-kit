@@ -1,24 +1,19 @@
 import Constants from "expo-constants";
-import { SQLite } from "expo-sqlite";
 import _ from "lodash";
+import { SQLite } from "expo-sqlite";
 import { Button, Icon, Text } from "native-base";
 import React, { Component } from "react";
 import { AsyncStorage, ImageBackground, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
-import Modal from "react-native-modal";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { ModalTypesEnum } from "../../enums";
 import { Helpers } from "../../services/utilities/helpers";
 import { State } from "../../state";
-import { deleteBookMark, insertBookMark, insertNote,
-   loadChapterContent, loadNotes, selectBook, selectChapter,
-    toggleLanguage, toggleLoading } from "../../state/content/action-creators";
+import { deleteBookMark, insertBookMark, insertNote, loadChapterContent, loadNotes, selectBook, selectChapter, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
+import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
 import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
-import { SidebarItem } from "../components/sidebar-item";
-import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
 
-SidebarItem;
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
   constructor() {
@@ -70,25 +65,7 @@ class verseScreenContainer extends Component {
       dispatch
     );
   }
-
-  validateVerse(verseNum) {
-    var res = {};
-    // res.backgroundColor = 'white'
-    res.textDecorationLine = "none";
-    if (_.includes(this.state.highlightedVerses, verseNum)) {
-      res.backgroundColor = "#ffff00";
-    }
-    // to be removed
-    // if (_.includes(this.state.bookMarkedVerses, verseNum)) {
-
-    //     res.backgroundColor = 'green'
-
-    // }
-    if (_.includes(this.state.selectedVerses, verseNum)) {
-      res.textDecorationLine = "underline";
-    }
-    return res;
-  }
+ 
   _storeData = async (type = "Highlight", verseNumArray) => {
     try {
       // console.log("=====type from _storeData ", type)
@@ -132,7 +109,6 @@ class verseScreenContainer extends Component {
       title: this.props.isArabic ? "الايات" : "verses"
     });
     this.isBookMarkedChapter();
-    // this.props.loadNotes()
     db.transaction(tx => {
       // tx.executeSql(
       //     'DROP TABLE Notes'
@@ -148,7 +124,6 @@ class verseScreenContainer extends Component {
         "create table if not exists bookmarks (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean , numberOfChapters integer);"
       );
     });
-    //    console.log("===from did mount")
     this._retrieveData();
     var highlightedVersesOfStorage = this.convertStringToArray(
       await this._retrieveData()
@@ -167,7 +142,6 @@ class verseScreenContainer extends Component {
     if (
       this.props.numberOfSelectedChapter != nextProps.numberOfSelectedChapter
     ) {
-      // console.log("=====this.props.numberOfSelectedChapter != nextProps.numberOfSelectedChapter====")
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
         (x = nextProps.selectedBook.bookName),
@@ -176,7 +150,6 @@ class verseScreenContainer extends Component {
       var highlightedVersesOfStorageArr = this.convertStringToArray(
         highlightedVersesOfStorage
       );
-      // console.log("==xx==", xx)
       this.setState(
         {
           highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
@@ -190,8 +163,8 @@ class verseScreenContainer extends Component {
   }
 
   convertStringToArray(data) {
+    console.log("data from  convertStringToArray " , data)
     if (typeof data != "string") return data;
-    // console.log("=========data from convertStringToArray=== ", data)
     let all = [];
     if (data && data.length > 0) {
       all = _.map(data.split(","), xx => {
@@ -281,8 +254,6 @@ class verseScreenContainer extends Component {
     var xxx = this.convertStringToArray(this.state.highlightedVerses);
     var union = _.union(xxx, this.state.selectedVerses);
     var afterfilter = union.filter(e => !intersection.find(a => e == a));
-    var xn = await this._retrieveData();
-    let all = this.convertStringToArray(xn) || [];
     this.setState(
       {
         highlight: !this.state.highlight,
@@ -353,85 +324,6 @@ class verseScreenContainer extends Component {
               }}
               isVisible={this.state.isVisible}
             />
-
-            <Modal
-              animationType="slide"
-              transparent={true}
-              backdropColor="white"
-              style={{ height: 200, width: 200 }}
-              isVisible={false}
-            >
-              <View
-                style={{
-                  width: 100,
-                  alignSelf: "center",
-                  padding: 10,
-                  backgroundColor: "white",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: 4,
-                  borderColor: "rgba(0, 0, 0, 0.1)"
-                }}
-              >
-                <TextInput
-                  style={styles.TextInputStyleClass}
-                  underlineColorAndroid="transparent"
-                  placeholder={"Type Something in Text Area."}
-                  placeholderTextColor={"#9E9E9E"}
-                  numberOfLines={10}
-                  multiline={true}
-                  defaultValue="asdasd"
-                />
-                <View
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center"
-                  }}
-                >
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between"
-                    }}
-                  >
-                    <View style={{ flex: 0.5 }}>
-                      <Button
-                        style={{
-                          margin: 10,
-                          paddingLeft: 30,
-                          paddingRight: 30
-                        }}
-                        full
-                        rounded
-                        disabled={false}
-                        onPress={() => {
-                          // console.log("=====xxxxx====")
-                        }}
-                      >
-                        <Text>saveee</Text>
-                      </Button>
-                    </View>
-                    <View style={{ flex: 0.5, width: 200 }}>
-                      <Button
-                        style={{
-                          margin: 10,
-                          paddingLeft: 30,
-                          paddingRight: 30
-                        }}
-                        full
-                        rounded
-                        disabled={false}
-                        onPress={() => {
-                          // console.log("=====xxxxx====")
-                        }}
-                      >
-                        <Text>cancel</Text>
-                      </Button>
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </Modal>
             <View
               style={{
                 flexDirection: "row",
@@ -588,20 +480,10 @@ class verseScreenContainer extends Component {
                   numberOfSelectedChapter={numberOfSelectedChapter}
                   isArabic={isArabic}
                   deleteBookMark={deleteBookMark}
-                  fontSizeOfText={fontSizeOfText}
-                  selectedVerses={selectedVerses}
-                  highlightedVerses={highlightedVerses}
-                  _retrieveData={this._retrieveData.bind(this)}
-                  convertStringToArray={this.convertStringToArray.bind(this)}
                   insertBookMark={insertBookMark}
-                  increaseFontSize={this.increaseFontSize.bind(this)}
-                  decreaseFontSize={this.decreaseFontSize.bind(this)}
                   enableIsBookMark={this.enableIsBookMark.bind(this)}
                   disableIsBookMark={this.disableIsBookMark.bind(this)}
                   enableIsVisible={this.enableIsVisible.bind(this)}
-                  highlight={highlight}
-                  _storeData={this._storeData.bind(this)}
-                  _retrieveData={this._retrieveData.bind(this)}
                   onHighlight={this.onHighlight.bind(this)}
                 />
               </Button>
@@ -645,7 +527,8 @@ class verseScreenContainer extends Component {
                       style={{
                         fontSize: this.props.fontSizeOfText,
                         fontWeight: "bold",
-                        backgroundColor: this.validateVerse(verse.num)
+                        backgroundColor: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                           verse.num)
                           .backgroundColor
                       }}
                     >
@@ -658,9 +541,11 @@ class verseScreenContainer extends Component {
                     <Text
                       style={{
                         fontSize: this.props.fontSizeOfText,
-                        backgroundColor: this.validateVerse(verse.num)
+                        backgroundColor: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                           verse.num)
                           .backgroundColor,
-                        textDecorationLine: this.validateVerse(verse.num)
+                        textDecorationLine: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                           verse.num)
                           .textDecorationLine,
                         textAlign: "justify"
                       }}

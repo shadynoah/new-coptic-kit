@@ -135,7 +135,6 @@ export class MenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              // console.log("======from sticky note====", this.state.selectedVerses)
               onHighlight();
             }}
           >
