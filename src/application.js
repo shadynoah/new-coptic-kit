@@ -9,7 +9,8 @@ import {
   reducer,
   toggleIsDownloading,
   updateConnectionStatus,
-  loadPlan
+  loadPlan,
+  loadArabicPlan
 } from "./state";
 import { AsyncStorage, Alert } from "react-native";
 import NetInfo from "@react-native-community/netinfo";
@@ -83,6 +84,7 @@ export class Application {
       this.networkConnectionChange
     );
     Application.current.store.dispatch(loadPlan());
+    Application.current.store.dispatch(loadArabicPlan());
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {

@@ -1,18 +1,11 @@
 // @Flow
 
-import { SQLite } from "expo-sqlite";
 import _ from "lodash";
 // var data = require("../../data/content.json");
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
+import { ArabicContent, checkedList, content } from '../../constants';
 import * as types from "./actions";
-import  { content ,checkedList , ArabicContent } from '../../constants'
-import { type } from './../state';
-
-const db = SQLite.openDatabase("db.db");
-
-
-
 
 export async function loadPlan() {
   // console.log("enter loadPlan");
@@ -25,9 +18,13 @@ export async function loadPlan() {
     payload: payloadPx
   }
 }
-export function selectDayOfPlan(dayNumber){
+export function selectDayOfPlan(dayNumber , isArabic = false){
   return async (dispatch, getState) => {
-    const planContent = getState().plan.planContent;
+    let planContent ;
+    if(isArabic)
+    planContent =  getState().plan.ArabicPlanContent;
+    else
+    planContent =  getState().plan.planContent;
     // console.log("plancontent from select day of plan" , planContent)
    let content  = planContent[dayNumber].dayChapters
    let payload = {
@@ -70,7 +67,6 @@ export async function loadPlanCheckedList (){
 export async function inializePlan(){
   return async dispatch => {
       await AsyncStorage.setItem("plan" , JSON.stringify(content));
-      await AsyncStorage.setItem("ArabicContent" , JSON.stringify(ArabicContent))
   }
 }
 export async function initializeCheckedList(){
@@ -94,5 +90,23 @@ return {
 export function clearDayContentOfPlan(){
   return {
     type: types.CLEAR_DAY_CONTENT_OF_PLAN
+  }
+}
+
+export async function inializeArabicPlan(){
+  return async () => {
+      await AsyncStorage.setItem("ArabicPlan" , JSON.stringify(ArabicContent));
+  }
+}
+
+export async function loadArabicPlan() {
+  // console.log("enter loadPlan");
+  // let payloadP = require("../../data/plan.json");
+  // console.log("payloadP" ,payloadP)
+  // console.log("payloadPx",payloadPx)
+  let payload =  JSON.parse(await AsyncStorage.getItem("ArabicPlan"))
+  return {
+    type: types.LOAD_ARABIC_PLAN_CHAPTERS,
+    payload: payload
   }
 }

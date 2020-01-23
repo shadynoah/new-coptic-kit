@@ -53,7 +53,7 @@ export async function loadChapterContent(
   isArabicBookMark = false
 ) {
   return async (dispatch, getState) => {
-    var isArabic = getState().content.isArabic;
+    var isArabic = true;
     let englishContent;
     let arabicContent;
     let contentOfSelectedChapter = [];

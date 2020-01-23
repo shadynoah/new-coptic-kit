@@ -7,7 +7,9 @@ import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
-import { inializePlan, initializeCheckedList, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
+import { inializePlan, initializeCheckedList, makeChapterChecked,
+   saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan ,
+   inializeArabicPlan } from "../../state/plan/action-creators";
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -40,7 +42,8 @@ class BiblePlanScreenContainer extends Component {
       planContent: state.plan.planContent,
       selectedDay: state.plan.selectedDay,
       selectedDayContent: state.plan.selectedDayContent,
-      selectedChapterIndex: state.plan.selectedChapterIndex
+      selectedChapterIndex: state.plan.selectedChapterIndex,
+      ArabicPlanContent: state.plan.ArabicPlanContent,
       
     };
   }
@@ -49,19 +52,24 @@ class BiblePlanScreenContainer extends Component {
       { toggleLanguage, selectDayOfPlan, makeChapterChecked , 
         inializePlan , saveCheckedListIntoLocalStorage ,
         loadChapterContent, initializeCheckedList ,
-        selectBook , selectChapterOfDayPlan
+        selectBook , selectChapterOfDayPlan ,
+        inializeArabicPlan
       },
       dispatch
     );
   }
 
    async componentDidMount() {
-   await AsyncStorage.removeItem("plan")
-   await AsyncStorage.removeItem("list")
+  //  await AsyncStorage.removeItem("plan")
+  //  await AsyncStorage.removeItem("list")
 
       if(await AsyncStorage.getItem("list")=== null)
       {
         this.props.initializeCheckedList()
+      }
+      if(await AsyncStorage.getItem("ArabicPlan")=== null)
+      {
+        this.props.inializeArabicPlan()
       }
      await this.props.inializePlan();
     //  await AsyncStorage.remo("list" , JSON.stringify(this.state.checkedList))
@@ -78,25 +86,13 @@ class BiblePlanScreenContainer extends Component {
   }
 
   selectDay = dayNumber => {
-    this.props.selectDayOfPlan(dayNumber);
+    this.props.selectDayOfPlan(dayNumber , true);
     // this.setState({
     //   checkedList:[[true, true] , [false, true]]
     // })
   };
-  executeSql(sql, params = []) {
-    return new Promise((resolve, reject) =>
-      db.transaction(tx => {
-        tx.executeSql(
-          sql,
-          params,
-          (_, { rows, insertId }) => resolve(rows._array, insertId),
-          reject
-        );
-      })
-    );
-  }
   render() {
-    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex);
+    console.log("ArabicPlanContent" , this.props.ArabicPlanContent);
     // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     return (
@@ -170,7 +166,8 @@ class BiblePlanScreenContainer extends Component {
                       })
                       this.props.loadChapterContent(
                         bookName,
-                        chapterNumber
+                        chapterNumber,
+                        true
                        );
                      NavigatorService.navigate("VerseScreen");
                     }

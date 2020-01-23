@@ -50,6 +50,12 @@ export function planReducer(
         selectedDayContent: []
       }
     }
+    case types.LOAD_ARABIC_PLAN_CHAPTERS:{
+      return{
+        ...state,
+        ArabicPlanContent : action.payload
+      }
+    }
     default:
       return state;
   }
