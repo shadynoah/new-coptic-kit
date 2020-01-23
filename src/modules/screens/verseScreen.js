@@ -68,8 +68,6 @@ class verseScreenContainer extends Component {
  
   _storeData = async (type = "Highlight", verseNumArray) => {
     try {
-      // console.log("=====type from _storeData ", type)
-      // console.log("========array of data=====", verseNumArray)
       await AsyncStorage.setItem(
         type +
           " " +
@@ -94,9 +92,6 @@ class verseScreenContainer extends Component {
         type + " " + x + " " + y.toString()
       );
       if (value !== null) {
-        // We have data!!
-        // console.log("====type===", type)
-        // console.log("value from _retrieveData ", value);
         return value;
       }
     } catch (error) {
@@ -105,6 +100,7 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
+    // await AsyncStorage.clear();
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
     });
@@ -131,10 +127,6 @@ class verseScreenContainer extends Component {
     this.setState(
       {
         highlightedVerses: [...new Set(highlightedVersesOfStorage)]
-      },
-      () => {
-        // console.log("====form did mount===", this.state.highlightedVerses)
-        // console.log("=====from did monut===== ", this.state.bookMarkedVerses)
       }
     );
   }
@@ -153,17 +145,12 @@ class verseScreenContainer extends Component {
       this.setState(
         {
           highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
-        },
-        () => {
-          // console.log("=======from  componentWillReceiveProps highlightedVerses==", this.state.highlightedVerses)
-          // console.log("=======from  componentWillReceiveProps bookMarkedVerses==", this.state.bookMarkedVerses)
         }
       );
     }
   }
 
   convertStringToArray(data) {
-    console.log("data from  convertStringToArray " , data)
     if (typeof data != "string") return data;
     let all = [];
     if (data && data.length > 0) {
@@ -192,9 +179,6 @@ class verseScreenContainer extends Component {
     bookName = this.props.selectedBook.bookName,
     chapterNumber = this.props.numberOfSelectedChapter
   ) {
-    // console.log("from isBookMarkedChapter bookName ", bookName);
-    // console.log("from  isBookMarkedChapter chapterNumber ", chapterNumber);
-
     db.transaction(tx => {
       tx.executeSql(
         "select count(*) from bookmarks where bookName = (?) and chapterNumber = (?)",
@@ -263,14 +247,13 @@ class verseScreenContainer extends Component {
         this.setState({
           selectedVerses: []
         });
+        this._storeData("Highlight", this.state.highlightedVerses);
       }
     );
-    this._storeData("Highlight", this.state.highlightedVerses);
+   
     this._retrieveData();
   }
   render() {
-    // console.log("selectedDayContent day content" , this.props.selectedDayContent);
-    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     let {
       selectedBook,
       numberOfSelectedChapter,
@@ -280,21 +263,11 @@ class verseScreenContainer extends Component {
     } = this.props;
     let {
       isbookmark,
-      fontSizeOfText,
-      selectedVerses,
-      highlightedVerses,
-      highlight
     } = this.state;
-    // const deviceWidth = Dimensions.get("window").width;
-    // const deviceHeight = Platform.OS === "ios"
-    //     ? Dimensions.get("window").height
-    //     : require("react-native-extra-dimensions-android").get("REAL_WINDOW_HEIGHT");
-    // console.log("====this.props.selectedbookname--", this.props.selectedBook.bookName)
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
         Constants.platform.android.userInterfaceIdiom);
-
     let index = 1;
     let indexOfVerse = 1;
     return (
@@ -387,9 +360,6 @@ class verseScreenContainer extends Component {
               <Button
                 transparent
                 onPress={() => {
-                  // console.log("selectedBook" ,selectedBook.bookName)
-                  // console.log(" this.props.numberOfSelectedChapter + 1" , this.props.numberOfSelectedChapter + 1)
-                  
                   if (
                     this.props.numberOfSelectedChapter + 1 <=
                     this.props.selectedBook.numberOfChapters
@@ -502,7 +472,6 @@ class verseScreenContainer extends Component {
                     style={{ fontSize: this.props.fontSizeOfText }}
                     onPress={async () => {
                       if (this.state.selectedVerses.indexOf(verse.num) == -1) {
-                        // console.log("=====this verses is note selelcted ====")
                         this.setState(
                           {
                             selectedVerses: [
@@ -566,22 +535,4 @@ export const VerseScreen = connect(
   verseScreenContainer.mapStatetToProps,
   verseScreenContainer.mapDispatchToProps
 )(verseScreenContainer);
-const styles = StyleSheet.create({
-  MainContainer: {
-    flex: 1,
-    paddingTop: Platform.OS === "ios" ? 20 : 0,
-    justifyContent: "center",
-    margin: 20
-  },
 
-  TextInputStyleClass: {
-    padding: 30,
-    textAlign: "left",
-    width: 200,
-    borderWidth: 2,
-    borderColor: "#9E9E9E",
-    borderRadius: 20,
-    backgroundColor: "#FFFFFF",
-    height: 200
-  }
-});
