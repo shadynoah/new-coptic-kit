@@ -29,3 +29,14 @@ export const checkedList = [
     [false , false],
     [false , false]
 ]
+
+export const ArabicContent =[
+    {
+            key:1,
+            dayChapters:[
+                "مزامير 1",
+                "تكوين 1",
+                "متى 1",
+            ]
+    }
+]

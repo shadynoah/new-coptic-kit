@@ -6,7 +6,7 @@ import _ from "lodash";
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
 import * as types from "./actions";
-import  { content ,checkedList } from '../../constants'
+import  { content ,checkedList , ArabicContent } from '../../constants'
 import { type } from './../state';
 
 const db = SQLite.openDatabase("db.db");
@@ -70,6 +70,7 @@ export async function loadPlanCheckedList (){
 export async function inializePlan(){
   return async dispatch => {
       await AsyncStorage.setItem("plan" , JSON.stringify(content));
+      await AsyncStorage.setItem("ArabicContent" , JSON.stringify(ArabicContent))
   }
 }
 export async function initializeCheckedList(){

@@ -56,8 +56,8 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-  //  await AsyncStorage.removeItem("plan")
-  //  await AsyncStorage.removeItem("list")
+   await AsyncStorage.removeItem("plan")
+   await AsyncStorage.removeItem("list")
 
       if(await AsyncStorage.getItem("list")=== null)
       {
@@ -98,21 +98,7 @@ class BiblePlanScreenContainer extends Component {
   render() {
     // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex);
     // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
-
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        paddingTop: 22,
-        justifyContent: "center"
-      },
-      item: {
-        padding: 10,
-        fontSize: 18,
-        height: 60
-      }
-    });
-
     return (
       <ImageBackground
         source={require("../../../assets/images/background.jpg")}
