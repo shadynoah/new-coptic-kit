@@ -60,8 +60,8 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-  //  await AsyncStorage.removeItem("plan")
-  //  await AsyncStorage.removeItem("list")
+   await AsyncStorage.removeItem("plan")
+   await AsyncStorage.removeItem("list")
 
       if(await AsyncStorage.getItem("list")=== null)
       {
@@ -86,13 +86,12 @@ class BiblePlanScreenContainer extends Component {
   }
 
   selectDay = dayNumber => {
-    this.props.selectDayOfPlan(dayNumber , true);
+    this.props.selectDayOfPlan(dayNumber , false);
     // this.setState({
     //   checkedList:[[true, true] , [false, true]]
     // })
   };
   render() {
-    console.log("ArabicPlanContent" , this.props.ArabicPlanContent);
     // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     return (

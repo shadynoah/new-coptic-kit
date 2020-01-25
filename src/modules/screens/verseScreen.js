@@ -377,18 +377,20 @@ class verseScreenContainer extends Component {
                    if(this.props.selectedChapterIndex + 1 < this.props.selectedDayContent.length)
                    {
                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex + 1 )
-                     let bookName = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ")[0];
+                     const bookNameAndChapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ");
+                     let bookName = bookNameAndChapterNumber[0];
                     //  alert("bookName" + bookName);
-                    this.props.selectBook({
-                      "bookName": bookName,
-                     })
-                     let chapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ")[1];
+                   
+                     let chapterNumber = bookNameAndChapterNumber[1];
                     //  alert("chapterNumber"  + chapterNumber);
                     this.props.selectChapter(chapterNumber)
                      this.props.loadChapterContent(
                       bookName,
                       chapterNumber
                     );
+                    this.props.selectBook({
+                      "bookName": bookName,
+                     })
                    }
                    else {
                      alert("this is last chapter in this day")
