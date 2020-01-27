@@ -1,30 +1,15 @@
 // @Flow
 
-import * as types from "./actions";
-
-import * as contentActions from "../content/actions";
-import NavigatorService from "../../services/navigator";
-
-import { IBOOK } from "./state";
-import { State } from "../state";
+import * as FileSystem from "expo-file-system";
+import { SQLite } from "expo-sqlite";
 import _ from "lodash";
-import React, { Component } from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Button,
-  FlatList
-} from "react-native";
 // var data = require("../../data/content.json");
 // var dataAr = require("../../data/content-ar.json");
 import { AsyncStorage } from "react-native";
-import { SQLite } from "expo-sqlite";
-import * as FileSystem from "expo-file-system";
+import * as types from "./actions";
+import { IBOOK } from "./state";
+
+
 
 const db = SQLite.openDatabase("db.db");
 export function toggleLoading() {
@@ -53,7 +38,7 @@ export async function loadChapterContent(
   isArabicBookMark = false
 ) {
   return async (dispatch, getState) => {
-    var isArabic = false;
+    var isArabic = getState().content.isArabic;
     let englishContent;
     let arabicContent;
     let contentOfSelectedChapter = [];

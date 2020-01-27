@@ -44,7 +44,7 @@ const Navigator = createStackNavigator(
     }
   },
   {
-    initialRouteName: "BiblePlanScreen"
+    initialRouteName: "HomeScreen"
   }
 );
 const Navigators = createAppContainer(Navigator);

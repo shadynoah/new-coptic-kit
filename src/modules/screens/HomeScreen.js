@@ -295,6 +295,11 @@ class HomeScreenContainer extends Component {
                 source={require("../../../assets/images/bible.png")}
               />
             </TouchableOpacity>
+            <TouchableOpacity onPress ={()=> NavigatorService.navigate("BiblePlanScreen")}>
+              <Text>
+                bibleplaaaan
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>

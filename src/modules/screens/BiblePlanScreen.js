@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { Button, CheckBox, Icon } from "native-base";
 import React, { Component } from "react";
 import { AsyncStorage, FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
@@ -17,7 +18,7 @@ class BiblePlanScreenContainer extends Component {
     this.selectDay = this.selectDay.bind(this);
     this.state = {
       selectedDay: 1,
-      checkedList: [] ,
+      checkedList:_.times(365, _.constant([false])) ,
       refresh:false
     };
   }
@@ -60,8 +61,9 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-   await AsyncStorage.removeItem("plan")
-   await AsyncStorage.removeItem("list")
+  //  await AsyncStorage.removeItem("plan")
+  //  await AsyncStorage.removeItem("list")
+   this.props.initializeCheckedList()
 
       if(await AsyncStorage.getItem("list")=== null)
       {
@@ -84,14 +86,21 @@ class BiblePlanScreenContainer extends Component {
       title: this.props.isArabic ? " خطه القراءه" : "bible plan"
     });
   }
+  // componentDidUpdate(prevProps) {
+  //   if(this.props.isArabic)
+  //    this.setState({
+  //      checkedList: _.times(365, _.constant([false]))
+  //    })
+  // }
 
   selectDay = dayNumber => {
-    this.props.selectDayOfPlan(dayNumber , false);
+    this.props.selectDayOfPlan(dayNumber , this.props.isArabic);
     // this.setState({
     //   checkedList:[[true, true] , [false, true]]
     // })
   };
   render() {
+    console.log("selectedDay" , this.props.selectedDay)
     // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     return (
@@ -100,7 +109,7 @@ class BiblePlanScreenContainer extends Component {
         style={{ flex: 1 }}
       >
         <View>
-          <DaysToolBar selectDay={this.selectDay.bind(this)} />
+          <DaysToolBar  selectedDay ={this.props.selectedDay}  isArabic ={this.props.isArabic} selectDay={this.selectDay.bind(this)} />
           <View>
             <FlatList
               keyExtractor={(item, index) => index.toString()}
@@ -121,8 +130,6 @@ class BiblePlanScreenContainer extends Component {
                       borderColor: "black"
                     }}
                     onPress={() => {
-                  
-
                       let copy = this.state.checkedList[this.props.selectedDay];
                       // console.log("copy====" , copy)
                       if(copy[index])
