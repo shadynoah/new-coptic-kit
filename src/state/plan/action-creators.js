@@ -69,15 +69,10 @@ export async function inializePlan(){
       await AsyncStorage.setItem("plan" , JSON.stringify(content));
   }
 }
-export async function initializeCheckedList(){
-  return async dispatch => {
-    // console.log("list from saveCheckedListIntoLocalStorage " ,list)
-    await AsyncStorage.setItem("list" , JSON.stringify(checkedList));
-}
-}
+
 export async function saveCheckedListIntoLocalStorage(list){
   return async dispatch => {
-    // console.log("list from saveCheckedListIntoLocalStorage " ,list)
+    console.log("list from saveCheckedListIntoLocalStorage " ,list)
     await AsyncStorage.setItem("list" , JSON.stringify(list));
 }
 }

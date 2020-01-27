@@ -1,16 +1,14 @@
 import _ from "lodash";
 import { Button, CheckBox, Icon } from "native-base";
 import React, { Component } from "react";
-import { AsyncStorage, FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { AsyncStorage, FlatList, ImageBackground, Text, View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
-import { inializePlan, initializeCheckedList, makeChapterChecked,
-   saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan ,
-   inializeArabicPlan } from "../../state/plan/action-creators";
+import { inializeArabicPlan, inializePlan, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -52,7 +50,7 @@ class BiblePlanScreenContainer extends Component {
     return bindActionCreators(
       { toggleLanguage, selectDayOfPlan, makeChapterChecked , 
         inializePlan , saveCheckedListIntoLocalStorage ,
-        loadChapterContent, initializeCheckedList ,
+        loadChapterContent, 
         selectBook , selectChapterOfDayPlan ,
         inializeArabicPlan
       },
@@ -63,21 +61,16 @@ class BiblePlanScreenContainer extends Component {
    async componentDidMount() {
   //  await AsyncStorage.removeItem("plan")
   //  await AsyncStorage.removeItem("list")
-   this.props.initializeCheckedList()
-
-      if(await AsyncStorage.getItem("list")=== null)
-      {
-        this.props.initializeCheckedList()
-      }
+  //  this.props.initializeCheckedList()
       if(await AsyncStorage.getItem("ArabicPlan")=== null)
       {
         this.props.inializeArabicPlan()
       }
-     await this.props.inializePlan();
+      else 
+      this.props.inializePlan();
     //  await AsyncStorage.remo("list" , JSON.stringify(this.state.checkedList))
     // await AsyncStorage.setItem("list" , JSON.stringify(this.state.checkedList))
   //  console.log("plan" , JSON.parse(await AsyncStorage.getItem("plan")) ) 
-  //  let x= JSON.parse(await AsyncStorage.getItem("list"))
     this.setState({
        checkedList: JSON.parse(await AsyncStorage.getItem("list"))
     })
@@ -100,8 +93,6 @@ class BiblePlanScreenContainer extends Component {
     // })
   };
   render() {
-    console.log("selectedDay" , this.props.selectedDay)
-    // console.log("selectedChapterIndex day content" , this.props.selectedChapterIndex)
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     return (
       <ImageBackground
@@ -131,12 +122,10 @@ class BiblePlanScreenContainer extends Component {
                     }}
                     onPress={() => {
                       let copy = this.state.checkedList[this.props.selectedDay];
-                      // console.log("copy====" , copy)
                       if(copy[index])
                        copy[index] = false;
                        else 
                        copy[index] = true;
-                      //  console.log("-----------copy is equal----", copy);
                        let list = []
                        this.setState(state => {
                          list = state.checkedList.map((item, index) => {
@@ -144,7 +133,6 @@ class BiblePlanScreenContainer extends Component {
                           return copy;
                           else return item
                         });
-                        // console.log("new list is" , list)
                         return {
                           list,
                            refresh: !this.state.refresh
@@ -165,7 +153,6 @@ class BiblePlanScreenContainer extends Component {
                     () =>{
                       const bookName = selectedDayContent[index].split(" ")[0];
                        const chapterNumber = selectedDayContent[index].split(" ")[1]
-                      console.log("chapterNumber []" , chapterNumber );
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
                         "bookName": bookName,

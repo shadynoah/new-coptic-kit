@@ -36,7 +36,7 @@ export class DaysToolBar extends Component {
                 // this.selectDay(index);
                this.props.selectDay(index)
               }
-            } style={{ backgroundColor:'#b8aeae' , borderColor: index === selectedDay ?'black' : 'red' , borderWidth:4 ,justifyContent:'center' , paddingLeft:5 , paddingRight:5 , marginLeft:5 , marginRight:5}}>
+            } style={{ backgroundColor:'#b8aeae' , borderColor: 'black' , borderWidth:4 ,justifyContent:'center' , paddingLeft:5 , paddingRight:5 , marginLeft:5 , marginRight:5}}>
             <Text >{item.data}</Text>
             </Button>
             //  console.log("====render item====", item)
