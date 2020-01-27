@@ -66,8 +66,11 @@ class verseScreenContainer extends Component {
     );
   }
  
-  _storeData = async (type = "Highlight", verseNumArray) => {
+  _storeHighlighted = async (type = "Highlight", verseNumArray) => {
     try {
+      alert("=====from  _storeHighlighted====" + verseNumArray )
+      alert("=====this.props.selectedBook.bookName====" + this.props.selectedBook.bookName )
+      // alert("=====  this.props.numberOfSelectedChapter.toString()====" +   this.props.numberOfSelectedChapter.toString() )
       await AsyncStorage.setItem(
         type +
           " " +
@@ -78,7 +81,7 @@ class verseScreenContainer extends Component {
       );
     } catch (error) {
       // Error saving data
-      console.log("===error from _storeData ");
+      console.log("===error from _storeHighlighted ");
     }
   };
 
@@ -92,6 +95,7 @@ class verseScreenContainer extends Component {
         type + " " + x + " " + y.toString()
       );
       if (value !== null) {
+        alert("==========value======" + value)
         return value;
       }
     } catch (error) {
@@ -120,7 +124,7 @@ class verseScreenContainer extends Component {
         "create table if not exists bookmarks (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean , numberOfChapters integer);"
       );
     });
-    this._retrieveData();
+    // this._retrieveData();
     var highlightedVersesOfStorage = this.convertStringToArray(
       await this._retrieveData()
     );
@@ -132,7 +136,8 @@ class verseScreenContainer extends Component {
   }
   async componentWillReceiveProps(nextProps) {
     if (
-      this.props.numberOfSelectedChapter != nextProps.numberOfSelectedChapter
+      (this.props.numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
+      (this.props.selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
@@ -232,22 +237,24 @@ class verseScreenContainer extends Component {
     });
   }
   async onHighlight() {
-    let intersection = this.state.selectedVerses.filter(x =>
-      this.state.highlightedVerses.includes(x)
+    const { selectedVerses , highlightedVerses } = this.state;
+    let intersection = selectedVerses.filter(x =>
+      highlightedVerses.includes(x)
     );
-    var xxx = this.convertStringToArray(this.state.highlightedVerses);
-    var union = _.union(xxx, this.state.selectedVerses);
+    var xxx = this.convertStringToArray(highlightedVerses);
+    var union = _.union(xxx, selectedVerses);
     var afterfilter = union.filter(e => !intersection.find(a => e == a));
     this.setState(
       {
-        highlight: !this.state.highlight,
         highlightedVerses: [...afterfilter]
       },
       () => {
         this.setState({
           selectedVerses: []
-        });
-        this._storeData("Highlight", this.state.highlightedVerses);
+        },
+        () =>  this._storeHighlighted("Highlight", afterfilter)
+        );
+       
       }
     );
    
@@ -307,7 +314,7 @@ class verseScreenContainer extends Component {
               <Button
                 black
                 transparent
-                onPress={() => {
+                onPress={async () => {
                   if( this.props.selectedDayContent.length >0)
                   {
                     if(this.props.selectedChapterIndex - 1 >= 0)
@@ -327,6 +334,14 @@ class verseScreenContainer extends Component {
                      this.props.selectBook({
                       "bookName": bookName,
                      })
+                     var highlightedVersesOfStorage = this.convertStringToArray(
+                      await this._retrieveData()
+                    );
+                    this.setState(
+                      {
+                        highlightedVerses: [...new Set(highlightedVersesOfStorage)]
+                      }
+                    );
                     }
                     else{
                       alert("this is first chapter in this day")
@@ -358,6 +373,7 @@ class verseScreenContainer extends Component {
               }}
             >
               <Button
+              black
                 transparent
                 onPress={() => {
                   if (
