@@ -69,7 +69,11 @@ export async function inializePlan(){
       await AsyncStorage.setItem("plan" , JSON.stringify(content));
   }
 }
-
+export async function inializeCheckedList(){
+  return async dispatch => {
+      await AsyncStorage.setItem("list" , JSON.stringify(checkedList));
+  }
+}
 export async function saveCheckedListIntoLocalStorage(list){
   return async dispatch => {
     console.log("list from saveCheckedListIntoLocalStorage " ,list)

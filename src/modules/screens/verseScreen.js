@@ -312,21 +312,21 @@ class verseScreenContainer extends Component {
                   {
                     if(this.props.selectedChapterIndex - 1 >= 0)
                     {
-                    
-                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex - 1 )
-
-                      let bookName = this.props.selectedDayContent[this.props.selectedChapterIndex-1].split(" ")[0];
-                     //  alert("bookName" + bookName);
-                     this.props.selectBook({
-                      "bookName": bookName,
-                     })
-                      let chapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex-1].split(" ")[1];
+                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex - 1 );
+                      const splitted = this.props.selectedDayContent[this.props.selectedChapterIndex - 1 ].split(" ");
+                      let isBookStartWithString =  isNaN(parseInt(splitted[0]));
+                      const bookName = isBookStartWithString ? splitted[0] :
+                      (splitted[0] + " " + splitted[1]) 
+                       const chapterNumber = _.last(splitted);
                      //  alert("chapterNumber"  + chapterNumber);
                      this.props.selectChapter(chapterNumber)
                       this.props.loadChapterContent(
                        bookName,
                        chapterNumber
                      );
+                     this.props.selectBook({
+                      "bookName": bookName,
+                     })
                     }
                     else{
                       alert("this is first chapter in this day")
@@ -377,11 +377,11 @@ class verseScreenContainer extends Component {
                    if(this.props.selectedChapterIndex + 1 < this.props.selectedDayContent.length)
                    {
                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex + 1 )
-                     const bookNameAndChapterNumber = this.props.selectedDayContent[this.props.selectedChapterIndex+1].split(" ");
-                     let bookName = bookNameAndChapterNumber[0];
-                    //  alert("bookName" + bookName);
-                   
-                     let chapterNumber = bookNameAndChapterNumber[1];
+                     const splitted = this.props.selectedDayContent[this.props.selectedChapterIndex + 1 ].split(" ");
+                     let isBookStartWithString =  isNaN(parseInt(splitted[0]));
+                     const bookName = isBookStartWithString ? splitted[0] :
+                     (splitted[0] + " " + splitted[1]) 
+                      const chapterNumber = _.last(splitted);
                     //  alert("chapterNumber"  + chapterNumber);
                     this.props.selectChapter(chapterNumber)
                      this.props.loadChapterContent(

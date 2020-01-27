@@ -8,7 +8,9 @@ import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
-import { inializeArabicPlan, inializePlan, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
+import { inializeArabicPlan, inializePlan,
+   makeChapterChecked, saveCheckedListIntoLocalStorage,
+    selectChapterOfDayPlan, selectDayOfPlan , inializeCheckedList } from "../../state/plan/action-creators";
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -52,7 +54,7 @@ class BiblePlanScreenContainer extends Component {
         inializePlan , saveCheckedListIntoLocalStorage ,
         loadChapterContent, 
         selectBook , selectChapterOfDayPlan ,
-        inializeArabicPlan
+        inializeArabicPlan ,inializeCheckedList
       },
       dispatch
     );
@@ -61,7 +63,8 @@ class BiblePlanScreenContainer extends Component {
    async componentDidMount() {
   //  await AsyncStorage.removeItem("plan")
   //  await AsyncStorage.removeItem("list")
-  //  this.props.initializeCheckedList()
+    this.props.inializeCheckedList();
+    this.props.inializePlan();
       if(await AsyncStorage.getItem("ArabicPlan")=== null)
       {
         this.props.inializeArabicPlan()
@@ -151,8 +154,12 @@ class BiblePlanScreenContainer extends Component {
                   <Text key={index}
                   onPress = {
                     () =>{
-                      const bookName = selectedDayContent[index].split(" ")[0];
-                       const chapterNumber = selectedDayContent[index].split(" ")[1]
+                      const splitted = selectedDayContent[index].split(" ");
+                      let isBookStartWithString =  isNaN(parseInt(splitted[0]));
+                      console.log("------------y-------" , isBookStartWithString)
+                      const bookName = isBookStartWithString ? splitted[0] :
+                      (splitted[0] + " " + splitted[1]) 
+                       const chapterNumber = _.last(splitted)
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
                         "bookName": bookName,
