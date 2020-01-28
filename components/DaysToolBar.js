@@ -14,7 +14,6 @@ export class DaysToolBar extends Component {
     return false
   }
   render() {
-    console.log("render toolbar")
     const xx = []
     for (let index = 1; index <= 365; index++) {
       xx.push({

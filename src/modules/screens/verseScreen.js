@@ -321,7 +321,10 @@ class verseScreenContainer extends Component {
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
                        const chapterNumber = _.last(splitted);
-                     
+                       this.isBookMarkedChapter(
+                        bookName,
+                        chapterNumber
+                      );
                      this.props.selectChapter(chapterNumber)
                       this.props.loadChapterContent(
                        bookName,
@@ -394,7 +397,10 @@ class verseScreenContainer extends Component {
                      const bookName = isBookStartWithString ? splitted[0] :
                      (splitted[0] + " " + splitted[1]) 
                       const chapterNumber = _.last(splitted);
-                    
+                      this.isBookMarkedChapter(
+                        bookName,
+                        chapterNumber
+                      );
                     this.props.selectChapter(chapterNumber)
                      this.props.loadChapterContent(
                       bookName,
