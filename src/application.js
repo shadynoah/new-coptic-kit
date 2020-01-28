@@ -1,19 +1,12 @@
-import { createStore, applyMiddleware, Store } from "redux";
+import NetInfo from "@react-native-community/netinfo";
+import * as FileSystem from "expo-file-system";
+import { AsyncStorage } from "react-native";
+import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
-import * as FileSystem from "expo-file-system";
 // import { NotificationManager } from "./services/pushNotification";
-import {
-  State,
-  reducer,
-  toggleIsDownloading,
-  updateConnectionStatus,
-  loadPlan,
-  loadArabicPlan
-} from "./state";
-import { AsyncStorage, Alert } from "react-native";
-import NetInfo from "@react-native-community/netinfo";
+import { loadArabicPlan, loadPlan, reducer, toggleIsDownloading, updateConnectionStatus } from "./state";
 
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 export class Application {

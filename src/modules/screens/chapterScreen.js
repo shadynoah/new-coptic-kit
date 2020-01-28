@@ -1,33 +1,14 @@
 import React, { Component } from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Button,
-  FlatList,
-  ImageBackground
-} from "react-native";
-import { WebBrowser } from "expo";
-
-import { MonoText } from "../../../components/StyledText";
-import NavigatorService from "../../services/navigator.js";
-import { State, IBOOK } from "../../state";
+import { FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
 import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
-import {
-  toggleLoading,
-  selectBook,
-  selectChapter,
-  loadChapterContent
-} from "../../state/content/action-creators";
-import _ from "lodash";
+import { bindActionCreators, Dispatch } from "redux";
+import NavigatorService from "../../services/navigator.js";
+import { Helpers } from "../../services/utilities/helpers";
+import { IBOOK, State } from "../../state";
+import { loadChapterContent, selectBook, selectChapter, toggleLoading } from "../../state/content/action-creators";
+
 const customData = require("../../data/data-structure.json");
 var myArray = { matta: 5, loca: 20 };
-import { Helpers } from "../../services/utilities/helpers";
 class chapterScreenContainer extends Component {
   constructor() {
     super();

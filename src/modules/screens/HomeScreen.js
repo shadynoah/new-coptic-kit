@@ -1,33 +1,17 @@
+import { Linking } from "expo";
+import Constants from "expo-constants";
+import * as FileSystem from "expo-file-system";
+import { Switch } from "native-base";
 import React, { Component } from "react";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  ImageBackground,
-  Dimensions,
-  Button
-} from "react-native";
+import { AsyncStorage, Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
+import { ModalTypesEnum } from "../../enums";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
-import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
-import {
-  toggleLoading,
-  selectBook,
-  loadChapterContent,
-  toggleIsDownloading,
-  toggleLanguage
-} from "../../state/content/action-creators";
-import Constants from "expo-constants";
-import { Linking } from "expo";
-import * as FileSystem from "expo-file-system";
-import { AsyncStorage } from "react-native";
-import { LoadingContentModal } from "../components/loading-content-modal";
-import { ModalTypesEnum } from "../../enums";
+import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { BaseModal } from "../components/base-modal";
-import { Switch } from "native-base";
+import { LoadingContentModal } from "../components/loading-content-modal";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -90,9 +74,6 @@ class HomeScreenContainer extends Component {
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الرئيسية" : "Home"
     });
-    // console.log("-----Location------",Location)
-    //   console.log("homee")
-    // NotificationManager.registerForPushNotifications()
   }
   async downloadEnglish() {
     await FileSystem.downloadAsync(
@@ -100,8 +81,6 @@ class HomeScreenContainer extends Component {
       FileSystem.documentDirectory + "content"
     )
       .then(async ({ uri }) => {
-        console.log("uri from downloadEnglish home  ");
-        // let stringcontent = await FileSystem.readAsStringAsync(uri);
         await AsyncStorage.setItem("English", uri);
       })
       .catch(error => {
@@ -115,9 +94,6 @@ class HomeScreenContainer extends Component {
       FileSystem.documentDirectory + "contentAR"
     )
       .then(async ({ uri }) => {
-        console.log("uri from downloadArabic home  ");
-
-        // let stringcontent = await FileSystem.readAsStringAsync(uri);
         AsyncStorage.setItem("ArabicUpdated1", uri);
       })
       .catch(error => {
@@ -125,9 +101,6 @@ class HomeScreenContainer extends Component {
       });
   }
   render() {
-    // console.log("is connected from homescreen--" , this.props.isConnected)
-    // if(this.props.isConnected == false)
-    // alert("false home")
     const loadingModal = this.state.isDownloadling ? (
       <LoadingContentModal
         isVisible={this.state.isDownloadling}

@@ -1,10 +1,10 @@
-// @Flow
+
 
 import * as FileSystem from "expo-file-system";
 import { SQLite } from "expo-sqlite";
 import _ from "lodash";
-// var data = require("../../data/content.json");
-// var dataAr = require("../../data/content-ar.json");
+
+
 import { AsyncStorage } from "react-native";
 import * as types from "./actions";
 import { IBOOK } from "./state";
@@ -53,7 +53,7 @@ export async function loadChapterContent(
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {
               contentOfSelectedChapter = _.map(chapter.verses, verse => {
-                // return <Text key={index}> <Text style={{ fontWeight: 'bold' }}>{index++}</Text> {verse.text}</Text>
+                
                 return {
                   key: verse.num,
                   text: verse.text,
@@ -75,7 +75,7 @@ export async function loadChapterContent(
           _.map(book.chapters, chapter => {
             if (chapter.num == chapterNumber) {
               contentOfSelectedChapter = _.map(chapter.verses, verse => {
-                // return <Text key={index}> <Text style={{ fontWeight: 'bold' }}>{index++}</Text> {verse.text}</Text>
+                
                 return {
                   key: verse.num,
                   text: verse.text,
@@ -108,9 +108,7 @@ export function loadNotes() {
   var arrayOfNotes = [];
   db.transaction(tx => {
     tx.executeSql("select * from Notes", [], (_, { rows }) => {
-      // console.log(JSON.stringify(rows))
       arrayOfNotes = rows._array;
-      // console.log("======object from action creator ====", rows._array)
     });
   }, null);
   return {
@@ -120,7 +118,6 @@ export function loadNotes() {
 }
 function convertStringToArray(data) {
   if (typeof data != "string") return data;
-  // console.log("=========data from convertStringToArray=== ", data)
   let all = [];
   if (data && data.length > 0) {
     all = _.map(data.split(","), xx => {
@@ -157,13 +154,11 @@ export async function insertBookMark(
 ) {
   try {
     const { bookName, numberOfChapters } = selectedBook;
-    console.log("--from insert bookmark---", selectedBook);
     return async dispatch => {
       await executeSql(
         "INSERT into bookmarks (bookName , chapterNumber , isArabic ,numberOfChapters) values (?,?,?, ?)",
         [bookName, numberOfSelectedChapter, isArabic, numberOfChapters]
       ).then(() => {
-        console.log("insert bookmark succeeded");
         dispatch({
           type: types.INSERT_BOOKMARK_SUCCESS
         });
@@ -182,7 +177,6 @@ export async function deleteBookMark(bookName, numberOfSelectedChapter) {
         "delete from bookmarks where bookName = (?) and chapterNumber = (?)",
         [bookName, numberOfSelectedChapter]
       ).then(() => {
-        // console.log("delete bookmark succeeded");
         dispatch({
           type: types.DELETE_BOOKMARK_SUCESS
         });
@@ -207,7 +201,6 @@ export async function insertNote(
         "INSERT into Notes (title , versesText,bookName , chapterNumber , isArabic) values (?, ?,? ,? ,?)",
         [title, text, bookName, numberOfSelectedChapter, isArabic]
       ).then(() => {
-        // console.log("insert note succeeded");
         dispatch({
           type: types.INSERT_NOTE_SUCCESS
         });
@@ -238,7 +231,6 @@ export function toggleIsDownloading() {
   };
 }
 export function updateConnectionStatus(status) {
-  // console.log("status from action creator" , status)
   return {
     type: types.CONNECTION_STATUS,
     payload: status

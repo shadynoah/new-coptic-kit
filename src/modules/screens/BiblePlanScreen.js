@@ -8,9 +8,7 @@ import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
-import { inializeArabicPlan, inializePlan,
-   makeChapterChecked, saveCheckedListIntoLocalStorage,
-    selectChapterOfDayPlan, selectDayOfPlan , inializeCheckedList } from "../../state/plan/action-creators";
+import { inializeArabicPlan, inializeCheckedList, inializePlan, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -61,9 +59,11 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-   await AsyncStorage.removeItem("ArabicPlan");
-   this.props.inializeArabicPlan()
+  //  await AsyncStorage.removeItem("ArabicPlan");
+  //  await AsyncStorage.removeItem("Plan");
 
+  //  this.props.inializeArabicPlan();
+  //  this.props.inializeCheckedList();
    
   //  await AsyncStorage.removeItem("list")
     // this.props.inializeCheckedList();
@@ -74,30 +74,30 @@ class BiblePlanScreenContainer extends Component {
       }
       else 
       this.props.inializePlan();
-    //  await AsyncStorage.remo("list" , JSON.stringify(this.state.checkedList))
-    // await AsyncStorage.setItem("list" , JSON.stringify(this.state.checkedList))
-  //  console.log("plan" , JSON.parse(await AsyncStorage.getItem("plan")) ) 
     this.setState({
-       checkedList: JSON.parse(await AsyncStorage.getItem("list"))
+       checkedList: await this.getCheckedList(this.props.isArabic)
     })
     this.selectDay(0);
     this.props.navigation.setParams({
       title: this.props.isArabic ? " خطه القراءه" : "bible plan"
     });
   }
-  // componentDidUpdate(prevProps) {
-  //   if(this.props.isArabic)
-  //    this.setState({
-  //      checkedList: _.times(365, _.constant([false]))
-  //    })
-  // }
-
   selectDay = dayNumber => {
     this.props.selectDayOfPlan(dayNumber , this.props.isArabic);
     // this.setState({
     //   checkedList:[[true, true] , [false, true]]
     // })
   };
+  async getCheckedList(isArabic) {
+    if(isArabic)
+    {
+      return JSON.parse(await AsyncStorage.getItem("arabicList"))
+    }
+    else 
+    {
+      return JSON.parse(await AsyncStorage.getItem("list"))
+    }
+  }
   render() {
     const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
     return (
@@ -144,7 +144,7 @@ class BiblePlanScreenContainer extends Component {
                            refresh: !this.state.refresh
                         };
                       },
-                     () => this.props.saveCheckedListIntoLocalStorage(list)
+                     () => this.props.saveCheckedListIntoLocalStorage(list , this.props.isArabic)
                       );
                     
                       // this.setState({
@@ -159,7 +159,6 @@ class BiblePlanScreenContainer extends Component {
                     () =>{
                       const splitted = selectedDayContent[index].split(" ");
                       let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                      console.log("------------y-------" , isBookStartWithString)
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
                        const chapterNumber = _.last(splitted)

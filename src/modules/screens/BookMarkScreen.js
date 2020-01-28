@@ -1,45 +1,16 @@
-import React, { Component } from "react";
-import { FlatList, StyleSheet, ImageBackground, Alert } from "react-native";
-import {
-  Container,
-  Button,
-  Icon,
-  Text,
-  Footer,
-  FooterTab,
-  Input,
-  Thumbnail,
-  Item,
-  Content,
-  connectStyle,
-  Header,
-  Title,
-  Left,
-  Body,
-  Right,
-  Spinner,
-  View,
-  Picker,
-  Toast
-} from "native-base";
-
-import Modal from "react-native-modal";
-
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { bindActionCreators } from "redux";
-import { NavigationStackScreenOptions } from "react-navigation";
-import _ from "lodash";
-import { SQLite } from "expo-sqlite";
 import Constants from "expo-constants";
-import { BookMarkItem } from "../components/bookmark-item";
-const db = SQLite.openDatabase("db.db");
-import {
-  loadChapterContent,
-  selectBook
-} from "../../state/content/action-creators";
-import { State, IBOOK } from "../../state";
+import { SQLite } from "expo-sqlite";
+import React, { Component } from "react";
+import { FlatList, ImageBackground } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
 import NavigatorService from "../../services/navigator.js";
+import { State } from "../../state";
+import { loadChapterContent, selectBook } from "../../state/content/action-creators";
+import { BookMarkItem } from "../components/bookmark-item";
+
+
+const db = SQLite.openDatabase("db.db");
 
 // import Toast from 'react-native-whc-toast'
 const SUPPORTED_ORIENTATIONS = [

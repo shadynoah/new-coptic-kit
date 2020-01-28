@@ -1,17 +1,13 @@
-// @Flow
+
 
 import _ from "lodash";
-// var data = require("../../data/content.json");
-// var dataAr = require("../../data/content-ar.json");
+
+
 import { AsyncStorage } from "react-native";
-import { ArabicContent, checkedList, content } from '../../constants';
+import { arabicCheckedList, ArabicContent, checkedList, content } from '../../constants';
 import * as types from "./actions";
 
 export async function loadPlan() {
-  // console.log("enter loadPlan");
-  // let payloadP = require("../../data/plan.json");
-  // console.log("payloadP" ,payloadP)
-  // console.log("payloadPx",payloadPx)
   let payloadPx =  JSON.parse(await AsyncStorage.getItem("plan"))
   return {
     type: types.LOAD_PLAN_CHAPTERS,
@@ -25,7 +21,6 @@ export function selectDayOfPlan(dayNumber , isArabic = false){
     planContent =  getState().plan.ArabicPlanContent;
     else
     planContent =  getState().plan.planContent;
-    // console.log("plancontent from select day of plan" , planContent)
    let content  = planContent[dayNumber].dayChapters
    let payload = {
      selectedDay:dayNumber ,
@@ -57,7 +52,6 @@ export async function makeChapterChecked (indexOfChapter) {
 
 export async function loadPlanCheckedList (){
  let res = await AsyncStorage.getItem("plan")
-//  console.log("from action creator" , res)
   return {
     type: types.LOAD_PLAN_CHECKED_LIST,
     payload:res
@@ -72,12 +66,25 @@ export async function inializePlan(){
 export async function inializeCheckedList(){
   return async dispatch => {
       await AsyncStorage.setItem("list" , JSON.stringify(checkedList));
+      await AsyncStorage.setItem("arabicList" , JSON.stringify(arabicCheckedList));
+
   }
 }
-export async function saveCheckedListIntoLocalStorage(list){
+export async function inializeArabicCheckedList(){
   return async dispatch => {
-    console.log("list from saveCheckedListIntoLocalStorage " ,list)
-    await AsyncStorage.setItem("list" , JSON.stringify(list));
+      await AsyncStorage.setItem("arabicList" , JSON.stringify(arabicCheckedList));
+  }
+}
+export async function saveCheckedListIntoLocalStorage(list , isArabic){
+  return async (dispatch, getState) => {
+    if(isArabic)
+    {
+      await AsyncStorage.setItem("arabicList" , JSON.stringify(list));
+    }
+    else
+    {
+      await AsyncStorage.setItem("list" , JSON.stringify(list));
+    }
 }
 }
 export  function selectChapterOfDayPlan (IndexOfChapter) {
@@ -99,10 +106,6 @@ export async function inializeArabicPlan(){
 }
 
 export async function loadArabicPlan() {
-  // console.log("enter loadPlan");
-  // let payloadP = require("../../data/plan.json");
-  // console.log("payloadP" ,payloadP)
-  // console.log("payloadPx",payloadPx)
   let payload =  JSON.parse(await AsyncStorage.getItem("ArabicPlan"))
   return {
     type: types.LOAD_ARABIC_PLAN_CHAPTERS,

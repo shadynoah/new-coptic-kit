@@ -1,9 +1,9 @@
 import Constants from "expo-constants";
-import _ from "lodash";
 import { SQLite } from "expo-sqlite";
+import _ from "lodash";
 import { Button, Icon, Text } from "native-base";
 import React, { Component } from "react";
-import { AsyncStorage, ImageBackground, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { AsyncStorage, ImageBackground, ScrollView, View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { ModalTypesEnum } from "../../enums";
@@ -68,9 +68,6 @@ class verseScreenContainer extends Component {
  
   _storeHighlighted = async (type = "Highlight", verseNumArray) => {
     try {
-      alert("=====from  _storeHighlighted====" + verseNumArray )
-      alert("=====this.props.selectedBook.bookName====" + this.props.selectedBook.bookName )
-      // alert("=====  this.props.numberOfSelectedChapter.toString()====" +   this.props.numberOfSelectedChapter.toString() )
       await AsyncStorage.setItem(
         type +
           " " +
@@ -80,7 +77,7 @@ class verseScreenContainer extends Component {
         verseNumArray.toString()
       );
     } catch (error) {
-      // Error saving data
+      
       console.log("===error from _storeHighlighted ");
     }
   };
@@ -95,28 +92,27 @@ class verseScreenContainer extends Component {
         type + " " + x + " " + y.toString()
       );
       if (value !== null) {
-        alert("==========value======" + value)
         return value;
       }
     } catch (error) {
-      // Error retrieving data
+      
     }
   };
 
   async componentDidMount() {
-    // await AsyncStorage.clear();
+    
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
     });
     this.isBookMarkedChapter();
     db.transaction(tx => {
-      // tx.executeSql(
-      //     'DROP TABLE Notes'
-      // );
-      // tx.executeSql(
-      //     'DROP TABLE bookmark'
+      
+      
+      
+      
+      
 
-      // );
+      
       tx.executeSql(
         "create table if not exists Notes (id integer primary key not null,title text, versesText text,bookName text , chapterNumber integer,isArabic boolean);"
       );
@@ -124,7 +120,7 @@ class verseScreenContainer extends Component {
         "create table if not exists bookmarks (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean , numberOfChapters integer);"
       );
     });
-    // this._retrieveData();
+    
     var highlightedVersesOfStorage = this.convertStringToArray(
       await this._retrieveData()
     );
@@ -325,7 +321,7 @@ class verseScreenContainer extends Component {
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
                        const chapterNumber = _.last(splitted);
-                     //  alert("chapterNumber"  + chapterNumber);
+                     
                      this.props.selectChapter(chapterNumber)
                       this.props.loadChapterContent(
                        bookName,
@@ -398,7 +394,7 @@ class verseScreenContainer extends Component {
                      const bookName = isBookStartWithString ? splitted[0] :
                      (splitted[0] + " " + splitted[1]) 
                       const chapterNumber = _.last(splitted);
-                    //  alert("chapterNumber"  + chapterNumber);
+                    
                     this.props.selectChapter(chapterNumber)
                      this.props.loadChapterContent(
                       bookName,
@@ -423,7 +419,7 @@ class verseScreenContainer extends Component {
               flexDirection: "row",
               justifyContent: "center",
               marginTop: 10
-              //   backgroundColor: "blue"
+              
             }}
           >
             {this.state.isbookmark && (
@@ -483,7 +479,7 @@ class verseScreenContainer extends Component {
               style={{ fontSize: this.props.fontSizeOfText, lineHeight: 30+this.props.fontSizeOfText*.3 }}
             >
               {_.map(this.props.contentOfSelectedChapter, verse => {
-                //passed as 16
+                
 
                 return (
                   <Text
