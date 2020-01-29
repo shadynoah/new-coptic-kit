@@ -39,10 +39,11 @@ class BookMarkContainer extends Component {
   };
 
   componentDidMount() {
+    const { isArabic } = this.props;
     db.transaction(tx => {
       tx.executeSql(
         "select * from bookmarks where isArabic = (?)",
-        [this.props.isArabic],
+        [isArabic],
         (_, { rows }) => {
           this.setState({
             bookmarks: rows._array
@@ -113,8 +114,8 @@ class BookMarkContainer extends Component {
   }
 
   render() {
-    let { loadChapterContent } = this.props;
-
+    let { loadChapterContent , selectBook } = this.props;
+    let { bookmarks } = this.state;
     return (
       <ImageBackground
         source={require("../../../assets/images/background.jpg")}
@@ -128,14 +129,14 @@ class BookMarkContainer extends Component {
           }}
           initialNumToRender={15}
           //  data={notes.filter(n => n.date >= new Date())}
-          data={this.state.bookmarks}
+          data={bookmarks}
           keyExtractor={note => note.id.toString()}
           renderItem={({ item }) => (
             <BookMarkItem
               item={item}
               loadChapterContent={loadChapterContent}
               NavigatorService={NavigatorService}
-              selectBook={this.props.selectBook}
+              selectBook={selectBook}
               delete={this.delete.bind(this)}
             />
 

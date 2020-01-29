@@ -106,13 +106,6 @@ class verseScreenContainer extends Component {
     });
     this.isBookMarkedChapter();
     db.transaction(tx => {
-      
-      
-      
-      
-      
-
-      
       tx.executeSql(
         "create table if not exists Notes (id integer primary key not null,title text, versesText text,bookName text , chapterNumber integer,isArabic boolean);"
       );
@@ -120,7 +113,6 @@ class verseScreenContainer extends Component {
         "create table if not exists bookmarks (id integer primary key not null, bookName text , chapterNumber integer , isArabic boolean , numberOfChapters integer);"
       );
     });
-    
     var highlightedVersesOfStorage = this.convertStringToArray(
       await this._retrieveData()
     );
@@ -131,9 +123,10 @@ class verseScreenContainer extends Component {
     );
   }
   async componentWillReceiveProps(nextProps) {
+    const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
-      (this.props.numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
-      (this.props.selectedBook.bookName !== nextProps.selectedBook.bookName )
+      (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
+      (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
@@ -162,9 +155,9 @@ class verseScreenContainer extends Component {
     return all;
   }
   saveNote = text => {
-    let { selectedBook, numberOfSelectedChapter, isArabic } = this.props;
+    let { selectedBook, numberOfSelectedChapter, isArabic , insertNote } = this.props;
     let title = text.substring(0, 10);
-    this.props.insertNote(
+    insertNote(
       title,
       text,
       selectedBook.bookName,
@@ -262,10 +255,21 @@ class verseScreenContainer extends Component {
       numberOfSelectedChapter,
       isArabic,
       deleteBookMark,
-      insertBookMark
+      insertBookMark,
+      selectedDayContent,
+      selectChapterOfDayPlan,
+      selectedChapterIndex,
+      selectChapter,
+      loadChapterContent,
+      selectBook,
+      contentOfSelectedChapter,
+      fontSizeOfText
     } = this.props;
     let {
       isbookmark,
+      isVisible,
+      selectedVerses,
+      highlightedVerses
     } = this.state;
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
@@ -284,21 +288,21 @@ class verseScreenContainer extends Component {
               baseModalProperties={{
                 hadCloseHeader: true,
                 hasHeaderTitle: true,
-                headerTitle: this.props.isArabic ? "مُلاحَظة" : "Note",
+                headerTitle: isArabic ? "مُلاحَظة" : "Note",
                 toggleModal: () => this.setState({ isVisible: false }),
                 modalText:
-                  this.props.selectedBook.bookName +
-                  this.props.numberOfSelectedChapter.toString(),
+                  selectedBook.bookName +
+                  numberOfSelectedChapter.toString(),
                 hasFirstButton: true,
                 hasSecondButton: true,
-                secondButtonText: this.props.isArabic ? "إلغاء" : "Cancel",
+                secondButtonText: isArabic ? "إلغاء" : "Cancel",
                 onPressSecondBtn: () => this.setState({ isVisible: false }),
-                firstButtonText: this.props.isArabic ? "حفظ" : "Save",
+                firstButtonText: isArabic ? "حفظ" : "Save",
                 onPressFirstBtn: this.saveNote,
                 modalType: ModalTypesEnum.modalHasTwoButtons,
-                isArabic: this.props.isArabic
+                isArabic: isArabic
               }}
-              isVisible={this.state.isVisible}
+              isVisible={isVisible}
             />
             <View
               style={{
@@ -311,12 +315,12 @@ class verseScreenContainer extends Component {
                 black
                 transparent
                 onPress={async () => {
-                  if( this.props.selectedDayContent.length >0)
+                  if(selectedDayContent.length >0)
                   {
-                    if(this.props.selectedChapterIndex - 1 >= 0)
+                    if(selectedChapterIndex - 1 >= 0)
                     {
-                      this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex - 1 );
-                      const splitted = this.props.selectedDayContent[this.props.selectedChapterIndex - 1 ].split(" ");
+                     selectChapterOfDayPlan(selectedChapterIndex - 1 );
+                      const splitted = selectedDayContent[selectedChapterIndex - 1 ].split(" ");
                       let isBookStartWithString =  isNaN(parseInt(splitted[0]));
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
@@ -325,12 +329,12 @@ class verseScreenContainer extends Component {
                         bookName,
                         chapterNumber
                       );
-                     this.props.selectChapter(chapterNumber)
-                      this.props.loadChapterContent(
+                     selectChapter(chapterNumber)
+                       loadChapterContent(
                        bookName,
                        chapterNumber
                      );
-                     this.props.selectBook({
+                     selectBook({
                       "bookName": bookName,
                      })
                      var highlightedVersesOfStorage = this.convertStringToArray(
@@ -347,14 +351,14 @@ class verseScreenContainer extends Component {
                     }
                   }
                   else {
-                    if (this.props.numberOfSelectedChapter - 1 > 0) {
+                    if (numberOfSelectedChapter - 1 > 0) {
                       this.isBookMarkedChapter(
-                        this.props.selectedBook.bookName,
-                        this.props.numberOfSelectedChapter - 1
+                        selectedBook.bookName,
+                        numberOfSelectedChapter - 1
                       );
-                      this.props.loadChapterContent(
-                        this.props.selectedBook.bookName,
-                        this.props.numberOfSelectedChapter - 1
+                        loadChapterContent(
+                        selectedBook.bookName,
+                        numberOfSelectedChapter - 1
                       );
                     }
                   }
@@ -376,23 +380,23 @@ class verseScreenContainer extends Component {
                 transparent
                 onPress={() => {
                   if (
-                    this.props.numberOfSelectedChapter + 1 <=
-                    this.props.selectedBook.numberOfChapters
+                    numberOfSelectedChapter + 1 <=
+                    selectedBook.numberOfChapters
                   ) {
                     this.isBookMarkedChapter(
-                      this.props.selectedBook.bookName,
-                      this.props.numberOfSelectedChapter + 1
+                      selectedBook.bookName,
+                      numberOfSelectedChapter + 1
                     );
-                    this.props.loadChapterContent(
-                      this.props.selectedBook.bookName,
-                      this.props.numberOfSelectedChapter + 1
+                    loadChapterContent(
+                      selectedBook.bookName,
+                      numberOfSelectedChapter + 1
                     );
                   }
                   else {
-                   if(this.props.selectedChapterIndex + 1 < this.props.selectedDayContent.length)
+                   if(selectedChapterIndex + 1 < selectedDayContent.length)
                    {
-                     this.props.selectChapterOfDayPlan(this.props.selectedChapterIndex + 1 )
-                     const splitted = this.props.selectedDayContent[this.props.selectedChapterIndex + 1 ].split(" ");
+                     selectChapterOfDayPlan(selectedChapterIndex + 1 )
+                     const splitted = selectedDayContent[selectedChapterIndex + 1 ].split(" ");
                      let isBookStartWithString =  isNaN(parseInt(splitted[0]));
                      const bookName = isBookStartWithString ? splitted[0] :
                      (splitted[0] + " " + splitted[1]) 
@@ -401,12 +405,12 @@ class verseScreenContainer extends Component {
                         bookName,
                         chapterNumber
                       );
-                    this.props.selectChapter(chapterNumber)
-                     this.props.loadChapterContent(
+                    selectChapter(chapterNumber)
+                     loadChapterContent(
                       bookName,
                       chapterNumber
                     );
-                    this.props.selectBook({
+                    selectBook({
                       "bookName": bookName,
                      })
                    }
@@ -428,7 +432,7 @@ class verseScreenContainer extends Component {
               
             }}
           >
-            {this.state.isbookmark && (
+            {isbookmark && (
               <View>
                 <Icon
                   style={{
@@ -451,8 +455,8 @@ class verseScreenContainer extends Component {
             >
               <Text style={{ fontSize: 16, alignItems: "center" }}>
                 {" "}
-                {this.props.selectedBook.bookName}{" "}
-                {this.props.numberOfSelectedChapter}
+                {selectedBook.bookName}{" "}
+                {numberOfSelectedChapter}
               </Text>
             </View>
             <View
@@ -482,16 +486,16 @@ class verseScreenContainer extends Component {
 
           <ScrollView contentContainerStyle={{ margin: 15, paddingBottom: 30 }}>
             <Text
-              style={{ fontSize: this.props.fontSizeOfText, lineHeight: 30+this.props.fontSizeOfText*.3 }}
+              style={{ fontSize: fontSizeOfText, lineHeight: 30+fontSizeOfText*.3 }}
             >
-              {_.map(this.props.contentOfSelectedChapter, verse => {
+              {_.map(contentOfSelectedChapter, verse => {
                 
 
                 return (
                   <Text
-                    style={{ fontSize: this.props.fontSizeOfText }}
+                    style={{ fontSize: fontSizeOfText }}
                     onPress={async () => {
-                      if (this.state.selectedVerses.indexOf(verse.num) == -1) {
+                      if (selectedVerses.indexOf(verse.num) == -1) {
                         this.setState(
                           {
                             selectedVerses: [
@@ -502,7 +506,7 @@ class verseScreenContainer extends Component {
                           () => {}
                         );
                       } else {
-                        var a = this.state.selectedVerses;
+                        var a = selectedVerses;
                         var index = a.indexOf(verse.num);
                         a.splice(index, 1);
                         this.setState({
@@ -516,7 +520,7 @@ class verseScreenContainer extends Component {
                       style={{
                         fontSize: this.props.fontSizeOfText,
                         fontWeight: "bold",
-                        backgroundColor: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                        backgroundColor: Helpers.validateVerse(highlightedVerses, selectedVerses,
                            verse.num)
                           .backgroundColor
                       }}
@@ -524,16 +528,16 @@ class verseScreenContainer extends Component {
                       {" "}
                       {Helpers.parseToArabic(
                         indexOfVerse++,
-                        this.props.isArabic
+                        isArabic
                       )}{" "}
                     </Text>
                     <Text
                       style={{
-                        fontSize: this.props.fontSizeOfText,
-                        backgroundColor: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                        fontSize: fontSizeOfText,
+                        backgroundColor: Helpers.validateVerse(highlightedVerses, selectedVerses,
                            verse.num)
                           .backgroundColor,
-                        textDecorationLine: Helpers.validateVerse(this.state.highlightedVerses, this.state.selectedVerses,
+                        textDecorationLine: Helpers.validateVerse(highlightedVerses, selectedVerses,
                            verse.num)
                           .textDecorationLine,
                         textAlign: "justify"

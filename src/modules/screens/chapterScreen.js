@@ -52,20 +52,17 @@ class chapterScreenContainer extends Component {
       title: isArabic ? "الاصحاحات" : "chapters"
     });
   }
-
-  props: {
-    selectedBook: IBOOK
-  };
   render() {
+    let { selectedBook , isArabic , fontSizeOfText } = this.props;
     var x = [];
     for (
       let index = 1;
-      index <= this.props.selectedBook.numberOfChapters;
+      index <= selectedBook.numberOfChapters;
       index++
     ) {
       x.push({
         key: `${index}`,
-        name: this.props.isArabic
+        name: isArabic
           ? `الاصحاح ${Helpers.parseToArabic(index, true)}`
           : `chapter ${index}`,
         number: index
@@ -95,19 +92,16 @@ class chapterScreenContainer extends Component {
             renderItem={({ item }) => (
               <Text
                 onPress={() => {
-                  // this.props.selectChapter(item.number);
-                  // console.log("this.props.selectedBook.bookName", this.props.selectedBook.bookName);
-                  // console.log("item.number",  item.number)
-                  this.props.loadChapterContent(
-                    this.props.selectedBook.bookName,
+                  loadChapterContent(
+                    selectedBook.bookName,
                     item.number
                   );
                   NavigatorService.navigate("VerseScreen");
                 }}
                 style={{
                   padding: 10,
-                  fontSize: this.props.fontSizeOfText,
-                  height:  44 + this.props.fontSizeOfText*0.4,
+                  fontSize: fontSizeOfText,
+                  height:  44 + fontSizeOfText*0.4,
                  
                 }}
               >

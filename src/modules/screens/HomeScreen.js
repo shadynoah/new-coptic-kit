@@ -71,8 +71,9 @@ class HomeScreenContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? "الرئيسية" : "Home"
+    const { navigation , isArabic } = this.props;
+    navigation.setParams({
+      title: isArabic ? "الرئيسية" : "Home"
     });
   }
   async downloadEnglish() {
@@ -101,14 +102,16 @@ class HomeScreenContainer extends Component {
       });
   }
   render() {
-    const loadingModal = this.state.isDownloadling ? (
+    const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
+    const { isDownloadling , isWarningModalVisible } = this.state;
+    const loadingModal = isDownloadling ? (
       <LoadingContentModal
-        isVisible={this.state.isDownloadling}
+        isVisible={isDownloadling}
         message="Loading data , please make sure you are connected to the internet..."
       />
     ) : null;
     const warningLostConnectionModal =
-      !this.props.isConnected && this.state.isWarningModalVisible ? (
+      !isConnected && isWarningModalVisible ? (
         <BaseModal
           baseModalProperties={{
             hadCloseHeader: true,
@@ -124,9 +127,9 @@ class HomeScreenContainer extends Component {
             modalType: ModalTypesEnum.warningModal
           }}
           isVisible={
-            !this.props.isConnected && this.state.isWarningModalVisible
+            !isConnected && isWarningModalVisible
           }
-          isArabic={this.props.isArabic}
+          isArabic={isArabic}
         />
       ) : null;
 
@@ -160,12 +163,12 @@ class HomeScreenContainer extends Component {
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
-                this.props.navigation.setParams({
-                  title: this.props.isArabic ? "الرئيسية" : "Home"
+               navigation.setParams({
+                  title: isArabic ? "الرئيسية" : "Home"
                 });
-                this.props.toggleLanguage();
+                toggleLanguage();
               }}
-              value={this.props.isArabic}
+              value={isArabic}
             />
             <Text style={{ color: "white", fontWeight: "900" }}>عربي</Text>
           </View>
@@ -183,7 +186,7 @@ class HomeScreenContainer extends Component {
               style={{ marginRight: 10 }}
               onPress={() =>
                 Linking.openURL(
-                  this.props.isArabic
+                  isArabic
                     ? "https://m.facebook.com/القمص-جرجس-جبرائيل-241119892976029/"
                     : "https://m.facebook.com/Fr-George-DMin-1693643244259588/"
                 )
@@ -242,9 +245,9 @@ class HomeScreenContainer extends Component {
                       isWarningModalVisible: true
                     });
                   } else {
-                    this.props.toggleIsDownloading();
+                    toggleIsDownloading();
                     await this.downloadEnglish();
-                    this.props.toggleIsDownloading();
+                    toggleIsDownloading();
                   }
                 }
                 if ((await AsyncStorage.getItem("ArabicUpdated1")) == null) {
@@ -253,9 +256,9 @@ class HomeScreenContainer extends Component {
                       isWarningModalVisible: true
                     });
                   } else {
-                    this.props.toggleIsDownloading();
+                    toggleIsDownloading();
                     await this.downloadArabic();
-                    this.props.toggleIsDownloading();
+                    toggleIsDownloading();
                   }
                 } else NavigatorService.navigate("BookScreen");
               }}
