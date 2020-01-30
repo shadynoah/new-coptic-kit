@@ -1,14 +1,33 @@
 import React, { Component } from "react";
-import { FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
-import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
-import NavigatorService from "../../services/navigator.js";
-import { Helpers } from "../../services/utilities/helpers";
-import { IBOOK, State } from "../../state";
-import { loadChapterContent, selectBook, selectChapter, toggleLoading } from "../../state/content/action-creators";
+import {
+  Image,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Button,
+  FlatList,
+  ImageBackground
+} from "react-native";
+import { WebBrowser } from "expo";
 
+import { MonoText } from "../../../components/StyledText";
+import NavigatorService from "../../services/navigator.js";
+import { State, IBOOK } from "../../state";
+import { connect } from "react-redux";
+import { Dispatch, bindActionCreators } from "redux";
+import {
+  toggleLoading,
+  selectBook,
+  selectChapter,
+  loadChapterContent
+} from "../../state/content/action-creators";
+import _ from "lodash";
 const customData = require("../../data/data-structure.json");
 var myArray = { matta: 5, loca: 20 };
+import { Helpers } from "../../services/utilities/helpers";
 class chapterScreenContainer extends Component {
   constructor() {
     super();
@@ -52,17 +71,20 @@ class chapterScreenContainer extends Component {
       title: isArabic ? "الاصحاحات" : "chapters"
     });
   }
+
+  props: {
+    selectedBook: IBOOK
+  };
   render() {
-    let { selectedBook , isArabic , fontSizeOfText } = this.props;
     var x = [];
     for (
       let index = 1;
-      index <= selectedBook.numberOfChapters;
+      index <= this.props.selectedBook.numberOfChapters;
       index++
     ) {
       x.push({
         key: `${index}`,
-        name: isArabic
+        name: this.props.isArabic
           ? `الاصحاح ${Helpers.parseToArabic(index, true)}`
           : `chapter ${index}`,
         number: index
@@ -92,16 +114,19 @@ class chapterScreenContainer extends Component {
             renderItem={({ item }) => (
               <Text
                 onPress={() => {
-                  loadChapterContent(
-                    selectedBook.bookName,
+                  // this.props.selectChapter(item.number);
+                  // console.log("this.props.selectedBook.bookName", this.props.selectedBook.bookName);
+                  // console.log("item.number",  item.number)
+                  this.props.loadChapterContent(
+                    this.props.selectedBook.bookName,
                     item.number
                   );
                   NavigatorService.navigate("VerseScreen");
                 }}
                 style={{
                   padding: 10,
-                  fontSize: fontSizeOfText,
-                  height:  44 + fontSizeOfText*0.4,
+                  fontSize: this.props.fontSizeOfText,
+                  height:  44 + this.props.fontSizeOfText*0.4,
                  
                 }}
               >

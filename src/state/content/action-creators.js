@@ -65,11 +65,37 @@ export async function loadChapterContent(
         }
       });
     } else {
-      englishContent = JSON.parse(
+      // console.time("timer")
+      // let start = Date.now();
+      // let start = Date.now();
+            englishContent = JSON.parse(
         await FileSystem.readAsStringAsync(
           await AsyncStorage.getItem("English")
         )
       );
+      // let timer = Date.now() - start
+      // console.log("timer is" , timer)
+      // // console.timeEnd("Time this");
+      // // console.log("bookname" , bookName)
+      //  start = Date.now();
+      // let arr  = englishContent.books;
+      // for (let index = 0; index < arr.length; index++) {
+      //   if (arr[index].name == bookName) {
+      //     contentOfSelectedChapter = arr[index].chapters[chapterNumber].verses
+      //    break;
+      //   }
+      // }
+      //  timer = Date.now() - start
+      // console.log("timer is" , timer)
+      // _.map(englishContent.books, book => {
+      //   console.log("x")
+      // // console.log("englishContent.books" , englishContent.books)
+      //   if (book.name == bookName) {
+      //     contentOfSelectedChapter = book.chapters[chapterNumber].verses
+      //     return
+      //   }
+      // });
+ 
       _.map(englishContent.books, book => {
         if (book.name == bookName) {
           _.map(book.chapters, chapter => {
@@ -86,6 +112,7 @@ export async function loadChapterContent(
           });
         }
       });
+        //  alert(Date.now() - start);
     }
 
     dispatch({
