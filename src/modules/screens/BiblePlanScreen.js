@@ -164,7 +164,7 @@ class BiblePlanScreenContainer extends Component {
                       let isBookStartWithString =  isNaN(parseInt(splitted[0]));
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
-                       const chapterNumber = 1
+                       const chapterNumber = _.last(splitted)
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
                         "bookName": bookName,
