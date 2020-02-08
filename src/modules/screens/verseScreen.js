@@ -3,7 +3,7 @@ import { SQLite } from "expo-sqlite";
 import _ from "lodash";
 import { Button, Icon, Text } from "native-base";
 import React, { Component } from "react";
-import { AsyncStorage, ImageBackground, ScrollView, View } from "react-native";
+import { AsyncStorage, ImageBackground, ScrollView, View , TextInput , StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { ModalTypesEnum } from "../../enums";
@@ -13,9 +13,25 @@ import { deleteBookMark, insertBookMark, insertNote, loadChapterContent, loadNot
 import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
 import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
+const styles = StyleSheet.create({
+  textinput: {
+      borderBottomColor: 'purple',
+      textAlign: 'center',
+      borderBottomWidth: 2,
+      height: 40,
+      marginTop: 20,
+  },
+  text: {
+      textAlign: 'center',
+      fontSize: 16,
+      margin: 10,
+  } 
+});
 
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
+    datapos = {};
+    scrollref = null
   constructor() {
     super();
     this.state = {
@@ -26,7 +42,9 @@ class verseScreenContainer extends Component {
       refresh: true,
       bookMarkedVerses: [],
       isVisible: false,
-      isbookmark: false
+      isbookmark: false,
+      inputvalue:'',
+      view2LayoutProps:{}
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -100,7 +118,7 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
-    
+    this.datapos = {}
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
     });
@@ -122,12 +140,18 @@ class verseScreenContainer extends Component {
       }
     );
   }
-  async componentWillReceiveProps(nextProps) {
+  async componentWillReceiveProps(nextProps) { 
     const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
       (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
+    // alert("===y====" + y)
+    
+    setTimeout(() => {
+      let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+      y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+    }, 1500);
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
         (x = nextProps.selectedBook.bookName),
@@ -249,6 +273,10 @@ class verseScreenContainer extends Component {
    
     this._retrieveData();
   }
+  onLayout(event , num) {
+    const {x, y, width} = event.nativeEvent.layout;
+    this.datapos[num]=y
+  }
   render() {
     let {
       selectedBook,
@@ -315,6 +343,7 @@ class verseScreenContainer extends Component {
                 black
                 transparent
                 onPress={async () => {
+                  this.datapos = {}
                   if(selectedDayContent.length >0)
                   {
                     if(selectedChapterIndex - 1 >= 0)
@@ -379,6 +408,7 @@ class verseScreenContainer extends Component {
               black
                 transparent
                 onPress={() => {
+                  this.datapos = {}
                   if (
                     numberOfSelectedChapter + 1 <=
                     selectedBook.numberOfChapters
@@ -483,17 +513,27 @@ class verseScreenContainer extends Component {
               </Button>
             </View>
           </View>
-
-          <ScrollView contentContainerStyle={{ margin: 15, paddingBottom: 30 }}>
-            <Text
-              style={{ fontSize: fontSizeOfText, lineHeight: 30+fontSizeOfText*.3 }}
-            >
+          {/* <TextInput style={styles.textinput}
+                    value={this.state.inputvalue}
+                    onChangeText={(text) => {
+                        // alert(JSON.stringify(this.datapos))
+                        this.setState({inputvalue: text});
+                        let y = 288
+                        // alert("===y====" + y)
+                        // y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+                    }}
+                /> */}
+          <ScrollView 
+          ref={(ref) => this.scrollref = ref}
+          contentContainerStyle={{ margin: 15, paddingBottom: 30 , lineHeight: 30+fontSizeOfText*.3 }}>
               {_.map(contentOfSelectedChapter, verse => {
                 
 
                 return (
                   <Text
-                    style={{ fontSize: fontSizeOfText }}
+                    onLayout={e => this.onLayout(e , verse.num)}
+                    style={{ fontSize: fontSizeOfText , lineHeight: 30+fontSizeOfText*.3 , flexWrap:'wrap'  }}
+                    // onLayout={e => this.onLayout(e)}
                     onPress={async () => {
                       if (selectedVerses.indexOf(verse.num) == -1) {
                         this.setState(
@@ -548,7 +588,6 @@ class verseScreenContainer extends Component {
                   </Text>
                 );
               })}
-            </Text>
           </ScrollView>
         </View>
       </ImageBackground>

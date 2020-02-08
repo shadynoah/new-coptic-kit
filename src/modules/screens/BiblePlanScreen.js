@@ -60,7 +60,7 @@ class BiblePlanScreenContainer extends Component {
 
    async componentDidMount() {
   //  await AsyncStorage.removeItem("ArabicPlan");
-  //  await AsyncStorage.removeItem("Plan");
+   await AsyncStorage.removeItem("Plan");
 
   //  this.props.inializeArabicPlan();
   //  this.props.inializeCheckedList();
@@ -157,11 +157,14 @@ class BiblePlanScreenContainer extends Component {
                   <Text key={index}
                   onPress = {
                     () =>{
+                      // if(selectedDayContent[index].indexOf(":") > -1)
+                      // alert("xx")
                       const splitted = selectedDayContent[index].split(" ");
+                      console.log("splitted===" , splitted)
                       let isBookStartWithString =  isNaN(parseInt(splitted[0]));
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
-                       const chapterNumber = _.last(splitted)
+                       const chapterNumber = 1
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
                         "bookName": bookName,
@@ -171,7 +174,9 @@ class BiblePlanScreenContainer extends Component {
                         chapterNumber,
                         true
                        );
-                     NavigatorService.navigate("VerseScreen");
+                     NavigatorService.navigate("VerseScreen" , {
+                       startVerseNumder:10
+                     });
                     }
                   }
                   >{item}</Text>

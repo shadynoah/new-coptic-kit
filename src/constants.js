@@ -2,7 +2,7 @@ import _ from "lodash";
 export const content = [
   {
     key: 1,
-    dayChapters: ["Psalm 1", "Genesis 1", "Genesis 2", "Matthew 1"]
+    dayChapters: ["Psalm 1:3-24", "Genesis 1", "Genesis 2", "Matthew 1"]
   },
   {
     key: 2,
