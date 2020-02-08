@@ -13,6 +13,8 @@ import { deleteBookMark, insertBookMark, insertNote, loadChapterContent, loadNot
 import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
 import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
+import NavigatorService from "../../services/navigator.js";
+
 const styles = StyleSheet.create({
   textinput: {
       borderBottomColor: 'purple',
@@ -376,7 +378,8 @@ class verseScreenContainer extends Component {
                     );
                     }
                     else{
-                      alert("this is first chapter in this day")
+                      // alert("this is first chapter in this day");
+                      NavigatorService.navigate("BiblePlanScreen")
                     }
                   }
                   else {
@@ -445,7 +448,9 @@ class verseScreenContainer extends Component {
                      })
                    }
                    else {
-                     alert("this is last chapter in this day")
+                    //  alert("this is last chapter in this day");
+                    selectChapterOfDayPlan(selectedChapterIndex + 1 )
+                     NavigatorService.navigate("BiblePlanScreen")
                    }
                   }
                 }}

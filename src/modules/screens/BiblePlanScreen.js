@@ -82,6 +82,20 @@ class BiblePlanScreenContainer extends Component {
       title: this.props.isArabic ? " خطه القراءه" : "bible plan"
     });
   }
+
+  componentDidUpdate(prevPros){
+  
+    let { selectedChapterIndex: preSelectedChapterIndex } = prevPros;
+    let { selectedChapterIndex } = this.props;
+    console.log("did update");
+    console.log("did preSelectedChapterIndex" , preSelectedChapterIndex);
+    console.log("did currrent" , selectedChapterIndex);
+    if(selectedChapterIndex > preSelectedChapterIndex)
+    {
+     this.setCheckedList(preSelectedChapterIndex , true)
+    }
+
+  }
   selectDay = dayNumber => {
     this.props.selectDayOfPlan(dayNumber , this.props.isArabic);
     // this.setState({
@@ -98,8 +112,37 @@ class BiblePlanScreenContainer extends Component {
       return JSON.parse(await AsyncStorage.getItem("list"))
     }
   }
+  setCheckedList(index , naviagtePlan = false){
+    const { selectedDay , saveCheckedListIntoLocalStorage , isArabic } = this.props;
+    let copy = this.state.checkedList[selectedDay];
+    if(copy[index] && !naviagtePlan)
+     copy[index] = false;
+     else 
+     copy[index] = true;
+     let list = []
+     this.setState(state => {
+       list = state.checkedList.map((item, index) => {
+        if(index === selectedDay)
+        return copy;
+        else return item
+      });
+      return {
+        list,
+         refresh: !this.state.refresh
+      };
+    },
+   () => saveCheckedListIntoLocalStorage(list , isArabic)
+    );
+  
+    // this.setState({
+    //   refresh: !this.state.refresh
+    // })
+    this.props.makeChapterChecked(index);
+  }
+
   render() {
-    const { selectedDayContent , selectChapterOfDayPlan }  = this.props;
+    const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex }  = this.props;
+    console.log("selectedChapterIndex" , selectedChapterIndex)
     return (
       <ImageBackground
         source={require("../../../assets/images/background.jpg")}
@@ -127,30 +170,31 @@ class BiblePlanScreenContainer extends Component {
                       borderColor: "black"
                     }}
                     onPress={() => {
-                      let copy = this.state.checkedList[this.props.selectedDay];
-                      if(copy[index])
-                       copy[index] = false;
-                       else 
-                       copy[index] = true;
-                       let list = []
-                       this.setState(state => {
-                         list = state.checkedList.map((item, index) => {
-                          if(index === this.props.selectedDay)
-                          return copy;
-                          else return item
-                        });
-                        return {
-                          list,
-                           refresh: !this.state.refresh
-                        };
-                      },
-                     () => this.props.saveCheckedListIntoLocalStorage(list , this.props.isArabic)
-                      );
+                      this.setCheckedList(index);
+                    //   let copy = this.state.checkedList[this.props.selectedDay];
+                    //   if(copy[index])
+                    //    copy[index] = false;
+                    //    else 
+                    //    copy[index] = true;
+                    //    let list = []
+                    //    this.setState(state => {
+                    //      list = state.checkedList.map((item, index) => {
+                    //       if(index === this.props.selectedDay)
+                    //       return copy;
+                    //       else return item
+                    //     });
+                    //     return {
+                    //       list,
+                    //        refresh: !this.state.refresh
+                    //     };
+                    //   },
+                    //  () => this.props.saveCheckedListIntoLocalStorage(list , this.props.isArabic)
+                    //   );
                     
-                      // this.setState({
-                      //   refresh: !this.state.refresh
-                      // })
-                      this.props.makeChapterChecked(index);
+                    //   // this.setState({
+                    //   //   refresh: !this.state.refresh
+                    //   // })
+                    //   this.props.makeChapterChecked(index);
                     }}
                     checked={this.state.checkedList[this.props.selectedDay][index]}
                   />
