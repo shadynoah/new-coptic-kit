@@ -9,8 +9,6 @@ import { AsyncStorage } from "react-native";
 import * as types from "./actions";
 import { IBOOK } from "./state";
 
-
-
 const db = SQLite.openDatabase("db.db");
 export function toggleLoading() {
   return { type: types.CONTENT_LOADING };
@@ -70,7 +68,7 @@ export async function loadChapterContent(
       // let start = Date.now();
             englishContent = JSON.parse(
         await FileSystem.readAsStringAsync(
-          await AsyncStorage.getItem("English")
+          await AsyncStorage.getItem(bookName)
         )
       );
       // let timer = Date.now() - start
@@ -95,23 +93,32 @@ export async function loadChapterContent(
       //     return
       //   }
       // });
- 
-      _.map(englishContent.books, book => {
-        if (book.name == bookName) {
-          _.map(book.chapters, chapter => {
-            if (chapter.num == chapterNumber) {
-              contentOfSelectedChapter = _.map(chapter.verses, verse => {
-                
-                return {
-                  key: verse.num,
-                  text: verse.text,
-                  num: verse.num
-                };
-              });
-            }
+      // console.log("test is" , englishContent.books)
+    //  console.log("englishContent issss" , englishContent)
+      //     _.map(test.chapters, chapter => {
+      //       if (chapter.num == chapterNumber) {
+      //         contentOfSelectedChapter = _.map(chapter.verses, verse => {
+      //           return {
+      //             key: verse.num,
+      //             text: verse.text,
+      //             num: verse.num
+      //           };
+      //         });
+      //       }
+      // });
+      for (let index = 0; index < englishContent.chapters.length; index++) {
+        let chapter = englishContent.chapters[index];
+        if (chapter.num == chapterNumber) {
+          contentOfSelectedChapter = _.map(chapter.verses, verse => {
+            return {
+              key: verse.num,
+              text: verse.text,
+              num: verse.num
+            };
           });
+         break;
         }
-      });
+      }
         //  alert(Date.now() - start);
     }
 
@@ -253,6 +260,7 @@ async function executeSql(sql, params = []) {
 }
 
 export function toggleIsDownloading() {
+  console.log("toggle")
   return {
     type: types.TOGGLE_IS_DOWNLOADING
   };

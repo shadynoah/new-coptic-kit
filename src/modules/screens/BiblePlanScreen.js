@@ -59,15 +59,17 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-  //  await AsyncStorage.removeItem("ArabicPlan");
-   await AsyncStorage.removeItem("Plan");
+  // await AsyncStorage.removeItem("Genesis");
+  // await AsyncStorage.removeItem("Exodus");
 
-  //  this.props.inializeArabicPlan();
-  //  this.props.inializeCheckedList();
+  //  await AsyncStorage.removeItem("Plan");
+
+  // //  this.props.inializeArabicPlan();
+  // //  this.props.inializeCheckedList();
    
-  //  await AsyncStorage.removeItem("list")
-    // this.props.inializeCheckedList();
-    this.props.inializePlan();
+  // //  await AsyncStorage.removeItem("list")
+  //   // this.props.inializeCheckedList();
+  //   this.props.inializePlan();
       if(await AsyncStorage.getItem("ArabicPlan")=== null)
       {
         this.props.inializeArabicPlan()
@@ -87,9 +89,6 @@ class BiblePlanScreenContainer extends Component {
   
     let { selectedChapterIndex: preSelectedChapterIndex } = prevPros;
     let { selectedChapterIndex } = this.props;
-    console.log("did update");
-    console.log("did preSelectedChapterIndex" , preSelectedChapterIndex);
-    console.log("did currrent" , selectedChapterIndex);
     if(selectedChapterIndex > preSelectedChapterIndex)
     {
      this.setCheckedList(preSelectedChapterIndex , true)
@@ -142,7 +141,6 @@ class BiblePlanScreenContainer extends Component {
 
   render() {
     const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex }  = this.props;
-    console.log("selectedChapterIndex" , selectedChapterIndex)
     return (
       <ImageBackground
         source={require("../../../assets/images/background.jpg")}
@@ -171,40 +169,13 @@ class BiblePlanScreenContainer extends Component {
                     }}
                     onPress={() => {
                       this.setCheckedList(index);
-                    //   let copy = this.state.checkedList[this.props.selectedDay];
-                    //   if(copy[index])
-                    //    copy[index] = false;
-                    //    else 
-                    //    copy[index] = true;
-                    //    let list = []
-                    //    this.setState(state => {
-                    //      list = state.checkedList.map((item, index) => {
-                    //       if(index === this.props.selectedDay)
-                    //       return copy;
-                    //       else return item
-                    //     });
-                    //     return {
-                    //       list,
-                    //        refresh: !this.state.refresh
-                    //     };
-                    //   },
-                    //  () => this.props.saveCheckedListIntoLocalStorage(list , this.props.isArabic)
-                    //   );
-                    
-                    //   // this.setState({
-                    //   //   refresh: !this.state.refresh
-                    //   // })
-                    //   this.props.makeChapterChecked(index);
                     }}
                     checked={this.state.checkedList[this.props.selectedDay][index]}
                   />
                   <Text key={index}
                   onPress = {
                     () =>{
-                      // if(selectedDayContent[index].indexOf(":") > -1)
-                      // alert("xx")
                       const splitted = selectedDayContent[index].split(" ");
-                      console.log("splitted===" , splitted)
                       let isBookStartWithString =  isNaN(parseInt(splitted[0]));
                       const bookName = isBookStartWithString ? splitted[0] :
                       (splitted[0] + " " + splitted[1]) 
@@ -219,7 +190,7 @@ class BiblePlanScreenContainer extends Component {
                         true
                        );
                      NavigatorService.navigate("VerseScreen" , {
-                       startVerseNumder:10
+                       startVerseNumder: 8
                      });
                     }
                   }

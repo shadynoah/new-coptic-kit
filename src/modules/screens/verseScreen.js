@@ -143,17 +143,17 @@ class verseScreenContainer extends Component {
     );
   }
   async componentWillReceiveProps(nextProps) { 
+    //  console.log("this proooops" , this.props);
+    // console.log("next proooops" , nextProps.selectedBook.bookName);
     const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
       (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
-    // alert("===y====" + y)
-    
-    setTimeout(() => {
-      let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-      y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-    }, 1500);
+    // setTimeout(() => {
+    //   let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+    //   y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+    // }, 1500);
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
         (x = nextProps.selectedBook.bookName),

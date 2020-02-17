@@ -2525,3 +2525,8 @@ export const ArabicContent = [
     dayChapters: ["مزامير 118"]
   }
 ];
+export const enlglishContentUri = {
+  "Genesis" : "https://www.dropbox.com/s/atlpv4y58rnmnjo/Genesis.json?dl=1",
+  "Exodus" : "https://www.dropbox.com/s/sy1j6k11eiij6da/Exodus.json?dl=1"
+}
+export const bookNames = ["Genesis" , "Exodus"]

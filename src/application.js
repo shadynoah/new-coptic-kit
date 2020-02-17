@@ -7,8 +7,10 @@ import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
 // import { NotificationManager } from "./services/pushNotification";
 import { loadArabicPlan, loadPlan, reducer, toggleIsDownloading, updateConnectionStatus } from "./state";
-
+import { enlglishContentUri , bookNames } from '../src/constants';
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
+import _ from 'lodash'
+
 export class Application {
   static current: Application;
   static token: string;
@@ -34,20 +36,25 @@ export class Application {
       return false;
     }
   }
-  async downloadEnglish() {
-    await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
-      FileSystem.documentDirectory + "content"
-    )
-      .then(async ({ uri }) => {
+  async downloadEnglish(bookName) {
+    await Promise.all(
+     _.map(bookNames , async bookName => {
+      await FileSystem.downloadAsync(
+        enlglishContentUri[bookName],
+        FileSystem.documentDirectory + bookName
+      ).then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        console.log("uri" , uri)
         console.log("english done");
-        await AsyncStorage.setItem("English", uri);
+        await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {
         alert("error");
         console.error(error);
       });
+     })
+    )
+     
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
@@ -81,16 +88,14 @@ export class Application {
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-        if ((await this.IsContentDownloaded("English")) == false) {
-          Application.current.store.dispatch(toggleIsDownloading());
-          await this.downloadEnglish();
-          Application.current.store.dispatch(toggleIsDownloading());
-        }
-        if ((await this.IsContentDownloaded("ArabicUpdated1")) == false) {
-          Application.current.store.dispatch(toggleIsDownloading());
-          await this.downloadArabic();
-          Application.current.store.dispatch(toggleIsDownloading());
-        }
+           Application.current.store.dispatch(toggleIsDownloading());
+           await this.downloadEnglish();
+           Application.current.store.dispatch(toggleIsDownloading());
+        // if ((await this.IsContentDownloaded("ArabicUpdated1")) == false) {
+        //   Application.current.store.dispatch(toggleIsDownloading());
+        //   await this.downloadArabic();
+        //   Application.current.store.dispatch(toggleIsDownloading());
+        // }
       }
     });
 
