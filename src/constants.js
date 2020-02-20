@@ -2,7 +2,7 @@ import _ from "lodash";
 export const content = [
   {
     key: 1,
-    dayChapters: ["Psalm 1", "Genesis 1", "Genesis 2", "Matthew 1"]
+    dayChapters: ["Psalm 1",  "Genesis 1", "Genesis 2", "Matthew 1", "Judges 1"]
   },
   {
     key: 2,
@@ -953,15 +953,15 @@ export const content = [
   },
   {
     key: 189,
-    dayChapters:  ["Proverbs 17"]
+    dayChapters: ["Proverbs 17"]
   },
   {
     key: 190,
-    dayChapters:  ["Proverbs 18"]
+    dayChapters: ["Proverbs 18"]
   },
   {
     key: 191,
-    dayChapters:  ["Proverbs 19"]
+    dayChapters: ["Proverbs 19"]
   },
   {
     key: 192,
@@ -977,23 +977,23 @@ export const content = [
   },
   {
     key: 195,
-    dayChapters:  ["Proverbs 21:16-31"]
+    dayChapters: ["Proverbs 21:16-31"]
   },
   {
     key: 196,
-    dayChapters:  ["Proverbs 22"]
+    dayChapters: ["Proverbs 22"]
   },
   {
     key: 197,
-    dayChapters:  ["Proverbs 23:1-17"]
+    dayChapters: ["Proverbs 23:1-17"]
   },
   {
     key: 198,
-    dayChapters:  ["Proverbs 23:18-35"]
+    dayChapters: ["Proverbs 23:18-35"]
   },
   {
     key: 199,
-    dayChapters:  ["Proverbs 24"]
+    dayChapters: ["Proverbs 24"]
   },
   {
     key: 200,
@@ -1001,35 +1001,35 @@ export const content = [
   },
   {
     key: 201,
-    dayChapters: ["Proverbs 26"]  
+    dayChapters: ["Proverbs 26"]
   },
   {
     key: 202,
-    dayChapters: ["Proverbs 27"]  
+    dayChapters: ["Proverbs 27"]
   },
   {
     key: 203,
-    dayChapters: ["Proverbs 28"] 
+    dayChapters: ["Proverbs 28"]
   },
   {
     key: 204,
-    dayChapters: ["Proverbs 29"] 
-    },
+    dayChapters: ["Proverbs 29"]
+  },
   {
     key: 205,
-    dayChapters: ["Proverbs 30"] 
+    dayChapters: ["Proverbs 30"]
   },
   {
     key: 206,
-    dayChapters: ["Proverbs 31"] 
+    dayChapters: ["Proverbs 31"]
   },
   {
     key: 207,
-    dayChapters: ["Psalm 1"] 
-    },
+    dayChapters: ["Psalm 1"]
+  },
   {
     key: 208,
-    dayChapters: ["Psalm 2"] 
+    dayChapters: ["Psalm 2"]
   },
   {
     key: 209,
@@ -1041,11 +1041,11 @@ export const content = [
   },
   {
     key: 211,
-    dayChapters:  ["Psalm 5"]
+    dayChapters: ["Psalm 5"]
   },
   {
     key: 212,
-    dayChapters:  ["Psalm 6"]
+    dayChapters: ["Psalm 6"]
   },
   {
     key: 213,
@@ -1053,11 +1053,11 @@ export const content = [
   },
   {
     key: 214,
-    dayChapters:  ["Psalm 8"]
+    dayChapters: ["Psalm 8"]
   },
   {
     key: 215,
-    dayChapters:  ["Psalm 9"]
+    dayChapters: ["Psalm 9"]
   },
   {
     key: 216,
@@ -1097,9 +1097,7 @@ export const content = [
   },
   {
     key: 225,
-    dayChapters: [
-      "Psalm 19",
-    ]
+    dayChapters: ["Psalm 19"]
   },
   {
     key: 226,
@@ -1267,51 +1265,35 @@ export const content = [
   },
   {
     key: 267,
-    dayChapters: [
-      "Psalm 61"
-    ]
+    dayChapters: ["Psalm 61"]
   },
   {
     key: 268,
-    dayChapters: [
-      "Psalm 62"
-    ]
+    dayChapters: ["Psalm 62"]
   },
   {
     key: 269,
-    dayChapters: [
-      "Psalm 63"
-    ]
+    dayChapters: ["Psalm 63"]
   },
   {
     key: 270,
-    dayChapters: [
-      "Psalm 64"
-    ]
+    dayChapters: ["Psalm 64"]
   },
   {
     key: 271,
-    dayChapters: [
-      "Psalm 65"
-    ]
+    dayChapters: ["Psalm 65"]
   },
   {
     key: 272,
-    dayChapters: [
-      "Psalm 66"
-    ]
+    dayChapters: ["Psalm 66"]
   },
   {
     key: 273,
-    dayChapters: [
-      "Psalm 67"
-    ]
+    dayChapters: ["Psalm 67"]
   },
   {
     key: 274,
-    dayChapters: [
-      "Psalm 68"
-    ]
+    dayChapters: ["Psalm 68"]
   },
   {
     key: 275,
@@ -1808,7 +1790,7 @@ export const content = [
   {
     key: 365,
     dayChapters: ["Psalm 150"]
-  },
+  }
 ];
 export const checkedList = _.times(365, _.constant([false]));
 export const arabicCheckedList = _.times(365, _.constant([false]));
@@ -2526,7 +2508,111 @@ export const ArabicContent = [
   }
 ];
 export const enlglishContentUri = {
-  "Genesis" : "https://www.dropbox.com/s/atlpv4y58rnmnjo/Genesis.json?dl=1",
-  "Exodus" : "https://www.dropbox.com/s/sy1j6k11eiij6da/Exodus.json?dl=1"
-}
-export const bookNames = ["Genesis" , "Exodus"]
+  Genesis: "https://www.dropbox.com/s/atlpv4y58rnmnjo/Genesis.json?dl=1",
+  Exodus: "https://www.dropbox.com/s/sy1j6k11eiij6da/Exodus.json?dl=1",
+  Leviticus: "https://www.dropbox.com/s/d0zkyw7akassm77/Leviticus.json?dl=1",
+  Numbers: "https://www.dropbox.com/s/eudd0f30gf1duf6/Numbers.json?dl=1",
+  Deuteronomy:
+    "https://www.dropbox.com/s/oa2nrenn1wttgrm/Deuteronomy.json?dl=1",
+  Joshua: "https://www.dropbox.com/s/k9swoqwreidptis/Joshua.json?dl=1",
+  Judges: "https://www.dropbox.com/s/24dg0ntvmlix3a9/Judges.json?dl=1",
+  Ruth: "https://www.dropbox.com/s/o07z3wkxo9run14/Ruth.json?dl=1",
+  "1 Samuel" : "https://www.dropbox.com/s/0ww6vcf3poeup72/1%20Samuel.json?dl=1",
+  "2 Samuel" : "https://www.dropbox.com/s/yzvvr8u2zqi2t6m/2%20Samuel.json?dl=1",
+  "1 Kings" : "https://www.dropbox.com/s/m4ob2d57h3y6fw6/1%20Kings.json?dl=1",
+  "2 Kings" : "https://www.dropbox.com/s/io9vcpn40tua3m0/2%20Kings.json?dl=1",
+  "1 Chronicles" : "https://www.dropbox.com/s/u7x59kypcam862m/1%20Chronicles.json?dl=1",
+  "2 Chronicles" : "https://www.dropbox.com/s/7xm0v4uqteqrckk/2%20Chronicles.json?dl=1",
+  "Ezra" : "https://www.dropbox.com/s/hpt79b5ssdyjc5o/Ezra.json?dl=1",
+ "Nehemiah":"https://www.dropbox.com/s/iq25b5upa5oazb6/Nehemiah.json?dl=1",
+ "Esther" : "https://www.dropbox.com/s/wrofxssjl8glz26/Esther.json?dl=1" ,
+ "Job": "https://www.dropbox.com/s/qc6z20q7ur5ycrl/Job.json?dl=1",
+ "Psalm" : "https://www.dropbox.com/s/zd8wfmghjr6unua/Psalm.json?dl=1",
+ "Proverbs" : "https://www.dropbox.com/s/w9jucfmpgtapi0k/Proverbs.json?dl=1",
+ "Ecclesiastes" : "https://www.dropbox.com/s/c69doqk89t7kcbb/Ecclesiastes.json?dl=1",
+ "Song of Solomon":"https://www.dropbox.com/s/5bz3itq9w02qyb2/Song%20of%20Solomon.json?dl=1",
+ "Isaiah" :"https://www.dropbox.com/s/vnggfdy8p7vsww3/Isaiah.json?dl=1",
+ "Jeremiah":"https://www.dropbox.com/s/gxmagc01sxa8346/Jeremiah.json?dl=1",
+  "Lamentations" : "https://www.dropbox.com/s/huooq8iz1b0ek6u/Lamentations.json?dl=1",
+  "Ezekiel" : "https://www.dropbox.com/s/dr68bhrqqmvdhye/Ezekiel.json?dl=1",
+  "Daniel":"https://www.dropbox.com/s/0q5m644pnnnwmdm/Daniel.json?dl=1",
+  "Hosea" : "https://www.dropbox.com/s/f0ndgocjt3504wk/Hosea.json?dl=1",
+  "Joel" : "https://www.dropbox.com/s/xui1fqrfr7hordx/Joel.json?dl=1",
+  "Amos" :"https://www.dropbox.com/s/wqr306jqr28o7hs/Amos.json?dl=1",
+  "Obadiah":"https://www.dropbox.com/s/9x1iajblvrhaij6/Obadiah.json?dl=1",
+  "Micah" :"https://www.dropbox.com/s/iozyugbutxmzmjb/Micah.json?dl=1",
+  "Nahum" :"https://www.dropbox.com/s/uu766lqlvtk0zw6/Nahum.json?dl=1",
+  "Habakkuk" :"https://www.dropbox.com/s/zflpcnbhzy47m3o/Habakkuk.json?dl=1",
+  "Zephaniah" :"https://www.dropbox.com/s/9c244gvky3yrfo9/Zephaniah.json?dl=1",
+  "Haggai" : "https://www.dropbox.com/s/6lj6g5c3t0zsnlt/Haggai.json?dl=1",
+  "Malachi" :"https://www.dropbox.com/s/ro6ckcncatpw8y9/Malachi.json?dl=1",
+  "Matthew" :"https://www.dropbox.com/s/5ty8fk61vlsuz8n/Matthew.json?dl=1",
+  "Mark" : "https://www.dropbox.com/s/qpmmmgk1qqm7bs6/Mark.json?dl=1",
+  "Luke" : "https://www.dropbox.com/s/0x51go1ho2tdqn3/Luke.json?dl=1",
+  "John" :"https://www.dropbox.com/s/em1z9gteq64lfin/John.json?dl=1",
+  "Acts" : "https://www.dropbox.com/s/08l64hglzngyiei/Acts.json?dl=1",
+  "Romans" : "https://www.dropbox.com/s/r65xvclohq509co/Romans.json?dl=1",
+  "1 Corinthians":"https://www.dropbox.com/s/ydm0eyt9o6uk3b6/1%20Corinthians.json?dl=1",
+  "2 Corinthians" :"https://www.dropbox.com/s/j9eudpd151q4bpo/2%20Corinthians.json?dl=1",
+  "Galatians" :"https://www.dropbox.com/s/19j2xr5rk9fry8l/Galatians.json?dl=1",
+  "Ephesians":"https://www.dropbox.com/s/pqxak36tc4xbts3/Ephesians.json?dl=1",
+  "Philippians":"https://www.dropbox.com/s/vaauw9ynaphxtlt/Philippians.json?dl=1",
+  "Colossians" :"https://www.dropbox.com/s/xwzfdfg9hl6jmjr/Colossians.json?dl=1",
+  "1 Thessalonians" :"https://www.dropbox.com/s/6tg0j20jqj9dh3l/1%20Thessalonians.json?dl=1",
+  "2 Thessalonians" : "https://www.dropbox.com/s/lsi85kvpx6gxa4m/2%20Thessalonians.json?dl=1",
+  "1 Timothy" : "https://www.dropbox.com/s/s317rqcdenx65sy/1%20Timothy.json?dl=1"
+};
+export const bookNames = [
+  "Genesis",
+  "Exodus",
+  "Leviticus",
+  "Numbers",
+  "Deuteronomy",
+  "Joshua",
+  "Judges",
+  "Ruth",
+  "1 Samuel",
+  "2 Samuel",
+  "1 Kings",
+  "2 Kings",
+  "1 Chronicles",
+  "2 Chronicles",
+  "Ezra",
+  "Nehemiah",
+  "Esther",
+  "Job",
+  "Psalm",
+  "Proverbs",
+  "Ecclesiastes",
+  "Song of Solomon",
+  "Isaiah",
+  "Jeremiah",
+  "Lamentations",
+  "Ezekiel",
+  "Daniel",
+  "Hosea",
+  "Joel" ,
+  "Amos",
+  "Obadiah",
+  "Micah",
+  "Nahum",
+  "Habakkuk",
+   "Zephaniah",
+   "Haggai",
+   "Malachi",
+   "Matthew",
+   "Mark",
+   "Luke",
+   "John",
+   "Acts",
+   "Romans",
+   "1 Corinthians",
+   "2 Corinthians",
+   "Galatians",
+   "Ephesians",
+   "Philippians",
+   "Colossians",
+   "1 Thessalonians",
+   "2 Thessalonians",
+   "1 Timothy"
+];

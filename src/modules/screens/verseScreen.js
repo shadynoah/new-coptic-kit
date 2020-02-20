@@ -150,10 +150,10 @@ class verseScreenContainer extends Component {
       (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
-    // setTimeout(() => {
-    //   let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-    //   y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-    // }, 1500);
+    setTimeout(() => {
+      let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+      y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+    }, 1500);
       var highlightedVersesOfStorage = await this._retrieveData(
         (type = "Highlight"),
         (x = nextProps.selectedBook.bookName),

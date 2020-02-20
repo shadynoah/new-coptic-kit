@@ -44,8 +44,8 @@ export class Application {
         FileSystem.documentDirectory + bookName
       ).then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        console.log("uri" , uri)
-        console.log("english done");
+        // console.log("uri" , uri)
+        // console.log("english done");
         await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {

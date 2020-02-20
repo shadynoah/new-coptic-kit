@@ -106,6 +106,7 @@ export async function loadChapterContent(
       //         });
       //       }
       // });
+      // console.log(" englishContent.chapters" ,  englishContent.chapters)
       for (let index = 0; index < englishContent.chapters.length; index++) {
         let chapter = englishContent.chapters[index];
         if (chapter.num == chapterNumber) {
