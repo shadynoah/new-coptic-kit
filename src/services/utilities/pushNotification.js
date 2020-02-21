@@ -64,9 +64,9 @@ export class NotificationManager {
    
         // Get the token that uniquely identifies this device
         let token = await Notifications.getExpoPushTokenAsync();
-        console.log("----token----" , token)
+        // console.log("----token----" , token)
         firebase.database().ref('test').on('value', function(snapshot) {
-            console.log("snapshot=====" ,snapshot)
+            // console.log("snapshot=====" ,snapshot)
             if(snapshot.forEach(a =>{
                 // console.log("===a===" ,a)
             }) )
