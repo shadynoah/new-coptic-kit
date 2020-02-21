@@ -88,9 +88,9 @@ export class Application {
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-           Application.current.store.dispatch(toggleIsDownloading());
-           await this.downloadEnglish();
-           Application.current.store.dispatch(toggleIsDownloading());
+          //  Application.current.store.dispatch(toggleIsDownloading());
+          //  await this.downloadEnglish();
+          //  Application.current.store.dispatch(toggleIsDownloading());
         // if ((await this.IsContentDownloaded("ArabicUpdated1")) == false) {
         //   Application.current.store.dispatch(toggleIsDownloading());
         //   await this.downloadArabic();

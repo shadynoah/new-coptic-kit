@@ -2560,7 +2560,19 @@ export const enlglishContentUri = {
   "Colossians" :"https://www.dropbox.com/s/xwzfdfg9hl6jmjr/Colossians.json?dl=1",
   "1 Thessalonians" :"https://www.dropbox.com/s/6tg0j20jqj9dh3l/1%20Thessalonians.json?dl=1",
   "2 Thessalonians" : "https://www.dropbox.com/s/lsi85kvpx6gxa4m/2%20Thessalonians.json?dl=1",
-  "1 Timothy" : "https://www.dropbox.com/s/s317rqcdenx65sy/1%20Timothy.json?dl=1"
+  "1 Timothy" : "https://www.dropbox.com/s/s317rqcdenx65sy/1%20Timothy.json?dl=1",
+  "2 Timothy" :"https://www.dropbox.com/s/dk0f9avl2zge5qq/2%20Timothy.json?dl=1",
+  "Titus" :  "https://www.dropbox.com/s/yet36pthclnqak5/Titus.json?dl=1",
+  "Philemon" : "https://www.dropbox.com/s/slj4zp7rc0owyjv/Philemon.json?dl=1",
+  "Hebrews" : "https://www.dropbox.com/s/lpi3gklxxyc2m5e/Hebrews.json?dl=1",
+  "James" :"https://www.dropbox.com/s/jpf3m4qe0ycgudx/James.json?dl=1",
+  "1 Peter" : "https://www.dropbox.com/s/g6knfle5b58wh0n/1%20Peter.json?dl=1",
+  "2 Peter" : "https://www.dropbox.com/s/m6cpqidf6zhrwsa/2%20Peter.json?dl=1",
+  "1 John" : "https://www.dropbox.com/s/f6vufoai9iv1d6m/1%20John.json?dl=1",
+  "2 John" :"https://www.dropbox.com/s/re1celioexu8t3z/2%20John.json?dl=1",
+  "3 John" :"https://www.dropbox.com/s/4w1smgr9bvlq1hn/3%20John.json?dl=1",
+  "Jude" : "https://www.dropbox.com/s/nbjn4d6kiprcng5/Jude.json?dl=1",
+  "Revelation" :"https://www.dropbox.com/s/jlauyydhkrq6vfw/Revelation.json?dl=1"
 };
 export const bookNames = [
   "Genesis",
@@ -2614,5 +2626,17 @@ export const bookNames = [
    "Colossians",
    "1 Thessalonians",
    "2 Thessalonians",
-   "1 Timothy"
+   "1 Timothy",
+   "2 Timothy",
+   "Titus",
+   "Philemon",
+   "Hebrews",
+   "James",
+   "1 Peter",
+   "2 Peter" ,
+    "1 John" , 
+    "2 John",
+    "3 John",
+    "Jude",
+    "Revelation"
 ];
