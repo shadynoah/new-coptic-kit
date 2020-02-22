@@ -36,16 +36,18 @@ export class Application {
       return false;
     }
   }
-  async downloadEnglish(bookName) {
+  async downloadEnglish() {
     await Promise.all(
      _.map(bookNames , async bookName => {
+let trimmed = bookName.replace(/\s/g, "");
       await FileSystem.downloadAsync(
         enlglishContentUri[bookName],
-        FileSystem.documentDirectory + bookName
+        FileSystem.documentDirectory + trimmed
       ).then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
         // console.log("uri" , uri)
         // console.log("english done");
+        // console.log("before setimeeem" , bookName)
         await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {

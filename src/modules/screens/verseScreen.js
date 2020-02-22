@@ -120,7 +120,18 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
-    this.datapos = {}
+    const { selectedDayContent , selectedChapterIndex } = this.props;
+    if(selectedDayContent.length > 0 && selectedDayContent[selectedChapterIndex].startVerseNumber != 0)
+    {
+      var refreshIntervalId = setInterval(() => {
+        let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+        console.log("y isssss" , y)
+        if(y)
+        clearInterval(refreshIntervalId)
+        y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+    }, 1000);
+    }
+    // this.datapos = {}
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
     });
@@ -143,17 +154,16 @@ class verseScreenContainer extends Component {
     );
   }
   async componentWillReceiveProps(nextProps) { 
-    //  console.log("this proooops" , this.props);
     // console.log("next proooops" , nextProps.selectedBook.bookName);
     const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
       (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
-    setTimeout(() => {
-      let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-      y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-    }, 1500);
+    // setTimeout(() => {
+    //   let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+    //   y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+    // }, 1500);
       // var highlightedVersesOfStorage = await this._retrieveData(
       //   (type = "Highlight"),
       //   (x = nextProps.selectedBook.bookName),
@@ -276,8 +286,7 @@ class verseScreenContainer extends Component {
     this._retrieveData();
   }
   onLayout(event , num) {
-    const {x, y, width} = event.nativeEvent.layout;
-    console.log6("y is", y)
+    const {y} = event.nativeEvent.layout;
     this.datapos[num]=y
   }
   render() {
@@ -315,14 +324,6 @@ class verseScreenContainer extends Component {
       >
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row" }}>
-            <Button  onPress={
-              ()=>{
-                let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-                y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-              }
-            }>
-   <Text>sss</Text>
-            </Button>
             <BaseModal
               baseModalProperties={{
                 hadCloseHeader: true,
@@ -360,22 +361,20 @@ class verseScreenContainer extends Component {
                     if(selectedChapterIndex - 1 >= 0)
                     {
                      selectChapterOfDayPlan(selectedChapterIndex - 1 );
-                      const splitted = selectedDayContent[selectedChapterIndex - 1 ].split(" ");
-                      let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                      const bookName = isBookStartWithString ? splitted[0] :
-                      (splitted[0] + " " + splitted[1]) 
-                       const chapterNumber = _.last(splitted);
+                      const item = selectedDayContent[selectedChapterIndex - 1 ]
+                      let bookName = item.bookName; 
+                      let chapterNumber = item.chapterNumber;
                        this.isBookMarkedChapter(
                         bookName,
-                        chapterNumber
-                      );
-                     selectChapter(chapterNumber)
-                       loadChapterContent(
-                       bookName,
                        chapterNumber
+                      );
+                     selectChapter( item.chapterNumber)
+                       loadChapterContent(
+                        bookName,
+                        chapterNumber
                      );
                      selectBook({
-                      "bookName": bookName,
+                      "bookName":  bookName,
                      })
                      var highlightedVersesOfStorage = this.convertStringToArray(
                       await this._retrieveData()
@@ -438,11 +437,9 @@ class verseScreenContainer extends Component {
                    if(selectedChapterIndex + 1 < selectedDayContent.length)
                    {
                      selectChapterOfDayPlan(selectedChapterIndex + 1 )
-                     const splitted = selectedDayContent[selectedChapterIndex + 1 ].split(" ");
-                     let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                     const bookName = isBookStartWithString ? splitted[0] :
-                     (splitted[0] + " " + splitted[1]) 
-                      const chapterNumber = _.last(splitted);
+                     const item = selectedDayContent[selectedChapterIndex + 1 ];
+                     let bookName = item.bookName;
+                     let chapterNumber = item.chapterNumber;
                       this.isBookMarkedChapter(
                         bookName,
                         chapterNumber

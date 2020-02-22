@@ -73,40 +73,6 @@ export async function loadChapterContent(
       );
       // let timer = Date.now() - start
       // console.log("timer is" , timer)
-      // // console.timeEnd("Time this");
-      // // console.log("bookname" , bookName)
-      //  start = Date.now();
-      // let arr  = englishContent.books;
-      // for (let index = 0; index < arr.length; index++) {
-      //   if (arr[index].name == bookName) {
-      //     contentOfSelectedChapter = arr[index].chapters[chapterNumber].verses
-      //    break;
-      //   }
-      // }
-      //  timer = Date.now() - start
-      // console.log("timer is" , timer)
-      // _.map(englishContent.books, book => {
-      //   console.log("x")
-      // // console.log("englishContent.books" , englishContent.books)
-      //   if (book.name == bookName) {
-      //     contentOfSelectedChapter = book.chapters[chapterNumber].verses
-      //     return
-      //   }
-      // });
-      // console.log("test is" , englishContent.books)
-    //  console.log("englishContent issss" , englishContent)
-      //     _.map(test.chapters, chapter => {
-      //       if (chapter.num == chapterNumber) {
-      //         contentOfSelectedChapter = _.map(chapter.verses, verse => {
-      //           return {
-      //             key: verse.num,
-      //             text: verse.text,
-      //             num: verse.num
-      //           };
-      //         });
-      //       }
-      // });
-      // console.log(" englishContent.chapters" ,  englishContent.chapters)
       for (let index = 0; index < englishContent.chapters.length; index++) {
         let chapter = englishContent.chapters[index];
         if (chapter.num == chapterNumber) {

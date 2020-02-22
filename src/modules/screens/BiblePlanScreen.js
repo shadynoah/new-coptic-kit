@@ -68,14 +68,14 @@ class BiblePlanScreenContainer extends Component {
   //  this.props.inializeCheckedList();
    
   // //  await AsyncStorage.removeItem("list")
-  //   // this.props.inializeCheckedList();
+    // this.props.inializeCheckedList();
     this.props.inializePlan();
-      if(await AsyncStorage.getItem("ArabicPlan")=== null)
-      {
-        this.props.inializeArabicPlan()
-      }
-      else 
-      this.props.inializePlan();
+    //   if(await AsyncStorage.getItem("ArabicPlan")=== null)
+    //   {
+    //     this.props.inializeArabicPlan()
+    //   }
+    //   else 
+    //   this.props.inializePlan();
     this.setState({
        checkedList: await this.getCheckedList(this.props.isArabic)
     })
