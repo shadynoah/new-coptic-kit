@@ -112,3 +112,9 @@ export async function loadArabicPlan() {
     payload: payload
   }
 }
+export function setCompletedDayPlan(dayNumber){
+ return {
+   type: types.SET_COMPLETED_DAY_PLAN_FLAG,
+   payload:dayNumber
+ }
+}
