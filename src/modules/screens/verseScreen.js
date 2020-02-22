@@ -154,19 +154,19 @@ class verseScreenContainer extends Component {
       let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
       y !== undefined && this.scrollref.scrollTo({ y, animated: true });
     }, 1500);
-      var highlightedVersesOfStorage = await this._retrieveData(
-        (type = "Highlight"),
-        (x = nextProps.selectedBook.bookName),
-        (y = nextProps.numberOfSelectedChapter)
-      );
-      var highlightedVersesOfStorageArr = this.convertStringToArray(
-        highlightedVersesOfStorage
-      );
-      this.setState(
-        {
-          highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
-        }
-      );
+      // var highlightedVersesOfStorage = await this._retrieveData(
+      //   (type = "Highlight"),
+      //   (x = nextProps.selectedBook.bookName),
+      //   (y = nextProps.numberOfSelectedChapter)
+      // );
+      // var highlightedVersesOfStorageArr = this.convertStringToArray(
+      //   highlightedVersesOfStorage
+      // );
+      // this.setState(
+      //   {
+      //     highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
+      //   }
+      // );
     }
   }
 
@@ -277,6 +277,7 @@ class verseScreenContainer extends Component {
   }
   onLayout(event , num) {
     const {x, y, width} = event.nativeEvent.layout;
+    console.log6("y is", y)
     this.datapos[num]=y
   }
   render() {
@@ -314,6 +315,14 @@ class verseScreenContainer extends Component {
       >
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row" }}>
+            <Button  onPress={
+              ()=>{
+                let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
+                y !== undefined && this.scrollref.scrollTo({ y, animated: true });
+              }
+            }>
+   <Text>sss</Text>
+            </Button>
             <BaseModal
               baseModalProperties={{
                 hadCloseHeader: true,

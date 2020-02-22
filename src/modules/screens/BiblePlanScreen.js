@@ -175,11 +175,10 @@ class BiblePlanScreenContainer extends Component {
                   <Text key={index}
                   onPress = {
                     () =>{
-                      const splitted = selectedDayContent[index].split(" ");
-                      let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                      const bookName = isBookStartWithString ? splitted[0] :
-                      (splitted[0] + " " + splitted[1]) 
-                       const chapterNumber = _.last(splitted)
+                      // const splitted = selectedDayContent[index].split(" ");
+                      // let isBookStartWithString =  isNaN(parseInt(splitted[0]));
+                      const bookName = item.bookName;
+                       const chapterNumber = item.chapterNumber;
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
                         "bookName": bookName,
@@ -190,11 +189,11 @@ class BiblePlanScreenContainer extends Component {
                         true
                        );
                      NavigatorService.navigate("VerseScreen" , {
-                       startVerseNumder: 8
+                       startVerseNumder: item.startVerseNumber
                      });
                     }
                   }
-                  >{item}</Text>
+                  >{item.text}</Text>
                 </View>
 
                 // return a component using that data
