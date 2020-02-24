@@ -121,16 +121,6 @@ class verseScreenContainer extends Component {
 
   async componentDidMount() {
     const { selectedDayContent , selectedChapterIndex } = this.props;
-    if(selectedDayContent.length > 0 && selectedDayContent[selectedChapterIndex].startVerseNumber != 0)
-    {
-      var refreshIntervalId = setInterval(() => {
-        let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-        console.log("y isssss" , y)
-        if(y)
-        clearInterval(refreshIntervalId)
-        y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-    }, 1000);
-    }
     // this.datapos = {}
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
@@ -311,6 +301,8 @@ class verseScreenContainer extends Component {
       selectedVerses,
       highlightedVerses
     } = this.state;
+    let startVerseNumber = this.props.navigation.state.params.startVerseNumder;
+    let endVerseNumber = this.props.navigation.state.params.endVerseNumber;
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
@@ -538,8 +530,7 @@ class verseScreenContainer extends Component {
           ref={(ref) => this.scrollref = ref}
           contentContainerStyle={{ margin: 15, paddingBottom: 30 , lineHeight: 30+fontSizeOfText*.3 }}>
               {_.map(contentOfSelectedChapter, verse => {
-                
-
+                if(verse.num >= startVerseNumber && verse.num <= endVerseNumber)
                 return (
                   <Text
                     onLayout={e => this.onLayout(e , verse.num)}
@@ -578,7 +569,7 @@ class verseScreenContainer extends Component {
                     >
                       {" "}
                       {Helpers.parseToArabic(
-                        indexOfVerse++,
+                        verse.num,
                         isArabic
                       )}{" "}
                     </Text>
