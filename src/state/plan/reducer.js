@@ -56,6 +56,16 @@ export function planReducer(
         ArabicPlanContent : action.payload
       }
     }
+    case types.SET_COMPLETED_DAY_PLAN_FLAG:{
+      console.log("from reducer" , action.payload )
+      return{
+        ...state,
+        listOfCompletedDaysObj: {
+          ...state.listOfCompletedDaysObj,
+          [action.payload] : true
+        }
+      }
+    }
     default:
       return state;
   }

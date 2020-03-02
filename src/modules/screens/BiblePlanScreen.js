@@ -8,7 +8,7 @@ import { DaysToolBar } from "../../../components/DaysToolBar";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
-import { inializeArabicPlan, inializeCheckedList, inializePlan, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
+import { inializeArabicPlan, inializeCheckedList,setCompletedDayPlan, inializePlan, makeChapterChecked, saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan } from "../../state/plan/action-creators";
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -43,6 +43,7 @@ class BiblePlanScreenContainer extends Component {
       selectedDayContent: state.plan.selectedDayContent,
       selectedChapterIndex: state.plan.selectedChapterIndex,
       ArabicPlanContent: state.plan.ArabicPlanContent,
+      listOfCompletedDaysObj: state.plan.listOfCompletedDaysObj
       
     };
   }
@@ -52,30 +53,29 @@ class BiblePlanScreenContainer extends Component {
         inializePlan , saveCheckedListIntoLocalStorage ,
         loadChapterContent, 
         selectBook , selectChapterOfDayPlan ,
-        inializeArabicPlan ,inializeCheckedList
+        inializeArabicPlan ,inializeCheckedList,
+        setCompletedDayPlan
       },
       dispatch
     );
   }
 
    async componentDidMount() {
-  // await AsyncStorage.removeItem("Genesis");
-  // await AsyncStorage.removeItem("Exodus");
-
+  // //  await AsyncStorage.removeItem("ArabicPlan");
   //  await AsyncStorage.removeItem("Plan");
 
   // //  this.props.inializeArabicPlan();
-  //  this.props.inializeCheckedList();
+  // //  this.props.inializeCheckedList();
    
-  // //  await AsyncStorage.removeItem("list")
-    // this.props.inializeCheckedList();
-    // this.props.inializePlan();
-    //   if(await AsyncStorage.getItem("ArabicPlan")=== null)
-    //   {
-    //     this.props.inializeArabicPlan()
-    //   }
-    //   else 
-    //   this.props.inializePlan();
+  // await AsyncStorage.removeItem("list")
+    this.props.inializeCheckedList();
+  //   this.props.inializePlan();
+      if(await AsyncStorage.getItem("ArabicPlan")=== null)
+      {
+        this.props.inializeArabicPlan()
+      }
+      else 
+      this.props.inializePlan();
     this.setState({
        checkedList: await this.getCheckedList(this.props.isArabic)
     })
@@ -89,6 +89,9 @@ class BiblePlanScreenContainer extends Component {
   
     let { selectedChapterIndex: preSelectedChapterIndex } = prevPros;
     let { selectedChapterIndex } = this.props;
+    // console.log("did update");
+    // console.log("did preSelectedChapterIndex" , preSelectedChapterIndex);
+    // console.log("did currrent" , selectedChapterIndex);
     if(selectedChapterIndex > preSelectedChapterIndex)
     {
      this.setCheckedList(preSelectedChapterIndex , true)
@@ -112,12 +115,24 @@ class BiblePlanScreenContainer extends Component {
     }
   }
   setCheckedList(index , naviagtePlan = false){
-    const { selectedDay , saveCheckedListIntoLocalStorage , isArabic } = this.props;
+    const { selectedDay , saveCheckedListIntoLocalStorage , isArabic ,selectedDayContent ,
+      setCompletedDayPlan } = this.props;
     let copy = this.state.checkedList[selectedDay];
     if(copy[index] && !naviagtePlan)
      copy[index] = false;
      else 
-     copy[index] = true;
+     {
+      copy[index] = true;
+     let filtered = _.filter(copy , c => c === true);
+    //  console.log("filtered" , filtered)
+    //  console.log("selectedDayContent" , selectedDayContent.length)
+      if(filtered.length === selectedDayContent.length)
+      {
+        alert("you completed this day reading");
+        setCompletedDayPlan(selectedDay)
+      }
+     }
+   
      let list = []
      this.setState(state => {
        list = state.checkedList.map((item, index) => {
@@ -140,14 +155,25 @@ class BiblePlanScreenContainer extends Component {
   }
 
   render() {
-    const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex }  = this.props;
+    let { checkedList } = this.state;
+
+    const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex , selectedDay , listOfCompletedDaysObj }  = this.props;
+    console.log(selectedDayContent)
+    console.log("listOfCompletedDaysObj" ,listOfCompletedDaysObj);
+
+    // console.log("selectedChapterIndex" , selectedChapterIndex)
     return (
       <ImageBackground
         source={require("../../../assets/images/background.jpg")}
         style={{ flex: 1 }}
       >
         <View>
-          <DaysToolBar  selectedDay ={this.props.selectedDay}  isArabic ={this.props.isArabic} selectDay={this.selectDay.bind(this)} />
+          <DaysToolBar
+            selectedDay ={this.props.selectedDay}
+            isArabic ={this.props.isArabic} 
+            selectDay={this.selectDay.bind(this)} 
+            listOfCompletedDaysObj ={listOfCompletedDaysObj}
+            />
           <View>
             <FlatList
               keyExtractor={(item, index) => index.toString()}

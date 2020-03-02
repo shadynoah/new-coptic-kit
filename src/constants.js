@@ -4,18 +4,25 @@ export const content = [
     key: 1,
     dayChapters: [
       {
-        bookName: "Psalm",
+        bookName: "Luke",
         chapterNumber: 1,
         startVerseNumber: 0,
-        endVerseNumber:200,
-        text: "Psalm 1"
+        endVerseNumber:30,
+        text: "Luke 1:1-38"
       },
       {
-        bookName: "Psalm",
-        chapterNumber: 15,
-        startVerseNumber: 0,
-        endVerseNumber:200,
-        text: "Psalm 15"
+        bookName: "Luke",
+        chapterNumber: 1,
+        startVerseNumber: 39,
+        endVerseNumber:66,
+        text: "Luke 1:39-66"
+      },
+      {
+          bookName: "Luke",
+          chapterNumber: 1,
+          startVerseNumber: 67,
+          endVerseNumber:80,
+          text: "Luke 1:67-80"
       }
     ]
   },

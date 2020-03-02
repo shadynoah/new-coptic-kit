@@ -1,0 +1,354 @@
+{
+    "luka": [
+    {
+        bookName: "Luke",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: "Luke 1:1-25"
+      },
+      {
+        bookName: "Luke",
+        chapterNumber: 1,
+        startVerseNumber: 26,
+        endVerseNumber:66,
+        text: "Luke 1:26-66"
+      },
+       {
+        bookName: "Luke",
+        chapterNumber: 1,
+        startVerseNumber: 67,
+        endVerseNumber:80,
+        text: "Luke 1:67-80"
+      },
+        {
+          bookName: "Luke",
+          chapterNumber: 2,
+          startVerseNumber: 1,
+          endVerseNumber:20,
+          text: "Luke 2:1-20"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 2,
+          startVerseNumber: 21,
+          endVerseNumber:50,
+          text: "Luke 2:21-50"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 3,
+          startVerseNumber: 1,
+          endVerseNumber:20,
+          text: "Luke 3:1-20"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 3,
+          startVerseNumber: 21,
+          endVerseNumber:38,
+          text: "Luke 3:21-38"
+      },
+          {
+            
+          bookName: "Luke",
+          chapterNumber: 4,
+          startVerseNumber: 1,
+          endVerseNumber:30,
+          text: "Luke 4:1-30"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 4,
+          startVerseNumber: 31,
+          endVerseNumber:44,
+          text: "Luke 4:31-44"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 5,
+          startVerseNumber: 1,
+          endVerseNumber:16,
+          text: "Luke 5:1-16"
+      },
+    {
+            
+          bookName: "Luke",
+          chapterNumber: 5,
+          startVerseNumber: 17,
+          endVerseNumber:38,
+          text: "Luke 5:17-39"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 6,
+          startVerseNumber: 1,
+          endVerseNumber:26,
+          text: "Luke 6:1-26"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 6,
+          startVerseNumber: 27,
+          endVerseNumber:49,
+          text: "Luke 6:27-49"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 7,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 7:1-35"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 7,
+          startVerseNumber: 36,
+          endVerseNumber:48,
+          text: "Luke 7:36-50"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 8,
+          startVerseNumber: 1,
+          endVerseNumber:48,
+          text: "Luke 8:1-25"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 8,
+          startVerseNumber: 1,
+          endVerseNumber:48,
+          text: "Luke 8:26-56"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 9,
+          startVerseNumber: 1,
+          endVerseNumber:27,
+          text: "Luke 9:1-27"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 9,
+          startVerseNumber: 1,
+          endVerseNumber:27,
+          text: "Luke 9:28-62"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 10,
+          startVerseNumber: 1,
+          endVerseNumber:24,
+          text: "Luke 10:1-24"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 10,
+          startVerseNumber: 25,
+          endVerseNumber:24,
+          text: "Luke 10:25-42"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 11,
+          startVerseNumber: 1,
+          endVerseNumber:28,
+          text: "Luke 11:1-28"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 11,
+          startVerseNumber: 29,
+          endVerseNumber:54,
+          text: "Luke 11:29-54"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 12,
+          startVerseNumber: 1,
+          endVerseNumber:34,
+          text: "Luke 12:1-34"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 12,
+          startVerseNumber: 35,
+          endVerseNumber:59,
+          text: "Luke 12:35-59"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 13,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 13:"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 14,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 14:"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 15,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 15:"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 15,
+          startVerseNumber: 1,
+          endVerseNumber:31,
+          text: "Luke 16"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 17,
+          startVerseNumber: 1,
+          endVerseNumber:37,
+          text: "Luke 17"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 18,
+          startVerseNumber: 1,
+          endVerseNumber:43,
+          text: "Luke 18"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 18,
+          startVerseNumber: 1,
+          endVerseNumber:43,
+          text: "Luke 18"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 19,
+          startVerseNumber: 1,
+          endVerseNumber:27,
+          text: "Luke 19:1-27"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 19,
+          startVerseNumber: 28,
+          endVerseNumber:48,
+          text: "Luke 19:28-48"
+      },
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 20,
+          startVerseNumber: 1,
+          endVerseNumber:26,
+          text: "Luke 20:1-26"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 20,
+          startVerseNumber: 1,
+          endVerseNumber:47,
+          text: "Luke 20:27-47"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 21,
+          startVerseNumber: 1,
+          endVerseNumber:38,
+          text: "Luke 21"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 22,
+          startVerseNumber: 1,
+          endVerseNumber:38,
+          text: "Luke 22:1-30"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 22,
+          startVerseNumber: 31,
+          endVerseNumber:53,
+          text: "Luke 22:31-53"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 22,
+          startVerseNumber: 39,
+          endVerseNumber:71,
+          text: "Luke 22:54-71"
+      },
+         {
+            
+          bookName: "Luke",
+          chapterNumber: 23,
+          startVerseNumber: 1,
+          endVerseNumber:25,
+          text: "Luke 23:1-25"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 23,
+          startVerseNumber: 26,
+          endVerseNumber:56,
+          text: "Luke 23:26-56"
+      }, 
+      {
+            
+          bookName: "Luke",
+          chapterNumber: 24,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 24:1-35"
+      },
+        {
+            
+          bookName: "Luke",
+          chapterNumber: 24,
+          startVerseNumber: 1,
+          endVerseNumber:35,
+          text: "Luke 24:36-53"
+      },
+    ]
+}
+====================== 44 days============
+will fill 16 days

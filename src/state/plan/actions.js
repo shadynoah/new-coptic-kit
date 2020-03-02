@@ -9,3 +9,5 @@ export const SELECT_CHAPTER_OF_DAY_PLAN = '[Plan] select chapter of day plan'
 
 export const CLEAR_DAY_CONTENT_OF_PLAN = '[Plan] clear day content of plan'
 export const LOAD_ARABIC_PLAN_CHAPTERS = "[Plan] loading arabic plan chapters";
+
+export const SET_COMPLETED_DAY_PLAN_FLAG = "[Plan] set completed day flag";
