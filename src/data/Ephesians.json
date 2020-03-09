@@ -1,0 +1,63 @@
+{
+    "Ephesians": [
+    {
+        "bookName": "Ephesians",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":23,
+        "text": "Ephesians 1"
+      },
+      {
+        "bookName": "Ephesians",
+        "chapterNumber": 2,
+        "startVerseNumber": 1,
+        "endVerseNumber":22,
+        "text": "Ephesians 2"
+      },
+       {
+        "bookName": "Ephesians",
+        "chapterNumber": 3,
+        "startVerseNumber": 0,
+        "endVerseNumber":21,
+        "text": "Ephesians 3"
+      },
+        {
+            "bookName": "Ephesians",
+            "chapterNumber": 4,
+            "startVerseNumber": 1,
+            "endVerseNumber":16,
+            "text": "Ephesians 4:1-16"
+      },
+      {
+        "bookName": "Ephesians",
+        "chapterNumber": 4,
+        "startVerseNumber": 17,
+        "endVerseNumber":32,
+        "text": "Ephesians 4:17-32"
+      },
+        {
+            
+            "bookName": "Ephesians",
+            "chapterNumber": 5,
+            "startVerseNumber": 1,
+            "endVerseNumber":21,
+            "text": "Ephesians 5:1-21"
+      },
+        {
+            "bookName": "Ephesians",
+            "chapterNumber": 5,
+            "startVerseNumber": 22,
+            "endVerseNumber":33,
+            "text": "Ephesians 5:22-33"
+      },
+          {
+            "bookName": "Ephesians",
+            "chapterNumber": 6,
+            "startVerseNumber": 1,
+            "endVerseNumber":24,
+            "text": "Ephesians 6"
+      }
+    ]
+}
+// ====================== 8 days============
+// will fill 2 days

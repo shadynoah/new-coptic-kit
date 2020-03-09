@@ -1,0 +1,293 @@
+{
+    "Acts": [
+    {
+        "bookName": "Acts",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":26,
+        "text": "Acts 1"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 2,
+        "startVerseNumber": 1,
+        "endVerseNumber":21,
+        "text": "Acts 2:1-21"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 2,
+        "startVerseNumber": 22,
+        "endVerseNumber":47,
+        "text": "Acts 2:22-47"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber": 3,
+            "startVerseNumber": 0,
+            "endVerseNumber":26,
+            "text": "Acts 3"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 4,
+        "startVerseNumber": 0,
+        "endVerseNumber":37,
+        "text": "Acts 4"
+      },
+        {
+            
+            "bookName": "Acts",
+            "chapterNumber": 5,
+            "startVerseNumber": 1,
+            "endVerseNumber":21,
+            "text": "Acts 5:1-21"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber": 5,
+            "startVerseNumber": 22,
+            "endVerseNumber":42,
+            "text": "Acts 5:22-42"
+      },
+          {
+            "bookName": "Acts",
+            "chapterNumber": 6,
+            "startVerseNumber": 1,
+            "endVerseNumber":15,
+            "text": "Acts 6"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber": 7,
+            "startVerseNumber": 1,
+            "endVerseNumber":19,
+            "text": "Acts 7:1-19"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 8,
+        "startVerseNumber": 20,
+        "endVerseNumber":43,
+        "text": "Acts 7:20-43"
+      },
+    {
+        "bookName": "Acts",
+        "chapterNumber": 6,
+        "startVerseNumber": 60,
+        "endVerseNumber":71,
+        "text": "Acts 7:44-60"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 8,
+        "startVerseNumber": 1,
+        "endVerseNumber":25,
+        "text": "Acts 8:1-25"
+      },
+         {
+            "bookName": "Acts",
+            "chapterNumber": 7,
+            "startVerseNumber": 26,
+            "endVerseNumber":40,
+            "text": "Acts 8:26-40"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber":  9,
+            "startVerseNumber": 1,
+            "endVerseNumber":31,
+            "text": "Acts 9:1-31"
+      },
+         {
+            "bookName": "Acts",
+            "chapterNumber": 9,
+            "startVerseNumber": 32,
+            "endVerseNumber":43,
+            "text": "Acts 9:32-43"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 10,
+        "startVerseNumber": 1,
+        "endVerseNumber":23,
+        "text": "Acts 10:1-23"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 10,
+        "startVerseNumber": 24,
+        "endVerseNumber":48,
+        "text": "Acts 10:24-48"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 11,
+        "startVerseNumber": 1,
+        "endVerseNumber":30,
+        "text": "Acts 11"
+      },
+       {
+        "bookName": "Acts",
+        "chapterNumber": 12,
+        "startVerseNumber": 1,
+        "endVerseNumber":25,
+        "text": "Acts 12"
+      },
+         {
+        "bookName": "Acts",
+        "chapterNumber": 13,
+        "startVerseNumber": 1,
+        "endVerseNumber":25,
+        "text": "Acts 13:1-25"
+      },
+         {
+         "bookName": "Acts",
+        "chapterNumber": 13,
+        "startVerseNumber": 26,
+        "endVerseNumber":52,
+        "text": "Acts 13:26-52"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber": 14,
+            "startVerseNumber": 1,
+            "endVerseNumber":28,
+            "text": "Acts 14"
+      },
+         {
+            "bookName": "Acts",
+            "chapterNumber": 15,
+            "startVerseNumber": 1,
+            "endVerseNumber":21,
+            "text": "Acts 15:1-21"
+      },
+       {
+            "bookName": "Acts",
+            "chapterNumber": 15,
+            "startVerseNumber": 22,
+            "endVerseNumber":41,
+            "text": "Acts 15:22-41"
+      },
+      {
+            "bookName": "Acts",
+            "chapterNumber": 16,
+            "startVerseNumber": 1,
+            "endVerseNumber":15,
+            "text": "Acts 16:1-15"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 16,
+        "startVerseNumber": 16,
+        "endVerseNumber":40,
+        "text": "Acts 16:16-40"
+      },
+        {
+            "bookName": "Acts",
+            "chapterNumber": 17,
+            "startVerseNumber": 1,
+            "endVerseNumber":34,
+            "text": "Acts 17"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 18,
+        "startVerseNumber": 1,
+        "endVerseNumber":28,
+        "text": "Acts 18"
+      },{
+        "bookName": "Acts",
+        "chapterNumber": 19,
+        "startVerseNumber": 1,
+        "endVerseNumber":22,
+        "text": "Acts 19:1-22"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 19,
+        "startVerseNumber": 23,
+        "endVerseNumber":41,
+        "text": "Acts 19:23-41"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 20,
+        "startVerseNumber": 1,
+        "endVerseNumber":38,
+        "text": "Acts 20"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 19,
+        "startVerseNumber": 1,
+        "endVerseNumber":26,
+        "text": "Acts 21:1-26"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 21,
+        "startVerseNumber": 27,
+        "endVerseNumber":40,
+        "text": "Acts 21:27-40"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 22,
+        "startVerseNumber": 1,
+        "endVerseNumber":30,
+        "text": "Acts 22"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 23,
+        "startVerseNumber": 1,
+        "endVerseNumber":35,
+        "text": "Acts 23"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 24,
+        "startVerseNumber": 1,
+        "endVerseNumber":27,
+        "text": "Acts 24"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 25,
+        "startVerseNumber": 1,
+        "endVerseNumber":27,
+        "text": "Acts 25"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 26,
+        "startVerseNumber": 1,
+        "endVerseNumber":32,
+        "text": "Acts 26"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 26,
+        "startVerseNumber": 1,
+        "endVerseNumber":26,
+        "text": "Acts 27"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 27,
+        "startVerseNumber": 27,
+        "endVerseNumber":44,
+        "text": "Acts 27"
+      },
+      {
+        "bookName": "Acts",
+        "chapterNumber": 28,
+        "startVerseNumber": 1,
+        "endVerseNumber":31,
+        "text": "Acts 28"
+      }
+    ]
+}
+// ====================== 41 days============
+// will fill 13 days

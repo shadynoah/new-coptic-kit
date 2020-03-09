@@ -1,0 +1,140 @@
+{
+    "Romans": [
+    {
+        "bookName": "Romans",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":28,
+        "text": "Romans 1:1-17"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 1,
+        "startVerseNumber": 1,
+        "endVerseNumber":29,
+        "text": "Romans 2"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 3,
+        "startVerseNumber": 0,
+        "endVerseNumber":31,
+        "text": "Romans 3"
+      },
+        {
+            "bookName": "Romans",
+            "chapterNumber": 4,
+            "startVerseNumber": 0,
+            "endVerseNumber":25,
+            "text": "Romans 4"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 5,
+        "startVerseNumber": 0,
+        "endVerseNumber":21,
+        "text": "Romans 5"
+      },
+        {
+            
+            "bookName": "Romans",
+            "chapterNumber": 6,
+            "startVerseNumber": 1,
+            "endVerseNumber":23,
+            "text": "Romans 6"
+      },
+        {
+            "bookName": "Romans",
+            "chapterNumber": 7,
+            "startVerseNumber": 1,
+            "endVerseNumber":25,
+            "text": "Romans 7"
+      },
+          {
+            "bookName": "Romans",
+            "chapterNumber": 8,
+            "startVerseNumber": 1,
+            "endVerseNumber":30,
+            "text": "Romans 8:1-30"
+      },
+        {
+            "bookName": "Romans",
+            "chapterNumber": 8,
+            "startVerseNumber": 31,
+            "endVerseNumber":39,
+            "text": "Romans 8:31-39"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 9,
+        "startVerseNumber": 1,
+        "endVerseNumber":33,
+        "text": "Romans 9"
+      },
+    {
+        "bookName": "Romans",
+        "chapterNumber": 10,
+        "startVerseNumber": 1,
+        "endVerseNumber":21,
+        "text": "Romans 10"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 11,
+        "startVerseNumber": 1,
+        "endVerseNumber":24,
+        "text": "Romans 11:1-24"
+      },
+         {
+            "bookName": "Romans",
+            "chapterNumber": 11,
+            "startVerseNumber": 25,
+            "endVerseNumber":53,
+            "text": "Romans 11:25-36"
+      },
+        {
+            "bookName": "Romans",
+            "chapterNumber": 12,
+            "startVerseNumber": 1,
+            "endVerseNumber":21,
+            "text": "Romans 12"
+      },
+         {
+            "bookName": "Romans",
+            "chapterNumber": 13,
+            "startVerseNumber": 1,
+            "endVerseNumber":14,
+            "text": "Romans 13"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 14,
+        "startVerseNumber": 1,
+        "endVerseNumber":23,
+        "text": "Romans 14"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 15,
+        "startVerseNumber": 1,
+        "endVerseNumber":22,
+        "text": "Romans 15:1-22"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 15,
+        "startVerseNumber": 23,
+        "endVerseNumber":33,
+        "text": "Romans 15:23-33"
+      },
+       {
+        "bookName": "Romans",
+        "chapterNumber": 16,
+        "startVerseNumber": 1,
+        "endVerseNumber":27,
+        "text": "Romans 16"
+      }
+    ]
+}
+// ====================== 19 days============
+// will fill 3 days

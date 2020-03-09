@@ -1,0 +1,63 @@
+{
+    "Galatians": [
+    {
+        "bookName": "Galatians",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":24,
+        "text": "Galatians 1"
+      },
+      {
+        "bookName": "Galatians",
+        "chapterNumber": 2,
+        "startVerseNumber": 1,
+        "endVerseNumber":21,
+        "text": "Galatians 2"
+      },
+       {
+        "bookName": "Galatians",
+        "chapterNumber": 3,
+        "startVerseNumber": 0,
+        "endVerseNumber":18,
+        "text": "Galatians 3:1-14"
+      },
+        {
+            "bookName": "Galatians",
+            "chapterNumber": 3,
+            "startVerseNumber": 15,
+            "endVerseNumber":29,
+            "text": "Galatians 3:15-29"
+      },
+      {
+        "bookName": "Galatians",
+        "chapterNumber": 4,
+        "startVerseNumber": 0,
+        "endVerseNumber":20,
+        "text": "Galatians 4:1-20"
+      },
+        {
+            
+            "bookName": "Galatians",
+            "chapterNumber": 4,
+            "startVerseNumber": 21,
+            "endVerseNumber":31,
+            "text": "Galatians 4:21-31"
+      },
+        {
+            "bookName": "Galatians",
+            "chapterNumber": 5,
+            "startVerseNumber": 1,
+            "endVerseNumber":26,
+            "text": "Galatians 5"
+      },
+          {
+            "bookName": "Galatians",
+            "chapterNumber": 6,
+            "startVerseNumber": 1,
+            "endVerseNumber":18,
+            "text": "Galatians 6"
+      }
+    ]
+}
+// ====================== 8 days============
+// will fill 2 days
