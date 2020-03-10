@@ -1,0 +1,41 @@
+{
+    "1 Peter": [
+    {
+        "bookName": "1 Peter",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":25,
+        "text": "1 Peter 1"
+      },
+      {
+        "bookName": "1 Peter",
+        "chapterNumber": 2,
+        "startVerseNumber": 1,
+        "endVerseNumber":25,
+        "text": "1 Peter 2"
+      },
+       {
+        "bookName": "1 Peter",
+        "chapterNumber": 3,
+        "startVerseNumber": 1,
+        "endVerseNumber":22,
+        "text": "1 Peter 3"
+      },
+        {
+            "bookName": "1 Peter",
+            "chapterNumber": 4,
+            "startVerseNumber": 1,
+            "endVerseNumber":19,
+            "text": "1 Peter 4"
+      },
+      {
+        "bookName": "1 Peter",
+        "chapterNumber": 5,
+        "startVerseNumber": 0,
+        "endVerseNumber":14,
+        "text": "1 Peter 5"
+      }
+    ]
+}
+// ====================== 5 days============
+// will fill 0 days

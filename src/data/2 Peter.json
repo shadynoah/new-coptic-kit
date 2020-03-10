@@ -1,0 +1,27 @@
+{
+    "2 Peter": [
+    {
+        "bookName": "2 Peter",
+        "chapterNumber": 1,
+        "startVerseNumber": 0,
+        "endVerseNumber":21,
+        "text": "2 Peter 1"
+      },
+      {
+        "bookName": "2 Peter",
+        "chapterNumber": 2,
+        "startVerseNumber": 1,
+        "endVerseNumber":22,
+        "text": "2 Peter 2"
+      },
+       {
+        "bookName": "2 Peter",
+        "chapterNumber": 3,
+        "startVerseNumber": 1,
+        "endVerseNumber":18,
+        "text": "2 Peter 3"
+      }
+    ]
+}
+// ====================== 3 days============
+// will fill 3 days

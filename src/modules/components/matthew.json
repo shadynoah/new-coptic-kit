@@ -45,13 +45,6 @@
       },
         {
             "bookName": "Matthew",
-            "chapterNumber": 5,
-            "startVerseNumber": 27,
-            "endVerseNumber":26,
-            "text": "Matthew 5:27-48"
-      },
-          {
-            "bookName": "Matthew",
             "chapterNumber": 6,
             "startVerseNumber": 1,
             "endVerseNumber":34,
@@ -84,13 +77,6 @@
         "startVerseNumber": 1,
         "endVerseNumber":23,
         "text": "Matthew 10:1-23"
-      },
-         {
-            "bookName": "Matthew",
-            "chapterNumber": 10,
-            "startVerseNumber": 1,
-            "endVerseNumber":23,
-            "text": "Matthew 10:1-23"
       },
         {
             "bookName": "Matthew",
@@ -181,7 +167,7 @@
         "chapterNumber": 18,
         "startVerseNumber": 1,
         "endVerseNumber":20,
-        "text": "Matthew 18"
+        "text": "Matthew 18:1-20"
       },
         {
             "bookName": "Matthew",
@@ -211,13 +197,6 @@
             "startVerseNumber": 20,
             "endVerseNumber":34,
             "text": "Matthew 20:20-34"
-      },
-       {
-        "bookName": "Matthew",
-        "chapterNumber": 20,
-        "startVerseNumber": 20,
-        "endVerseNumber":34,
-        "text": "Matthew 20:20-34"
       },
          {
             "bookName": "Matthew",
@@ -266,7 +245,7 @@
         "chapterNumber": 24,
         "startVerseNumber": 1,
         "endVerseNumber":31,
-        "text": "Matthew 24:1-31"
+        "text": "Matthew 24:1-30"
       },
         {
             "bookName": "Matthew",
@@ -317,22 +296,8 @@
         "chapterNumber": 27,
         "startVerseNumber": 1,
         "endVerseNumber":26,
-        "text": "Matthew 27:1-26"
+        "text": "Matthew 27:1-31"
   },
-  {
-    "bookName": "Matthew",
-    "chapterNumber": 27,
-    "startVerseNumber": 1,
-    "endVerseNumber":26,
-    "text": "Matthew 27:1-26"
-},
-{
-    "bookName": "Matthew",
-    "chapterNumber": 27,
-    "startVerseNumber": 27,
-    "endVerseNumber":31,
-    "text": "Matthew 27:1-31"
-},
 {
     "bookName": "Matthew",
     "chapterNumber": 27,
