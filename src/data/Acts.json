@@ -66,16 +66,16 @@
       },
        {
         "bookName": "Acts",
-        "chapterNumber": 8,
+        "chapterNumber": 7,
         "startVerseNumber": 20,
         "endVerseNumber":43,
         "text": "Acts 7:20-43"
       },
     {
         "bookName": "Acts",
-        "chapterNumber": 6,
-        "startVerseNumber": 60,
-        "endVerseNumber":71,
+        "chapterNumber": 7,
+        "startVerseNumber": 44,
+        "endVerseNumber":60,
         "text": "Acts 7:44-60"
       },
       {
@@ -87,7 +87,7 @@
       },
          {
             "bookName": "Acts",
-            "chapterNumber": 7,
+            "chapterNumber": 8,
             "startVerseNumber": 26,
             "endVerseNumber":40,
             "text": "Acts 8:26-40"
@@ -268,17 +268,17 @@
       },
       {
         "bookName": "Acts",
-        "chapterNumber": 26,
+        "chapterNumber": 27,
         "startVerseNumber": 1,
         "endVerseNumber":26,
-        "text": "Acts 27"
+        "text": "Acts 27:1-26"
       },
       {
         "bookName": "Acts",
         "chapterNumber": 27,
         "startVerseNumber": 27,
         "endVerseNumber":44,
-        "text": "Acts 27"
+        "text": "Acts 27:27-44"
       },
       {
         "bookName": "Acts",

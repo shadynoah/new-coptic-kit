@@ -47,14 +47,14 @@
             "bookName": "2 Corinthians",
             "chapterNumber": 7,
             "startVerseNumber": 1,
-            "endVerseNumber":18,
+            "endVerseNumber":16,
             "text": "2 Corinthians 7"
       },
           {
             "bookName": "2 Corinthians",
             "chapterNumber": 8,
-            "startVerseNumber": 25,
-            "endVerseNumber":40,
+            "startVerseNumber": 1,
+            "endVerseNumber":24,
             "text": "2 Corinthians 8"
       },
         {
@@ -71,12 +71,19 @@
         "endVerseNumber":18,
         "text": "2 Corinthians 10"
       },
-    {
+      {
         "bookName": "2 Corinthians",
         "chapterNumber": 11,
         "startVerseNumber": 1,
+        "endVerseNumber":15,
+        "text": "2 Corinthians 11:1-15"
+      },
+    {
+        "bookName": "2 Corinthians",
+        "chapterNumber": 11,
+        "startVerseNumber": 16,
         "endVerseNumber":33,
-        "text": "2 Corinthians 11"
+        "text": "2 Corinthians 11:16-33"
       },
       {
         "bookName": "2 Corinthians",
@@ -94,5 +101,5 @@
       }
     ]
 }
-// ====================== 13 days============
+// ====================== 14 days============
 // will fill 0 days

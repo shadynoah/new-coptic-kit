@@ -4,15 +4,22 @@
         "bookName": "1 Corinthians",
         "chapterNumber": 1,
         "startVerseNumber": 0,
-        "endVerseNumber":28,
-        "text": "1 Corinthians 1"
+        "endVerseNumber":17,
+        "text": "1 Corinthians 1:1-17"
+      },
+      {
+        "bookName": "1 Corinthians",
+        "chapterNumber": 1,
+        "startVerseNumber": 18,
+        "endVerseNumber":31,
+        "text": "1 Corinthians 1:18-31"
       },
       {
         "bookName": "1 Corinthians",
         "chapterNumber": 2,
         "startVerseNumber": 1,
         "endVerseNumber":16,
-        "text": "1 Corinthians 2:"
+        "text": "1 Corinthians 2"
       },
        {
         "bookName": "1 Corinthians",
@@ -157,5 +164,5 @@
       }
     ]
 }
-// ====================== 22 days============
+// ====================== 23 days============
 // will fill 6 days

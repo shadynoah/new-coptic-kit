@@ -5,7 +5,7 @@
         "chapterNumber": 1,
         "startVerseNumber": 0,
         "endVerseNumber":28,
-        "text": "John:1-28"
+        "text": "John 1:1-28"
       },
       {
         "bookName": "John",
@@ -25,9 +25,16 @@
             "bookName": "John",
             "chapterNumber": 3,
             "startVerseNumber": 0,
-            "endVerseNumber":36,
-            "text": "John 3"
+            "endVerseNumber":24,
+            "text": "John 3:1-24"
       },
+      {
+        "bookName": "John",
+        "chapterNumber": 3,
+        "startVerseNumber": 25,
+        "endVerseNumber":36,
+        "text": "John 3:25-36"
+  },
       {
         "bookName": "John",
         "chapterNumber": 4,
@@ -124,7 +131,7 @@
         "bookName": "John",
         "chapterNumber": 10,
         "startVerseNumber": 22,
-        "endVerseNumber":52,
+        "endVerseNumber":42,
         "text": "John 10:22-42"
       },
        {
@@ -159,23 +166,30 @@
             "bookName": "John",
             "chapterNumber": 13,
             "startVerseNumber": 1,
-            "endVerseNumber":21,
-            "text": "John 13:1-21"
+            "endVerseNumber":19,
+            "text": "John 13:1-19"
       },
        {
             "bookName": "John",
             "chapterNumber": 13,
-            "startVerseNumber": 22,
+            "startVerseNumber": 20,
             "endVerseNumber":38,
-            "text": "John 13:22-38"
+            "text": "John 13:20-38"
       },
       {
             "bookName": "John",
             "chapterNumber": 14,
             "startVerseNumber": 1,
-            "endVerseNumber":31,
-            "text": "John 14"
+            "endVerseNumber":14,
+            "text": "John 14:1-14"
       },
+      {
+        "bookName": "John",
+        "chapterNumber": 14,
+        "startVerseNumber": 15,
+        "endVerseNumber":31,
+        "text": "John 14:15-31"
+  },
       {
         "bookName": "John",
         "chapterNumber": 15,
@@ -187,9 +201,16 @@
             "bookName": "John",
             "chapterNumber": 16,
             "startVerseNumber": 1,
-            "endVerseNumber":33,
-            "text": "John 16"
+            "endVerseNumber":16,
+            "text": "John 16:1-16"
       },
+      {
+        "bookName": "John",
+        "chapterNumber": 16,
+        "startVerseNumber": 17,
+        "endVerseNumber":33,
+        "text": "John 16:17-33"
+  },
       {
         "bookName": "John",
         "chapterNumber": 17,
@@ -228,17 +249,31 @@
         "bookName": "John",
         "chapterNumber": 20,
         "startVerseNumber": 1,
+        "endVerseNumber":18,
+        "text": "John 20:1-18"
+      },
+      {
+        "bookName": "John",
+        "chapterNumber": 20,
+        "startVerseNumber": 19,
         "endVerseNumber":31,
-        "text": "John 20"
+        "text": "John 20:19-31"
       },
       {
         "bookName": "John",
         "chapterNumber": 21,
         "startVerseNumber": 1,
+        "endVerseNumber":14,
+        "text": "John 21:1-14"
+      },
+      {
+        "bookName": "John",
+        "chapterNumber": 21,
+        "startVerseNumber": 15,
         "endVerseNumber":25,
-        "text": "John 21"
+        "text": "John 21:15-25"
       }
     ]
 }
-// ====================== 34 days============
-// will fill 13 days
+// ====================== 39 days============
+// will fill 18 days

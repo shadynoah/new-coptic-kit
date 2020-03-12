@@ -5,21 +5,28 @@
         "chapterNumber": 1,
         "startVerseNumber": 0,
         "endVerseNumber":28,
-        "text": "Mark 1"
+        "text": "Mark 1:1-28"
       },
       {
         "bookName": "Mark",
         "chapterNumber": 1,
         "startVerseNumber": 29,
         "endVerseNumber":45,
-        "text": "Mark 1"
+        "text": "Mark 1:29-45"
       },
        {
         "bookName": "Mark",
         "chapterNumber": 2,
         "startVerseNumber": 0,
+        "endVerseNumber":17,
+        "text": "Mark 2:1-17"
+      },
+      {
+        "bookName": "Mark",
+        "chapterNumber": 2,
+        "startVerseNumber": 18,
         "endVerseNumber":28,
-        "text": "Mark 2"
+        "text": "Mark 2:18-28"
       },
         {
             "bookName": "Mark",
@@ -76,7 +83,7 @@
         "chapterNumber": 7,
         "startVerseNumber": 1,
         "endVerseNumber":23,
-        "text": "Mark 7"
+        "text": "Mark 7:1-23"
       },
       {
         "bookName": "Mark",
@@ -134,6 +141,13 @@
         "endVerseNumber":19,
         "text": "Mark 11:1-19"
       },
+      {
+        "bookName": "Mark",
+        "chapterNumber": 11,
+        "startVerseNumber": 20,
+        "endVerseNumber":33,
+        "text": "Mark 11:20-33"
+      },
          {
         "bookName": "Mark",
         "chapterNumber": 12,
@@ -153,7 +167,7 @@
             "chapterNumber": 13,
             "startVerseNumber": 1,
             "endVerseNumber":37,
-            "text": "Mark 13:1-37"
+            "text": "Mark 13"
       },
          {
             "bookName": "Mark",
@@ -199,5 +213,5 @@
       }
     ]
 }
-// ====================== 28 days============
-// will fill 12 days
+// ====================== 30 days============
+// will fill 14 days

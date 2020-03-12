@@ -81,7 +81,7 @@
           bookName: "Luke",
           chapterNumber: 5,
           startVerseNumber: 17,
-          endVerseNumber:38,
+          endVerseNumber:39,
           text: "Luke 5:17-39"
       },
       {
@@ -113,7 +113,7 @@
           bookName: "Luke",
           chapterNumber: 7,
           startVerseNumber: 36,
-          endVerseNumber:48,
+          endVerseNumber:50,
           text: "Luke 7:36-50"
       },
        {
@@ -121,15 +121,15 @@
           bookName: "Luke",
           chapterNumber: 8,
           startVerseNumber: 1,
-          endVerseNumber:48,
+          endVerseNumber:25,
           text: "Luke 8:1-25"
       },
        {
             
           bookName: "Luke",
           chapterNumber: 8,
-          startVerseNumber: 1,
-          endVerseNumber:48,
+          startVerseNumber: 26,
+          endVerseNumber:56,
           text: "Luke 8:26-56"
       },
        {
@@ -144,9 +144,17 @@
             
           bookName: "Luke",
           chapterNumber: 9,
-          startVerseNumber: 1,
-          endVerseNumber:27,
-          text: "Luke 9:28-62"
+          startVerseNumber: 28,
+          endVerseNumber:50,
+          text: "Luke 9:28-50"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 9,
+          startVerseNumber: 51,
+          endVerseNumber:62,
+          text: "Luke 9:51-62"
       },
          {
             
@@ -161,7 +169,7 @@
           bookName: "Luke",
           chapterNumber: 10,
           startVerseNumber: 25,
-          endVerseNumber:24,
+          endVerseNumber:42,
           text: "Luke 10:25-42"
       },
         {
@@ -201,59 +209,91 @@
           bookName: "Luke",
           chapterNumber: 13,
           startVerseNumber: 1,
+          endVerseNumber:21,
+          text: "Luke 13:1-21"
+      },
+       {
+          bookName: "Luke",
+          chapterNumber: 13,
+          startVerseNumber: 22,
           endVerseNumber:35,
-          text: "Luke 13:"
+          text: "Luke 13:22-35"
       },
         {
             
           bookName: "Luke",
           chapterNumber: 14,
           startVerseNumber: 1,
+          endVerseNumber:24,
+          text: "Luke 14:1-24"
+      },
+        {
+          bookName: "Luke",
+          chapterNumber: 14,
+          startVerseNumber: 25,
           endVerseNumber:35,
-          text: "Luke 14:"
+          text: "Luke 14:25-35"
       },
       {
-            
           bookName: "Luke",
           chapterNumber: 15,
           startVerseNumber: 1,
-          endVerseNumber:35,
-          text: "Luke 15:"
+          endVerseNumber:10,
+          text: "Luke 15:1-10"
+      },
+      {
+          bookName: "Luke",
+          chapterNumber: 15,
+          startVerseNumber: 11,
+          endVerseNumber:32,
+          text: "Luke 15:11-32"
       },
         {
             
           bookName: "Luke",
-          chapterNumber: 15,
+          chapterNumber: 16,
           startVerseNumber: 1,
+          endVerseNumber:18,
+          text: "Luke 16:1-18"
+      },
+       {
+            
+          bookName: "Luke",
+          chapterNumber: 16,
+          startVerseNumber: 19,
           endVerseNumber:31,
-          text: "Luke 16"
+          text: "Luke 16:19-31"
       },
         {
             
           bookName: "Luke",
           chapterNumber: 17,
           startVerseNumber: 1,
-          endVerseNumber:37,
-          text: "Luke 17"
+          endVerseNumber:19,
+          text: "Luke 17:1-19"
       },
        {
-            
           bookName: "Luke",
-          chapterNumber: 18,
-          startVerseNumber: 1,
-          endVerseNumber:43,
-          text: "Luke 18"
+          chapterNumber: 17,
+          startVerseNumber: 20,
+          endVerseNumber:37,
+          text: "Luke 17:20-37"
       },
-         {
-            
+       {
           bookName: "Luke",
           chapterNumber: 18,
           startVerseNumber: 1,
+          endVerseNumber:17,
+          text: "Luke 18:1-17"
+      },
+       {
+          bookName: "Luke",
+          chapterNumber: 18,
+          startVerseNumber: 18,
           endVerseNumber:43,
-          text: "Luke 18"
+          text: "Luke 18:18-43"
       },
       {
-            
           bookName: "Luke",
           chapterNumber: 19,
           startVerseNumber: 1,
@@ -261,7 +301,6 @@
           text: "Luke 19:1-27"
       },
         {
-            
           bookName: "Luke",
           chapterNumber: 19,
           startVerseNumber: 28,
@@ -269,7 +308,6 @@
           text: "Luke 19:28-48"
       },
       {
-            
           bookName: "Luke",
           chapterNumber: 20,
           startVerseNumber: 1,
@@ -277,7 +315,6 @@
           text: "Luke 20:1-26"
       },
          {
-            
           bookName: "Luke",
           chapterNumber: 20,
           startVerseNumber: 1,
@@ -285,7 +322,6 @@
           text: "Luke 20:27-47"
       },
        {
-            
           bookName: "Luke",
           chapterNumber: 21,
           startVerseNumber: 1,
@@ -293,7 +329,6 @@
           text: "Luke 21"
       },
        {
-            
           bookName: "Luke",
           chapterNumber: 22,
           startVerseNumber: 1,
@@ -301,7 +336,6 @@
           text: "Luke 22:1-30"
       },
         {
-            
           bookName: "Luke",
           chapterNumber: 22,
           startVerseNumber: 31,
@@ -312,7 +346,7 @@
             
           bookName: "Luke",
           chapterNumber: 22,
-          startVerseNumber: 39,
+          startVerseNumber: 54,
           endVerseNumber:71,
           text: "Luke 22:54-71"
       },
@@ -325,7 +359,6 @@
           text: "Luke 23:1-25"
       },
        {
-            
           bookName: "Luke",
           chapterNumber: 23,
           startVerseNumber: 26,
@@ -333,7 +366,6 @@
           text: "Luke 23:26-56"
       }, 
       {
-            
           bookName: "Luke",
           chapterNumber: 24,
           startVerseNumber: 1,
@@ -350,5 +382,5 @@
       },
     ]
 }
-====================== 44 days============
-will fill 20 days
+====================== 50 days============
+will fill 26 days

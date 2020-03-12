@@ -4,12 +4,19 @@
         "bookName": "Romans",
         "chapterNumber": 1,
         "startVerseNumber": 0,
-        "endVerseNumber":28,
+        "endVerseNumber":17,
         "text": "Romans 1:1-17"
       },
       {
         "bookName": "Romans",
         "chapterNumber": 1,
+        "startVerseNumber": 18,
+        "endVerseNumber":28,
+        "text": "Romans 1:18-32"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 2,
         "startVerseNumber": 1,
         "endVerseNumber":29,
         "text": "Romans 2"
@@ -36,7 +43,6 @@
         "text": "Romans 5"
       },
         {
-            
             "bookName": "Romans",
             "chapterNumber": 6,
             "startVerseNumber": 1,
@@ -54,22 +60,29 @@
             "bookName": "Romans",
             "chapterNumber": 8,
             "startVerseNumber": 1,
-            "endVerseNumber":30,
-            "text": "Romans 8:1-30"
+            "endVerseNumber":17,
+            "text": "Romans 8:1-17"
       },
         {
             "bookName": "Romans",
             "chapterNumber": 8,
-            "startVerseNumber": 31,
+            "startVerseNumber": 18,
             "endVerseNumber":39,
-            "text": "Romans 8:31-39"
+            "text": "Romans 8:18-39"
       },
        {
         "bookName": "Romans",
         "chapterNumber": 9,
         "startVerseNumber": 1,
+        "endVerseNumber":13,
+        "text": "Romans 9:1-13"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 9,
+        "startVerseNumber": 14,
         "endVerseNumber":33,
-        "text": "Romans 9"
+        "text": "Romans 9:14-33"
       },
     {
         "bookName": "Romans",
@@ -89,7 +102,7 @@
             "bookName": "Romans",
             "chapterNumber": 11,
             "startVerseNumber": 25,
-            "endVerseNumber":53,
+            "endVerseNumber":36,
             "text": "Romans 11:25-36"
       },
         {
@@ -131,10 +144,17 @@
         "bookName": "Romans",
         "chapterNumber": 16,
         "startVerseNumber": 1,
+        "endVerseNumber":16,
+        "text": "Romans 16:1-16"
+      },
+      {
+        "bookName": "Romans",
+        "chapterNumber": 16,
+        "startVerseNumber": 17,
         "endVerseNumber":27,
-        "text": "Romans 16"
+        "text": "Romans 16:17-27"
       }
     ]
 }
-// ====================== 19 days============
-// will fill 3 days
+// ====================== 22 days============
+// will fill 6 days
