@@ -9,12 +9,12 @@ export class BiblePlanRowItem extends Component {
     //  console.log("nextProps.index from item" , nextProps.index )
     if(nextProps.listOfCompletedDaysObj[nextProps.index])
     {
-      console.log("doneeeee");
+      // console.log("doneeeee");
       return true;
     }
     // console.log("will not rerender")
     // return false;
-    console.log("should update return false")
+    // console.log("should update return false")
    return false;
   }
   render() {

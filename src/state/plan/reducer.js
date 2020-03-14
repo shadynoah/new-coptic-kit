@@ -57,13 +57,15 @@ export function planReducer(
       }
     }
     case types.SET_COMPLETED_DAY_PLAN_FLAG:{
-      console.log("from reducer" , action.payload )
       return{
         ...state,
-        listOfCompletedDaysObj: {
-          ...state.listOfCompletedDaysObj,
-          [action.payload] : true
-        }
+        listOfCompletedDaysObj: action.payload
+      }
+    }
+    case types.LOAD_LIST_OF_COMPLETED_DAYS_PLAN:{
+      return{
+        ...state,
+        listOfCompletedDaysObj: action.payload
       }
     }
     default:

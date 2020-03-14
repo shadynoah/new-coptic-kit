@@ -51,10 +51,11 @@ export async function makeChapterChecked (indexOfChapter) {
 }
 
 export async function loadPlanCheckedList (){
- let res = await AsyncStorage.getItem("plan")
+ let res = await AsyncStorage.getItem("list")
+ console.log('load checkedlist is' , res)
   return {
     type: types.LOAD_PLAN_CHECKED_LIST,
-    payload:res
+    payload: JSON.parse(res) 
   }
 }
 
@@ -113,8 +114,24 @@ export async function loadArabicPlan() {
   }
 }
 export function setCompletedDayPlan(dayNumber){
- return {
-   type: types.SET_COMPLETED_DAY_PLAN_FLAG,
-   payload:dayNumber
+  return async (dispatch, getState) => {
+    let listOfCompletedDaysObj = getState().plan.listOfCompletedDaysObj;
+    listOfCompletedDaysObj = {...listOfCompletedDaysObj,[dayNumber]:"true"};
+    console.log("before set" , listOfCompletedDaysObj)
+    await AsyncStorage.setItem("listOfCompletedDaysObj" , JSON.stringify(listOfCompletedDaysObj));
+    dispatch({
+      type: types.SET_COMPLETED_DAY_PLAN_FLAG,
+      payload:listOfCompletedDaysObj
+    })
  }
+}
+export function loadListOfCompletedDaysOfPlan(){
+ return async (dispatch, getState) => {
+  let res =  await AsyncStorage.getItem("listOfCompletedDaysObj");
+  console.log("res" , res)
+   dispatch({
+    type: types.LOAD_LIST_OF_COMPLETED_DAYS_PLAN,
+    payload: JSON.parse(res)  
+   })
+  }
 }
