@@ -69,7 +69,6 @@
           text: "Luke 4:31-44"
       },
        {
-            
           bookName: "Luke",
           chapterNumber: 5,
           startVerseNumber: 1,
@@ -384,3 +383,5 @@
 }
 ====================== 50 days============
 will fill 26 days
+
+REDUCED LUKE 15

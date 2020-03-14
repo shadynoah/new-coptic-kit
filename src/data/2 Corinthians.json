@@ -1,103 +1,103 @@
 {
     "2 Corinthians": [
     {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 1,
-        "startVerseNumber": 0,
-        "endVerseNumber":24,
-        "text": "2 Corinthians 1"
+        bookName: "2 Corinthians",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:24,
+        text: "2 Corinthians 1"
       },
       {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 2,
-        "startVerseNumber": 1,
-        "endVerseNumber":17,
-        "text": "2 Corinthians 2:"
+        bookName: "2 Corinthians",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "2 Corinthians 2:"
       },
        {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 3,
-        "startVerseNumber": 0,
-        "endVerseNumber":18,
-        "text": "2 Corinthians 3"
+        bookName: "2 Corinthians",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:18,
+        text: "2 Corinthians 3"
       },
         {
-            "bookName": "2 Corinthians",
-            "chapterNumber": 4,
-            "startVerseNumber": 0,
-            "endVerseNumber":18,
-            "text": "2 Corinthians 4"
+            bookName: "2 Corinthians",
+            chapterNumber: 4,
+            startVerseNumber: 0,
+            endVerseNumber:18,
+            text: "2 Corinthians 4"
       },
       {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 5,
-        "startVerseNumber": 0,
-        "endVerseNumber":21,
-        "text": "2 Corinthians 5"
+        bookName: "2 Corinthians",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "2 Corinthians 5"
       },
         {
             
-            "bookName": "2 Corinthians",
-            "chapterNumber": 6,
-            "startVerseNumber": 1,
-            "endVerseNumber":18,
-            "text": "2 Corinthians 6"
+            bookName: "2 Corinthians",
+            chapterNumber: 6,
+            startVerseNumber: 1,
+            endVerseNumber:18,
+            text: "2 Corinthians 6"
       },
         {
-            "bookName": "2 Corinthians",
-            "chapterNumber": 7,
-            "startVerseNumber": 1,
-            "endVerseNumber":16,
-            "text": "2 Corinthians 7"
+            bookName: "2 Corinthians",
+            chapterNumber: 7,
+            startVerseNumber: 1,
+            endVerseNumber:16,
+            text: "2 Corinthians 7"
       },
           {
-            "bookName": "2 Corinthians",
-            "chapterNumber": 8,
-            "startVerseNumber": 1,
-            "endVerseNumber":24,
-            "text": "2 Corinthians 8"
+            bookName: "2 Corinthians",
+            chapterNumber: 8,
+            startVerseNumber: 1,
+            endVerseNumber:24,
+            text: "2 Corinthians 8"
       },
         {
-            "bookName": "2 Corinthians",
-            "chapterNumber": 9,
-            "startVerseNumber": 1,
-            "endVerseNumber":15,
-            "text": "2 Corinthians 9"
+            bookName: "2 Corinthians",
+            chapterNumber: 9,
+            startVerseNumber: 1,
+            endVerseNumber:15,
+            text: "2 Corinthians 9"
       },
        {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 10,
-        "startVerseNumber": 1,
-        "endVerseNumber":18,
-        "text": "2 Corinthians 10"
+        bookName: "2 Corinthians",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "2 Corinthians 10"
       },
       {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 11,
-        "startVerseNumber": 1,
-        "endVerseNumber":15,
-        "text": "2 Corinthians 11:1-15"
+        bookName: "2 Corinthians",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "2 Corinthians 11:1-15"
       },
     {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 11,
-        "startVerseNumber": 16,
-        "endVerseNumber":33,
-        "text": "2 Corinthians 11:16-33"
+        bookName: "2 Corinthians",
+        chapterNumber: 11,
+        startVerseNumber: 16,
+        endVerseNumber:33,
+        text: "2 Corinthians 11:16-33"
       },
       {
-        "bookName": "2 Corinthians",
-        "chapterNumber": 12,
-        "startVerseNumber": 1,
-        "endVerseNumber":21,
-        "text": "2 Corinthians 12"
+        bookName: "2 Corinthians",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "2 Corinthians 12"
       },
          {
-            "bookName": "2 Corinthians",
-            "chapterNumber": 13,
-            "startVerseNumber": 1,
-            "endVerseNumber":14,
-            "text": "2 Corinthians 13"
+            bookName: "2 Corinthians",
+            chapterNumber: 13,
+            startVerseNumber: 1,
+            endVerseNumber:14,
+            text: "2 Corinthians 13"
       }
     ]
 }

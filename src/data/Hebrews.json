@@ -1,109 +1,109 @@
 {
     "Hebrews": [
     {
-        "bookName": "Hebrews",
-        "chapterNumber": 1,
-        "startVerseNumber": 0,
-        "endVerseNumber":14,
-        "text": "Hebrews 1"
+        bookName: "Hebrews",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:14,
+        text: "Hebrews 1"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 2,
-        "startVerseNumber": 1,
-        "endVerseNumber":18,
-        "text": "Hebrews 2"
+        bookName: "Hebrews",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "Hebrews 2"
       },
        {
-        "bookName": "Hebrews",
-        "chapterNumber": 3,
-        "startVerseNumber": 1,
-        "endVerseNumber":19,
-        "text": "Hebrews 3"
+        bookName: "Hebrews",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: "Hebrews 3"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 4,
-        "startVerseNumber": 1,
-        "endVerseNumber":16,
-        "text": "Hebrews 4"
+        bookName: "Hebrews",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "Hebrews 4"
       },   {
-        "bookName": "Hebrews",
-        "chapterNumber": 5,
-        "startVerseNumber": 1,
-        "endVerseNumber":14,
-        "text": "Hebrews 5"
+        bookName: "Hebrews",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: "Hebrews 5"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 6,
-        "startVerseNumber": 1,
-        "endVerseNumber":20,
-        "text": "Hebrews 6"
+        bookName: "Hebrews",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "Hebrews 6"
       }, 
         {
-        "bookName": "Hebrews",
-        "chapterNumber": 7,
-        "startVerseNumber": 1,
-        "endVerseNumber":28,
-        "text": "Hebrews 7"
+        bookName: "Hebrews",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "Hebrews 7"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 8,
-        "startVerseNumber": 1,
-        "endVerseNumber":13,
-        "text": "Hebrews 8"
+        bookName: "Hebrews",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "Hebrews 8"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 9,
-        "startVerseNumber": 1,
-        "endVerseNumber":28,
-        "text": "Hebrews 9"
+        bookName: "Hebrews",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "Hebrews 9"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 10,
-        "startVerseNumber": 1,
-        "endVerseNumber":18,
-        "text": "Hebrews 10:1-18"
+        bookName: "Hebrews",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "Hebrews 10:1-18"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 10,
-        "startVerseNumber": 19,
-        "endVerseNumber":39,
-        "text": "Hebrews 10:19-39"
+        bookName: "Hebrews",
+        chapterNumber: 10,
+        startVerseNumber: 19,
+        endVerseNumber:39,
+        text: "Hebrews 10:19-39"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 11,
-        "startVerseNumber": 1,
-        "endVerseNumber":20,
-        "text": "Hebrews 11:1-20"
+        bookName: "Hebrews",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "Hebrews 11:1-20"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 11,
-        "startVerseNumber": 21,
-        "endVerseNumber":40,
-        "text": "Hebrews 11:21-40"
+        bookName: "Hebrews",
+        chapterNumber: 11,
+        startVerseNumber: 21,
+        endVerseNumber:40,
+        text: "Hebrews 11:21-40"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 12,
-        "startVerseNumber": 1,
-        "endVerseNumber":13,
-        "text": "Hebrews 12:1-13"
+        bookName: "Hebrews",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "Hebrews 12:1-13"
       },
       {
-        "bookName": "Hebrews",
-        "chapterNumber": 12,
-        "startVerseNumber": 14,
-        "endVerseNumber":29,
-        "text": "Hebrews 12:14-29"
+        bookName: "Hebrews",
+        chapterNumber: 12,
+        startVerseNumber: 14,
+        endVerseNumber:29,
+        text: "Hebrews 12:14-29"
       },{
-        "bookName": "Hebrews",
-        "chapterNumber": 13,
-        "startVerseNumber": 1,
-        "endVerseNumber":25,
-        "text": "Hebrews 13"
+        bookName: "Hebrews",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "Hebrews 13"
       }
     ]
 }

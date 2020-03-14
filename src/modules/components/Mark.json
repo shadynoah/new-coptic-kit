@@ -1,217 +1,219 @@
 {
     "Mark": [
     {
-        "bookName": "Mark",
-        "chapterNumber": 1,
-        "startVerseNumber": 0,
-        "endVerseNumber":28,
-        "text": "Mark 1:1-28"
+        bookName: "Mark",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        startVerseNumber:28,
+        text: "Mark 1:1-28"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 1,
-        "startVerseNumber": 29,
-        "endVerseNumber":45,
-        "text": "Mark 1:29-45"
+        bookName: "Mark",
+        chapterNumber: 1,
+        startVerseNumber: 29,
+        startVerseNumber:45,
+        text: "Mark 1:29-45"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 2,
-        "startVerseNumber": 0,
-        "endVerseNumber":17,
-        "text": "Mark 2:1-17"
+        bookName: "Mark",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        startVerseNumber:17,
+        text: "Mark 2:1-17"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 2,
-        "startVerseNumber": 18,
-        "endVerseNumber":28,
-        "text": "Mark 2:18-28"
+        bookName: "Mark",
+        chapterNumber: 2,
+        startVerseNumber: 18,
+        startVerseNumber:28,
+        text: "Mark 2:18-28"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 3,
-            "startVerseNumber": 0,
-            "endVerseNumber":35,
-            "text": "Mark 3"
+            bookName: "Mark",
+            chapterNumber: 3,
+            startVerseNumber: 0,
+            startVerseNumber:35,
+            text: "Mark 3"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 4,
-        "startVerseNumber": 0,
-        "endVerseNumber":25,
-        "text": "Matthew 4:1-25"
+        bookName: "Mark",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        startVerseNumber:25,
+        text: "Matthew 4:1-25"
       },
         {
             
-            "bookName": "Mark",
-            "chapterNumber": 5,
-            "startVerseNumber": 26,
-            "endVerseNumber":41,
-            "text": "Mark 4:26-41"
+            bookName: "Mark",
+            chapterNumber: 5,
+            startVerseNumber: 26,
+            startVerseNumber:41,
+            text: "Mark 4:26-41"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 5,
-            "startVerseNumber": 1,
-            "endVerseNumber":20,
-            "text": "Mark 5:1-20"
+            bookName: "Mark",
+            chapterNumber: 5,
+            startVerseNumber: 1,
+            startVerseNumber:20,
+            text: "Mark 5:1-20"
       },
           {
-            "bookName": "Mark",
-            "chapterNumber": 5,
-            "startVerseNumber": 21,
-            "endVerseNumber":43,
-            "text": "Mark 5:21-43"
+            bookName: "Mark",
+            chapterNumber: 5,
+            startVerseNumber: 21,
+            startVerseNumber:43,
+            text: "Mark 5:21-43"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 6,
-            "startVerseNumber": 1,
-            "endVerseNumber":29,
-            "text": "Mark 6:1-29"
+            bookName: "Mark",
+            chapterNumber: 6,
+            startVerseNumber: 1,
+            startVerseNumber:29,
+            text: "Mark 6:1-29"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 6,
-        "startVerseNumber": 30,
-        "endVerseNumber":56,
-        "text": "Mark 6:30-56"
+        bookName: "Mark",
+        chapterNumber: 6,
+        startVerseNumber: 30,
+        startVerseNumber:56,
+        text: "Mark 6:30-56"
       },
     {
-        "bookName": "Mark",
-        "chapterNumber": 7,
-        "startVerseNumber": 1,
-        "endVerseNumber":23,
-        "text": "Mark 7:1-23"
+        bookName: "Mark",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        startVerseNumber:23,
+        text: "Mark 7:1-23"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 7,
-        "startVerseNumber": 24,
-        "endVerseNumber":37,
-        "text": "Mark 7:24-37"
+        bookName: "Mark",
+        chapterNumber: 7,
+        startVerseNumber: 24,
+        startVerseNumber:37,
+        text: "Mark 7:24-37"
       },
          {
-            "bookName": "Mark",
-            "chapterNumber": 8,
-            "startVerseNumber": 1,
-            "endVerseNumber":21,
-            "text": "Mark 8:1-21"
+            bookName: "Mark",
+            chapterNumber: 8,
+            startVerseNumber: 1,
+            startVerseNumber:21,
+            text: "Mark 8:1-21"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 8,
-            "startVerseNumber": 22,
-            "endVerseNumber":38,
-            "text": "Mark 8:22-38"
+            bookName: "Mark",
+            chapterNumber: 8,
+            startVerseNumber: 22,
+            startVerseNumber:38,
+            text: "Mark 8:22-38"
       },
          {
-            "bookName": "Mark",
-            "chapterNumber": 9,
-            "startVerseNumber": 1,
-            "endVerseNumber":29,
-            "text": "Mark 9:1-29"
+            bookName: "Mark",
+            chapterNumber: 9,
+            startVerseNumber: 1,
+            startVerseNumber:29,
+            text: "Mark 9:1-29"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 9,
-        "startVerseNumber": 30,
-        "endVerseNumber":50,
-        "text": "Mark 9:30-50"
+        bookName: "Mark",
+        chapterNumber: 9,
+        startVerseNumber: 30,
+        startVerseNumber:50,
+        text: "Mark 9:30-50"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 10,
-        "startVerseNumber": 1,
-        "endVerseNumber":31,
-        "text": "Mark 10:1-31"
+        bookName: "Mark",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        startVerseNumber:31,
+        text: "Mark 10:1-31"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 10,
-        "startVerseNumber": 32,
-        "endVerseNumber":52,
-        "text": "Mark 10:32-52"
+        bookName: "Mark",
+        chapterNumber: 10,
+        startVerseNumber: 32,
+        startVerseNumber:52,
+        text: "Mark 10:32-52"
       },
        {
-        "bookName": "Mark",
-        "chapterNumber": 11,
-        "startVerseNumber": 1,
-        "endVerseNumber":19,
-        "text": "Mark 11:1-19"
+        bookName: "Mark",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        startVerseNumber:19,
+        text: "Mark 11:1-19"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 11,
-        "startVerseNumber": 20,
-        "endVerseNumber":33,
-        "text": "Mark 11:20-33"
+        bookName: "Mark",
+        chapterNumber: 11,
+        startVerseNumber: 20,
+        startVerseNumber:33,
+        text: "Mark 11:20-33"
       },
          {
-        "bookName": "Mark",
-        "chapterNumber": 12,
-        "startVerseNumber": 1,
-        "endVerseNumber":27,
-        "text": "Mark 12:1-27"
+        bookName: "Mark",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        startVerseNumber:27,
+        text: "Mark 12:1-27"
       },
          {
-         "bookName": "Mark",
-        "chapterNumber": 12,
-        "startVerseNumber": 28,
-        "endVerseNumber":44,
-        "text": "Mark 12:28-44"
+         bookName: "Mark",
+        chapterNumber: 12,
+        startVerseNumber: 28,
+        startVerseNumber:44,
+        text: "Mark 12:28-44"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 13,
-            "startVerseNumber": 1,
-            "endVerseNumber":37,
-            "text": "Mark 13"
+            bookName: "Mark",
+            chapterNumber: 13,
+            startVerseNumber: 1,
+            startVerseNumber:37,
+            text: "Mark 13"
       },
          {
-            "bookName": "Mark",
-            "chapterNumber": 14,
-            "startVerseNumber": 1,
-            "endVerseNumber":21,
-            "text": "Mark 14:21-39"
+            bookName: "Mark",
+            chapterNumber: 14,
+            startVerseNumber: 1,
+            startVerseNumber:21,
+            text: "Mark 14:1-21"
       },
        {
-            "bookName": "Mark",
-            "chapterNumber": 14,
-            "startVerseNumber": 22,
-            "endVerseNumber":52,
-            "text": "Mark 14:22-52"
+            bookName: "Mark",
+            chapterNumber: 14,
+            startVerseNumber: 22,
+            startVerseNumber:52,
+            text: "Mark 14:22-52"
       },
       {
-            "bookName": "Mark",
-            "chapterNumber": 14,
-            "startVerseNumber": 53,
-            "endVerseNumber":72,
-            "text": "Mark 14:53-72"
+            bookName: "Mark",
+            chapterNumber: 14,
+            startVerseNumber: 53,
+            startVerseNumber:72,
+            text: "Mark 14:53-72"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 15,
-        "startVerseNumber": 1,
-        "endVerseNumber":32,
-        "text": "Mark 15:1-32"
+        bookName: "Mark",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        startVerseNumber:32,
+        text: "Mark 15:1-32"
       },
         {
-            "bookName": "Mark",
-            "chapterNumber": 15,
-            "startVerseNumber": 33,
-            "endVerseNumber":47,
-            "text": "Mark 15:33-47"
+            bookName: "Mark",
+            chapterNumber: 15,
+            startVerseNumber: 33,
+            startVerseNumber:47,
+            text: "Mark 15:33-47"
       },
       {
-        "bookName": "Mark",
-        "chapterNumber": 16,
-        "startVerseNumber": 1,
-        "endVerseNumber":20,
-        "text": "Mark 16"
+        bookName: "Mark",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        startVerseNumber:20,
+        text: "Mark 16"
       }
     ]
 }
 // ====================== 30 days============
 // will fill 14 days
+
+// I reudeced mark 2 and mark 11
