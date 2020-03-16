@@ -25,13 +25,6 @@ export function planReducer(
         selectedDayContent: action.payload.selectedDayContent
       };
     }
-    case types.MAKE_CHAPETER_CHECKED:{
-      return {
-        ...state,
-        checkedChaptersIndexes: action.payload
-
-      }
-    }
     case types.LOAD_PLAN_CHECKED_LIST : {
       return{
         ...state,

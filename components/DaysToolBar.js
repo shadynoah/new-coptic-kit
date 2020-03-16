@@ -11,7 +11,7 @@ export class DaysToolBar extends Component {
   shouldComponentUpdate(nextProps) {
     if( (!_.isEqual(nextProps.listOfCompletedDaysObj , this.props.listOfCompletedDaysObj) ))
     {
-      console.log("will rerender daysss toooooolbar");
+      // console.log("will rerender daysss toooooolbar");
       return true;
     }
     return false
@@ -19,7 +19,7 @@ export class DaysToolBar extends Component {
   render() {
     const {  listOfCompletedDaysObj , selectedDay ,selectDay } = this.props;
     let isCompleted = listOfCompletedDaysObj[selectedDay];
-    console.log("is completed from daystoolbar listOfCompletedDaysObj" , listOfCompletedDaysObj);
+    // console.log("is completed from daystoolbar listOfCompletedDaysObj" , listOfCompletedDaysObj);
     // console.log(" isCompleted from toooolbar" , isCompleted )
     // console.log(" selectedDay from toooolbar" , selectedDay )
     const xx = []

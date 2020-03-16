@@ -1,15 +1,15 @@
 import NetInfo from "@react-native-community/netinfo";
 import * as FileSystem from "expo-file-system";
+import _ from 'lodash';
 import { AsyncStorage } from "react-native";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
+import { bookNames, enlglishContentUri } from '../src/constants';
 // import { NotificationManager } from "./services/pushNotification";
-import { loadArabicPlan, loadPlan, reducer, toggleIsDownloading, updateConnectionStatus } from "./state";
-import { enlglishContentUri , bookNames } from '../src/constants';
+import { inializePlan, loadArabicPlan, reducer, updateConnectionStatus , resetCheckedList } from "./state";
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
-import _ from 'lodash'
 
 export class Application {
   static current: Application;
@@ -65,7 +65,7 @@ let trimmed = bookName.replace(/\s/g, "");
     )
       .then(async ({ uri }) => {
         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        console.log("arabic done");
+        // console.log("arabic done");
         AsyncStorage.setItem("ArabicUpdated1", uri);
       })
       .catch(error => {
@@ -85,7 +85,8 @@ let trimmed = bookName.replace(/\s/g, "");
       "connectionChange",
       this.networkConnectionChange
     );
-    Application.current.store.dispatch(loadPlan());
+    // Application.current.store.dispatch(resetCheckedList());
+    await Application.current.store.dispatch(inializePlan());
     Application.current.store.dispatch(loadArabicPlan());
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
