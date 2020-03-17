@@ -301,8 +301,8 @@ class verseScreenContainer extends Component {
       selectedVerses,
       highlightedVerses
     } = this.state;
-    let startVerseNumber = this.props.navigation.state.params.startVerseNumder;
-    let endVerseNumber = this.props.navigation.state.params.endVerseNumber;
+    let startVerseNumber = (this.props.navigation.state.params && this.props.navigation.state.params.startVerseNumder) || 0;
+    let endVerseNumber = (this.props.navigation.state.params && this.props.navigation.state.params.endVerseNumber) || 200;
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&

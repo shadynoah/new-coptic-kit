@@ -8,7 +8,7 @@ import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
 import { bookNames, enlglishContentUri } from '../src/constants';
 // import { NotificationManager } from "./services/pushNotification";
-import { inializePlan, loadArabicPlan, reducer, updateConnectionStatus , resetCheckedList } from "./state";
+import { inializePlan, loadArabicPlan, reducer, updateConnectionStatus , resetCheckedList , toggleIsDownloading } from "./state";
 const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
 
 export class Application {
@@ -55,7 +55,12 @@ let trimmed = bookName.replace(/\s/g, "");
         console.error(error);
       });
      })
-    )
+    ).then(async ()=>{
+      await AsyncStorage.setItem("englishUp", "true");
+      console.log("finished");
+    }).catch(()=>{
+      console.log("error in download content")
+    })
      
   }
   async downloadArabic() {
@@ -81,19 +86,26 @@ let trimmed = bookName.replace(/\s/g, "");
   async onStart() {
     //await AsyncStorage.clear();
     // Listen for network status changes
+    // await AsyncStorage.clear();
     NetInfo.isConnected.addEventListener(
       "connectionChange",
       this.networkConnectionChange
     );
     // Application.current.store.dispatch(resetCheckedList());
-    await Application.current.store.dispatch(inializePlan());
     Application.current.store.dispatch(loadArabicPlan());
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-          //  Application.current.store.dispatch(toggleIsDownloading());
-          //  await this.downloadEnglish();
-          //  Application.current.store.dispatch(toggleIsDownloading());
+          let isContentDownloaded = await AsyncStorage.getItem("englishUp");
+          if(!isContentDownloaded){
+            Application.current.store.dispatch(toggleIsDownloading());
+            await this.downloadEnglish();
+            Application.current.store.dispatch(toggleIsDownloading());
+            // await Application.current.store.dispatch(inializePlan());
+             Application.current.store.dispatch(resetCheckedList());
+
+          }
+         
         // if ((await this.IsContentDownloaded("ArabicUpdated1")) == false) {
         //   Application.current.store.dispatch(toggleIsDownloading());
         //   await this.downloadArabic();

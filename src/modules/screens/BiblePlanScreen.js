@@ -65,6 +65,7 @@ class BiblePlanScreenContainer extends Component {
 
    async componentDidMount() {
   //  await AsyncStorage.removeItem("ArabicPlan");
+   await this.props.inializePlan();
    this.props.loadListOfCompletedDaysOfPlan();
    this.props.loadPlanCheckedList();
   //  await AsyncStorage.removeItem("plan");
@@ -77,10 +78,10 @@ class BiblePlanScreenContainer extends Component {
      await this.props.loadPlan();
       // if(await AsyncStorage.getItem("ArabicPlan")=== null)
       // {
-      //   this.props.inializeArabicPlan()
+      // await this.props.inializeArabicPlan()
       // }
       // else 
-      // this.props.inializePlan();
+      // await this.props.inializePlan();
     this.setState({
        checkedList: await this.getCheckedList(this.props.isArabic)
     })

@@ -239,7 +239,9 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 const { toggleIsDownloading, isConnected } = this.props;
-                if ((await AsyncStorage.getItem("English")) == null) {
+                let resoFhOME = await AsyncStorage.getItem("englishUp");
+                console.log("resoFhOME",resoFhOME)
+                if (resoFhOME !== "true") {
                   if (!isConnected) {
                     this.setState({
                       isWarningModalVisible: true
@@ -250,17 +252,20 @@ class HomeScreenContainer extends Component {
                     toggleIsDownloading();
                   }
                 }
-                if ((await AsyncStorage.getItem("ArabicUpdated1")) == null) {
-                  if (!isConnected) {
-                    this.setState({
-                      isWarningModalVisible: true
-                    });
-                  } else {
-                    toggleIsDownloading();
-                    await this.downloadArabic();
-                    toggleIsDownloading();
-                  }
-                } else NavigatorService.navigate("BookScreen");
+                else{
+                  NavigatorService.navigate("BookScreen");
+                }
+                // if ((await AsyncStorage.getItem("ArabicUpdated1")) == null) {
+                //   if (!isConnected) {
+                //     this.setState({
+                //       isWarningModalVisible: true
+                //     });
+                //   } else {
+                //     toggleIsDownloading();
+                //     await this.downloadArabic();
+                //     toggleIsDownloading();
+                //   }
+                // } else NavigatorService.navigate("BookScreen");
               }}
             >
               <Image

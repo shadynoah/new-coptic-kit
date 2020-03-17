@@ -43,6 +43,7 @@ export async function loadPlanCheckedList (){
 
 export async function inializePlan(){
   return async dispatch => {
+    // await AsyncStorage.setItem("plan" , JSON.stringify(content));
       let isPlanContentExistOnLocalStorage = await AsyncStorage.getItem("plan");
       if(!isPlanContentExistOnLocalStorage){
         console.log("will set the plan content in local storage")
@@ -121,7 +122,7 @@ export function loadListOfCompletedDaysOfPlan(){
   // console.log("res" , res)
    dispatch({
     type: planActions.LOAD_LIST_OF_COMPLETED_DAYS_PLAN,
-    payload: JSON.parse(res)  
+    payload: JSON.parse(res) || {}
    })
   }
 }

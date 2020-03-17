@@ -18,7 +18,7 @@ export class DaysToolBar extends Component {
   }
   render() {
     const {  listOfCompletedDaysObj , selectedDay ,selectDay } = this.props;
-    let isCompleted = listOfCompletedDaysObj[selectedDay];
+    let isCompleted = listOfCompletedDaysObj[selectedDay] || false;
     // console.log("is completed from daystoolbar listOfCompletedDaysObj" , listOfCompletedDaysObj);
     // console.log(" isCompleted from toooolbar" , isCompleted )
     // console.log(" selectedDay from toooolbar" , selectedDay )
