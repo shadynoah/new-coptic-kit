@@ -239,7 +239,7 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 const { toggleIsDownloading, isConnected } = this.props;
-                let resoFhOME = await AsyncStorage.getItem("englishUp");
+                let resoFhOME = await AsyncStorage.getItem("englishUpso");
                 console.log("resoFhOME",resoFhOME)
                 if (resoFhOME !== "true") {
                   if (!isConnected) {

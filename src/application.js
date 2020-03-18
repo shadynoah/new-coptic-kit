@@ -56,7 +56,7 @@ let trimmed = bookName.replace(/\s/g, "");
       });
      })
     ).then(async ()=>{
-      await AsyncStorage.setItem("englishUp", "true");
+      await AsyncStorage.setItem("englishUpso", "true");
       console.log("finished");
     }).catch(()=>{
       console.log("error in download content")
@@ -96,7 +96,7 @@ let trimmed = bookName.replace(/\s/g, "");
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-          let isContentDownloaded = await AsyncStorage.getItem("englishUp");
+          let isContentDownloaded = await AsyncStorage.getItem("englishUpso");
           if(!isContentDownloaded){
             Application.current.store.dispatch(toggleIsDownloading());
             await this.downloadEnglish();
