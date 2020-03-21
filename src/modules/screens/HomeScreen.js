@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { Linking } from "expo";
 import Constants from "expo-constants";
 import * as FileSystem from "expo-file-system";
@@ -12,6 +13,7 @@ import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
+import {enlglishContentUri , bookNames} from '../../constants'
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -77,17 +79,31 @@ class HomeScreenContainer extends Component {
     });
   }
   async downloadEnglish() {
-    await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/uh9bou38u672og4/content.json?dl=1",
-      FileSystem.documentDirectory + "content"
-    )
-      .then(async ({ uri }) => {
-        await AsyncStorage.setItem("English", uri);
+    await Promise.all(
+     _.map(bookNames , async bookName => {
+let trimmed = bookName.replace(/\s/g, "");
+      await FileSystem.downloadAsync(
+        enlglishContentUri[bookName],
+        FileSystem.documentDirectory + trimmed
+      ).then(async ({ uri }) => {
+        // let stringcontent = await FileSystem.readAsStringAsync(uri);
+        // console.log("uri" , uri)
+        // console.log("english done");
+        // console.log("before setimeeem" , bookName)
+        await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {
-        Alert.alert("Apaap", error);
+        alert("error");
         console.error(error);
       });
+     })
+    ).then(async ()=>{
+      await AsyncStorage.setItem("englishUpso", "true");
+      console.log("finished");
+    }).catch(()=>{
+      console.log("error in download content")
+    })
+     
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
