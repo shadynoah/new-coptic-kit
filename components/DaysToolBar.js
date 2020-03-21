@@ -11,6 +11,10 @@ export class DaysToolBar extends Component {
   shouldComponentUpdate(nextProps) {
     if( (!_.isEqual(nextProps.listOfCompletedDaysObj , this.props.listOfCompletedDaysObj) ))
     {
+      return true;
+    }
+    if(nextProps.selectedDay !== this.props.selectedDay)
+    {
       // console.log("will rerender daysss toooooolbar");
       return true;
     }

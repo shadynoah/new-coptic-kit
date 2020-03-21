@@ -167,7 +167,6 @@ class BiblePlanScreenContainer extends Component {
 
   render() {
     let { checkedList } = this.state;
-
     const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex , selectedDay , listOfCompletedDaysObj }  = this.props;
     // console.log(selectedDayContent)
     // console.log("listOfCompletedDaysObj" ,listOfCompletedDaysObj);
@@ -178,6 +177,11 @@ class BiblePlanScreenContainer extends Component {
         style={{ flex: 1 }}
       >
         <View>
+          <View  style={{ flexDirection:'row', justifyContent:'center' ,marginTop:5 }}>
+            <Text style={{ fontWeight:'bold' }}>
+               {365-Object.keys(listOfCompletedDaysObj).length} Days Left
+            </Text>
+          </View>
           <DaysToolBar
             selectedDay ={this.props.selectedDay}
             isArabic ={this.props.isArabic} 
@@ -206,7 +210,7 @@ class BiblePlanScreenContainer extends Component {
                     onPress={() => {
                       this.setCheckedList(index);
                     }}
-                    checked={this.state.checkedList[this.props.selectedDay][index]}
+                    checked={checkedList[this.props.selectedDay][index]}
                   />
                   <Text key={index}
                   onPress = {
