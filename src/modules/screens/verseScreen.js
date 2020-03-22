@@ -529,51 +529,12 @@ class verseScreenContainer extends Component {
           <ScrollView 
           ref={(ref) => this.scrollref = ref}
           contentContainerStyle={{ margin: 15, paddingBottom: 30 , lineHeight: 30+fontSizeOfText*.3 }}>
-              {_.map(contentOfSelectedChapter, verse => {
+            <Text style={{fontSize: fontSizeOfText}}>
+       {_.map(contentOfSelectedChapter, verse => {
                 if(verse.num >= startVerseNumber && verse.num <= endVerseNumber)
                 return (
-                  <Text
-                    onLayout={e => this.onLayout(e , verse.num)}
-                    style={{ fontSize: fontSizeOfText , lineHeight: 30+fontSizeOfText*.3 , flexWrap:'wrap'  }}
-                    // onLayout={e => this.onLayout(e)}
-                    onPress={async () => {
-                      if (selectedVerses.indexOf(verse.num) == -1) {
-                        this.setState(
-                          {
-                            selectedVerses: [
-                              ...this.state.selectedVerses,
-                              verse.num
-                            ]
-                          },
-                          () => {}
-                        );
-                      } else {
-                        var a = selectedVerses;
-                        var index = a.indexOf(verse.num);
-                        a.splice(index, 1);
-                        this.setState({
-                          selectedVerses: a
-                        });
-                      }
-                    }}
-                    key={index++}
-                  >
                     <Text
-                      style={{
-                        fontSize: this.props.fontSizeOfText,
-                        fontWeight: "bold",
-                        backgroundColor: Helpers.validateVerse(highlightedVerses, selectedVerses,
-                           verse.num)
-                          .backgroundColor
-                      }}
-                    >
-                      {" "}
-                      {Helpers.parseToArabic(
-                        verse.num,
-                        isArabic
-                      )}{" "}
-                    </Text>
-                    <Text
+                    key={verse.num}
                       style={{
                         fontSize: fontSizeOfText,
                         backgroundColor: Helpers.validateVerse(highlightedVerses, selectedVerses,
@@ -582,14 +543,40 @@ class verseScreenContainer extends Component {
                         textDecorationLine: Helpers.validateVerse(highlightedVerses, selectedVerses,
                            verse.num)
                           .textDecorationLine,
-                        textAlign: "justify"
+                        textAlign: "justify",
+                        lineHeight: 30+fontSizeOfText*.3
+                      }}
+                      onPress={async () => {
+                        if (selectedVerses.indexOf(verse.num) == -1) {
+                          this.setState(
+                            {
+                              selectedVerses: [
+                                ...this.state.selectedVerses,
+                                verse.num
+                              ]
+                            },
+                            () => {}
+                          );
+                        } else {
+                          var a = selectedVerses;
+                          var index = a.indexOf(verse.num);
+                          a.splice(index, 1);
+                          this.setState({
+                            selectedVerses: a
+                          });
+                        }
                       }}
                     >
+                       {" "}
+                      {Helpers.parseToArabic(
+                        verse.num,
+                        isArabic
+                      )}{" "}
                       {verse.text}
                     </Text>
-                  </Text>
                 );
               })}
+              </Text>
           </ScrollView>
         </View>
       </ImageBackground>
