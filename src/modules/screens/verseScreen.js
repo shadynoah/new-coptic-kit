@@ -150,6 +150,19 @@ class verseScreenContainer extends Component {
       (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
+         var highlightedVersesOfStorage = await this._retrieveData(
+        (type = "Highlight"),
+        (x = nextProps.selectedBook.bookName),
+        (y = nextProps.numberOfSelectedChapter)
+      );
+      var highlightedVersesOfStorageArr = this.convertStringToArray(
+        highlightedVersesOfStorage
+      );
+      this.setState(
+        {
+          highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
+        }
+      );
     // setTimeout(() => {
     //   let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
     //   y !== undefined && this.scrollref.scrollTo({ y, animated: true });
