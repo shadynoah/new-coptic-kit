@@ -36,6 +36,7 @@ export async function loadChapterContent(
   isArabicBookMark = false
 ) {
   return async (dispatch, getState) => {
+    console.log("arabic bookname" ,bookName )
     var isArabic = getState().content.isArabic;
     let englishContent;
     let arabicContent;
@@ -43,25 +44,22 @@ export async function loadChapterContent(
     if (isArabic || isArabicBookMark == "true") {
       arabicContent = JSON.parse(
         await FileSystem.readAsStringAsync(
-          await AsyncStorage.getItem("ArabicUpdated1")
+          await AsyncStorage.getItem(bookName)
         )
       );
-      _.map(arabicContent.books, book => {
-        if (book.name == bookName) {
-          _.map(book.chapters, chapter => {
-            if (chapter.num == chapterNumber) {
-              contentOfSelectedChapter = _.map(chapter.verses, verse => {
-                
-                return {
-                  key: verse.num,
-                  text: verse.text,
-                  num: verse.num
-                };
-              });
-            }
+      for (let index = 0; index < arabicContent.chapters.length; index++) {
+        let chapter = arabicContent.chapters[index];
+        if (chapter.num == chapterNumber) {
+          contentOfSelectedChapter = _.map(chapter.verses, verse => {
+            return {
+              key: verse.num,
+              text: verse.text,
+              num: verse.num
+            };
           });
+         break;
         }
-      });
+      }
     } else {
       // console.time("timer")
       // let start = Date.now();

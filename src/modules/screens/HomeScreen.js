@@ -257,7 +257,7 @@ let trimmed = bookName.replace(/\s/g, "");
                 const { toggleIsDownloading, isConnected } = this.props;
                 let resoFhOME = await AsyncStorage.getItem("englishUpso");
                 console.log("resoFhOME",resoFhOME)
-                if (resoFhOME !== "true") {
+                if (resoFhOME !== "true" && false) {
                   if (!isConnected) {
                     this.setState({
                       isWarningModalVisible: true

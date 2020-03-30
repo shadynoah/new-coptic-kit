@@ -12,6 +12,14 @@ export async function loadPlan() {
     payload: payload
   }
 }
+export async function loadArabicPlan() {
+  let payload = JSON.parse(await AsyncStorage.getItem("ArabicPlan"));
+  // console.log("from load arabic plan", payload)
+  return {
+    type: planActions.LOAD_ARABIC_PLAN_CHAPTERS,
+    payload: payload
+  }
+}
 
 export function selectDayOfPlan(dayNumber , isArabic = false){
   return async (dispatch, getState) => {
@@ -93,17 +101,11 @@ export function clearDayContentOfPlan(){
 
 export async function inializeArabicPlan(){
   return async () => {
+      alert("inializeArabicPlan")
       await AsyncStorage.setItem("ArabicPlan" , JSON.stringify(ArabicContent));
   }
 }
 
-export async function loadArabicPlan() {
-  let payload =  JSON.parse(await AsyncStorage.getItem("ArabicPlan"))
-  return {
-    type: planActions.LOAD_ARABIC_PLAN_CHAPTERS,
-    payload: payload
-  }
-}
 export function setCompletedDayPlan(dayNumber){
   return async (dispatch, getState) => {
     let listOfCompletedDaysObj = getState().plan.listOfCompletedDaysObj;

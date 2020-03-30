@@ -7777,3 +7777,10 @@ export const bookNames = [
   "Jude",
   "Revelation"
 ];
+export const arabicBookNames = [
+  "مزامير"
+];
+export const arabicContentUri = {
+  مزامير:
+    "https://www.dropbox.com/s/quga2e0cdq4y7hq/compress.json?dl=1"
+};
