@@ -13,8 +13,8 @@ import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
-import {enlglishContentUri , bookNames} from '../../constants'
-
+import {IS_ENGLISH_CONTENT_DOWNLOADED} from '../../constants'
+import { Helpers } from './../../services/utilities/helpers';
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
@@ -77,33 +77,6 @@ class HomeScreenContainer extends Component {
     navigation.setParams({
       title: isArabic ? "الرئيسية" : "Home"
     });
-  }
-  async downloadEnglish() {
-    await Promise.all(
-     _.map(bookNames , async bookName => {
-let trimmed = bookName.replace(/\s/g, "");
-      await FileSystem.downloadAsync(
-        enlglishContentUri[bookName],
-        FileSystem.documentDirectory + trimmed
-      ).then(async ({ uri }) => {
-        // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        // console.log("uri" , uri)
-        // console.log("english done");
-        // console.log("before setimeeem" , bookName)
-        await AsyncStorage.setItem(bookName, uri);
-      })
-      .catch(error => {
-        alert("error");
-        console.error(error);
-      });
-     })
-    ).then(async ()=>{
-      await AsyncStorage.setItem("englishUpso", "true");
-      console.log("finished");
-    }).catch(()=>{
-      console.log("error in download content")
-    })
-     
   }
   async downloadArabic() {
     await FileSystem.downloadAsync(
@@ -256,7 +229,7 @@ let trimmed = bookName.replace(/\s/g, "");
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 const { toggleIsDownloading, isConnected } = this.props;
-                let resoFhOME = await AsyncStorage.getItem("englishUpso");
+                let resoFhOME = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
                 if (resoFhOME !== "true") {
                   if (!isConnected) {
                     this.setState({
@@ -264,7 +237,7 @@ let trimmed = bookName.replace(/\s/g, "");
                     });
                   } else {
                     toggleIsDownloading();
-                    await this.downloadEnglish();
+                    await Helpers.downloadEnglish();
                     toggleIsDownloading();
                   }
                 }
@@ -284,22 +257,7 @@ let trimmed = bookName.replace(/\s/g, "");
             <TouchableOpacity
               style={{ marginLeft: 10 }}
               onPress={async () => {
-                const { toggleIsDownloading, isConnected } = this.props;
-                let resoFhOME = await AsyncStorage.getItem("englishUpso");
-                if (resoFhOME !== "true") {
-                  if (!isConnected) {
-                    this.setState({
-                      isWarningModalVisible: true
-                    });
-                  } else {
-                    toggleIsDownloading();
-                    await this.downloadEnglish();
-                    toggleIsDownloading();
-                  }
-                }
-                else{
                   NavigatorService.navigate("BiblePlanScreen");
-                }
               }}
             >
               <Image

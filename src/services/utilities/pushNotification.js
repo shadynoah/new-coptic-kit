@@ -74,7 +74,6 @@ export class NotificationManager {
            
           });
           var val = await AsyncStorage.getItem("expoKey" )
-          console.log("----val----" , val)
           if( await AsyncStorage.getItem("expoKeyaa" ))
           {
               console.log("don't pust in firebase")

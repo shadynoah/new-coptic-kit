@@ -123,7 +123,6 @@ class BiblePlanScreenContainer extends Component {
     // })
   };
   async getCheckedList(isArabic) {
-    console.log("getCheckedList")
     if(isArabic)
     {
       return JSON.parse(await AsyncStorage.getItem("arabicList"))

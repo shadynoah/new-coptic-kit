@@ -7784,3 +7784,4 @@ export const arabicContentUri = {
   مزامير:
     "https://www.dropbox.com/s/quga2e0cdq4y7hq/compress.json?dl=1"
 };
+export const IS_ENGLISH_CONTENT_DOWNLOADED = "english";

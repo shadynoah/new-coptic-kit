@@ -6,14 +6,12 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
-import { bookNames,arabicBookNames, enlglishContentUri, arabicContentUri } from '../src/constants';
-// import { NotificationManager } from "./services/pushNotification";
-import { inializePlan, loadArabicPlan, reducer, updateConnectionStatus , resetCheckedList , toggleIsDownloading } from "./state";
-const contentFilePath = `${FileSystem.documentDirectory}content/english/`;
-
+import { arabicBookNames, arabicContentUri, IS_ENGLISH_CONTENT_DOWNLOADED } from '../src/constants';
+import { Helpers } from './services/utilities/helpers';
+import { reducer, resetCheckedList, toggleIsDownloading, updateConnectionStatus } from "./state";
 export class Application {
-  static current: Application;
-  static token: string;
+  static current;
+  static token;
   store = createStore(
     reducer,
     composeWithDevTools(applyMiddleware(promiseMiddleware, thunkMiddleware))
@@ -35,33 +33,6 @@ export class Application {
     } else {
       return false;
     }
-  }
-  async downloadEnglish() {
-    await Promise.all(
-     _.map(bookNames , async bookName => {
-let trimmed = bookName.replace(/\s/g, "");
-      await FileSystem.downloadAsync(
-        enlglishContentUri[bookName],
-        FileSystem.documentDirectory + trimmed
-      ).then(async ({ uri }) => {
-        // let stringcontent = await FileSystem.readAsStringAsync(uri);
-        // console.log("uri" , uri)
-        // console.log("english done");
-        // console.log("before setimeeem" , bookName)
-        await AsyncStorage.setItem(bookName, uri);
-      })
-      .catch(error => {
-        alert("error");
-        console.error(error);
-      });
-     })
-    ).then(async ()=>{
-      await AsyncStorage.setItem("englishUpso", "true");
-      console.log("finished");
-    }).catch(()=>{
-      console.log("error in download content")
-    })
-     
   }
   async downloadArabic() {
     await Promise.all(
@@ -90,31 +61,21 @@ let trimmed = bookName.replace(/\s/g, "");
      })
   }
   networkConnectionChange = isConnected => {
-    // alert(isConnected)
-    // console.log("isconnected--" , isConnected )
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
-    //await AsyncStorage.clear();
-    // Listen for network status changes
     // await AsyncStorage.clear();
     NetInfo.isConnected.addEventListener(
       "connectionChange",
       this.networkConnectionChange
     );
-    // Application.current.store.dispatch(resetCheckedList());
-    // Application.current.store.dispatch(loadArabicPlan());
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-          let isContentDownloadedRes = await AsyncStorage.getItem("englishUpso");
+          let isContentDownloadedRes = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
           if(!isContentDownloadedRes){
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // await this.downloadEnglish();
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // await Application.current.store.dispatch(inializePlan());
             Application.current.store.dispatch(toggleIsDownloading());
-            await this.downloadEnglish();
+            await Helpers.downloadEnglish();
             Application.current.store.dispatch(toggleIsDownloading());
              Application.current.store.dispatch(resetCheckedList());
           }
