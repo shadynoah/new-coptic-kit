@@ -86,30 +86,28 @@ class verseScreenContainer extends Component {
     );
   }
  
-  _storeHighlighted = async (type = "Highlight", verseNumArray) => {
+  _storeHighlighted = async ( verseNumArray) => {
     try {
       await AsyncStorage.setItem(
-        type +
-          " " +
+         "Highlight" +
+         " " +
           this.props.selectedBook.bookName +
           " " +
           this.props.numberOfSelectedChapter.toString(),
         verseNumArray.toString()
       );
     } catch (error) {
-      
-      console.log("===error from _storeHighlighted ");
+      console.log("===error from _storeHighlighted===");
     }
   };
 
   _retrieveData = async (
-    type = "Highlight",
     x = this.props.selectedBook.bookName,
     y = this.props.numberOfSelectedChapter
   ) => {
     try {
       const value = await AsyncStorage.getItem(
-        type + " " + x + " " + y.toString()
+        "Highlight" + " " + x + " " + y.toString()
       );
       if (value !== null) {
         return value;
@@ -151,7 +149,6 @@ class verseScreenContainer extends Component {
       (selectedBook.bookName !== nextProps.selectedBook.bookName )
     ) {
          var highlightedVersesOfStorage = await this._retrieveData(
-        (type = "Highlight"),
         (x = nextProps.selectedBook.bookName),
         (y = nextProps.numberOfSelectedChapter)
       );
@@ -163,23 +160,6 @@ class verseScreenContainer extends Component {
           highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
         }
       );
-    // setTimeout(() => {
-    //   let y = this.datapos[this.props.navigation.state.params.startVerseNumder];
-    //   y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-    // }, 1500);
-      // var highlightedVersesOfStorage = await this._retrieveData(
-      //   (type = "Highlight"),
-      //   (x = nextProps.selectedBook.bookName),
-      //   (y = nextProps.numberOfSelectedChapter)
-      // );
-      // var highlightedVersesOfStorageArr = this.convertStringToArray(
-      //   highlightedVersesOfStorage
-      // );
-      // this.setState(
-      //   {
-      //     highlightedVerses: [...new Set(highlightedVersesOfStorageArr)]
-      //   }
-      // );
     }
   }
 
@@ -280,7 +260,7 @@ class verseScreenContainer extends Component {
         this.setState({
           selectedVerses: []
         },
-        () =>  this._storeHighlighted("Highlight", afterfilter)
+        () =>  this._storeHighlighted(afterfilter)
         );
        
       }

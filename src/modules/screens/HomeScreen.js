@@ -192,7 +192,8 @@ let trimmed = bookName.replace(/\s/g, "");
         <View
           style={{
             alignItems: "flex-end",
-            margin: 20,
+            marginBottom: (Dimensions.get("window").height * 0.2)-60,
+            marginLeft:10,
             flex: 1,
             flexDirection: "row"
           }}
@@ -249,15 +250,14 @@ let trimmed = bookName.replace(/\s/g, "");
               />
             </TouchableOpacity>
           </View>
-
-          <View style={{ flex: 0.2 }}>
-            <TouchableOpacity
+        </View>
+        <View style={{ flexDirection: "row" , marginBottom:10 }}>
+        <TouchableOpacity
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 const { toggleIsDownloading, isConnected } = this.props;
                 let resoFhOME = await AsyncStorage.getItem("englishUpso");
-                console.log("resoFhOME",resoFhOME)
-                if (resoFhOME !== "true" && false) {
+                if (resoFhOME !== "true") {
                   if (!isConnected) {
                     this.setState({
                       isWarningModalVisible: true
@@ -271,17 +271,6 @@ let trimmed = bookName.replace(/\s/g, "");
                 else{
                   NavigatorService.navigate("BookScreen");
                 }
-                // if ((await AsyncStorage.getItem("ArabicUpdated1")) == null) {
-                //   if (!isConnected) {
-                //     this.setState({
-                //       isWarningModalVisible: true
-                //     });
-                //   } else {
-                //     toggleIsDownloading();
-                //     await this.downloadArabic();
-                //     toggleIsDownloading();
-                //   }
-                // } else NavigatorService.navigate("BookScreen");
               }}
             >
               <Image
@@ -289,16 +278,39 @@ let trimmed = bookName.replace(/\s/g, "");
                   height: heightT + 0.3 * heightT,
                   width: heightT + 0.3 * heightT
                 }}
-                source={require("../../../assets/images/bible.png")}
+                source={require("../../../assets/images/newbible.png")}
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress ={()=> NavigatorService.navigate("BiblePlanScreen")}>
-              <Text>
-                bibleplaaaan
-              </Text>
+            <TouchableOpacity
+              style={{ marginLeft: 10 }}
+              onPress={async () => {
+                const { toggleIsDownloading, isConnected } = this.props;
+                let resoFhOME = await AsyncStorage.getItem("englishUpso");
+                if (resoFhOME !== "true") {
+                  if (!isConnected) {
+                    this.setState({
+                      isWarningModalVisible: true
+                    });
+                  } else {
+                    toggleIsDownloading();
+                    await this.downloadEnglish();
+                    toggleIsDownloading();
+                  }
+                }
+                else{
+                  NavigatorService.navigate("BiblePlanScreen");
+                }
+              }}
+            >
+              <Image
+                style={{
+                  height: heightT + 0.3 * heightT,
+                  width: heightT + 0.3 * heightT
+                }}
+                source={require("../../../assets/images/newbiblePlan.png")}
+              />
             </TouchableOpacity>
           </View>
-        </View>
       </ImageBackground>
     );
   }
