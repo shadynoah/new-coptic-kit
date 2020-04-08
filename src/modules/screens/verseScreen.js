@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
 
 const db = SQLite.openDatabase("db.db");
 class verseScreenContainer extends Component {
-    datapos = {};
     scrollref = null
   constructor() {
     super();
@@ -118,8 +117,6 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
-    const { selectedDayContent , selectedChapterIndex } = this.props;
-    // this.datapos = {}
     this.props.navigation.setParams({
       title: this.props.isArabic ? "الايات" : "verses"
     });
@@ -268,10 +265,6 @@ class verseScreenContainer extends Component {
    
     this._retrieveData();
   }
-  onLayout(event , num) {
-    const {y} = event.nativeEvent.layout;
-    this.datapos[num]=y
-  }
   render() {
     let {
       selectedBook,
@@ -340,7 +333,6 @@ class verseScreenContainer extends Component {
                 black
                 transparent
                 onPress={async () => {
-                  this.datapos = {}
                   if(selectedDayContent.length >0)
                   {
                     if(selectedChapterIndex - 1 >= 0)
@@ -404,45 +396,47 @@ class verseScreenContainer extends Component {
               black
                 transparent
                 onPress={() => {
-                  this.datapos = {}
-                  if (
-                    numberOfSelectedChapter + 1 <=
-                    selectedBook.numberOfChapters
-                  ) {
-                    this.isBookMarkedChapter(
-                      selectedBook.bookName,
-                      numberOfSelectedChapter + 1
-                    );
-                    loadChapterContent(
-                      selectedBook.bookName,
-                      numberOfSelectedChapter + 1
-                    );
-                  }
-                  else {
-                   if(selectedChapterIndex + 1 < selectedDayContent.length)
-                   {
+                  if(selectedDayContent.length >0) {
+                    if(selectedChapterIndex + 1 < selectedDayContent.length)
+                    {
+                      selectChapterOfDayPlan(selectedChapterIndex + 1 )
+                      const item = selectedDayContent[selectedChapterIndex + 1 ];
+                      let bookName = item.bookName;
+                      let chapterNumber = item.chapterNumber;
+                       this.isBookMarkedChapter(
+                         bookName,
+                         chapterNumber
+                       );
+                     selectChapter(chapterNumber)
+                      loadChapterContent(
+                       bookName,
+                       chapterNumber
+                     );
+                     selectBook({
+                       "bookName": bookName,
+                      })
+                    }
+                    else {
+                     //  alert("this is last chapter in this day");
                      selectChapterOfDayPlan(selectedChapterIndex + 1 )
-                     const item = selectedDayContent[selectedChapterIndex + 1 ];
-                     let bookName = item.bookName;
-                     let chapterNumber = item.chapterNumber;
+                      NavigatorService.navigate("BiblePlanScreen")
+                    }
+                  }
+                  else 
+                  {
+                    if (
+                      numberOfSelectedChapter + 1 <=
+                      selectedBook.numberOfChapters
+                    ) {
                       this.isBookMarkedChapter(
-                        bookName,
-                        chapterNumber
+                        selectedBook.bookName,
+                        numberOfSelectedChapter + 1
                       );
-                    selectChapter(chapterNumber)
-                     loadChapterContent(
-                      bookName,
-                      chapterNumber
-                    );
-                    selectBook({
-                      "bookName": bookName,
-                     })
-                   }
-                   else {
-                    //  alert("this is last chapter in this day");
-                    selectChapterOfDayPlan(selectedChapterIndex + 1 )
-                     NavigatorService.navigate("BiblePlanScreen")
-                   }
+                      loadChapterContent(
+                        selectedBook.bookName,
+                        numberOfSelectedChapter + 1
+                      );
+                    }
                   }
                 }}
               >
@@ -509,16 +503,6 @@ class verseScreenContainer extends Component {
               </Button>
             </View>
           </View>
-          {/* <TextInput style={styles.textinput}
-                    value={this.state.inputvalue}
-                    onChangeText={(text) => {
-                        // alert(JSON.stringify(this.datapos))
-                        this.setState({inputvalue: text});
-                        let y = 288
-                        // alert("===y====" + y)
-                        // y !== undefined && this.scrollref.scrollTo({ y, animated: true });
-                    }}
-                /> */}
           <ScrollView 
           ref={(ref) => this.scrollref = ref}
           contentContainerStyle={{ margin: 15, paddingBottom: 30 , lineHeight: 30+fontSizeOfText*.3 }}>
