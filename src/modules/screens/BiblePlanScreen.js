@@ -146,7 +146,7 @@ class BiblePlanScreenContainer extends Component {
      let filtered = _.filter(copy , c => c === true);
     //  console.log("filtered" , filtered)
     //  console.log("selectedDayContent" , selectedDayContent.length)
-      if(filtered.length === selectedDayContent.length)
+      if(filtered.length === selectedDayContent.length && index === filtered.length-1)
       {
         alert("you completed this day reading");
         setCompletedDayPlan(selectedDay)
