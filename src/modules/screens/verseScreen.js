@@ -1,5 +1,5 @@
 import Constants from "expo-constants";
-import { SQLite } from "expo-sqlite";
+import * as SQLite from 'expo-sqlite';
 import _ from "lodash";
 import { Button, Icon, Text } from "native-base";
 import React, { Component } from "react";

@@ -30,7 +30,7 @@ import { Dispatch } from "redux";
 import { bindActionCreators } from "redux";
 import { NavigationStackScreenOptions } from "react-navigation";
 import _ from "lodash";
-import { SQLite } from "expo-sqlite";
+import * as SQLite from 'expo-sqlite';
 import Constants from "expo-constants";
 
 import { NoteItem } from "../components/note-list-item";
