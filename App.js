@@ -84,7 +84,7 @@ export default class App extends React.Component {
     return Promise.all([
       Asset.loadAsync([
         require("./assets/images/background.jpg"),
-        require("./assets/images/bible.png"),
+        require("./assets/images/newbible.png"),
         require("./assets/images/facebook.png"),
         require("./assets/images/homecrop.png"),
         require("./assets/images/logo.png"),
@@ -93,7 +93,8 @@ export default class App extends React.Component {
         require("./assets/images/twitter.png"),
         require("./assets/images/website.png"),
         require("./assets/images/youtube.png"),
-        require("./assets/images/soundcloud.png")
+        require("./assets/images/soundcloud.png"),
+        require("./assets/images/newbiblePlan.png")
       ])
       // Font.loadAsync({
       //   // This is the font that we are using for our tab bar
