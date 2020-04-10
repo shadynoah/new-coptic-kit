@@ -138,16 +138,16 @@ class verseScreenContainer extends Component {
       }
     );
   }
-  async componentWillReceiveProps(nextProps) { 
+  async componentDidUpdate(prevProps) {
     // console.log("next proooops" , nextProps.selectedBook.bookName);
     const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
-      (numberOfSelectedChapter != nextProps.numberOfSelectedChapter) ||
-      (selectedBook.bookName !== nextProps.selectedBook.bookName )
+      (numberOfSelectedChapter != prevProps.numberOfSelectedChapter) ||
+      (selectedBook.bookName !== prevProps.selectedBook.bookName )
     ) {
          var highlightedVersesOfStorage = await this._retrieveData(
-        (x = nextProps.selectedBook.bookName),
-        (y = nextProps.numberOfSelectedChapter)
+        (x = this.props.selectedBook.bookName),
+        (y = this.props.numberOfSelectedChapter)
       );
       var highlightedVersesOfStorageArr = this.convertStringToArray(
         highlightedVersesOfStorage

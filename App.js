@@ -22,7 +22,7 @@ export default class App extends React.Component {
     isReady: false,
     notification: {}
   };
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     var firebaseConfig = {
       apiKey: "AIzaSyB7TYD3p-bgkkDrz2qXm82sCPQ_UWSThiQ",
       authDomain: "pushnotification-d6a2c.firebaseapp.com",
