@@ -142,12 +142,12 @@ class HomeScreenContainer extends Component {
         {warningLostConnectionModal}
         <View
           style={{
-            flex: 0.7,
+            flex: 0.8,
             justifyContent: "flex-end",
             alignItems: "center"
           }}
         >
-        {false &&  <View style={{ flexDirection: "row" }}>
+         <View style={{ flexDirection: "row" }}>
             <Text style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
@@ -160,7 +160,7 @@ class HomeScreenContainer extends Component {
               value={isArabic}
             />
             <Text style={{ color: "white", fontWeight: "900" }}>عربي</Text>
-          </View>}
+          </View>
         </View>
         <View
           style={{
