@@ -262,6 +262,31 @@ class AboutScreenContainer extends React.Component {
               in Egyptian in Christmas and Easter{" "}
             </Text>
           </View>
+          <View style={{
+                flexDirection: "row",
+                justifyContent: "center",
+          }}>
+            <Text>
+            Scripture taken from the New King James Version®.
+            </Text>
+          
+          </View>
+          <View style={{
+                flexDirection: "row",
+                justifyContent: "center",
+          }}>
+            <Text>
+            Copyright © 1982 by Thomas Nelson
+            </Text>
+          </View>
+          <View style={{
+                flexDirection: "row",
+                justifyContent: "center",
+          }}>
+            <Text>
+            All rights reserved.           
+             </Text>
+          </View>
         </View>
       </Content>
     );
