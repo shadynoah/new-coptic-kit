@@ -13,8 +13,10 @@ import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
-import {IS_ENGLISH_CONTENT_DOWNLOADED} from '../../constants'
+import {IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED} from '../../constants'
 import { Helpers } from './../../services/utilities/helpers';
+import { inializeArabicCheckedList , inializeEnglishCheckedList } from "../../state/plan/action-creators";
+
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
@@ -49,7 +51,9 @@ class HomeScreenContainer extends Component {
         selectBook,
         loadChapterContent,
         toggleIsDownloading,
-        toggleLanguage
+        toggleLanguage,
+        inializeArabicCheckedList,
+        inializeEnglishCheckedList
       },
       dispatch
     );
@@ -78,20 +82,33 @@ class HomeScreenContainer extends Component {
       title: isArabic ? "الرئيسية" : "Home"
     });
   }
-  async downloadArabic() {
-    await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/isewiicvbmsm1hs/content-ar-u%20%281%29.json?dl=1",
-      FileSystem.documentDirectory + "contentAR"
-    )
-      .then(async ({ uri }) => {
-        AsyncStorage.setItem("ArabicUpdated1", uri);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+  async downloadContent() {
+    const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
+    inializeArabicCheckedList();
+    inializeEnglishCheckedList();
+    let keyOfContent = isArabic ? IS_ARABIC_CONTENT_DOWNLOADED : IS_ENGLISH_CONTENT_DOWNLOADED
+    let isContentExist = await AsyncStorage.getItem(keyOfContent);
+    if (isContentExist !== "true") {
+      if (!isConnected) {
+        this.setState({
+          isWarningModalVisible: true
+        });
+      } else {
+        toggleIsDownloading();
+        if(isArabic)
+        await Helpers.downloadArabic();
+        else
+        await Helpers.downloadEnglish();
+        toggleIsDownloading();
+      }
+    }
+    else{
+      NavigatorService.navigate("BookScreen");
+    }
   }
   render() {
     const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
+    console.log("is arabic " , isArabic)
     const { isDownloadling , isWarningModalVisible } = this.state;
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
@@ -228,22 +245,7 @@ class HomeScreenContainer extends Component {
         <TouchableOpacity
               style={{ marginLeft: 10 }}
               onPress={async () => {
-                const { toggleIsDownloading, isConnected } = this.props;
-                let resoFhOME = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
-                if (resoFhOME !== "true") {
-                  if (!isConnected) {
-                    this.setState({
-                      isWarningModalVisible: true
-                    });
-                  } else {
-                    toggleIsDownloading();
-                    await Helpers.downloadEnglish();
-                    toggleIsDownloading();
-                  }
-                }
-                else{
-                  NavigatorService.navigate("BookScreen");
-                }
+              await this.downloadContent();
               }}
             >
               <Image

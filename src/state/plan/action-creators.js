@@ -63,11 +63,9 @@ export async function inializePlan(){
       }
   }
 }
-export async function resetCheckedList(){
+export async function inializeEnglishCheckedList(){
   return async dispatch => {
       await AsyncStorage.setItem("list" , JSON.stringify(checkedList));
-      await AsyncStorage.setItem("arabicList" , JSON.stringify(arabicCheckedList));
-
   }
 }
 export async function inializeArabicCheckedList(){

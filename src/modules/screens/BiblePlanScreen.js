@@ -9,7 +9,7 @@ import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleLanguage } from "../../state/content/action-creators";
 import { inializeArabicPlan, inializePlan, loadListOfCompletedDaysOfPlan,
-   loadPlan, loadPlanCheckedList, makeChapterChecked, resetCheckedList, 
+   loadPlan, loadPlanCheckedList, makeChapterChecked, inializeEnglishCheckedList, 
    saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan, 
    setCompletedDayPlan , loadArabicPlan} from "../../state/plan/action-creators";
 
@@ -56,7 +56,7 @@ class BiblePlanScreenContainer extends Component {
         inializePlan , saveCheckedListIntoLocalStorage ,
         loadChapterContent, 
         selectBook , selectChapterOfDayPlan ,
-        inializeArabicPlan ,resetCheckedList,
+        inializeArabicPlan ,inializeEnglishCheckedList,
         setCompletedDayPlan,
         loadListOfCompletedDaysOfPlan,
         loadPlanCheckedList,
@@ -89,10 +89,10 @@ class BiblePlanScreenContainer extends Component {
   //  await AsyncStorage.removeItem("plan");
 
   // //  this.props.inializeArabicPlan();
-  // //  this.props.resetCheckedList();
+  // //  this.props.inializeEnglishCheckedList();
    
   // await AsyncStorage.removeItem("list")
-    // this.props.resetCheckedList();
+    // this.props.inializeEnglishCheckedList();
    
     this.setState({
        checkedList: await this.getCheckedList(this.props.isArabic)

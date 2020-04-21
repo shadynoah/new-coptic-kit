@@ -6,9 +6,10 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
-import { arabicBookNames, arabicContentUri, IS_ENGLISH_CONTENT_DOWNLOADED } from '../src/constants';
+import { arabicBookNames, arabicContentUri, IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED} from '../src/constants';
 import { Helpers } from './services/utilities/helpers';
-import { reducer, resetCheckedList, toggleIsDownloading, updateConnectionStatus } from "./state";
+import { reducer, inializeEnglishCheckedList, toggleIsDownloading, 
+  updateConnectionStatus , inializeArabicCheckedList } from "./state";
 export class Application {
   static current;
   static token;
@@ -54,7 +55,7 @@ export class Application {
        });
       })
      ).then(async ()=>{
-       await AsyncStorage.setItem("englishUpso", "true");
+       await AsyncStorage.setItem("arabic", "true");
        console.log("finished");
      }).catch(()=>{
        console.log("error in download content")
@@ -72,12 +73,20 @@ export class Application {
     NetInfo.isConnected.fetch().done(async isConnected => {
       Application.current.store.dispatch(updateConnectionStatus(isConnected));
       if (isConnected) {
-          let isContentDownloadedRes = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
-          if(!isContentDownloadedRes){
-            Application.current.store.dispatch(toggleIsDownloading());
-            await Helpers.downloadEnglish();
-            Application.current.store.dispatch(toggleIsDownloading());
-             Application.current.store.dispatch(resetCheckedList());
+          let isEnglishContentDownloadedRes = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
+          if(!isEnglishContentDownloadedRes){
+            // Application.current.store.dispatch(toggleIsDownloading());
+            // await Helpers.downloadEnglish();
+            // Application.current.store.dispatch(toggleIsDownloading());
+            //  Application.current.store.dispatch(inializeEnglishCheckedList());
+          }
+          let isArabicContentDownloadedRes = await AsyncStorage.getItem(IS_ARABIC_CONTENT_DOWNLOADED);
+          if(!isArabicContentDownloadedRes){
+            // Application.current.store.dispatch(toggleIsDownloading());
+            // await this.downloadArabic();
+            // Application.current.store.dispatch(toggleIsDownloading());
+            // Application.current.store.dispatch(inializeArabicCheckedList());
+
           }
       }
     });

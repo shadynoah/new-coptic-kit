@@ -36,7 +36,6 @@ export async function loadChapterContent(
   isArabicBookMark = false
 ) {
   return async (dispatch, getState) => {
-    // console.log("arabic bookname" ,bookName )
     var isArabic = getState().content.isArabic;
     let englishContent;
     let arabicContent;

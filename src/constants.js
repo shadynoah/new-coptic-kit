@@ -7782,10 +7782,165 @@ export const bookNames = [
   "Revelation"
 ];
 export const arabicBookNames = [
-  "مزامير"
+  "تكوين",
+  "خروج",
+  "لاويين",
+  "عدد",
+  "تثنية",
+  "يشوع",
+  "قضاة",
+  "راعوث",
+  "1 صموئيل",
+  "2 صموئيل",
+  "1 ملوك",
+  "2 ملوك",
+  "1 اخبار",
+  "2 اخبار",
+  "عزرا",
+  "نحميا",
+  "استير",
+  "ايوب",
+  "مزامير",
+  "امثال",
+  "جامعة",
+  "نشيد الانشاد",
+  "اشعياء",
+  "ارميا",
+  "مراثي",
+  "حزقيال",
+  "دانيال",
+  "هوشع",
+  "يوئيل",
+  "عاموس",
+  "عوبديا",
+  "يونان",
+  "ميخا",
+  "ناحوم",
+  "حبقوق",
+  "صفنيا",
+  "حجى",
+  "زكريا",
+  "ملاخي",
+  "متى",
+  "مرقس",
+  "لوقا",
+  "يوحنا",
+  "اعمال",
+  "رومية",
+  "1 كورنثوس",
+  "2 كورنثوس",
+  "غلاطية",
+  "افسس",
+  "فيلبي",
+  "كولوسي",
+  "1 تسالونيكي",
+  "2 تسالونيكي",
+  "1 تيموثاوس",
+  "2 تيموثاوس",
+  "تيطس",
+  "فليمون",
+  "عبرانيين",
+  "يعقوب",
+  "1 بطرس",
+  "2 بطرس",
+  "1 يوحنا",
+  "2 يوحنا",
+  "3 يوحنا",
+  "يهوذا",
+  "رؤيا"
 ];
 export const arabicContentUri = {
+  تكوين :"https://www.dropbox.com/s/fih1blx5kn1p94c/%D8%AA%D9%83%D9%88%D9%8A%D9%86.json?dl=1",
+  خروج:"https://www.dropbox.com/s/1t35itdo0hinpze/%D8%AE%D8%B1%D9%88%D8%AC.json?dl=1",
+  لاويين :"https://www.dropbox.com/s/m7c4z595zsi0ox8/%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86.json?dl=1",
+  عدد:"https://www.dropbox.com/s/xxmixpaxbij1rmf/%D8%B9%D8%AF%D8%AF.json?dl=1",
+  تثنية:"https://www.dropbox.com/s/984tml5jdjakvpp/%D8%AA%D8%AB%D9%86%D9%8A%D8%A9.json?dl=1",
+  يشوع:"https://www.dropbox.com/s/iw2eim7g4vgdn3t/%D9%8A%D8%B4%D9%88%D8%B9.json?dl=1",
+  قضاة:"https://www.dropbox.com/s/25ic5spg4xd0mr8/%D9%82%D8%B6%D8%A7%D8%A9.json?dl=1",
+  راعوث:"https://www.dropbox.com/s/cjg2abu0uulnzgk/%D8%B1%D8%A7%D8%B9%D9%88%D8%AB.json?dl=1",
+  "1 صموئيل":"https://www.dropbox.com/s/x60s1uwbg8irho6/1%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+  "2 صموئيل":"https://www.dropbox.com/s/o128i6j0ixgh7nt/2%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+  "1 ملوك":"https://www.dropbox.com/s/mcogx1lxnzo52r0/1%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
+  "2 ملوك":"https://www.dropbox.com/s/gwsw7yw6r5s4q3c/2%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
+  "1 اخبار":"https://www.dropbox.com/s/vejx1kzt5ywtvj8/1%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
+  "2 اخبار":"https://www.dropbox.com/s/it99hmuun15xu3h/2%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
+  عزرا :"https://www.dropbox.com/s/ophgw4wunvb19vl/%D8%B9%D8%B2%D8%B1%D8%A7.json?dl=1",
+  نحميا:"https://www.dropbox.com/s/eihkulyrpy8l3jr/%D9%86%D8%AD%D9%85%D9%8A%D8%A7.json?dl=1",
+  استير:"https://www.dropbox.com/s/uws8pt3j7a0udma/%D8%A7%D8%B3%D8%AA%D9%8A%D8%B1.json?dl=1",
+  ايوب:"https://www.dropbox.com/s/84m4jyad2zlw62u/%D8%A7%D9%8A%D9%88%D8%A8.json?dl=1",
   مزامير:
-    "https://www.dropbox.com/s/quga2e0cdq4y7hq/compress.json?dl=1"
+    "https://www.dropbox.com/s/w024fcn2ghuj7u8/%D9%85%D8%B2%D8%A7%D9%85%D9%8A%D8%B1.json?dl=1",
+    امثال:"https://www.dropbox.com/s/qfe89lf1tgtkfdq/%D8%A7%D9%85%D8%AB%D8%A7%D9%84.json?dl=1",
+    جامعة:"https://www.dropbox.com/s/fnrwtegmyoen4dq/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9.json?dl=1",
+    "نشيد الانشاد" :
+    "https://www.dropbox.com/s/auy0jmb7e6vz465/%D9%86%D8%B4%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D8%A7%D8%AF.json?dl=1",
+    اشعياء:"https://www.dropbox.com/s/l3qh9vlrm4e3k7s/%D8%A7%D8%B4%D8%B9%D9%8A%D8%A7%D8%A1.json?dl=1",
+    ارميا:"https://www.dropbox.com/s/eexdz5jxyidho1s/%D8%A7%D8%B1%D9%85%D9%8A%D8%A7.json?dl=1",
+    مراثي:"https://www.dropbox.com/s/qoz80ai81wu0hqw/%D9%85%D8%B1%D8%A7%D8%AB%D9%8A.json?dl=1",
+    حزقيال:"https://www.dropbox.com/s/f736933ar9t3rwu/%D8%AD%D8%B2%D9%82%D9%8A%D8%A7%D9%84.json?dl=1",
+    دانيال:"https://www.dropbox.com/s/v2rszxi11wxpbep/%D8%AF%D8%A7%D9%86%D9%8A%D8%A7%D9%84.json?dl=1",
+    هوشع:"https://www.dropbox.com/s/u38s7wwxh2hdcik/%D9%87%D9%88%D8%B4%D8%B9.json?dl=1",
+    يوئيل:"https://www.dropbox.com/s/7kffuhmpqqzvjef/%D9%8A%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+    عاموس:"https://www.dropbox.com/s/61r827crpo30f99/%D8%B9%D8%A7%D9%85%D9%88%D8%B3.json?dl=1",
+    عوبديا:"https://www.dropbox.com/s/hmx8k1rz59j4r26/%D8%B9%D9%88%D8%A8%D8%AF%D9%8A%D8%A7.json?dl=1",
+    يونان:"https://www.dropbox.com/s/bjlrs46gxspmtrr/%D9%8A%D9%88%D9%86%D8%A7%D9%86.json?dl=1",
+    ميخا:"https://www.dropbox.com/s/in1l5b0xddgwunc/%D9%85%D9%8A%D8%AE%D8%A7.json?dl=1",
+    ناحوم:"https://www.dropbox.com/s/0m2bwys0isfk83e/%D9%86%D8%A7%D8%AD%D9%88%D9%85.json?dl=1",
+    حبقوق :"https://www.dropbox.com/s/n04pfq2nx1h3j0i/%D8%AD%D8%A8%D9%82%D9%88%D9%82.json?dl=1",
+    صفنيا:"https://www.dropbox.com/s/swkp4o5elbb808m/%D8%B5%D9%81%D9%86%D9%8A%D8%A7.json?dl=1",
+    حجى :"https://www.dropbox.com/s/pv3rvo93lt158gv/%D8%AD%D8%AC%D9%89.json?dl=1",
+    زكريا :"https://www.dropbox.com/s/m2750avjaswekxd/%D8%B2%D9%83%D8%B1%D9%8A%D8%A7.json?dl=1",
+    ملاخي:"https://www.dropbox.com/s/2woynm5bzyvqc1s/%D9%85%D9%84%D8%A7%D8%AE%D9%8A.json?dl=1",
+    متى:"https://www.dropbox.com/s/ezfvulrl52vauxp/%D9%85%D8%AA%D9%8A.json?dl=1",
+    مرقس :"https://www.dropbox.com/s/qwj8t32tlpg6acj/%D9%85%D8%B1%D9%82%D8%B3.json?dl=1",
+    لوقا:"https://www.dropbox.com/s/cy891etxezpt6yp/%D9%84%D9%88%D9%82%D8%A7.json?dl=1",
+    يوحنا:"https://www.dropbox.com/s/majkx3bgwg17ws0/%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+    اعمال:"https://www.dropbox.com/s/ueia6hkq5irmra7/%D8%A7%D8%B9%D9%85%D8%A7%D9%84.json?dl=1",
+    رومية:"https://www.dropbox.com/s/yhbpeggj6syhn5y/%D8%B1%D9%88%D9%85%D9%8A%D8%A9.json?dl=1",
+     "1 كورنثوس" :"https://www.dropbox.com/s/5ymur8m3htmemc6/1%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
+     "2 كورنثوس":"https://www.dropbox.com/s/lgbu13y7jir5th6/2%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
+     غلاطية:"https://www.dropbox.com/s/iknj77hgrfmyth8/%D8%BA%D9%84%D8%A7%D8%B7%D9%8A%D8%A9.json?dl=1",
+     افسس:"https://www.dropbox.com/s/l5w3p20aqtujrz4/%D8%A7%D9%81%D8%B3%D8%B3.json?dl=1",
+     فيلبي:"https://www.dropbox.com/s/cz4em1bj72lir9r/%D9%81%D9%8A%D9%84%D8%A8%D9%8A.json?dl=1",
+     كولوسي:"https://www.dropbox.com/s/98spb5mqvbkx3j2/%D9%83%D9%88%D9%84%D9%88%D8%B3%D9%8A.json?dl=1",
+     "1 تسالونيكي":
+     "https://www.dropbox.com/s/lsly20pkiwt1r1w/1%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
+     "2 تسالونيكي":
+     "https://www.dropbox.com/s/55cpoiryxzjdvl8/2%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
+     "1 تيموثاوس":
+     "https://www.dropbox.com/s/gbt1dqjvuhdktwv/1%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
+     "2 تيموثاوس":
+     "https://www.dropbox.com/s/vy7k920zzp7qged/2%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
+     "تيطس":
+      "https://www.dropbox.com/s/cu91tjnkn4i55y6/%D8%AA%D9%8A%D8%B7%D8%B3.json?dl=1",
+      "فليمون":
+      "https://www.dropbox.com/s/zfbdx6pwfjeyp8y/%D9%81%D9%84%D9%8A%D9%85%D9%88%D9%86.json?dl=1",
+      "عبرانيين":
+      "https://www.dropbox.com/s/88c3qzd8682fplf/%D8%B9%D8%A8%D8%B1%D8%A7%D9%86%D9%8A%D9%8A%D9%86.json?dl=1",
+      "يعقوب":
+      "https://www.dropbox.com/s/0sxwbqn0km8nz2i/%D9%8A%D8%B9%D9%82%D9%88%D8%A8.json?dl=1",
+      "1 بطرس":
+      "https://www.dropbox.com/s/szckmo80xbxg80c/1%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
+      "2 بطرس":
+       "https://www.dropbox.com/s/sdmayo81il1afu1/2%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
+       "1 يوحنا":
+       "https://www.dropbox.com/s/s4372rojz1hq5ho/1%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+       "2 يوحنا":
+       "https://www.dropbox.com/s/k7nvd4hddmo7qxw/2%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+       "3 يوحنا":
+       "https://www.dropbox.com/s/ccxt0hghij0gare/3%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+       "يهوذا":
+       "https://www.dropbox.com/s/pwmo8pg7vk8kh52/%D9%8A%D9%87%D9%88%D8%B0%D8%A7.json?dl=1",
+       "رؤيا":
+       "https://www.dropbox.com/s/c0e45ccdkdh9efy/%D8%B1%D8%A4%D9%8A%D8%A7.json?dl=1"
+
+
+
+
+    
+
+
+    
 };
 export const IS_ENGLISH_CONTENT_DOWNLOADED = "english";
+export const IS_ARABIC_CONTENT_DOWNLOADED = "arabic";
