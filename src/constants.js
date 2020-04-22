@@ -110,7 +110,7 @@ export const content = [
         bookName: "Matthew",
         chapterNumber: 5,
         startVerseNumber: 27,
-        endVerseNumber:26,
+        endVerseNumber:48,
         text: "Matthew 5:27-48"
   }
     ]
