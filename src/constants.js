@@ -1,4 +1,6 @@
 import _ from "lodash";
+import { Helpers } from './../src/services/utilities/helpers';
+
 export const content = [
   {
     key: 1,
@@ -110,7 +112,7 @@ export const content = [
         bookName: "Matthew",
         chapterNumber: 5,
         startVerseNumber: 27,
-        endVerseNumber:26,
+        endVerseNumber:48,
         text: "Matthew 5:27-48"
   }
     ]
@@ -165,7 +167,7 @@ export const content = [
       },
       {
         bookName: "Matthew",
-        chapterNumber: 7,
+        chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:34,
         text: "Matthew 8"
@@ -291,10 +293,10 @@ export const content = [
     dayChapters: [
       {
         bookName: "Psalm",
-        chapterNumber: 15,
+        chapterNumber: 16,
         startVerseNumber: 0,
         endVerseNumber:200,
-        text: "Psalm 15"
+        text: "Psalm 16"
       },
       {
         bookName: "Matthew",
@@ -567,7 +569,7 @@ export const content = [
         bookName: "Matthew",
         chapterNumber: 21,
         startVerseNumber: 23,
-        endVerseNumber:22,
+        endVerseNumber:46,
         text: "Matthew 21:23-46"
       }
     ]
@@ -1776,10 +1778,10 @@ export const content = [
     dayChapters: [
       {
         bookName: "Psalm",
-        chapterNumber: 95,
+        chapterNumber: 94,
         startVerseNumber: 0,
         endVerseNumber:200,
-        text: "Psalm 95"
+        text: "Psalm 94"
       },
       {
         bookName: "Luke",
@@ -2145,7 +2147,7 @@ export const content = [
       {
         bookName: "Luke",
         chapterNumber: 20,
-        startVerseNumber: 1,
+        startVerseNumber: 27,
         endVerseNumber:47,
         text: "Luke 20:27-47"
     }
@@ -2184,7 +2186,7 @@ export const content = [
         bookName: "Luke",
         chapterNumber: 22,
         startVerseNumber: 1,
-        endVerseNumber:38,
+        endVerseNumber:30,
         text: "Luke 22:1-30"
     }
     ]
@@ -2298,8 +2300,8 @@ export const content = [
       {
         bookName: "Luke",
         chapterNumber: 24,
-        startVerseNumber: 1,
-        endVerseNumber:35,
+        startVerseNumber: 36,
+        endVerseNumber:53,
         text: "Luke 24:36-53"
     }
     ]
@@ -2414,7 +2416,7 @@ export const content = [
         chapterNumber: 4,
         startVerseNumber: 0,
         endVerseNumber:30,
-        text: "Matthew 4:1-30"
+        text: "John 4:1-30"
       }
     ]
   },
@@ -2424,7 +2426,7 @@ export const content = [
       {
         bookName: "Psalm",
         chapterNumber: 119,
-        startVerseNumber: 137,
+        startVerseNumber: 153,
         endVerseNumber: 176,
         text: "Psalm 119:153-176"
       },
@@ -3222,7 +3224,7 @@ export const content = [
       {
         bookName: "Proverbs",
         chapterNumber: 7,
-        startVerseNumber: 14,
+        startVerseNumber: 16,
         endVerseNumber: 27,
         text: "Proverbs 7:16-27"
       },
@@ -3260,7 +3262,7 @@ export const content = [
       {
         bookName: "Proverbs",
         chapterNumber: 8,
-        startVerseNumber: 0,
+        startVerseNumber: 18,
         endVerseNumber: 36,
         text: "Proverbs 8:18-36"
       },
@@ -3450,7 +3452,7 @@ export const content = [
       {
         bookName: "Proverbs",
         chapterNumber: 13,
-        startVerseNumber: 0,
+        startVerseNumber: 13,
         endVerseNumber: 25,
         text: "Proverbs 13:13-25"
       },
@@ -3584,6 +3586,7 @@ export const content = [
         bookName: "Proverbs",
         chapterNumber: 17,
         startVerseNumber: 1,
+        endVerseNumber: 200,
         text: "Proverbs 17"
       },
       {
@@ -6923,714 +6926,6921 @@ export const arabicCheckedList = _.times(365, _.constant([false]));
 export const ArabicContent = [
   {
     key: 1,
-    dayChapters: ["1 مزامير", "تكوين 1", "تكوين 2", "متي 1"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:6,
+        text: `مزامير ${Helpers.parseToArabic(1)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: `متى ${Helpers.parseToArabic(1)}`
+      }
+    ]
   },
   {
     key: 2,
-    dayChapters: ["مزامير 2", "تكوين 3", "تكوين 4", "متي 2"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۲"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        endVerseNumber:23,
+        text: "متى ۲"
+      }
+    ]
   },
   {
     key: 3,
-    dayChapters: ["مزامير 3", "تكوين 5", "تكوين 6", "متي 3"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۳"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:17,
+        text: "متى ۳"
+      }
+    ]
   },
   {
     key: 4,
-    dayChapters: ["مزامير 4", "تكوين 7", "تكوين 8", "متي 4"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(4)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: `متى ${Helpers.parseToArabic(4)}`
+  }
+    ]
   },
   {
     key: 5,
-    dayChapters: ["مزامير 5", "تكوين 9", "تكوين 10", "تكوين 11", "متي 5"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(5)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:26,
+        text: `متي ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
+      }
+    ]
   },
   {
     key: 6,
-    dayChapters: ["مزامير 6", "تكوين 12", "تكوين 13", "متي 6"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 6,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ٦`
+      },
+      {
+            
+        bookName: "متى",
+        chapterNumber: 5,
+        startVerseNumber: 27,
+        endVerseNumber:48,
+        text: `متي ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(27)} - ${Helpers.parseToArabic(48)}`
+  }
+    ]
   },
   {
     key: 7,
-    dayChapters: ["مزامير 7", "تكوين 14", "تكوين 15", "تكوين 16", "متي 7"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 7,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۷"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:34,
+        text: "متى ٦"
+  }
+    ]
   },
   {
     key: 8,
-    dayChapters: ["مزامير 8", "تكوين 17", "تكوين 18", "متي 8"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 8,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۸"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:29,
+        text: "متى ۷"
+  }
+    ]
   },
   {
     key: 9,
-    dayChapters: ["مزامير 9", "تكوين 19", "تكوين 20", "متي 9"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 9,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۹"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:34,
+        text: "متى ۸"
+      }
+    ]
   },
   {
     key: 10,
-    dayChapters: ["مزامير 10", "تكوين 21", "تكوين 22", "تكوين 23", "متي 10"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 10,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۱۰"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:38,
+        text: "متى ۹"
+      }
+    ]
   },
   {
     key: 11,
-    dayChapters: ["مزامير 11", "تكوين 24", "تكوين 25", "متي 11"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 11,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۱۱"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:23,
+        text: `متي ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(23)}`
+      }
+    ]
   },
   {
     key: 12,
-    dayChapters: ["مزامير 12", "تكوين 26", "تكوين 27", "متي 12"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 12,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۱۲"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 10,
+        startVerseNumber: 24,
+        endVerseNumber:42,
+        text: `متي ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(24)} - ${Helpers.parseToArabic(42)}`
+  }
+    ]
   },
   {
     key: 13,
-    dayChapters: ["مزامير 13", "تكوين 28", "تكوين 29", "متي 13"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 13,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير ۱۳"
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: "متى ۱۱"
+  }
+    ]
   },
   {
     key: 14,
-    dayChapters: ["مزامير 14", "تكوين 30", "تكوين 31", "متي 14"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 14,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(14)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: `متي ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+      }
+    ]
   },
   {
     key: 15,
-    dayChapters: ["مزامير 15", "تكوين 32", "تكوين 33", "متي 15"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 15,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(15)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 12,
+        startVerseNumber: 22,
+        endVerseNumber:50,
+        text: `متى ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(50)}`
+      }
+    ]
   },
   {
     key: 16,
-    dayChapters: ["مزامير 16", "تكوين 34", "تكوين 35", "متي 16"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 16,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `متى ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+      }
+    ]
   },
   {
     key: 17,
-    dayChapters: ["مزامير 17", "تكوين 36", "تكوين 37", "متي 17"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 17,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 13,
+        startVerseNumber: 31,
+        endVerseNumber:58,
+        text: `متى ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(58)}`
+      }
+    ]
   },
   {
     key: 18,
-    dayChapters: ["مزامير 18", "تكوين 38", "تكوين 39", "متي 18"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 18,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(18)}`
+      },
+      {
+        bookName: "متى",
+    chapterNumber: 14,
+    startVerseNumber: 1,
+    endVerseNumber:21,
+    text: `متى ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+  }
+    ]
   },
   {
     key: 19,
-    dayChapters: ["مزامير 19", "تكوين 40", "تكوين 41", "متي 19"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 19,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(19)}`
+      },
+      {
+        bookName: "متى",
+       chapterNumber: 14,
+       startVerseNumber: 22,
+       endVerseNumber:36,
+       text: `متى ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(36)}`
+      }
+    ]
   },
   {
     key: 20,
-    dayChapters: ["مزامير 20", "تكوين 42", "تكوين 43", "متي 20"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 20,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(20)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: `متى ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
+      }
+    ]
   },
   {
     key: 21,
-    dayChapters: ["مزامير 21", "تكوين 44", "تكوين 45", "متي 21"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 21,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(21)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 15,
+        startVerseNumber: 21,
+        endVerseNumber:39,
+        text: `متى ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(39)}`
+  }
+    ]
   },
   {
     key: 22,
-    dayChapters: ["مزامير 22", "تكوين 46", "تكوين 47", "متي 22"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 22,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(22)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: `متى ${Helpers.parseToArabic(16)}`
+  }
+    ]
   },
   {
     key: 23,
-    dayChapters: ["مزامير 23", "تكوين 48", "تكوين 49", "متي 23"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 23,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(23)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:27,
+        text: `متى ${Helpers.parseToArabic(17)}`
+  }
+    ]
   },
   {
     key: 24,
-    dayChapters: ["مزامير 24", "ايوب 1", "تكوين 50", "متي 24"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 24,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(24)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 18,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: `متى ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
+      }
+    ]
   },
   {
     key: 25,
-    dayChapters: ["مزامير 25", "ايوب 2", "ايوب 3", "ايوب 4", "متي 25"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 25,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(25)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 18,
+        startVerseNumber: 21,
+        endVerseNumber:35,
+        text: `متى ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(35)}`
+  }
+    ]
   },
   {
     key: 26,
-    dayChapters: ["مزامير 26", "ايوب 5", "ايوب 6", "ايوب 7", "متي 26"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 26,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(26)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `متى ${Helpers.parseToArabic(19)}`
+      }
+    ]
   },
   {
     key: 27,
-    dayChapters: ["مزامير 27", "ايوب 8", "ايوب 9", "ايوب 10", "متي 27"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 27,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(27)}`
+      },
+      {
+            
+        bookName: "متى",
+        chapterNumber: 20,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: `متى ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(19)}`
+  }
+    ]
   },
   {
     key: 28,
-    dayChapters: ["مزامير 28", "ايوب 11", "ايوب 12", "ايوب 13", "متي 28"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 28,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(28)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 20,
+        startVerseNumber: 20,
+        endVerseNumber:34,
+        text: `متى ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(20)} - ${Helpers.parseToArabic(34)}`
+  }
+    ]
   },
   {
     key: 29,
-    dayChapters: ["مزامير 29", "ايوب 14", "ايوب 15", "ايوب 16", "مرقس 1"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 29,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(29)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 21,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: `متى ${Helpers.parseToArabic(21)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
+  }
+    ]
   },
   {
     key: 30,
-    dayChapters: ["مزامير 30", "ايوب 17", "ايوب 18", "ايوب 19", "مرقس 2"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 30,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(30)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 21,
+        startVerseNumber: 23,
+        endVerseNumber:46,
+        text: `متى ${Helpers.parseToArabic(21)} :${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(46)}`
+      }
+    ]
   },
   {
     key: 31,
-    dayChapters: ["مزامير 31", "ايوب 20", "ايوب 21", "ايوب 22", "مرقس 3"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 31,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(31)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 22,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: `متى ${Helpers.parseToArabic(22)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
+  }
+    ]
   },
   {
     key: 32,
-    dayChapters: ["مزامير 32", "ايوب 23", "ايوب 24", "ايوب 25", "مرقس 4"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 32,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(32)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 22,
+        startVerseNumber: 23,
+        endVerseNumber:46,
+        text: `متى ${Helpers.parseToArabic(22)} :${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(46)}`
+      }
+    ]
   },
   {
     key: 33,
-    dayChapters: ["مزامير 33", "ايوب 26", "ايوب 27", "ايوب 28", "مرقس 5"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 33,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(33)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 23,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: `متى ${Helpers.parseToArabic(23)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
+  }
+    ]
   },
   {
     key: 34,
-    dayChapters: ["مزامير 34", "ايوب 29", "ايوب 30", "ايوب 31", "مرقس 6"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 34,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(34)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 23,
+        startVerseNumber: 23,
+        endVerseNumber:39,
+        text: `متى ${Helpers.parseToArabic(23)} :${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(39)}`
+      }
+    ]
   },
   {
     key: 35,
-    dayChapters: ["مزامير 35", "ايوب 32", "ايوب 33", "ايوب 34", "مرقس 7"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 35,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(35)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 24,
+        startVerseNumber: 1,
+        endVerseNumber:31,
+        text: `متى ${Helpers.parseToArabic(24)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(31)}`
+      }
+    ]
   },
   {
     key: 36,
-    dayChapters: ["مزامير 36", "ايوب 35", "ايوب 36", "ايوب 37", "مرقس 8"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 36,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(36)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 24,
+        startVerseNumber: 31,
+        endVerseNumber:51,
+        text: `متى ${Helpers.parseToArabic(24)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(51)}`
+  }
+    ]
   },
   {
     key: 37,
-    dayChapters: ["مزامير 37", "ايوب 38", "ايوب 39", "ايوب 40", "مرقس 9"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 37,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(37)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 25,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `متى ${Helpers.parseToArabic(25)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+  }
+    ]
   },
   {
     key: 38,
-    dayChapters: ["مزامير 38", "ايوب 41", "ايوب 42", "مرقس 10"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 38,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(38)}`
+      },
+      {
+            
+        bookName: "متى",
+        chapterNumber: 25,
+        startVerseNumber: 31,
+        endVerseNumber:46,
+        text: `متى ${Helpers.parseToArabic(25)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(46)}`
+  }
+    ]
   },
   {
     key: 39,
-    dayChapters: ["مزامير 39", "خروج 1", "خروج 2", "خروج 3", "مرقس 11"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 39,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(39)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 26,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `متى ${Helpers.parseToArabic(26)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+      }
+    ]
   },
   {
     key: 40,
-    dayChapters: ["مزامير 40", "خروج 4", "خروج 5", "خروج 6", "مرقس 12"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 40,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(40)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 26,
+        startVerseNumber: 31,
+        endVerseNumber:56,
+        text: `متى ${Helpers.parseToArabic(26)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(56)}`
+      }
+    ]
   },
   {
     key: 41,
-    dayChapters: ["مزامير 41", "خروج 7", "خروج 8", "خروج 9", "مرقس 13"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 41,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(41)}`
+      },
+      {
+            
+        bookName: "متى",
+        chapterNumber: 26,
+        startVerseNumber: 57,
+        endVerseNumber:75,
+        text: `متى ${Helpers.parseToArabic(26)} :${Helpers.parseToArabic(57)} - ${Helpers.parseToArabic(75)}`
+  }
+    ]
   },
   {
     key: 42,
-    dayChapters: ["مزامير 42", "خروج 10", "خروج 11", "خروج 12", "مرقس 14"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 42,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(42)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 27,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: `متى ${Helpers.parseToArabic(27)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
+  }
+    ]
   },
   {
     key: 43,
-    dayChapters: ["مزامير 43", "خروج 13", "خروج 14", "خروج 15", "مرقس 15"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 43,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(43)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 27,
+        startVerseNumber: 32,
+        endVerseNumber:66,
+        text: `متى ${Helpers.parseToArabic(27)} :${Helpers.parseToArabic(32)} - ${Helpers.parseToArabic(66)}`
+    }
+    ]
   },
   {
     key: 44,
-    dayChapters: ["مزامير 44", "خروج 16", "خروج 17", "خروج 18", "مرقس 16"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 44,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(44)}`
+      },
+      {
+        bookName: "متى",
+        chapterNumber: 28,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: `متى ${Helpers.parseToArabic(28)}`
+    }
+    ]
   },
   {
     key: 45,
-    dayChapters: ["مزامير 45", "خروج 19", "خروج 20", "خروج 21", "Luke 1"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 45,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(45)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        startVerseNumber:28,
+        text: `مرقس ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(28)}`
+      }
+    ]
   },
   {
     key: 46,
-    dayChapters: ["مزامير 46", "خروج 22", "خروج 23", "خروج 24", "Luke 2"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 46,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(46)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 1,
+        startVerseNumber: 29,
+        startVerseNumber:45,
+        text: `مرقس ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(29)} - ${Helpers.parseToArabic(45)}`
+      }
+    ]
   },
   {
     key: 47,
-    dayChapters: ["مزامير 47", "خروج 25", "خروج 26", "خروج 27", "Luke 3"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 47,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(47)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        startVerseNumber:28,
+        text: `مرقس ${Helpers.parseToArabic(2)}`
+      }
+    ]
   },
   {
     key: 48,
-    dayChapters: ["مزامير 48", "خروج 28", "خروج 29", "خروج 30", "Luke 4"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 48,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(48)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        startVerseNumber:35,
+        text: `مرقس ${Helpers.parseToArabic(3)}`
+  }
+    ]
   },
   {
     key: 49,
-    dayChapters: ["مزامير 49", "خروج 31", "خروج 32", "خروج 33", "Luke 5"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 49,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(49)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        startVerseNumber:25,
+        text: `مرقس ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
+      }
+    ]
   },
   {
     key: 50,
-    dayChapters: ["مزامير 50", "خروج 34", "خروج 35", "خروج 36", "Luke 6"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 50,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(50)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 4,
+        startVerseNumber: 26,
+        startVerseNumber:41,
+        text: `مرقس ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(41)}`
+  }
+    ]
   },
   {
     key: 51,
-    dayChapters: ["مزامير 51", "خروج 37", "خروج 38", "خروج 39", "Luke 7"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 51,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(51)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        startVerseNumber:20,
+        text: `مرقس ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
+      }
+    ]
   },
   {
     key: 52,
     dayChapters: [
-      "مزامير 52",
-      "Leviticus 1",
-      "Leviticus 2",
-      "خروج 40",
-      "Luke 8"
+      {
+        bookName: "مزامير",
+        chapterNumber: 52,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(52)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 5,
+        startVerseNumber: 21,
+        startVerseNumber:43,
+        text: `مرقس ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(43)}`
+  }
     ]
   },
   {
     key: 53,
     dayChapters: [
-      "مزامير 53",
-      "Leviticus 3",
-      "Leviticus 4",
-      "Proverbs 1",
-      "Luke 9"
+      {
+        bookName: "مزامير",
+        chapterNumber: 53,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(53)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        startVerseNumber:29,
+        text: `مرقس ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(29)}`
+  }
     ]
   },
   {
     key: 54,
     dayChapters: [
-      "مزامير 54",
-      "Leviticus 5",
-      "Leviticus 6",
-      "Proverbs 2",
-      "Luke 10"
+      {
+        bookName: "مزامير",
+        chapterNumber: 54,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(54)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 6,
+        startVerseNumber: 30,
+        startVerseNumber:56,
+        text: `مرقس ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(30)} - ${Helpers.parseToArabic(56)}`
+      }
     ]
   },
   {
     key: 55,
     dayChapters: [
-      "مزامير 55",
-      "Leviticus 7",
-      "Leviticus 8",
-      "Proverbs 3",
-      "Luke 11"
+      {
+        bookName: "مزامير",
+        chapterNumber: 55,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(55)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        startVerseNumber:23,
+        text: `مرقس ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(23)}`
+      }
     ]
   },
   {
     key: 56,
     dayChapters: [
-      "مزامير 56",
-      "Leviticus 9",
-      "Leviticus 10",
-      "Proverbs 4",
-      "Luke 12"
+      {
+        bookName: "مزامير",
+        chapterNumber: 56,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(56)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 7,
+        startVerseNumber: 24,
+        startVerseNumber:37,
+        text: `مرقس ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(24)} - ${Helpers.parseToArabic(37)}`
+      }
     ]
   },
   {
     key: 57,
     dayChapters: [
-      "مزامير 57",
-      "Leviticus 11",
-      "Leviticus 12",
-      "Proverbs 5",
-      "Luke 13"
+      {
+        bookName: "مزامير",
+        chapterNumber: 57,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(57)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        startVerseNumber:21,
+        text: `مرقس ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+  }
     ]
   },
   {
     key: 58,
     dayChapters: [
-      "مزامير 58",
-      "Leviticus 13",
-      "Leviticus 14",
-      "Proverbs 6",
-      "Luke 14"
+      {
+        bookName: "مزامير",
+        chapterNumber: 58,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(58)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 8,
+        startVerseNumber: 22,
+        startVerseNumber:38,
+        text: `مرقس ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(38)}`
+  }
     ]
   },
   {
     key: 59,
     dayChapters: [
-      "مزامير 59",
-      "Leviticus 15",
-      "Leviticus 16",
-      "Proverbs 7",
-      "Luke 15"
+      {
+        bookName: "مزامير",
+        chapterNumber: 59,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(59)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        startVerseNumber:29,
+        text: `مرقس ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(29)}`
+  }
     ]
   },
   {
     key: 60,
     dayChapters: [
-      "مزامير 60",
-      "Leviticus 17",
-      "Leviticus 18",
-      "Proverbs 8",
-      "Luke 16"
+      {
+        bookName: "مزامير",
+        chapterNumber: 60,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(60)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 9,
+        startVerseNumber: 30,
+        startVerseNumber:50,
+        text: `مرقس ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(30)} - ${Helpers.parseToArabic(50)}`
+      }
     ]
   },
   {
     key: 61,
     dayChapters: [
-      "مزامير 61",
-      "Leviticus 19",
-      "Leviticus 20",
-      "Proverbs 9",
-      "Luke 17"
+      {
+        bookName: "مزامير",
+        chapterNumber: 61,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(61)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        startVerseNumber:31,
+        text: `مرقس ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(31)}`
+      }
     ]
   },
   {
     key: 62,
     dayChapters: [
-      "مزامير 62",
-      "Leviticus 21",
-      "Leviticus 22",
-      "Proverbs 10",
-      "Luke 18"
+      {
+        bookName: "مزامير",
+        chapterNumber: 62,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(62)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 10,
+        startVerseNumber: 32,
+        startVerseNumber:52,
+        text: `مرقس ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(32)} - ${Helpers.parseToArabic(52)}`
+      }
     ]
   },
   {
     key: 63,
     dayChapters: [
-      "مزامير 63",
-      "Leviticus 23",
-      "Leviticus 24",
-      "Proverbs 11",
-      "Luke 19"
+      {
+        bookName: "مزامير",
+        chapterNumber: 63,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(63)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        startVerseNumber:33,
+        text: `مرقس ${Helpers.parseToArabic(11)}`
+      }
     ]
   },
   {
     key: 64,
     dayChapters: [
-      "مزامير 64",
-      "Leviticus 25",
-      "Leviticus 26",
-      "Proverbs 12",
-      "Luke 20"
+      {
+        bookName: "مزامير",
+        chapterNumber: 64,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(64)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        startVerseNumber:27,
+        text: `مرقس ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(27)}`
+      }
     ]
   },
   {
     key: 65,
-    dayChapters: ["مزامير 65", "Leviticus 27", "Proverbs 13", "Luke 21"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 65,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(65)}`
+      },
+      {
+        bookName: "مرقس",
+       chapterNumber: 12,
+       startVerseNumber: 28,
+       startVerseNumber:44,
+       text: `مرقس ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(28)} - ${Helpers.parseToArabic(44)}`
+      }
+    ]
   },
   {
     key: 66,
     dayChapters: [
-      "مزامير 66",
-      "Numbers 1",
-      "Numbers 2",
-      "Proverbs 14",
-      "Luke 22"
+      {
+        bookName: "مزامير",
+        chapterNumber: 66,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(66)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        startVerseNumber:37,
+        text: `مرقس ${Helpers.parseToArabic(13)}`
+  }
     ]
   },
   {
     key: 67,
     dayChapters: [
-      "مزامير 67",
-      "Numbers 3",
-      "Numbers 4",
-      "Proverbs 15",
-      "Luke 23"
+      {
+        bookName: "مزامير",
+        chapterNumber: 67,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(67)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        startVerseNumber:21,
+        text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+      }
     ]
   },
   {
     key: 68,
     dayChapters: [
-      "مزامير 68",
-      "Numbers 5",
-      "Numbers 6",
-      "Proverbs 16",
-      "Luke 24"
+      {
+        bookName: "مزامير",
+        chapterNumber: 68,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(68)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 14,
+        startVerseNumber: 22,
+        startVerseNumber:52,
+        text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(52)}`
+  }
     ]
   },
   {
     key: 69,
     dayChapters: [
-      "مزامير 69",
-      "Numbers 7",
-      "Numbers 8",
-      "Proverbs 17",
-      "John 1"
+      {
+        bookName: "مزامير",
+        chapterNumber: 69,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(69)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 14,
+        startVerseNumber: 53,
+        startVerseNumber:72,
+        text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(53)} - ${Helpers.parseToArabic(72)}`
+      }
     ]
   },
   {
     key: 70,
     dayChapters: [
-      "مزامير 70",
-      "Numbers 9",
-      "Numbers 10",
-      "Proverbs 18",
-      "John 2"
+      {
+        bookName: "مزامير",
+        chapterNumber: 70,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(70)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        startVerseNumber:32,
+        text: `مرقس ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(32)}`
+      }
     ]
   },
   {
     key: 71,
     dayChapters: [
-      "مزامير 71",
-      "Numbers 11",
-      "Numbers 12",
-      "Proverbs 19",
-      "John 3"
+      {
+        bookName: "مزامير",
+        chapterNumber: 71,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(71)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 15,
+        startVerseNumber: 33,
+        startVerseNumber:47,
+        text: `مرقس ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(33)} - ${Helpers.parseToArabic(47)}`
+  }
     ]
   },
   {
     key: 72,
     dayChapters: [
-      "مزامير 72",
-      "Numbers 13",
-      "Numbers 14",
-      "Proverbs 20",
-      "John 4"
+      {
+        bookName: "مزامير",
+        chapterNumber: 72,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(72)}`
+      },
+      {
+        bookName: "مرقس",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        startVerseNumber:20,
+        text: `مرقس ${Helpers.parseToArabic(16)}`
+      }
     ]
   },
   {
     key: 73,
     dayChapters: [
-      "مزامير 73",
-      "Numbers 15",
-      "Numbers 16",
-      "Proverbs 21",
-      "John 5"
+      {
+        bookName: "مزامير",
+        chapterNumber: 73,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(73)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: `لوقا ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
+      }
     ]
   },
   {
     key: 74,
     dayChapters: [
-      "مزامير 74",
-      "Numbers 17",
-      "Numbers 18",
-      "Proverbs 22",
-      "John 6"
+      {
+        bookName: "مزامير",
+        chapterNumber: 74,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(74)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 1,
+        startVerseNumber: 26,
+        endVerseNumber:66,
+        text: `لوقا ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(66)}`
+      }
     ]
   },
   {
     key: 75,
     dayChapters: [
-      "مزامير 75",
-      "Numbers 19",
-      "Numbers 20",
-      "Proverbs 23",
-      "John 7"
+      {
+        bookName: "مزامير",
+        chapterNumber: 75,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(75)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 1,
+        startVerseNumber: 67,
+        endVerseNumber:80,
+        text: `لوقا ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(67)} - ${Helpers.parseToArabic(80)}`
+      }
     ]
   },
   {
     key: 76,
     dayChapters: [
-      "مزامير 76",
-      "Numbers 21",
-      "Numbers 22",
-      "Proverbs 24",
-      "John 8"
+      {
+        bookName: "مزامير",
+        chapterNumber: 76,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(76)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: `لوقا ${Helpers.parseToArabic(2)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
+    }
     ]
   },
   {
     key: 77,
     dayChapters: [
-      "مزامير 77",
-      "Numbers 23",
-      "Numbers 24",
-      "Proverbs 25",
-      "John 9"
+      {
+        bookName: "مزامير",
+        chapterNumber: 77,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(77)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 2,
+        startVerseNumber: 21,
+        endVerseNumber:50,
+        text: `لوقا ${Helpers.parseToArabic(2)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(50)}`
+    }
     ]
   },
   {
     key: 78,
     dayChapters: [
-      "مزامير 78",
-      "Numbers 25",
-      "Numbers 26",
-      "Proverbs 26",
-      "John 10"
+      {
+        bookName: "مزامير",
+        chapterNumber: 78,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(78)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: `لوقا ${Helpers.parseToArabic(3)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
+    }
     ]
   },
   {
     key: 79,
     dayChapters: [
-      "مزامير 79",
-      "Numbers 27",
-      "Numbers 28",
-      "Proverbs 27",
-      "John 11"
+      {
+        bookName: "مزامير",
+        chapterNumber: 79,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(79)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 3,
+        startVerseNumber: 21,
+        endVerseNumber:38,
+        text: `لوقا ${Helpers.parseToArabic(3)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(38)}`
+    }
     ]
   },
   {
     key: 80,
     dayChapters: [
-      "مزامير 80",
-      "Numbers 29",
-      "Numbers 30",
-      "Proverbs 28",
-      "John 12"
+      {
+        bookName: "مزامير",
+        chapterNumber: 80,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(80)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `لوقا ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+    }
     ]
   },
   {
     key: 81,
     dayChapters: [
-      "مزامير 81",
-      "Numbers 31",
-      "Numbers 32",
-      "Proverbs 29",
-      "John 13"
-    ]
-  },
-  {
-    key: 81,
-    dayChapters: [
-      "مزامير 81",
-      "Numbers 33",
-      "Numbers 34",
-      "Proverbs 30",
-      "John 14"
+      {
+        bookName: "مزامير",
+        chapterNumber: 81,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(81)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 4,
+        startVerseNumber: 31,
+        endVerseNumber:44,
+        text: `لوقا ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(44)}`
+    }
     ]
   },
   {
     key: 82,
     dayChapters: [
-      "مزامير 82",
-      "Numbers 35",
-      "Numbers 36",
-      "Proverbs 31",
-      "John 15"
+      {
+        bookName: "مزامير",
+        chapterNumber: 82,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(82)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: `لوقا ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+    }
     ]
   },
   {
     key: 83,
-    dayChapters: ["مزامير 83", "Deuteronomy 1", "Deuteronomy 2", "John 16"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 83,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(83)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 5,
+        startVerseNumber: 17,
+        endVerseNumber:39,
+        text: `لوقا ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(39)}`
+    }
+    ]
   },
   {
     key: 84,
-    dayChapters: ["مزامير 84", "Deuteronomy 3", "Deuteronomy 4", "John 17"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 84,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(84)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: `لوقا ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
+    }
+    ]
   },
   {
     key: 85,
-    dayChapters: ["مزامير 85", "Deuteronomy 5", "Deuteronomy 6", "John 18"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 85,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(85)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 6,
+        startVerseNumber: 27,
+        endVerseNumber:49,
+        text: `لوقا ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(27)} - ${Helpers.parseToArabic(49)}`
+    }
+    ]
   },
   {
     key: 86,
-    dayChapters: ["مزامير 86", "Deuteronomy 7", "Deuteronomy 8", "John 19"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 86,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(86)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:35,
+        text: `لوقا ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(35)}`
+    }
+    ]
   },
   {
     key: 87,
-    dayChapters: ["مزامير 87", "Deuteronomy 9", "Deuteronomy 10", "John 20"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 87,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(87)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 7,
+        startVerseNumber: 36,
+        endVerseNumber:50,
+        text: `لوقا ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(36)} - ${Helpers.parseToArabic(50)}`
+    }
+    ]
   },
   {
     key: 88,
-    dayChapters: ["مزامير 88", "Deuteronomy 11", "Deuteronomy 12", "John 21"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 88,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(88)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: `لوقا ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
+    }
+    ]
   },
   {
     key: 89,
-    dayChapters: ["مزامير 89", "Deuteronomy 13", "Deuteronomy 14", "Acts 1"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 89,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(89)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 8,
+        startVerseNumber: 26,
+        endVerseNumber:56,
+        text: `لوقا ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(56)}`
+    }
+    ]
   },
   {
     key: 90,
-    dayChapters: ["مزامير 90", "Deuteronomy 15", "Deuteronomy 16", "Acts 2"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 90,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(90)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:27,
+        text: `لوقا ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(27)}`
+    }
+    ]
   },
   {
     key: 91,
-    dayChapters: ["مزامير 91", "Deuteronomy 17", "Deuteronomy 18", "Acts 3"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 91,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(91)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 9,
+        startVerseNumber: 28,
+        endVerseNumber:50,
+        text: `لوقا ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(28)} - ${Helpers.parseToArabic(50)}`
+    }
+    ]
   },
   {
     key: 92,
-    dayChapters: ["مزامير 92", "Deuteronomy 19", "Deuteronomy 20", "Acts 4"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 92,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(92)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 9,
+        startVerseNumber: 51,
+        endVerseNumber:62,
+        text: `لوقا ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(51)} - ${Helpers.parseToArabic(62)}`
+    }
+    ]
   },
   {
     key: 93,
-    dayChapters: ["مزامير 93", "Deuteronomy 21", "Deuteronomy 22", "Acts 5"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 93,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(93)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `لوقا ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+    }
+    ]
   },
   {
     key: 94,
-    dayChapters: ["مزامير 94", "Deuteronomy 23", "Deuteronomy 24", "Acts 6"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 94,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(94)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 10,
+        startVerseNumber: 25,
+        endVerseNumber:42,
+        text: `لوقا ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(42)}`
+    }
+    ]
   },
   {
     key: 95,
-    dayChapters: ["مزامير 95", "Deuteronomy 25", "Deuteronomy 26", "Acts 7"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 95,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(95)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: `لوقا ${Helpers.parseToArabic(11)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(28)}`
+    }
+    ]
   },
   {
     key: 96,
-    dayChapters: ["مزامير 96", "Deuteronomy 27", "Deuteronomy 28", "Acts 8"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 96,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(96)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 11,
+        startVerseNumber: 29,
+        endVerseNumber:54,
+        text: `لوقا ${Helpers.parseToArabic(11)} :${Helpers.parseToArabic(29)} - ${Helpers.parseToArabic(54)}`
+    }
+    ]
   },
   {
     key: 97,
-    dayChapters: ["مزامير 97", "Deuteronomy 29", "Deuteronomy 30", "Acts 9"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 97,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(97)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:34,
+        text: `لوقا ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(34)}`
+    }
+    ]
   },
   {
     key: 98,
-    dayChapters: ["مزامير 98", "Deuteronomy 31", "Deuteronomy 32", "Acts 10"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 98,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(98)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 12,
+        startVerseNumber: 35,
+        endVerseNumber:59,
+        text: `لوقا ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(35)} - ${Helpers.parseToArabic(59)}`
+    }
+    ]
   },
   {
     key: 99,
-    dayChapters: ["مزامير 99", "Deuteronomy 33", "Deuteronomy 34", "Acts 11"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 99,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(99)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: `لوقا ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+    }
+    ]
   },
   {
     key: 100,
-    dayChapters: ["مزامير 100", "Acts 12"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 100,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(100)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 13,
+        startVerseNumber: 22,
+        endVerseNumber:35,
+        text: `لوقا ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(35)}`
+    }
+    ]
   },
   {
     key: 101,
-    dayChapters: ["مزامير 101", "Acts 13"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 101,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(101)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `لوقا ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+    }
+    ]
   },
   {
     key: 102,
-    dayChapters: ["مزامير 102", "Acts 14"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 102,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(102)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 14,
+        startVerseNumber: 25,
+        endVerseNumber:35,
+        text: `لوقا ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(35)}`
+    }
+    ]
   },
   {
     key: 103,
-    dayChapters: ["مزامير 103", "Acts 15"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 103,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(103)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:32,
+        text: `لوقا ${Helpers.parseToArabic(15)}`
+    }
+    ]
   },
   {
     key: 104,
-    dayChapters: ["مزامير 104", "Acts 16"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 104,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(104)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: `لوقا ${Helpers.parseToArabic(16)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(18)}`
+    }
+    ]
   },
   {
     key: 105,
-    dayChapters: ["مزامير 105", "Acts 17"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 105,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(105)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 16,
+        startVerseNumber: 19,
+        endVerseNumber:31,
+        text: `لوقا ${Helpers.parseToArabic(16)} :${Helpers.parseToArabic(19)} - ${Helpers.parseToArabic(31)}`
+    }
+    ]
   },
   {
     key: 106,
-    dayChapters: ["مزامير 106", "Acts 18"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 106,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(106)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: `لوقا ${Helpers.parseToArabic(17)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(19)}`
+    }
+    ]
   },
   {
     key: 107,
-    dayChapters: ["مزامير 107", "Acts 19"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 107,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(107)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 17,
+        startVerseNumber: 20,
+        endVerseNumber:37,
+        text: `لوقا ${Helpers.parseToArabic(17)} :${Helpers.parseToArabic(20)} - ${Helpers.parseToArabic(37)}`
+    }
+    ]
   },
   {
     key: 108,
-    dayChapters: ["مزامير 108", "Acts 20"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 108,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(108)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 18,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: `لوقا ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+    }
+    ]
   },
   {
     key: 109,
-    dayChapters: ["مزامير 109", "Acts 21"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 109,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(109)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 18,
+        startVerseNumber: 18,
+        endVerseNumber:43,
+        text: `لوقا ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(43)}`
+    }
+    ]
   },
   {
     key: 110,
-    dayChapters: ["مزامير 110", "Acts 22"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 110,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(110)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:27,
+        text: `لوقا ${Helpers.parseToArabic(19)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(27)}`
+    }
+    ]
+  },
+  {
+    key: 111,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 111,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(111)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 19,
+        startVerseNumber: 28,
+        endVerseNumber:48,
+        text: `لوقا ${Helpers.parseToArabic(19)} :${Helpers.parseToArabic(28)} - ${Helpers.parseToArabic(48)}`
+    }
+    ]
   },
   {
     key: 112,
-    dayChapters: ["مزامير 112", "Acts 23"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 112,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(112)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 20,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: `لوقا ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
+    }
+    ]
   },
   {
     key: 113,
-    dayChapters: ["مزامير 113", "Acts 24"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 113,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(113)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 20,
+        startVerseNumber: 27,
+        endVerseNumber:47,
+        text: `لوقا ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(27)} - ${Helpers.parseToArabic(47)}`
+    }
+    ]
   },
   {
     key: 114,
-    dayChapters: ["مزامير 114", "Acts 25"]
-  },
-  {
-    key: 114,
-    dayChapters: ["مزامير 100", "Acts 26"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 114,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(114)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 21,
+        startVerseNumber: 1,
+        endVerseNumber:38,
+        text: `لوقا ${Helpers.parseToArabic(21)}`
+    }
+    ]
   },
   {
     key: 115,
-    dayChapters: ["مزامير 115", "Acts 27"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 115,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(115)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 22,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `لوقا ${Helpers.parseToArabic(22)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+    }
+    ]
   },
   {
     key: 116,
-    dayChapters: ["مزامير 116", "Acts 28"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 116,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(116)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 22,
+        startVerseNumber: 31,
+        endVerseNumber:53,
+        text: `لوقا ${Helpers.parseToArabic(22)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(53)}`
+    }
+    ]
   },
   {
     key: 117,
-    dayChapters: ["مزامير 117"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 117,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(117)}`
+      },
+      {
+            
+        bookName: "لوقا",
+        chapterNumber: 22,
+        startVerseNumber: 54,
+        endVerseNumber:71,
+        text: `لوقا ${Helpers.parseToArabic(22)} :${Helpers.parseToArabic(54)} - ${Helpers.parseToArabic(71)}`
+    }
+    ]
   },
   {
     key: 118,
-    dayChapters: ["مزامير 118"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 118,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(118)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 23,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: `لوقا ${Helpers.parseToArabic(23)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
+    }
+    ]
   },
   {
     key: 119,
-    dayChapters: ["مزامير 119"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 0,
+        endVerseNumber: 16,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 23,
+        startVerseNumber: 26,
+        endVerseNumber:56,
+        text: `لوقا ${Helpers.parseToArabic(23)} :${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(56)}`
+    }
+    ]
   },
   {
     key: 120,
-    dayChapters: ["مزامير 120"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 17,
+        endVerseNumber: 32,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(32)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 24,
+        startVerseNumber: 1,
+        endVerseNumber:35,
+        text: `لوقا ${Helpers.parseToArabic(24)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(35)}`
+    }
+    ]
   },
   {
     key: 121,
-    dayChapters: ["مزامير 121"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 33,
+        endVerseNumber: 56,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(33)} - ${Helpers.parseToArabic(56)}`
+      },
+      {
+        bookName: "لوقا",
+        chapterNumber: 24,
+        startVerseNumber: 36,
+        endVerseNumber:53,
+        text: `لوقا ${Helpers.parseToArabic(24)} :${Helpers.parseToArabic(36)} - ${Helpers.parseToArabic(53)}`
+    }
+    ]
   },
   {
     key: 122,
-    dayChapters: ["مزامير 122"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 57,
+        endVerseNumber: 72,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(57)} - ${Helpers.parseToArabic(72)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:28,
+        text: `يوحنا ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(28)}`
+      }
+    ]
   },
   {
     key: 123,
-    dayChapters: ["مزامير 123"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 73,
+        endVerseNumber: 88,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(73)} - ${Helpers.parseToArabic(88)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 1,
+        startVerseNumber: 29,
+        endVerseNumber:51,
+        text: `يوحنا ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(29)} - ${Helpers.parseToArabic(51)}`
+      }
+    ]
   },
   {
     key: 124,
-    dayChapters: ["مزامير 124"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 89,
+        endVerseNumber: 104,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(89)} - ${Helpers.parseToArabic(104)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: `يوحنا ${Helpers.parseToArabic(2)}`
+      }
+    ]
   },
   {
     key: 125,
-    dayChapters: ["مزامير 125"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 105,
+        endVerseNumber: 120,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(105)} - ${Helpers.parseToArabic(120)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:24,
+        text: `يوحنا ${Helpers.parseToArabic(3)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+  }
+    ]
   },
   {
     key: 126,
-    dayChapters: ["مزامير 118"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 121,
+        endVerseNumber: 136,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(121)} - ${Helpers.parseToArabic(136)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 3,
+        startVerseNumber: 25,
+        endVerseNumber:36,
+        text: `يوحنا ${Helpers.parseToArabic(3)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(36)}`
+  }
+    ]
   },
   {
     key: 127,
-    dayChapters: ["مزامير 127"]
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 137,
+        endVerseNumber: 152,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(137)} - ${Helpers.parseToArabic(152)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:30,
+        text: `يوحنا ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+      }
+    ]
   },
   {
-    key: 118,
-    dayChapters: ["مزامير 118"]
-  },
-  {
-    key: 118,
-    dayChapters: ["مزامير 118"]
-  },
-  {
-    key: 118,
-    dayChapters: ["مزامير 118"]
+    key: 128,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 153,
+        endVerseNumber: 176,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(153)} - ${Helpers.parseToArabic(176)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 4,
+        startVerseNumber: 31,
+        endVerseNumber:54,
+        text: `يوحنا ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(54)}`
   }
+    ]
+  },
+  {
+    key: 129,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 120,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(120)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: `يوحنا ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(30)}`
+  }
+    ]
+  },
+  {
+    key: 130,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 121,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(121)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 5,
+        startVerseNumber: 31,
+        endVerseNumber:47,
+        text: `يوحنا ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(31)} - ${Helpers.parseToArabic(47)}`
+  }
+    ]
+  },
+  {
+    key: 131,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 122,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(122)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `يوحنا ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+  }
+    ]
+  },
+  {
+    key: 132,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 123,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(123)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 6,
+        startVerseNumber: 25,
+        endVerseNumber:59,
+        text: `يوحنا ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(59)}`
+      }
+    ]
+  },
+  {
+    key: 133,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 124,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(124)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 6,
+        startVerseNumber: 60,
+        endVerseNumber:71,
+        text: `يوحنا ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(60)} - ${Helpers.parseToArabic(71)}`
+      }
+    ]
+  },
+  {
+    key: 134,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 125,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(125)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `يوحنا ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+      }
+    ]
+  },
+  {
+    key: 135,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 126,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(126)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 7,
+        startVerseNumber: 25,
+        endVerseNumber:53,
+        text: `يوحنا ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(53)}`
+  }
+    ]
+  },
+  {
+    key: 136,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 127,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(127)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:29,
+        text: `يوحنا ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(29)}`
+  }
+    ]
+  },
+  {
+    key: 137,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 128,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(128)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 8,
+        startVerseNumber: 30,
+        endVerseNumber:59,
+        text: `يوحنا ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(30)} - ${Helpers.parseToArabic(59)}`
+  }
+    ]
+  },
+  {
+    key: 138,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 129,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(129)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:41,
+        text: `يوحنا ${Helpers.parseToArabic(9)}`
+      }
+    ]
+  },
+  {
+    key: 139,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 130,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(130)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: `يوحنا ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
+      }
+    ]
+  },
+  {
+    key: 140,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 131,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(131)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 10,
+        startVerseNumber: 22,
+        endVerseNumber:42,
+        text: `يوحنا ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(42)}`
+      }
+    ]
+  },
+  {
+    key: 141,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 132,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(132)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:44,
+        text: `يوحنا ${Helpers.parseToArabic(11)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(44)}`
+      }
+    ]
+  },
+  {
+    key: 142,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 133,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(133)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 11,
+        startVerseNumber: 45,
+        endVerseNumber:57,
+        text: `يوحنا ${Helpers.parseToArabic(11)} :${Helpers.parseToArabic(45)} - ${Helpers.parseToArabic(57)}`
+      }
+    ]
+  },
+  {
+    key: 143,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 134,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(134)}`
+      },
+      {
+        bookName: "يوحنا",
+       chapterNumber: 12,
+       startVerseNumber: 1,
+       endVerseNumber:33,
+       text: `يوحنا ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(33)}`
+      }
+    ]
+  },
+  {
+    key: 144,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 135,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(135)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 12,
+        startVerseNumber: 34,
+        endVerseNumber:50,
+        text: `يوحنا ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(34)} - ${Helpers.parseToArabic(50)}`
+      }
+    ]
+  },
+  {
+    key: 145,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 136,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(136)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: `يوحنا ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(19)}`
+  }
+    ]
+  },
+  {
+    key: 146,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 137,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(137)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 13,
+        startVerseNumber: 20,
+        endVerseNumber:38,
+        text: `يوحنا ${Helpers.parseToArabic(13)} :${Helpers.parseToArabic(20)} - ${Helpers.parseToArabic(38)}`
+  }
+    ]
+  },
+  {
+    key: 147,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 138,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(138)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: `يوحنا ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(14)}`
+  }
+    ]
+  },
+  {
+    key: 148,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 139,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(139)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 14,
+        startVerseNumber: 15,
+        endVerseNumber:31,
+        text: `يوحنا ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(15)} - ${Helpers.parseToArabic(31)}`
+  }
+    ]
+  },
+  {
+    key: 149,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 140,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(140)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:27,
+        text: `يوحنا ${Helpers.parseToArabic(15)}`
+      }
+    ]
+  },
+  {
+    key: 150,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 141,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(141)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: `يوحنا ${Helpers.parseToArabic(16)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+  }
+    ]
+  },
+  {
+    key: 151,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 142,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(142)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 16,
+        startVerseNumber: 17,
+        endVerseNumber:33,
+        text: `يوحنا ${Helpers.parseToArabic(16)} :${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(33)}`
+  }
+    ]
+  },
+  {
+    key: 152,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 143,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(143)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: `يوحنا ${Helpers.parseToArabic(17)}`
+      }
+    ]
+  },
+  {
+    key: 153,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 144,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(144)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 18,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `يوحنا ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+      }
+    ]
+  },
+  {
+    key: 154,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 145,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(145)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 18,
+        startVerseNumber: 25,
+        endVerseNumber:40,
+        text: `يوحنا ${Helpers.parseToArabic(18)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(40)}`
+      }
+    ]
+  },
+  {
+    key: 155,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 146,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(146)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: `يوحنا ${Helpers.parseToArabic(19)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+      }
+    ]
+  },
+  {
+    key: 156,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 147,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(147)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 19,
+        startVerseNumber: 25,
+        endVerseNumber:42,
+        text: `يوحنا ${Helpers.parseToArabic(19)} :${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(42)}`
+      }
+    ]
+  },
+  {
+    key: 157,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 148,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(148)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 20,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: `يوحنا ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(18)}`
+      }
+    ]
+  },
+  {
+    key: 158,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 149,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(149)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 20,
+        startVerseNumber: 19,
+        endVerseNumber:31,
+        text: `يوحنا ${Helpers.parseToArabic(20)} :${Helpers.parseToArabic(19)} - ${Helpers.parseToArabic(31)}`
+      }
+    ]
+  },
+  {
+    key: 159,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 150,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(150)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 21,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: `يوحنا ${Helpers.parseToArabic(21)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(14)}`
+      }
+    ]
+  },
+  {
+    key: 160,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber: 19,
+        text: `امثال ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(19)}`
+      },
+      {
+        bookName: "يوحنا",
+        chapterNumber: 21,
+        startVerseNumber: 15,
+        endVerseNumber:25,
+        text: `يوحنا ${Helpers.parseToArabic(21)} :${Helpers.parseToArabic(15)} - ${Helpers.parseToArabic(25)}`
+      }
+    ]
+  },
+  {
+    key: 161,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 1,
+        startVerseNumber: 20,
+        endVerseNumber: 33,
+        text: `امثال ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(20)} - ${Helpers.parseToArabic(33)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:26,
+        text: "اعمال 1"
+      }
+    ]
+  },
+  {
+    key: 162,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(2)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "اعمال 2:1-21"
+        }
+    ]
+  },
+  {
+    key: 163,
+    dayChapters: [
+      {
+        bookName: "Proverbs",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber: 17,
+        text: `امثال ${Helpers.parseToArabic(3)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 2,
+        startVerseNumber: 22,
+        endVerseNumber:47,
+        text: "اعمال 2:22-47"
+        }
+    ]
+  },
+  {
+    key: 164,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 3,
+        startVerseNumber: 18,
+        endVerseNumber: 35,
+        text: `امثال ${Helpers.parseToArabic(3)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(35)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:26,
+        text: "اعمال 3"
+    }
+    ]
+  },
+  {
+    key: 165,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(4)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:37,
+        text: "اعمال 4"
+        }
+    ]
+  },
+  {
+    key: 166,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(5)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "اعمال 5:1-21"
+    }
+    ]
+  },
+  {
+    key: 167,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 6,
+        startVerseNumber: 0,
+        endVerseNumber: 17,
+        text: `امثال ${Helpers.parseToArabic(6)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 5,
+        startVerseNumber: 22,
+        endVerseNumber:42,
+        text: "اعمال 5:22-42"
+    }
+    ]
+  },
+  {
+    key: 168,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 6,
+        startVerseNumber: 18,
+        endVerseNumber: 35,
+        text: `امثال ${Helpers.parseToArabic(6)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(35)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "اعمال 6"
+    }
+    ]
+  },
+  {
+    key: 169,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 7,
+        startVerseNumber: 0,
+        endVerseNumber: 15,
+        text: `امثال ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: "اعمال 7:1-19"
+    }
+    ]
+  },
+  {
+    key: 170,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 7,
+        startVerseNumber: 16,
+        endVerseNumber: 27,
+        text: `امثال ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(27)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 7,
+        startVerseNumber: 20,
+        endVerseNumber:43,
+        text: "اعمال 7:20-43"
+        }
+    ]
+  },
+  {
+    key: 171,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 8,
+        startVerseNumber: 0,
+        endVerseNumber: 17,
+        text: `امثال ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 7,
+        startVerseNumber: 44,
+        endVerseNumber:60,
+        text: "اعمال 7:44-60"
+        }
+    ]
+  },
+  {
+    key: 172,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 8,
+        startVerseNumber: 18,
+        endVerseNumber: 36,
+        text: `امثال ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(36)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "اعمال 8:1-25"
+        }
+    ]
+  },
+  {
+    key: 173,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 9,
+        startVerseNumber: 0,
+        endVerseNumber: 10,
+        text: `امثال ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(10)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 8,
+        startVerseNumber: 26,
+        endVerseNumber:40,
+        text: "اعمال 8:26-40"
+    }
+    ]
+  },
+  {
+    key: 174,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 9,
+        startVerseNumber: 11,
+        endVerseNumber: 18,
+        text: `امثال ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(11)} - ${Helpers.parseToArabic(18)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber:  9,
+        startVerseNumber: 1,
+        endVerseNumber:31,
+        text: "اعمال 9:1-31"
+    }
+    ]
+  },
+  {
+    key: 175,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 10,
+        startVerseNumber: 0,
+        endVerseNumber: 16,
+        text: `امثال ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 9,
+        startVerseNumber: 32,
+        endVerseNumber:43,
+        text: "اعمال 9:32-43"
+    }
+    ]
+  },
+  {
+    key: 176,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 10,
+        startVerseNumber: 17,
+        endVerseNumber: 31,
+        text: `امثال ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(31)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:23,
+        text: "اعمال 10:1-23"
+        }
+    ]
+  },
+  {
+    key: 177,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 11,
+        startVerseNumber: 0,
+        endVerseNumber: 15,
+        text: `امثال ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 10,
+        startVerseNumber: 24,
+        endVerseNumber:48,
+        text: "اعمال 10:24-48"
+        }
+    ]
+  },
+  {
+    key: 178,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 11,
+        startVerseNumber: 16,
+        endVerseNumber: 31,
+        text: `امثال ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(31)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: "اعمال 11"
+        }
+    ]
+  },
+  {
+    key: 179,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 12,
+        startVerseNumber: 0,
+        endVerseNumber: 14,
+        text: `امثال ${Helpers.parseToArabic(12)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(14)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "اعمال 12"
+        }
+    ]
+  },
+  {
+    key: 180,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 12,
+        startVerseNumber: 15,
+        endVerseNumber: 28,
+        text: `امثال ${Helpers.parseToArabic(12)}: ${Helpers.parseToArabic(15)} - ${Helpers.parseToArabic(28)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "اعمال 13:1-25"
+        }
+    ]
+  },
+  {
+    key: 181,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 13,
+        startVerseNumber: 0,
+        endVerseNumber: 12,
+        text: `امثال ${Helpers.parseToArabic(13)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(12)}`
+      },
+      {
+        bookName: "اعمال",
+       chapterNumber: 13,
+       startVerseNumber: 26,
+       endVerseNumber:52,
+       text: "اعمال 13:26-52"
+       }
+    ]
+  },
+  {
+    key: 182,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 13,
+        startVerseNumber: 13,
+        endVerseNumber: 25,
+        text: `امثال ${Helpers.parseToArabic(13)}: ${Helpers.parseToArabic(13)} - ${Helpers.parseToArabic(25)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "اعمال 14"
+    }
+    ]
+  },
+  {
+    key: 183,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 14,
+        startVerseNumber: 0,
+        endVerseNumber: 17,
+        text: `امثال ${Helpers.parseToArabic(14)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "اعمال 15:1-21"
+    }
+    ]
+  },
+  {
+    key: 184,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 14,
+        startVerseNumber: 18,
+        endVerseNumber: 35,
+        text: `امثال ${Helpers.parseToArabic(14)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(35)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 15,
+        startVerseNumber: 22,
+        endVerseNumber:41,
+        text: "اعمال 15:22-41"
+    }
+    ]
+  },
+  {
+    key: 185,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber: 16,
+        text: `امثال ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "اعمال 16:1-15"
+    }
+    ]
+  },
+  {
+    key: 186,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 15,
+        startVerseNumber: 17,
+        endVerseNumber: 33,
+        text: `امثال ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(33)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 16,
+        startVerseNumber: 16,
+        endVerseNumber:40,
+        text: "اعمال 16:16-40"
+        }
+    ]
+  },
+  {
+    key: 187,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber: 16,
+        text: `امثال ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:34,
+        text: "اعمال 17"
+    }
+    ]
+  },
+  {
+    key: 188,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 16,
+        startVerseNumber: 17,
+        endVerseNumber: 33,
+        text: `امثال ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(33)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 18,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "اعمال 18"
+        }
+    ]
+  },
+  {
+    key: 189,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(17)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "اعمال 19:1-22"
+        }
+    ]
+  },
+  {
+    key: 190,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 18,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(18)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 19,
+        startVerseNumber: 23,
+        endVerseNumber:41,
+        text: "اعمال 19:23-41"
+        }
+    ]
+  },
+  {
+    key: 191,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 19,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `امثال ${Helpers.parseToArabic(19)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 20,
+        startVerseNumber: 1,
+        endVerseNumber:38,
+        text: "اعمال 20"
+        }
+    ]
+  },
+  {
+    key: 192,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 20,
+        startVerseNumber: 0,
+        endVerseNumber:15,
+        text: `امثال ${Helpers.parseToArabic(20)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: "اعمال 21:1-26"
+        }
+    ]
+  },
+  {
+    key: 193,
+    dayChapters: [
+      {
+        bookName: "امثال",
+        chapterNumber: 20,
+        startVerseNumber: 16,
+        endVerseNumber:30,
+        text: `امثال ${Helpers.parseToArabic(20)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(30)}`
+      },
+      {
+        bookName: "اعمال",
+        chapterNumber: 21,
+        startVerseNumber: 27,
+        endVerseNumber:40,
+        text: "اعمال 21:27-40"
+        }
+    ]
+  },
+  {
+    key: 194,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 21,
+      startVerseNumber: 1,
+      endVerseNumber:15,
+      text: `امثال ${Helpers.parseToArabic(21)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 22,
+      startVerseNumber: 1,
+      endVerseNumber:30,
+      text: "اعمال 22"
+      }
+  
+  ]
+  },
+  {
+    key: 195,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 21,
+      startVerseNumber: 16,
+      endVerseNumber:31,
+      text: `امثال ${Helpers.parseToArabic(21)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(31)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 23,
+      startVerseNumber: 1,
+      endVerseNumber:35,
+      text: "اعمال 23"
+      }
+  ]
+  },
+  {
+    key: 196,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 22,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(22)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 24,
+      startVerseNumber: 1,
+      endVerseNumber:27,
+      text: "اعمال 24"
+      }
+  ]
+  },
+  {
+    key: 197,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 23,
+      startVerseNumber: 1,
+      endVerseNumber:17,
+      text: `امثال ${Helpers.parseToArabic(23)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 25,
+      startVerseNumber: 1,
+      endVerseNumber:27,
+      text: "اعمال 25"
+      }
+  ]
+  },
+  {
+    key: 198,
+    dayChapters:[{
+      bookName: "امثال",
+      chapterNumber: 23,
+      startVerseNumber: 18,
+      endVerseNumber:35,
+      text: `امثال ${Helpers.parseToArabic(23)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(35)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 26,
+      startVerseNumber: 1,
+      endVerseNumber:32,
+      text: "اعمال 26"
+      }
+  ]
+  },
+  {
+    key: 199,
+    dayChapters:[{
+      bookName: "امثال",
+      chapterNumber: 24,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(24)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 27,
+      startVerseNumber: 1,
+      endVerseNumber:26,
+      text: "اعمال 27:1-26"
+      }
+  ]
+  },
+  {
+    key: 200,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 25,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(25)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 27,
+      startVerseNumber: 27,
+      endVerseNumber:44,
+      text: "اعمال 27:27-44"
+      }
+  ]
+  },
+  {
+    key: 201,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 26,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(26)}`
+    },
+    {
+      bookName: "اعمال",
+      chapterNumber: 28,
+      startVerseNumber: 1,
+      endVerseNumber:31,
+      text: "اعمال 28"
+      }
+  ]
+  },
+  {
+    key: 202,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 27,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(27)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 1,
+      startVerseNumber: 0,
+      endVerseNumber:17,
+      text: "رومية 1:1-17"
+    }
+  ]
+  },
+  {
+    key: 203,
+    dayChapters: [{
+      bookName: "امثال",
+      chapterNumber: 28,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(28)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 1,
+      startVerseNumber: 18,
+      endVerseNumber:28,
+      text: "رومية 1:18-32"
+    }
+  ]
+  },
+  {
+    key: 204,
+    dayChapters: [{
+      bookName: "Proverbs",
+      chapterNumber: 29,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(29)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 2,
+      startVerseNumber: 1,
+      endVerseNumber:29,
+      text: "رومية 2"
+    }
+  ]
+  },
+  {
+    key: 205,
+    dayChapters: [{
+      bookName: "Proverbs",
+      chapterNumber: 30,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(30)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 3,
+      startVerseNumber: 0,
+      endVerseNumber:31,
+      text: "رومية 3"
+    }
+  ]
+  },
+  {
+    key: 206,
+    dayChapters: [{
+      bookName: "Proverbs",
+      chapterNumber: 31,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `امثال ${Helpers.parseToArabic(31)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 4,
+      startVerseNumber: 0,
+      endVerseNumber:25,
+      text: "رومية 4"
+}
+  ]
+  },
+  {
+    key: 207,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 1,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(1)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 5,
+      startVerseNumber: 0,
+      endVerseNumber:21,
+      text: "رومية 5"
+    }
+  ]
+  },
+  {
+    key: 208,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 2,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۲"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 6,
+      startVerseNumber: 1,
+      endVerseNumber:23,
+      text: "رومية 6"
+}
+  ]
+  },
+  {
+    key: 209,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 2,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۳"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 7,
+      startVerseNumber: 1,
+      endVerseNumber:25,
+      text: "رومية 7"
+}
+  ]
+  },
+  {
+    key: 210,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 4,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(4)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 8,
+      startVerseNumber: 1,
+      endVerseNumber:17,
+      text: "رومية 8:1-17"
+}
+  ]
+  },
+  {
+    key: 211,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 5,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(5)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 8,
+      startVerseNumber: 18,
+      endVerseNumber:39,
+      text: "رومية 8:18-39"
+}
+  ]
+  },
+  {
+    key: 212,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 6,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ٦`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 9,
+      startVerseNumber: 1,
+      endVerseNumber:13,
+      text: "رومية 9:1-13"
+    }
+  ]
+  },
+  {
+    key: 213,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 7,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۷"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 9,
+      startVerseNumber: 14,
+      endVerseNumber:33,
+      text: "رومية 9:14-33"
+    }
+  ]
+  },
+  {
+    key: 214,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 8,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۸"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 10,
+      startVerseNumber: 1,
+      endVerseNumber:21,
+      text: "رومية 10"
+    }
+  ]
+  },
+  {
+    key: 215,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 9,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۹"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 11,
+      startVerseNumber: 1,
+      endVerseNumber:24,
+      text: "رومية 11:1-24"
+    }
+  ]
+  },
+  {
+    key: 216,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 10,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۱۰"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 11,
+      startVerseNumber: 25,
+      endVerseNumber:36,
+      text: "رومية 11:25-36"
+}
+  ]
+  },
+  {
+    key: 217,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 11,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۱۱"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 12,
+      startVerseNumber: 1,
+      endVerseNumber:21,
+      text: "رومية 12"
+}
+  ]
+  },
+  {
+    key: 218,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 12,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۱۲"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 13,
+      startVerseNumber: 1,
+      endVerseNumber:14,
+      text: "رومية 13"
+}
+  ]
+  },
+  {
+    key: 219,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 13,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: "مزامير ۱۳"
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 14,
+      startVerseNumber: 1,
+      endVerseNumber:23,
+      text: "رومية 14"
+    }
+  ]
+  },
+  {
+    key: 220,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 14,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(14)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 15,
+      startVerseNumber: 1,
+      endVerseNumber:22,
+      text: "رومية 15:1-22"
+    }
+  ]
+  },
+  {
+    key: 221,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 15,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(15)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 15,
+      startVerseNumber: 23,
+      endVerseNumber:33,
+      text: "رومية 15:23-33"
+    }
+  ]
+  },
+  {
+    key: 222,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 16,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(16)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 16,
+      startVerseNumber: 1,
+      endVerseNumber:16,
+      text: "رومية 16:1-16"
+    }
+  ]
+  },
+  {
+    key: 223,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 17,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(17)}`
+    },
+    {
+      bookName: "رومية",
+      chapterNumber: 16,
+      startVerseNumber: 17,
+      endVerseNumber:27,
+      text: "رومية 16:17-27"
+    }
+  ]
+  },
+  {
+    key: 224,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 18,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(18)}`
+    },
+    {
+      bookName: "1 كورنثوس",
+      chapterNumber: 1,
+      startVerseNumber: 0,
+      endVerseNumber:17,
+      text: "1 كورنثوس 1:1-17"
+    }
+  ]
+  },
+  {
+    key: 225,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 19,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(19)}`
+    },
+    {
+      bookName: "1 كورنثوس",
+      chapterNumber: 1,
+      startVerseNumber: 18,
+      endVerseNumber:31,
+      text: "1 كورنثوس 1:18-31"
+    }
+  ]
+  },
+  {
+    key: 226,
+    dayChapters: [{
+      bookName: "مزامير",
+      chapterNumber: 20,
+      startVerseNumber: 1,
+      endVerseNumber:200,
+      text: `مزامير ${Helpers.parseToArabic(20)}`
+    },
+    {
+      bookName: "1 كورنثوس",
+      chapterNumber: 2,
+      startVerseNumber: 1,
+      endVerseNumber:16,
+      text: "1 كورنثوس 2"
+    }
+  ]
+  },
+  {
+    key: 227,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 21,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(21)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:23,
+        text: "1 كورنثوس 3"
+      }
+    ]
+  },
+  {
+    key: 228,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 22,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(22)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "1 كورنثوس 4"
+  }
+    ]
+  },
+  {
+    key: 229,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 23,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(23)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:13,
+        text: "1 كورنثوس 5"
+      }
+    ]
+  },
+  {
+    key: 230,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 24,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(24)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "1 كورنثوس 6"
+  }
+    ]
+  },
+  {
+    key: 231,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 25,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(25)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "1 كورنثوس 7:1-24"
+  }
+    ]
+  },
+  {
+    key: 232,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 26,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: "مزامير 26"
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 7,
+        startVerseNumber: 25,
+        endVerseNumber:40,
+        text: "1 كورنثوس 7:25-40"
+  }
+    ]
+  },
+  {
+    key: 233,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 27,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(27)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "1 كورنثوس 8"
+  }
+    ]
+  },
+  {
+    key: 234,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 28,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(28)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:27,
+        text: "1 كورنثوس 9"
+      }
+    ]
+  },
+  {
+    key: 235,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 29,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(29)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "1 كورنثوس 10:1-22"
+      }
+    ]
+  },
+  {
+    key: 236,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 30,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(30)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 10,
+        startVerseNumber: 23,
+        endVerseNumber:33,
+        text: "1 كورنثوس 10:23-33"
+      }
+    ]
+  },
+  {
+    key: 237,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 31,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(31)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "1 كورنثوس 11:1-16"
+  }
+    ]
+  },
+  {
+    key: 238,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 32,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(32)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 11,
+        startVerseNumber: 17,
+        endVerseNumber:34,
+        text: "1 كورنثوس 11:17-34"
+  }
+    ]
+  },
+  {
+    key: 239,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 33,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(33)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:11,
+        text: "1 كورنثوس 12:1-11"
+  }
+    ]
+  },
+  {
+    key: 240,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 34,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(34)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 12,
+        startVerseNumber: 12,
+        endVerseNumber:31,
+        text: "1 كورنثوس 12:12-31"
+      }
+    ]
+  },
+  {
+    key: 241,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 35,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(35)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "1 كورنثوس 13"
+      }
+    ]
+  },
+  {
+    key: 242,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 36,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(36)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "1 كورنثوس 14:1-25"
+      }
+    ]
+  },
+  {
+    key: 243,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 37,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(37)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 14,
+        startVerseNumber: 26,
+        endVerseNumber:40,
+        text: "1 كورنثوس 14:26-40"
+      }
+    ]
+  },
+  {
+    key: 244,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 38,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(38)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:34,
+        text: "1 كورنثوس 15:1-34"
+      }
+    ]
+  },
+  {
+    key: 245,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 39,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(39)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 15,
+        startVerseNumber: 35,
+        endVerseNumber:58,
+        text: "1 كورنثوس 15:35-58"
+  }
+    ]
+  },
+  {
+    key: 246,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 40,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(40)}`
+      },
+      {
+        bookName: "1 كورنثوس",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "1 كورنثوس 16"
+  }
+    ]
+  },
+  {
+    key: 247,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 41,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(41)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:24,
+        text: "2 كورنثوس 1"
+      }
+    ]
+  },
+  {
+    key: 248,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 42,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(42)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "2 كورنثوس 2"
+      }
+    ]
+  },
+  {
+    key: 249,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 43,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(43)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:18,
+        text: "2 كورنثوس 3"
+      }
+    ]
+  },
+  {
+    key: 250,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 44,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(44)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:18,
+        text: "2 كورنثوس 4"
+  }
+    ]
+  },
+  {
+    key: 251,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 45,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(45)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "2 كورنثوس 5"
+      }
+    ]
+  },
+  {
+    key: 252,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 46,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(46)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "2 كورنثوس 6"
+  }
+    ]
+  },
+  {
+    key: 253,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 47,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(47)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "2 كورنثوس 7"
+  }
+    ]
+  },
+  {
+    key: 254,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 48,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(48)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "2 كورنثوس 8"
+  }
+    ]
+  },
+  {
+    key: 255,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 49,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(49)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "2 كورنثوس 9"
+  }
+    ]
+  },
+  {
+    key: 256,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 50,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(50)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "2 كورنثوس 10"
+      }
+    ]
+  },
+  {
+    key: 257,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 51,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(51)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "2 كورنثوس 11:1-15"
+      }
+    ]
+  },
+  {
+    key: 258,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 52,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(52)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 11,
+        startVerseNumber: 16,
+        endVerseNumber:33,
+        text: "2 كورنثوس 11:16-33"
+      }
+    ]
+  },
+  {
+    key: 259,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 53,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(53)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "2 كورنثوس 12"
+      }
+    ]
+  },
+  {
+    key: 260,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 54,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(54)}`
+      },
+      {
+        bookName: "2 كورنثوس",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: "2 كورنثوس 13"
+  }
+    ]
+  },
+  {
+    key: 261,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 55,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(55)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:24,
+        text: "غلاطية 1"
+      }
+    ]
+  },
+  {
+    key: 262,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 56,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(56)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "غلاطية 2"
+      }
+    ]
+  },
+  {
+    key: 263,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 57,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(57)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:14,
+        text: "غلاطية 3:1-14"
+      }
+    ]
+  },
+  {
+    key: 264,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 58,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(58)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 3,
+        startVerseNumber: 15,
+        endVerseNumber:29,
+        text: "غلاطية 3:15-29"
+  }
+    ]
+  },
+  {
+    key: 265,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 59,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(59)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 4,
+        startVerseNumber: 0,
+        endVerseNumber:20,
+        text: "غلاطية 4:1-20"
+      }
+    ]
+  },
+  {
+    key: 266,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 60,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(60)}`
+      },
+      {
+            
+        bookName: "غلاطية",
+        chapterNumber: 4,
+        startVerseNumber: 21,
+        endVerseNumber:31,
+        text: "غلاطية 4:21-31"
+  }
+    ]
+  },
+  {
+    key: 267,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 61,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(61)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: "غلاطية 5"
+  }
+    ]
+  },
+  {
+    key: 268,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 62,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(62)}`
+      },
+      {
+        bookName: "غلاطية",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "غلاطية 6"
+  }
+    ]
+  },
+  {
+    key: 269,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 63,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(63)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:23,
+        text: "افسس 1"
+      }
+    ]
+  },
+  {
+    key: 270,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 64,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(64)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "افسس 2"
+      }
+    ]
+  },
+  {
+    key: 271,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 65,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(65)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "افسس 3"
+      }
+    ]
+  },
+  {
+    key: 272,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 66,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(66)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "افسس 4:1-16"
+  }
+    ]
+  },
+  {
+    key: 273,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 67,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(67)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 4,
+        startVerseNumber: 17,
+        endVerseNumber:32,
+        text: "افسس 4:17-32"
+      }
+    ]
+  },
+  {
+    key: 274,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 68,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(68)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "افسس 5:1-21"
+  }
+    ]
+  },
+  {
+    key: 275,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 69,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(69)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 5,
+        startVerseNumber: 22,
+        endVerseNumber:33,
+        text: "افسس 5:22-33"
+  }
+    ]
+  },
+  {
+    key: 276,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 70,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(70)}`
+      },
+      {
+        bookName: "افسس",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "افسس 6"
+  }
+    ]
+  },
+  {
+    key: 277,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 71,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(71)}`
+      },
+      {
+        bookName: "فيلبي",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:30,
+        text: "فيلبي 1"
+      }
+    ]
+  },
+  {
+    key: 278,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 72,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(72)}`
+      },
+      {
+        bookName: "فيلبي",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:30,
+        text: "فيلبي 2"
+      }
+    ]
+  },
+  {
+    key: 279,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 73,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(73)}`
+      },
+      {
+        bookName: "فيلبي",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "فيلبي 3"
+      }
+    ]
+  },
+  {
+    key: 280,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 74,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(74)}`
+      },
+      {
+        bookName: "فيلبي",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:23,
+        text: "فيلبي 4"
+  }
+    ]
+  },
+  {
+    key: 281,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 75,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(75)}`
+      },
+      {
+        bookName: "كولوسي",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:29,
+        text: "كولوسي 1"
+      }
+    ]
+  },
+  {
+    key: 282,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 76,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(76)}`
+      },
+      {
+        bookName: "كولوسي",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:23,
+        text: "كولوسي 2"
+      }
+    ]
+  },
+  {
+    key: 283,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 77,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(77)}`
+      },
+      {
+        bookName: "كولوسي",
+        chapterNumber: 3,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: "كولوسي 3"
+      }
+    ]
+  },
+  {
+    key: 284,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 78,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(78)}`
+      },
+      {
+        bookName: "كولوسي",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "كولوسي 4"
+  }
+    ]
+  },
+  {
+    key: 285,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 79,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(79)}`
+      },
+      {
+        bookName: "1 تسالونيكي",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:10,
+        text: "1 تسالونيكي 1"
+      }
+    ]
+  },
+  {
+    key: 286,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 80,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(80)}`
+      },
+      {
+        bookName: "1 تسالونيكي",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "1 تسالونيكي 2"
+      }
+    ]
+  },
+  {
+    key: 287,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 81,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(81)}`
+      },
+      {
+        bookName: "1 تسالونيكي",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "1 تسالونيكي 3"
+      }
+    ]
+  },
+  {
+    key: 288,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 82,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(82)}`
+      },
+      {
+        bookName: "1 تسالونيكي",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "1 تسالونيكي 4"
+  }
+    ]
+  },
+  {
+    key: 289,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 83,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(83)}`
+      },
+      {
+        bookName: "1 تسالونيكي",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "1 تسالونيكي 5"
+  }
+    ]
+  },
+  {
+    key: 290,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 84,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(84)}`
+      },
+      {
+        bookName: "2 تسالونيكي",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:12,
+        text: "2 تسالونيكي 1"
+      }
+    ]
+  },
+  {
+    key: 291,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 85,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(85)}`
+      },
+      {
+        bookName: "2 تسالونيكي",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "2 تسالونيكي 2"
+      }
+    ]
+  },
+  {
+    key: 292,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 86,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(86)}`
+      },
+      {
+        bookName: "2 تسالونيكي",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "2 تسالونيكي 3"
+      }
+    ]
+  },
+  {
+    key: 293,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 87,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(87)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:20,
+        text: "1 تيموثاوس 1"
+      }
+    ]
+  },
+  {
+    key: 294,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 88,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(88)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "1 تيموثاوس 2"
+      }
+    ]
+  },
+  {
+    key: 295,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 89,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(89)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "1 تيموثاوس 3"
+      }
+    ]
+  },
+  {
+    key: 296,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 90,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(90)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "1 تيموثاوس 4"
+  }
+    ]
+  },
+  {
+    key: 297,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 91,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(91)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "1 تيموثاوس 5"
+  }
+    ]
+  },
+  {
+    key: 298,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 92,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(92)}`
+      },
+      {
+        bookName: "1 تيموثاوس",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "1 تيموثاوس 6"
+    }
+    ]
+  },
+  {
+    key: 299,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 93,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(93)}`
+      },
+      {
+        bookName: "2 تيموثاوس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:18,
+        text: "2 تيموثاوس 1"
+      }
+    ]
+  },
+  {
+    key: 300,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 95,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(94)}`
+      },
+      {
+        bookName: "2 تيموثاوس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: "2 تيموثاوس 2"
+      }
+    ]
+  },
+  {
+    key: 301,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 95,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(95)}`
+      },
+      {
+        bookName: "2 تيموثاوس",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "2 تيموثاوس 3"
+      }
+    ]
+  },
+  {
+    key: 302,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 96,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(96)}`
+      },
+      {
+        bookName: "2 تيموثاوس",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "2 تيموثاوس 4"
+  }
+    ]
+  },
+  {
+    key: 303,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 97,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(97)}`
+      },
+      {
+        bookName: "تيطس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:16,
+        text: "تيطس 1"
+      }
+    ]
+  },
+  {
+    key: 304,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 98,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(98)}`
+      },
+      {
+        bookName: "تيطس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "تيطس 2"
+      }
+    ]
+  },
+  {
+    key: 305,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 99,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(99)}`
+      },
+      {
+        bookName: "تيطس",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "تيطس 3"
+      }
+    ]
+  },
+  {
+    key: 306,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 100,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(100)}`
+      },
+      {
+        bookName: "فليمون",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: "فليمون 1"
+      }
+    ]
+  },
+  {
+    key: 307,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 101,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(101)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:14,
+        text: "عبرانيين 1"
+      }
+    ]
+  },
+  {
+    key: 308,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 102,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(102)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "عبرانيين 2"
+      }
+    ]
+  },
+  {
+    key: 309,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 103,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(103)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: "عبرانيين 3"
+      }
+    ]
+  },
+  {
+    key: 310,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 104,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(104)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        text: "عبرانيين 4"
+      }
+    ]
+  },
+  {
+    key: 311,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 105,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(105)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: "عبرانيين 5"
+      }
+    ]
+  },
+  {
+    key: 312,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 106,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(106)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "عبرانيين 6"
+      }
+    ]
+  },
+  {
+    key: 313,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 107,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(107)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:28,
+        text: "عبرانيين 7"
+      }
+    ]
+  },
+  {
+    key: 314,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 108,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(108)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "عبرانيين 8"
+      }
+    ]
+  },
+  {
+    key: 315,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 109,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(109)}`
+      },
+      {
+          bookName: "عبرانيين",
+          chapterNumber: 9,
+          startVerseNumber: 1,
+          endVerseNumber:28,
+          text: "عبرانيين 9"
+      }
+    ]
+  },
+  {
+    key: 316,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 110,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(110)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "عبرانيين 10:1-18"
+      }
+    ]
+  },
+  {
+    key: 317,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 111,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(111)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 10,
+        startVerseNumber: 19,
+        endVerseNumber:39,
+        text: "عبرانيين 10:19-39"
+      }
+    ]
+  },
+  {
+    key: 318,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 112,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(112)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "عبرانيين 11:1-20"
+      }
+    ]
+  },
+  {
+    key: 319,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 113,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(113)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 11,
+        startVerseNumber: 21,
+        endVerseNumber:40,
+        text: "عبرانيين 11:21-40"
+      }
+    ]
+  },
+  {
+    key: 320,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 114,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(114)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "عبرانيين 12:1-13"
+      }
+    ]
+  },
+  {
+    key: 321,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 115,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(115)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 12,
+        startVerseNumber: 14,
+        endVerseNumber:29,
+        text: "عبرانيين 12:14-29"
+      }
+    ]
+  },
+  {
+    key: 322,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 116,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(116)}`
+      },
+      {
+        bookName: "عبرانيين",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "عبرانيين 13"
+      }
+    ]
+  },
+  {
+    key: 323,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 117,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(117)}`
+      },
+      {
+        bookName: "يعقوب",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:27,
+        text: "يعقوب 1"
+      }
+    ]
+  },
+  {
+    key: 324,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 118,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(118)}`
+      },
+      {
+        bookName: "يعقوب",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:26,
+        text: "يعقوب 2"
+      }
+    ]
+  },
+  {
+    key: 325,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 0,
+        endVerseNumber: 16,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        bookName: "يعقوب",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "يعقوب 3"
+      }
+    ]
+  },
+  {
+    key: 326,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 17,
+        endVerseNumber: 32,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(32)}`
+      },
+      {
+        bookName: "يعقوب",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "يعقوب 4"
+      }
+    ]
+  },
+  {
+    key: 327,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 33,
+        endVerseNumber: 56,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(33)} - ${Helpers.parseToArabic(56)}`
+      },
+      {
+        bookName: "يعقوب",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "يعقوب 5"
+      }
+    ]
+  },
+  {
+    key: 328,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 57,
+        endVerseNumber: 72,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(57)} - ${Helpers.parseToArabic(72)}`
+      },
+      {
+        bookName: "1 بطرس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: "1 بطرس 1"
+      }
+    ]
+  },
+  {
+    key: 329,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 73,
+        endVerseNumber: 88,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(73)} - ${Helpers.parseToArabic(88)}`
+      },
+      {
+        bookName: "1 بطرس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:25,
+        text: "1 بطرس 2"
+      }
+    ]
+  },
+  {
+    key: 330,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 89,
+        endVerseNumber: 104,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(89)} - ${Helpers.parseToArabic(104)}`
+      },
+      {
+        bookName: "1 بطرس",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "1 بطرس 3"
+      }
+    ]
+  },
+  {
+    key: 331,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 105,
+        endVerseNumber: 120,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(105)} - ${Helpers.parseToArabic(120)}`
+      },
+      {
+        bookName: "1 بطرس",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: "1 بطرس 4"
+  }
+    ]
+  },
+  {
+    key: 332,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 121,
+        endVerseNumber: 136,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(121)} - ${Helpers.parseToArabic(136)}`
+      },
+      {
+        bookName: "1 بطرس",
+        chapterNumber: 5,
+        startVerseNumber: 0,
+        endVerseNumber:14,
+        text: "1 بطرس 5"
+      }
+    ]
+  },
+  {
+    key: 333,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 137,
+        endVerseNumber: 152,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(137)} - ${Helpers.parseToArabic(152)}`
+      },
+      {
+        bookName: "2 بطرس",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:21,
+        text: "2 بطرس 1"
+      }
+    ]
+  },
+  {
+    key: 334,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 119,
+        startVerseNumber: 153,
+        endVerseNumber: 176,
+        text: `مزامير ${Helpers.parseToArabic(119)}: ${Helpers.parseToArabic(153)} - ${Helpers.parseToArabic(176)}`
+      },
+      {
+        bookName: "2 بطرس",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "2 بطرس 2"
+      }
+    ]
+  },
+  {
+    key: 335,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 120,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(120)}`
+      },
+      {
+        bookName: "2 بطرس",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "2 بطرس 3"
+      }
+    ]
+  },
+  {
+    key: 336,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 121,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(121)}`
+      },
+      {
+        bookName: "1 يوحنا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:10,
+        text: "1 يوحنا 1"
+      }
+    ]
+  },
+  {
+    key: 337,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 122,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(122)}`
+      },
+      {
+        bookName: "1 يوحنا",
+        chapterNumber: 2,
+        startVerseNumber: 1,
+        endVerseNumber:29,
+        text: "1 يوحنا 2"
+      }
+    ]
+  },
+  {
+    key: 338,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 123,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(123)}`
+      },
+      {
+        bookName: "1 يوحنا",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "1 يوحنا 3"
+      }
+    ]
+  },
+  {
+    key: 339,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 124,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(124)}`
+      },
+      {
+        bookName: "1 يوحنا",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "1 يوحنا 4"
+      }
+    ]
+  },
+  {
+    key: 340,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 125,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(125)}`
+      },
+      {
+        bookName: "1 يوحنا",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "1 يوحنا 5"
+      }
+    ]
+  },
+  {
+    key: 341,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 126,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(126)}`
+      },
+      {
+        bookName: "2 يوحنا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:13,
+        text: "2 يوحنا 1"
+      }
+    ]
+  },
+  {
+    key: 342,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 127,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(127)}`
+      },
+      {
+        bookName: "3 يوحنا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:15,
+        text: "3 يوحنا 1"
+      }
+    ]
+  },
+  {
+    key: 343,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 128,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(128)}`
+      },
+      {
+        bookName: "يهوذا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:25,
+        text: "يهوذا 1"
+      }
+    ]
+  },
+  {
+    key: 344,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 129,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(129)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 1,
+        startVerseNumber: 0,
+        endVerseNumber:20,
+        text: "رؤيا 1"
+       }
+    ]
+  },
+  {
+    key: 345,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 130,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(130)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 2,
+        startVerseNumber: 0,
+        endVerseNumber:17,
+        text: "رؤيا 2:1-17"
+       }
+    ]
+  },
+  {
+    key: 346,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 131,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(131)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 2,
+        startVerseNumber: 18,
+        endVerseNumber:29,
+        text: "رؤيا 2:18-29"
+       }
+    ]
+  },
+  {
+    key: 347,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 132,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(132)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 3,
+        startVerseNumber: 1,
+        endVerseNumber:22,
+        text: "رؤيا 3"
+       }
+    ]
+  },
+  {
+    key: 348,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 133,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(133)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 4,
+        startVerseNumber: 1,
+        endVerseNumber:11,
+        text: "رؤيا 4"
+       }
+    ]
+  },
+  {
+    key: 349,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 134,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(134)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 5,
+        startVerseNumber: 1,
+        endVerseNumber:14,
+        text: "رؤيا 5"
+   }
+    ]
+  },
+  {
+    key: 350,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 135,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(135)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 6,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "رؤيا 6"
+   }
+    ]
+  },
+  {
+    key: 351,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 136,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(136)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 7,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "رؤيا 7"
+   }
+    ]
+  },
+  {
+    key: 352,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 137,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(137)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 8,
+        startVerseNumber: 1,
+        endVerseNumber:13,
+        text: "رؤيا 8"
+     }
+    ]
+  },
+  {
+    key: 353,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 138,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(138)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 9,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "رؤيا 9"
+ }
+    ]
+  },
+  {
+    key: 354,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 139,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(139)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 10,
+        startVerseNumber: 1,
+        endVerseNumber:11,
+        text: "رؤيا 10"
+     }
+    ]
+  },
+  {
+    key: 355,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 140,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(140)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 11,
+        startVerseNumber: 1,
+        endVerseNumber:19,
+        text: "رؤيا 11"
+     }
+    ]
+  },
+  {
+    key: 356,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 141,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(141)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 12,
+        startVerseNumber: 1,
+        endVerseNumber:17,
+        text: "رؤيا 12"
+ }
+    ]
+  },
+  {
+    key: 357,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 142,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(142)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 13,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "رؤيا 13"
+     }
+    ]
+  },
+  {
+    key: 358,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 143,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(143)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 14,
+        startVerseNumber: 1,
+        endVerseNumber:20,
+        text: "رؤيا 14"
+     }
+    ]
+  },
+  {
+    key: 359,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 144,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(144)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:8,
+        text: "رؤيا 15"
+     }
+    ]
+  },
+  {
+    key: 360,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 145,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(145)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 16,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "رؤيا 16"
+     }
+    ]
+  },
+  {
+    key: 361,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 146,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(146)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 17,
+        startVerseNumber: 1,
+        endVerseNumber:18,
+        text: "رؤيا 17"
+     }
+    ]
+  },
+  {
+    key: 362,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 147,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(147)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 18,
+        startVerseNumber: 1,
+        endVerseNumber:24,
+        text: "رؤيا 18"
+     }
+    ]
+  },
+  {
+    key: 363,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 148,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(148)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 19,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "رؤيا 19"
+     }
+    ]
+  },
+  {
+    key: 364,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 149,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(149)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 20,
+        startVerseNumber: 1,
+        endVerseNumber:15,
+        text: "رؤيا 20"
+     },
+     {
+      bookName: "رؤيا",
+      chapterNumber: 21,
+      startVerseNumber: 1,
+      endVerseNumber:27,
+      text: "رؤيا 21"
+   }
+    ]
+  },
+  {
+    key: 365,
+    dayChapters: [
+      {
+        bookName: "مزامير",
+        chapterNumber: 150,
+        startVerseNumber: 0,
+        endVerseNumber:200,
+        text: `مزامير ${Helpers.parseToArabic(150)}`
+      },
+      {
+        bookName: "رؤيا",
+        chapterNumber: 22,
+        startVerseNumber: 1,
+        endVerseNumber:21,
+        text: "رؤيا 22"
+     }
+      
+    ]
+  },
 ];
 export const enlglishContentUri = {
   Genesis: "https://www.dropbox.com/s/atlpv4y58rnmnjo/Genesis.json?dl=1",
@@ -7678,8 +13888,8 @@ export const enlglishContentUri = {
   Haggai: "https://www.dropbox.com/s/6lj6g5c3t0zsnlt/Haggai.json?dl=1",
   Zechariah  :"https://www.dropbox.com/s/waqomftmtq3b2tv/Zechariah.json?dl=1",
   Malachi: "https://www.dropbox.com/s/ro6ckcncatpw8y9/Malachi.json?dl=1",
-  Matthew: "https://www.dropbox.com/s/5ty8fk61vlsuz8n/Matthew.json?dl=1",
-  Mark: "https://www.dropbox.com/s/qpmmmgk1qqm7bs6/Mark.json?dl=1",
+  متى: "https://www.dropbox.com/s/5ty8fk61vlsuz8n/متى.json?dl=1",
+  مرقس: "https://www.dropbox.com/s/qpmmmgk1qqm7bs6/مرقس.json?dl=1",
   Luke: "https://www.dropbox.com/s/0x51go1ho2tdqn3/Luke.json?dl=1",
   John: "https://www.dropbox.com/s/em1z9gteq64lfin/John.json?dl=1",
   Acts: "https://www.dropbox.com/s/08l64hglzngyiei/Acts.json?dl=1",
@@ -7753,8 +13963,8 @@ export const bookNames = [
   "Haggai",
   "Zechariah",
   "Malachi",
-  "Matthew",
-  "Mark",
+  "متى",
+  "مرقس",
   "Luke",
   "John",
   "Acts",
@@ -7848,99 +14058,91 @@ export const arabicBookNames = [
   "3 يوحنا",
   "يهوذا",
   "رؤيا"
-];
-export const arabicContentUri = {
-  تكوين :"https://www.dropbox.com/s/fih1blx5kn1p94c/%D8%AA%D9%83%D9%88%D9%8A%D9%86.json?dl=1",
-  خروج:"https://www.dropbox.com/s/1t35itdo0hinpze/%D8%AE%D8%B1%D9%88%D8%AC.json?dl=1",
-  لاويين :"https://www.dropbox.com/s/m7c4z595zsi0ox8/%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86.json?dl=1",
-  عدد:"https://www.dropbox.com/s/xxmixpaxbij1rmf/%D8%B9%D8%AF%D8%AF.json?dl=1",
-  تثنية:"https://www.dropbox.com/s/984tml5jdjakvpp/%D8%AA%D8%AB%D9%86%D9%8A%D8%A9.json?dl=1",
-  يشوع:"https://www.dropbox.com/s/iw2eim7g4vgdn3t/%D9%8A%D8%B4%D9%88%D8%B9.json?dl=1",
-  قضاة:"https://www.dropbox.com/s/25ic5spg4xd0mr8/%D9%82%D8%B6%D8%A7%D8%A9.json?dl=1",
-  راعوث:"https://www.dropbox.com/s/cjg2abu0uulnzgk/%D8%B1%D8%A7%D8%B9%D9%88%D8%AB.json?dl=1",
-  "1 صموئيل":"https://www.dropbox.com/s/x60s1uwbg8irho6/1%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
-  "2 صموئيل":"https://www.dropbox.com/s/o128i6j0ixgh7nt/2%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
-  "1 ملوك":"https://www.dropbox.com/s/mcogx1lxnzo52r0/1%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
-  "2 ملوك":"https://www.dropbox.com/s/gwsw7yw6r5s4q3c/2%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
-  "1 اخبار":"https://www.dropbox.com/s/vejx1kzt5ywtvj8/1%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
-  "2 اخبار":"https://www.dropbox.com/s/it99hmuun15xu3h/2%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
-  عزرا :"https://www.dropbox.com/s/ophgw4wunvb19vl/%D8%B9%D8%B2%D8%B1%D8%A7.json?dl=1",
-  نحميا:"https://www.dropbox.com/s/eihkulyrpy8l3jr/%D9%86%D8%AD%D9%85%D9%8A%D8%A7.json?dl=1",
-  استير:"https://www.dropbox.com/s/uws8pt3j7a0udma/%D8%A7%D8%B3%D8%AA%D9%8A%D8%B1.json?dl=1",
-  ايوب:"https://www.dropbox.com/s/84m4jyad2zlw62u/%D8%A7%D9%8A%D9%88%D8%A8.json?dl=1",
-  مزامير:
-    "https://www.dropbox.com/s/w024fcn2ghuj7u8/%D9%85%D8%B2%D8%A7%D9%85%D9%8A%D8%B1.json?dl=1",
-    امثال:"https://www.dropbox.com/s/qfe89lf1tgtkfdq/%D8%A7%D9%85%D8%AB%D8%A7%D9%84.json?dl=1",
-    جامعة:"https://www.dropbox.com/s/fnrwtegmyoen4dq/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9.json?dl=1",
-    "نشيد الانشاد" :
-    "https://www.dropbox.com/s/auy0jmb7e6vz465/%D9%86%D8%B4%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D8%A7%D8%AF.json?dl=1",
-    اشعياء:"https://www.dropbox.com/s/l3qh9vlrm4e3k7s/%D8%A7%D8%B4%D8%B9%D9%8A%D8%A7%D8%A1.json?dl=1",
-    ارميا:"https://www.dropbox.com/s/eexdz5jxyidho1s/%D8%A7%D8%B1%D9%85%D9%8A%D8%A7.json?dl=1",
-    مراثي:"https://www.dropbox.com/s/qoz80ai81wu0hqw/%D9%85%D8%B1%D8%A7%D8%AB%D9%8A.json?dl=1",
-    حزقيال:"https://www.dropbox.com/s/f736933ar9t3rwu/%D8%AD%D8%B2%D9%82%D9%8A%D8%A7%D9%84.json?dl=1",
-    دانيال:"https://www.dropbox.com/s/v2rszxi11wxpbep/%D8%AF%D8%A7%D9%86%D9%8A%D8%A7%D9%84.json?dl=1",
-    هوشع:"https://www.dropbox.com/s/u38s7wwxh2hdcik/%D9%87%D9%88%D8%B4%D8%B9.json?dl=1",
-    يوئيل:"https://www.dropbox.com/s/7kffuhmpqqzvjef/%D9%8A%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
-    عاموس:"https://www.dropbox.com/s/61r827crpo30f99/%D8%B9%D8%A7%D9%85%D9%88%D8%B3.json?dl=1",
-    عوبديا:"https://www.dropbox.com/s/hmx8k1rz59j4r26/%D8%B9%D9%88%D8%A8%D8%AF%D9%8A%D8%A7.json?dl=1",
-    يونان:"https://www.dropbox.com/s/bjlrs46gxspmtrr/%D9%8A%D9%88%D9%86%D8%A7%D9%86.json?dl=1",
-    ميخا:"https://www.dropbox.com/s/in1l5b0xddgwunc/%D9%85%D9%8A%D8%AE%D8%A7.json?dl=1",
-    ناحوم:"https://www.dropbox.com/s/0m2bwys0isfk83e/%D9%86%D8%A7%D8%AD%D9%88%D9%85.json?dl=1",
-    حبقوق :"https://www.dropbox.com/s/n04pfq2nx1h3j0i/%D8%AD%D8%A8%D9%82%D9%88%D9%82.json?dl=1",
-    صفنيا:"https://www.dropbox.com/s/swkp4o5elbb808m/%D8%B5%D9%81%D9%86%D9%8A%D8%A7.json?dl=1",
-    حجى :"https://www.dropbox.com/s/pv3rvo93lt158gv/%D8%AD%D8%AC%D9%89.json?dl=1",
-    زكريا :"https://www.dropbox.com/s/m2750avjaswekxd/%D8%B2%D9%83%D8%B1%D9%8A%D8%A7.json?dl=1",
-    ملاخي:"https://www.dropbox.com/s/2woynm5bzyvqc1s/%D9%85%D9%84%D8%A7%D8%AE%D9%8A.json?dl=1",
-    متى:"https://www.dropbox.com/s/ezfvulrl52vauxp/%D9%85%D8%AA%D9%8A.json?dl=1",
-    مرقس :"https://www.dropbox.com/s/qwj8t32tlpg6acj/%D9%85%D8%B1%D9%82%D8%B3.json?dl=1",
-    لوقا:"https://www.dropbox.com/s/cy891etxezpt6yp/%D9%84%D9%88%D9%82%D8%A7.json?dl=1",
-    يوحنا:"https://www.dropbox.com/s/majkx3bgwg17ws0/%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
-    اعمال:"https://www.dropbox.com/s/ueia6hkq5irmra7/%D8%A7%D8%B9%D9%85%D8%A7%D9%84.json?dl=1",
-    رومية:"https://www.dropbox.com/s/yhbpeggj6syhn5y/%D8%B1%D9%88%D9%85%D9%8A%D8%A9.json?dl=1",
-     "1 كورنثوس" :"https://www.dropbox.com/s/5ymur8m3htmemc6/1%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
-     "2 كورنثوس":"https://www.dropbox.com/s/lgbu13y7jir5th6/2%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
-     غلاطية:"https://www.dropbox.com/s/iknj77hgrfmyth8/%D8%BA%D9%84%D8%A7%D8%B7%D9%8A%D8%A9.json?dl=1",
-     افسس:"https://www.dropbox.com/s/l5w3p20aqtujrz4/%D8%A7%D9%81%D8%B3%D8%B3.json?dl=1",
-     فيلبي:"https://www.dropbox.com/s/cz4em1bj72lir9r/%D9%81%D9%8A%D9%84%D8%A8%D9%8A.json?dl=1",
-     كولوسي:"https://www.dropbox.com/s/98spb5mqvbkx3j2/%D9%83%D9%88%D9%84%D9%88%D8%B3%D9%8A.json?dl=1",
-     "1 تسالونيكي":
-     "https://www.dropbox.com/s/lsly20pkiwt1r1w/1%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
-     "2 تسالونيكي":
-     "https://www.dropbox.com/s/55cpoiryxzjdvl8/2%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
-     "1 تيموثاوس":
-     "https://www.dropbox.com/s/gbt1dqjvuhdktwv/1%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
-     "2 تيموثاوس":
-     "https://www.dropbox.com/s/vy7k920zzp7qged/2%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
-     "تيطس":
-      "https://www.dropbox.com/s/cu91tjnkn4i55y6/%D8%AA%D9%8A%D8%B7%D8%B3.json?dl=1",
-      "فليمون":
-      "https://www.dropbox.com/s/zfbdx6pwfjeyp8y/%D9%81%D9%84%D9%8A%D9%85%D9%88%D9%86.json?dl=1",
-      "عبرانيين":
-      "https://www.dropbox.com/s/88c3qzd8682fplf/%D8%B9%D8%A8%D8%B1%D8%A7%D9%86%D9%8A%D9%8A%D9%86.json?dl=1",
-      "يعقوب":
-      "https://www.dropbox.com/s/0sxwbqn0km8nz2i/%D9%8A%D8%B9%D9%82%D9%88%D8%A8.json?dl=1",
-      "1 بطرس":
-      "https://www.dropbox.com/s/szckmo80xbxg80c/1%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
-      "2 بطرس":
-       "https://www.dropbox.com/s/sdmayo81il1afu1/2%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
-       "1 يوحنا":
-       "https://www.dropbox.com/s/s4372rojz1hq5ho/1%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
-       "2 يوحنا":
-       "https://www.dropbox.com/s/k7nvd4hddmo7qxw/2%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
-       "3 يوحنا":
-       "https://www.dropbox.com/s/ccxt0hghij0gare/3%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
-       "يهوذا":
-       "https://www.dropbox.com/s/pwmo8pg7vk8kh52/%D9%8A%D9%87%D9%88%D8%B0%D8%A7.json?dl=1",
-       "رؤيا":
-       "https://www.dropbox.com/s/c0e45ccdkdh9efy/%D8%B1%D8%A4%D9%8A%D8%A7.json?dl=1"
-
-
-
-
-    
-
-
-    
-};
+]
+  export const arabicContentUri = {
+    تكوين :"https://www.dropbox.com/s/fih1blx5kn1p94c/%D8%AA%D9%83%D9%88%D9%8A%D9%86.json?dl=1",
+    خروج:"https://www.dropbox.com/s/1t35itdo0hinpze/%D8%AE%D8%B1%D9%88%D8%AC.json?dl=1",
+    لاويين :"https://www.dropbox.com/s/m7c4z595zsi0ox8/%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86.json?dl=1",
+    عدد:"https://www.dropbox.com/s/xxmixpaxbij1rmf/%D8%B9%D8%AF%D8%AF.json?dl=1",
+    تثنية:"https://www.dropbox.com/s/984tml5jdjakvpp/%D8%AA%D8%AB%D9%86%D9%8A%D8%A9.json?dl=1",
+    يشوع:"https://www.dropbox.com/s/iw2eim7g4vgdn3t/%D9%8A%D8%B4%D9%88%D8%B9.json?dl=1",
+    قضاة:"https://www.dropbox.com/s/25ic5spg4xd0mr8/%D9%82%D8%B6%D8%A7%D8%A9.json?dl=1",
+    راعوث:"https://www.dropbox.com/s/cjg2abu0uulnzgk/%D8%B1%D8%A7%D8%B9%D9%88%D8%AB.json?dl=1",
+    "1 صموئيل":"https://www.dropbox.com/s/x60s1uwbg8irho6/1%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+    "2 صموئيل":"https://www.dropbox.com/s/o128i6j0ixgh7nt/2%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+    "1 ملوك":"https://www.dropbox.com/s/mcogx1lxnzo52r0/1%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
+    "2 ملوك":"https://www.dropbox.com/s/gwsw7yw6r5s4q3c/2%20%D9%85%D9%84%D9%88%D9%83.json?dl=1",
+    "1 اخبار":"https://www.dropbox.com/s/vejx1kzt5ywtvj8/1%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
+    "2 اخبار":"https://www.dropbox.com/s/it99hmuun15xu3h/2%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1.json?dl=1",
+    عزرا :"https://www.dropbox.com/s/ophgw4wunvb19vl/%D8%B9%D8%B2%D8%B1%D8%A7.json?dl=1",
+    نحميا:"https://www.dropbox.com/s/eihkulyrpy8l3jr/%D9%86%D8%AD%D9%85%D9%8A%D8%A7.json?dl=1",
+    استير:"https://www.dropbox.com/s/uws8pt3j7a0udma/%D8%A7%D8%B3%D8%AA%D9%8A%D8%B1.json?dl=1",
+    ايوب:"https://www.dropbox.com/s/84m4jyad2zlw62u/%D8%A7%D9%8A%D9%88%D8%A8.json?dl=1",
+    مزامير:
+      "https://www.dropbox.com/s/w024fcn2ghuj7u8/%D9%85%D8%B2%D8%A7%D9%85%D9%8A%D8%B1.json?dl=1",
+      امثال:"https://www.dropbox.com/s/qfe89lf1tgtkfdq/%D8%A7%D9%85%D8%AB%D8%A7%D9%84.json?dl=1",
+      جامعة:"https://www.dropbox.com/s/fnrwtegmyoen4dq/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9.json?dl=1",
+      "نشيد الانشاد" :
+      "https://www.dropbox.com/s/auy0jmb7e6vz465/%D9%86%D8%B4%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D8%A7%D8%AF.json?dl=1",
+      اشعياء:"https://www.dropbox.com/s/l3qh9vlrm4e3k7s/%D8%A7%D8%B4%D8%B9%D9%8A%D8%A7%D8%A1.json?dl=1",
+      ارميا:"https://www.dropbox.com/s/eexdz5jxyidho1s/%D8%A7%D8%B1%D9%85%D9%8A%D8%A7.json?dl=1",
+      مراثي:"https://www.dropbox.com/s/qoz80ai81wu0hqw/%D9%85%D8%B1%D8%A7%D8%AB%D9%8A.json?dl=1",
+      حزقيال:"https://www.dropbox.com/s/f736933ar9t3rwu/%D8%AD%D8%B2%D9%82%D9%8A%D8%A7%D9%84.json?dl=1",
+      دانيال:"https://www.dropbox.com/s/v2rszxi11wxpbep/%D8%AF%D8%A7%D9%86%D9%8A%D8%A7%D9%84.json?dl=1",
+      هوشع:"https://www.dropbox.com/s/u38s7wwxh2hdcik/%D9%87%D9%88%D8%B4%D8%B9.json?dl=1",
+      يوئيل:"https://www.dropbox.com/s/7kffuhmpqqzvjef/%D9%8A%D9%88%D8%A6%D9%8A%D9%84.json?dl=1",
+      عاموس:"https://www.dropbox.com/s/61r827crpo30f99/%D8%B9%D8%A7%D9%85%D9%88%D8%B3.json?dl=1",
+      عوبديا:"https://www.dropbox.com/s/hmx8k1rz59j4r26/%D8%B9%D9%88%D8%A8%D8%AF%D9%8A%D8%A7.json?dl=1",
+      يونان:"https://www.dropbox.com/s/bjlrs46gxspmtrr/%D9%8A%D9%88%D9%86%D8%A7%D9%86.json?dl=1",
+      ميخا:"https://www.dropbox.com/s/in1l5b0xddgwunc/%D9%85%D9%8A%D8%AE%D8%A7.json?dl=1",
+      ناحوم:"https://www.dropbox.com/s/0m2bwys0isfk83e/%D9%86%D8%A7%D8%AD%D9%88%D9%85.json?dl=1",
+      حبقوق :"https://www.dropbox.com/s/n04pfq2nx1h3j0i/%D8%AD%D8%A8%D9%82%D9%88%D9%82.json?dl=1",
+      صفنيا:"https://www.dropbox.com/s/swkp4o5elbb808m/%D8%B5%D9%81%D9%86%D9%8A%D8%A7.json?dl=1",
+      حجى :"https://www.dropbox.com/s/pv3rvo93lt158gv/%D8%AD%D8%AC%D9%89.json?dl=1",
+      زكريا :"https://www.dropbox.com/s/m2750avjaswekxd/%D8%B2%D9%83%D8%B1%D9%8A%D8%A7.json?dl=1",
+      ملاخي:"https://www.dropbox.com/s/2woynm5bzyvqc1s/%D9%85%D9%84%D8%A7%D8%AE%D9%8A.json?dl=1",
+      متى:"https://www.dropbox.com/s/ezfvulrl52vauxp/%D9%85%D8%AA%D9%8A.json?dl=1",
+      مرقس :"https://www.dropbox.com/s/qwj8t32tlpg6acj/%D9%85%D8%B1%D9%82%D8%B3.json?dl=1",
+      لوقا:"https://www.dropbox.com/s/cy891etxezpt6yp/%D9%84%D9%88%D9%82%D8%A7.json?dl=1",
+      يوحنا:"https://www.dropbox.com/s/majkx3bgwg17ws0/%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+      اعمال:"https://www.dropbox.com/s/ueia6hkq5irmra7/%D8%A7%D8%B9%D9%85%D8%A7%D9%84.json?dl=1",
+      رومية:"https://www.dropbox.com/s/yhbpeggj6syhn5y/%D8%B1%D9%88%D9%85%D9%8A%D8%A9.json?dl=1",
+       "1 كورنثوس" :"https://www.dropbox.com/s/5ymur8m3htmemc6/1%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
+       "2 كورنثوس":"https://www.dropbox.com/s/lgbu13y7jir5th6/2%20%D9%83%D9%88%D8%B1%D9%86%D8%AB%D9%88%D8%B3.json?dl=1",
+       غلاطية:"https://www.dropbox.com/s/iknj77hgrfmyth8/%D8%BA%D9%84%D8%A7%D8%B7%D9%8A%D8%A9.json?dl=1",
+       افسس:"https://www.dropbox.com/s/l5w3p20aqtujrz4/%D8%A7%D9%81%D8%B3%D8%B3.json?dl=1",
+       فيلبي:"https://www.dropbox.com/s/cz4em1bj72lir9r/%D9%81%D9%8A%D9%84%D8%A8%D9%8A.json?dl=1",
+       كولوسي:"https://www.dropbox.com/s/98spb5mqvbkx3j2/%D9%83%D9%88%D9%84%D9%88%D8%B3%D9%8A.json?dl=1",
+       "1 تسالونيكي":
+       "https://www.dropbox.com/s/lsly20pkiwt1r1w/1%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
+       "2 تسالونيكي":
+       "https://www.dropbox.com/s/55cpoiryxzjdvl8/2%20%D8%AA%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A%D9%83%D9%8A.json?dl=1",
+       "1 تيموثاوس":
+       "https://www.dropbox.com/s/gbt1dqjvuhdktwv/1%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
+       "2 تيموثاوس":
+       "https://www.dropbox.com/s/vy7k920zzp7qged/2%20%D8%AA%D9%8A%D9%85%D9%88%D8%AB%D8%A7%D9%88%D8%B3.json?dl=1",
+       "تيطس":
+        "https://www.dropbox.com/s/cu91tjnkn4i55y6/%D8%AA%D9%8A%D8%B7%D8%B3.json?dl=1",
+        "فليمون":
+        "https://www.dropbox.com/s/zfbdx6pwfjeyp8y/%D9%81%D9%84%D9%8A%D9%85%D9%88%D9%86.json?dl=1",
+        "عبرانيين":
+        "https://www.dropbox.com/s/88c3qzd8682fplf/%D8%B9%D8%A8%D8%B1%D8%A7%D9%86%D9%8A%D9%8A%D9%86.json?dl=1",
+        "يعقوب":
+        "https://www.dropbox.com/s/0sxwbqn0km8nz2i/%D9%8A%D8%B9%D9%82%D9%88%D8%A8.json?dl=1",
+        "1 بطرس":
+        "https://www.dropbox.com/s/szckmo80xbxg80c/1%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
+        "2 بطرس":
+         "https://www.dropbox.com/s/sdmayo81il1afu1/2%20%D8%A8%D8%B7%D8%B1%D8%B3.json?dl=1",
+         "1 يوحنا":
+         "https://www.dropbox.com/s/s4372rojz1hq5ho/1%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+         "2 يوحنا":
+         "https://www.dropbox.com/s/k7nvd4hddmo7qxw/2%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+         "3 يوحنا":
+         "https://www.dropbox.com/s/ccxt0hghij0gare/3%20%D9%8A%D9%88%D8%AD%D9%86%D8%A7.json?dl=1",
+         "يهوذا":
+         "https://www.dropbox.com/s/pwmo8pg7vk8kh52/%D9%8A%D9%87%D9%88%D8%B0%D8%A7.json?dl=1",
+         "رؤيا":
+         "https://www.dropbox.com/s/c0e45ccdkdh9efy/%D8%B1%D8%A4%D9%8A%D8%A7.json?dl=1"
+  };
 export const IS_ENGLISH_CONTENT_DOWNLOADED = "english";
 export const IS_ARABIC_CONTENT_DOWNLOADED = "arabic";
