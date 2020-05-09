@@ -102,9 +102,9 @@ class HomeScreenContainer extends Component {
         toggleIsDownloading();
       }
     }
-    else{
-      NavigatorService.navigate("BookScreen");
-    }
+    // else{
+    //   NavigatorService.navigate("BookScreen");
+    // }
   }
   render() {
     const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
@@ -246,6 +246,7 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 10 }}
               onPress={async () => {
               await this.downloadContent();
+              NavigatorService.navigate("BookScreen");
               }}
             >
               <Image
@@ -259,7 +260,8 @@ class HomeScreenContainer extends Component {
             <TouchableOpacity
               style={{ marginLeft: 10 }}
               onPress={async () => {
-                  NavigatorService.navigate("BiblePlanScreen");
+                await this.downloadContent();
+                NavigatorService.navigate("BiblePlanScreen");
               }}
             >
               <Image

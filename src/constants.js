@@ -664,7 +664,7 @@ export const content = [
         bookName: "Matthew",
         chapterNumber: 24,
         startVerseNumber: 1,
-        endVerseNumber:31,
+        endVerseNumber:30,
         text: "Matthew 24:1-30"
       }
     ]
@@ -799,7 +799,7 @@ export const content = [
         bookName: "Matthew",
         chapterNumber: 27,
         startVerseNumber: 1,
-        endVerseNumber:26,
+        endVerseNumber:31,
         text: "Matthew 27:1-31"
   }
     ]
@@ -3648,7 +3648,7 @@ export const content = [
       },
       {
         bookName: "Acts",
-        chapterNumber: 19,
+        chapterNumber: 21,
         startVerseNumber: 1,
         endVerseNumber:26,
         text: "Acts 21:1-26"
@@ -3850,7 +3850,7 @@ export const content = [
       bookName: "Romans",
       chapterNumber: 1,
       startVerseNumber: 18,
-      endVerseNumber:28,
+      endVerseNumber:32,
       text: "Romans 1:18-32"
     }
   ]
@@ -7721,8 +7721,8 @@ export const ArabicContent = [
         bookName: "متى",
         chapterNumber: 27,
         startVerseNumber: 1,
-        endVerseNumber:26,
-        text: `متى ${Helpers.parseToArabic(27)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
+        endVerseNumber:31,
+        text: `متى ${Helpers.parseToArabic(27)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(31)}`
   }
     ]
   },
@@ -9984,7 +9984,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:26,
-        text: "اعمال 1"
+        text: `اعمال ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -10003,7 +10003,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "اعمال 2:1-21"
+        text: `اعمال ${Helpers.parseToArabic(2)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
         }
     ]
   },
@@ -10022,7 +10022,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 22,
         endVerseNumber:47,
-        text: "اعمال 2:22-47"
+        text: `اعمال ${Helpers.parseToArabic(2)}: ${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(47)}`
         }
     ]
   },
@@ -10041,7 +10041,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:26,
-        text: "اعمال 3"
+        text: `اعمال ${Helpers.parseToArabic(3)}`
     }
     ]
   },
@@ -10060,7 +10060,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 0,
         endVerseNumber:37,
-        text: "اعمال 4"
+        text: `اعمال ${Helpers.parseToArabic(4)}`
         }
     ]
   },
@@ -10079,7 +10079,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "اعمال 5:1-21"
+        text: `اعمال ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
     }
     ]
   },
@@ -10098,7 +10098,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 22,
         endVerseNumber:42,
-        text: "اعمال 5:22-42"
+        text: `اعمال ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(42)}`
     }
     ]
   },
@@ -10117,7 +10117,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "اعمال 6"
+        text: `اعمال ${Helpers.parseToArabic(6)}`
     }
     ]
   },
@@ -10136,7 +10136,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 1,
         endVerseNumber:19,
-        text: "اعمال 7:1-19"
+        text: `اعمال ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(19)}`
     }
     ]
   },
@@ -10155,7 +10155,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 20,
         endVerseNumber:43,
-        text: "اعمال 7:20-43"
+        text: `اعمال ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(20)} - ${Helpers.parseToArabic(43)}`
         }
     ]
   },
@@ -10174,7 +10174,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 44,
         endVerseNumber:60,
-        text: "اعمال 7:44-60"
+        text: `اعمال ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(44)} - ${Helpers.parseToArabic(60)}`
         }
     ]
   },
@@ -10193,7 +10193,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "اعمال 8:1-25"
+        text: `اعمال ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
         }
     ]
   },
@@ -10212,7 +10212,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 26,
         endVerseNumber:40,
-        text: "اعمال 8:26-40"
+        text: `اعمال ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(40)}`
     }
     ]
   },
@@ -10231,7 +10231,7 @@ export const ArabicContent = [
         chapterNumber:  9,
         startVerseNumber: 1,
         endVerseNumber:31,
-        text: "اعمال 9:1-31"
+        text: `اعمال ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(31)}`
     }
     ]
   },
@@ -10250,7 +10250,7 @@ export const ArabicContent = [
         chapterNumber: 9,
         startVerseNumber: 32,
         endVerseNumber:43,
-        text: "اعمال 9:32-43"
+        text: `اعمال ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(32)} - ${Helpers.parseToArabic(43)}`
     }
     ]
   },
@@ -10269,7 +10269,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 1,
         endVerseNumber:23,
-        text: "اعمال 10:1-23"
+        text: `اعمال ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(23)}`
         }
     ]
   },
@@ -10288,7 +10288,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 24,
         endVerseNumber:48,
-        text: "اعمال 10:24-48"
+        text: `اعمال ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(24)} - ${Helpers.parseToArabic(48)}`
         }
     ]
   },
@@ -10307,7 +10307,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 1,
         endVerseNumber:30,
-        text: "اعمال 11"
+        text: `اعمال ${Helpers.parseToArabic(11)}`
         }
     ]
   },
@@ -10326,7 +10326,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "اعمال 12"
+        text: `اعمال ${Helpers.parseToArabic(12)}`
         }
     ]
   },
@@ -10345,7 +10345,7 @@ export const ArabicContent = [
         chapterNumber: 13,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "اعمال 13:1-25"
+        text: `اعمال ${Helpers.parseToArabic(13)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
         }
     ]
   },
@@ -10364,8 +10364,8 @@ export const ArabicContent = [
        chapterNumber: 13,
        startVerseNumber: 26,
        endVerseNumber:52,
-       text: "اعمال 13:26-52"
-       }
+       text: `اعمال ${Helpers.parseToArabic(13)}: ${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(52)}`
+      }
     ]
   },
   {
@@ -10383,7 +10383,7 @@ export const ArabicContent = [
         chapterNumber: 14,
         startVerseNumber: 1,
         endVerseNumber:28,
-        text: "اعمال 14"
+        text: `اعمال ${Helpers.parseToArabic(14)}`
     }
     ]
   },
@@ -10402,7 +10402,7 @@ export const ArabicContent = [
         chapterNumber: 15,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "اعمال 15:1-21"
+        text: `اعمال ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
     }
     ]
   },
@@ -10421,7 +10421,7 @@ export const ArabicContent = [
         chapterNumber: 15,
         startVerseNumber: 22,
         endVerseNumber:41,
-        text: "اعمال 15:22-41"
+        text: `اعمال ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(41)}`
     }
     ]
   },
@@ -10440,7 +10440,7 @@ export const ArabicContent = [
         chapterNumber: 16,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "اعمال 16:1-15"
+        text: `اعمال ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
     }
     ]
   },
@@ -10459,7 +10459,7 @@ export const ArabicContent = [
         chapterNumber: 16,
         startVerseNumber: 16,
         endVerseNumber:40,
-        text: "اعمال 16:16-40"
+        text: `اعمال ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(40)}`
         }
     ]
   },
@@ -10478,7 +10478,7 @@ export const ArabicContent = [
         chapterNumber: 17,
         startVerseNumber: 1,
         endVerseNumber:34,
-        text: "اعمال 17"
+        text: `اعمال ${Helpers.parseToArabic(17)}`
     }
     ]
   },
@@ -10497,7 +10497,7 @@ export const ArabicContent = [
         chapterNumber: 18,
         startVerseNumber: 1,
         endVerseNumber:28,
-        text: "اعمال 18"
+        text: `اعمال ${Helpers.parseToArabic(18)}`
         }
     ]
   },
@@ -10516,7 +10516,7 @@ export const ArabicContent = [
         chapterNumber: 19,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "اعمال 19:1-22"
+        text: `اعمال ${Helpers.parseToArabic(19)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
         }
     ]
   },
@@ -10535,7 +10535,7 @@ export const ArabicContent = [
         chapterNumber: 19,
         startVerseNumber: 23,
         endVerseNumber:41,
-        text: "اعمال 19:23-41"
+        text: `اعمال ${Helpers.parseToArabic(19)}: ${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(41)}`
         }
     ]
   },
@@ -10554,7 +10554,7 @@ export const ArabicContent = [
         chapterNumber: 20,
         startVerseNumber: 1,
         endVerseNumber:38,
-        text: "اعمال 20"
+        text: `اعمال ${Helpers.parseToArabic(20)}`
         }
     ]
   },
@@ -10570,10 +10570,10 @@ export const ArabicContent = [
       },
       {
         bookName: "اعمال",
-        chapterNumber: 19,
+        chapterNumber: 21,
         startVerseNumber: 1,
         endVerseNumber:26,
-        text: "اعمال 21:1-26"
+        text: `اعمال ${Helpers.parseToArabic(21)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
         }
     ]
   },
@@ -10592,7 +10592,7 @@ export const ArabicContent = [
         chapterNumber: 21,
         startVerseNumber: 27,
         endVerseNumber:40,
-        text: "اعمال 21:27-40"
+        text: `اعمال ${Helpers.parseToArabic(21)}: ${Helpers.parseToArabic(27)} - ${Helpers.parseToArabic(40)}`
         }
     ]
   },
@@ -10610,8 +10610,8 @@ export const ArabicContent = [
       chapterNumber: 22,
       startVerseNumber: 1,
       endVerseNumber:30,
-      text: "اعمال 22"
-      }
+      text: `اعمال ${Helpers.parseToArabic(22)}`
+    }
   
   ]
   },
@@ -10629,7 +10629,7 @@ export const ArabicContent = [
       chapterNumber: 23,
       startVerseNumber: 1,
       endVerseNumber:35,
-      text: "اعمال 23"
+      text: `اعمال ${Helpers.parseToArabic(23)}`
       }
   ]
   },
@@ -10647,7 +10647,7 @@ export const ArabicContent = [
       chapterNumber: 24,
       startVerseNumber: 1,
       endVerseNumber:27,
-      text: "اعمال 24"
+      text: `اعمال ${Helpers.parseToArabic(24)}`
       }
   ]
   },
@@ -10665,7 +10665,7 @@ export const ArabicContent = [
       chapterNumber: 25,
       startVerseNumber: 1,
       endVerseNumber:27,
-      text: "اعمال 25"
+      text: `اعمال ${Helpers.parseToArabic(25)}`
       }
   ]
   },
@@ -10683,7 +10683,7 @@ export const ArabicContent = [
       chapterNumber: 26,
       startVerseNumber: 1,
       endVerseNumber:32,
-      text: "اعمال 26"
+      text: `اعمال ${Helpers.parseToArabic(26)}`
       }
   ]
   },
@@ -10701,7 +10701,7 @@ export const ArabicContent = [
       chapterNumber: 27,
       startVerseNumber: 1,
       endVerseNumber:26,
-      text: "اعمال 27:1-26"
+      text: `اعمال ${Helpers.parseToArabic(27)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(26)}`
       }
   ]
   },
@@ -10719,7 +10719,7 @@ export const ArabicContent = [
       chapterNumber: 27,
       startVerseNumber: 27,
       endVerseNumber:44,
-      text: "اعمال 27:27-44"
+      text: `اعمال ${Helpers.parseToArabic(27)}: ${Helpers.parseToArabic(27)} - ${Helpers.parseToArabic(44)}`
       }
   ]
   },
@@ -10737,7 +10737,7 @@ export const ArabicContent = [
       chapterNumber: 28,
       startVerseNumber: 1,
       endVerseNumber:31,
-      text: "اعمال 28"
+      text: `اعمال ${Helpers.parseToArabic(28)}`
       }
   ]
   },
@@ -10755,7 +10755,7 @@ export const ArabicContent = [
       chapterNumber: 1,
       startVerseNumber: 0,
       endVerseNumber:17,
-      text: "رومية 1:1-17"
+      text: `رومية ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
     }
   ]
   },
@@ -10772,8 +10772,8 @@ export const ArabicContent = [
       bookName: "رومية",
       chapterNumber: 1,
       startVerseNumber: 18,
-      endVerseNumber:28,
-      text: "رومية 1:18-32"
+      endVerseNumber:32,
+      text: `رومية ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(32)}`
     }
   ]
   },
@@ -10791,7 +10791,7 @@ export const ArabicContent = [
       chapterNumber: 2,
       startVerseNumber: 1,
       endVerseNumber:29,
-      text: "رومية 2"
+      text: `رومية ${Helpers.parseToArabic(2)}`
     }
   ]
   },
@@ -10809,7 +10809,7 @@ export const ArabicContent = [
       chapterNumber: 3,
       startVerseNumber: 0,
       endVerseNumber:31,
-      text: "رومية 3"
+      text: `رومية ${Helpers.parseToArabic(3)}`
     }
   ]
   },
@@ -10827,7 +10827,7 @@ export const ArabicContent = [
       chapterNumber: 4,
       startVerseNumber: 0,
       endVerseNumber:25,
-      text: "رومية 4"
+      text: `رومية ${Helpers.parseToArabic(4)}`
 }
   ]
   },
@@ -10845,7 +10845,7 @@ export const ArabicContent = [
       chapterNumber: 5,
       startVerseNumber: 0,
       endVerseNumber:21,
-      text: "رومية 5"
+      text: `رومية ${Helpers.parseToArabic(5)}`
     }
   ]
   },
@@ -10863,7 +10863,7 @@ export const ArabicContent = [
       chapterNumber: 6,
       startVerseNumber: 1,
       endVerseNumber:23,
-      text: "رومية 6"
+      text: `رومية ${Helpers.parseToArabic(6)}`
 }
   ]
   },
@@ -10881,7 +10881,7 @@ export const ArabicContent = [
       chapterNumber: 7,
       startVerseNumber: 1,
       endVerseNumber:25,
-      text: "رومية 7"
+      text: `رومية ${Helpers.parseToArabic(7)}`
 }
   ]
   },
@@ -10899,7 +10899,7 @@ export const ArabicContent = [
       chapterNumber: 8,
       startVerseNumber: 1,
       endVerseNumber:17,
-      text: "رومية 8:1-17"
+      text: `رومية ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)}`
 }
   ]
   },
@@ -10917,7 +10917,7 @@ export const ArabicContent = [
       chapterNumber: 8,
       startVerseNumber: 18,
       endVerseNumber:39,
-      text: "رومية 8:18-39"
+      text: `رومية ${Helpers.parseToArabic(8)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(39)}`
 }
   ]
   },
@@ -10935,7 +10935,7 @@ export const ArabicContent = [
       chapterNumber: 9,
       startVerseNumber: 1,
       endVerseNumber:13,
-      text: "رومية 9:1-13"
+      text: `رومية ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(13)}`
     }
   ]
   },
@@ -10953,7 +10953,7 @@ export const ArabicContent = [
       chapterNumber: 9,
       startVerseNumber: 14,
       endVerseNumber:33,
-      text: "رومية 9:14-33"
+      text: `رومية ${Helpers.parseToArabic(9)}: ${Helpers.parseToArabic(14)} - ${Helpers.parseToArabic(33)}`
     }
   ]
   },
@@ -10971,7 +10971,7 @@ export const ArabicContent = [
       chapterNumber: 10,
       startVerseNumber: 1,
       endVerseNumber:21,
-      text: "رومية 10"
+      text: `رومية ${Helpers.parseToArabic(10)}`
     }
   ]
   },
@@ -10989,7 +10989,7 @@ export const ArabicContent = [
       chapterNumber: 11,
       startVerseNumber: 1,
       endVerseNumber:24,
-      text: "رومية 11:1-24"
+      text: `رومية ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
     }
   ]
   },
@@ -11007,7 +11007,7 @@ export const ArabicContent = [
       chapterNumber: 11,
       startVerseNumber: 25,
       endVerseNumber:36,
-      text: "رومية 11:25-36"
+      text: `رومية ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(36)}`
 }
   ]
   },
@@ -11025,7 +11025,7 @@ export const ArabicContent = [
       chapterNumber: 12,
       startVerseNumber: 1,
       endVerseNumber:21,
-      text: "رومية 12"
+      text: `رومية ${Helpers.parseToArabic(12)}`
 }
   ]
   },
@@ -11043,7 +11043,7 @@ export const ArabicContent = [
       chapterNumber: 13,
       startVerseNumber: 1,
       endVerseNumber:14,
-      text: "رومية 13"
+      text: `رومية ${Helpers.parseToArabic(13)}`
 }
   ]
   },
@@ -11061,7 +11061,7 @@ export const ArabicContent = [
       chapterNumber: 14,
       startVerseNumber: 1,
       endVerseNumber:23,
-      text: "رومية 14"
+      text: `رومية ${Helpers.parseToArabic(14)}`
     }
   ]
   },
@@ -11079,7 +11079,7 @@ export const ArabicContent = [
       chapterNumber: 15,
       startVerseNumber: 1,
       endVerseNumber:22,
-      text: "رومية 15:1-22"
+      text: `رومية ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
     }
   ]
   },
@@ -11097,7 +11097,7 @@ export const ArabicContent = [
       chapterNumber: 15,
       startVerseNumber: 23,
       endVerseNumber:33,
-      text: "رومية 15:23-33"
+      text: `رومية ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(33)}`
     }
   ]
   },
@@ -11115,7 +11115,7 @@ export const ArabicContent = [
       chapterNumber: 16,
       startVerseNumber: 1,
       endVerseNumber:16,
-      text: "رومية 16:1-16"
+      text: `رومية ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
     }
   ]
   },
@@ -11133,7 +11133,7 @@ export const ArabicContent = [
       chapterNumber: 16,
       startVerseNumber: 17,
       endVerseNumber:27,
-      text: "رومية 16:17-27"
+      text: `رومية ${Helpers.parseToArabic(16)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(27)}`
     }
   ]
   },
@@ -11151,7 +11151,7 @@ export const ArabicContent = [
       chapterNumber: 1,
       startVerseNumber: 0,
       endVerseNumber:17,
-      text: "1 كورنثوس 1:1-17"
+      text: `كورنثوس الاولي  ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(27)}`
     }
   ]
   },
@@ -11169,7 +11169,7 @@ export const ArabicContent = [
       chapterNumber: 1,
       startVerseNumber: 18,
       endVerseNumber:31,
-      text: "1 كورنثوس 1:18-31"
+      text: `كورنثوس الاولي  ${Helpers.parseToArabic(1)}: ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(31)}`
     }
   ]
   },
@@ -11187,7 +11187,7 @@ export const ArabicContent = [
       chapterNumber: 2,
       startVerseNumber: 1,
       endVerseNumber:16,
-      text: "1 كورنثوس 2"
+      text: `كورنثوس الاولي  ${Helpers.parseToArabic(2)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
     }
   ]
   },
@@ -11206,7 +11206,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:23,
-        text: "1 كورنثوس 3"
+        text: `كورنثوس الاولي  ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -11225,7 +11225,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 0,
         endVerseNumber:21,
-        text: "1 كورنثوس 4"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -11244,7 +11244,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 0,
         endVerseNumber:13,
-        text: "1 كورنثوس 5"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -11263,7 +11263,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "1 كورنثوس 6"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(6)}`
   }
     ]
   },
@@ -11282,8 +11282,8 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "1 كورنثوس 7:1-24"
-  }
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(24)}`
+      }
     ]
   },
   {
@@ -11301,7 +11301,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 25,
         endVerseNumber:40,
-        text: "1 كورنثوس 7:25-40"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(7)}: ${Helpers.parseToArabic(25)} - ${Helpers.parseToArabic(40)}`
   }
     ]
   },
@@ -11320,7 +11320,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "1 كورنثوس 8"
+        text: `كورنثوس الاولي  ${Helpers.parseToArabic(8)}`
   }
     ]
   },
@@ -11339,7 +11339,7 @@ export const ArabicContent = [
         chapterNumber: 9,
         startVerseNumber: 1,
         endVerseNumber:27,
-        text: "1 كورنثوس 9"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(9)}`
       }
     ]
   },
@@ -11358,7 +11358,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "1 كورنثوس 10:1-22"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(22)}`
       }
     ]
   },
@@ -11377,7 +11377,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 23,
         endVerseNumber:33,
-        text: "1 كورنثوس 10:23-33"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(10)}: ${Helpers.parseToArabic(23)} - ${Helpers.parseToArabic(33)}`
       }
     ]
   },
@@ -11396,7 +11396,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "1 كورنثوس 11:1-16"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
   }
     ]
   },
@@ -11415,7 +11415,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 17,
         endVerseNumber:34,
-        text: "1 كورنثوس 11:17-34"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(34)}`
   }
     ]
   },
@@ -11434,7 +11434,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 1,
         endVerseNumber:11,
-        text: "1 كورنثوس 12:1-11"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(12)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(11)}`
   }
     ]
   },
@@ -11453,7 +11453,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 12,
         endVerseNumber:31,
-        text: "1 كورنثوس 12:12-31"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(12)}: ${Helpers.parseToArabic(12)} - ${Helpers.parseToArabic(31)}`
       }
     ]
   },
@@ -11472,7 +11472,7 @@ export const ArabicContent = [
         chapterNumber: 13,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "1 كورنثوس 13"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(13)}`
       }
     ]
   },
@@ -11491,7 +11491,7 @@ export const ArabicContent = [
         chapterNumber: 14,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "1 كورنثوس 14:1-25"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(14)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
       }
     ]
   },
@@ -11510,7 +11510,7 @@ export const ArabicContent = [
         chapterNumber: 14,
         startVerseNumber: 26,
         endVerseNumber:40,
-        text: "1 كورنثوس 14:26-40"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(14)}: ${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(40)}`
       }
     ]
   },
@@ -11529,7 +11529,7 @@ export const ArabicContent = [
         chapterNumber: 15,
         startVerseNumber: 1,
         endVerseNumber:34,
-        text: "1 كورنثوس 15:1-34"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(34)}`
       }
     ]
   },
@@ -11548,7 +11548,7 @@ export const ArabicContent = [
         chapterNumber: 15,
         startVerseNumber: 35,
         endVerseNumber:58,
-        text: "1 كورنثوس 15:35-58"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(15)}: ${Helpers.parseToArabic(35)} - ${Helpers.parseToArabic(58)}`
   }
     ]
   },
@@ -11567,7 +11567,7 @@ export const ArabicContent = [
         chapterNumber: 16,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "1 كورنثوس 16"
+        text: `كورنثوس الاولي ${Helpers.parseToArabic(16)}`
   }
     ]
   },
@@ -11586,7 +11586,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:24,
-        text: "2 كورنثوس 1"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -11605,7 +11605,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "2 كورنثوس 2"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -11624,7 +11624,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:18,
-        text: "2 كورنثوس 3"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -11643,7 +11643,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 0,
         endVerseNumber:18,
-        text: "2 كورنثوس 4"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -11662,7 +11662,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 0,
         endVerseNumber:21,
-        text: "2 كورنثوس 5"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -11681,7 +11681,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "2 كورنثوس 6"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(6)}`
   }
     ]
   },
@@ -11700,7 +11700,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "2 كورنثوس 7"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(7)}`
   }
     ]
   },
@@ -11719,7 +11719,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "2 كورنثوس 8"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(8)}`
   }
     ]
   },
@@ -11738,7 +11738,7 @@ export const ArabicContent = [
         chapterNumber: 9,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "2 كورنثوس 9"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(9)}`
   }
     ]
   },
@@ -11757,7 +11757,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "2 كورنثوس 10"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(10)}`
       }
     ]
   },
@@ -11776,7 +11776,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "2 كورنثوس 11:1-15"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(15)}`
       }
     ]
   },
@@ -11795,7 +11795,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 16,
         endVerseNumber:33,
-        text: "2 كورنثوس 11:16-33"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(11)}: ${Helpers.parseToArabic(16)} - ${Helpers.parseToArabic(33)}`
       }
     ]
   },
@@ -11814,7 +11814,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "2 كورنثوس 12"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(12)}`
       }
     ]
   },
@@ -11833,7 +11833,7 @@ export const ArabicContent = [
         chapterNumber: 13,
         startVerseNumber: 1,
         endVerseNumber:14,
-        text: "2 كورنثوس 13"
+        text: `كورنثوس الثانيه ${Helpers.parseToArabic(13)}`
   }
     ]
   },
@@ -11852,7 +11852,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:24,
-        text: "غلاطية 1"
+        text: `غلاطية ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -11871,7 +11871,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "غلاطية 2"
+        text: `غلاطية ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -11890,7 +11890,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:14,
-        text: "غلاطية 3:1-14"
+        text: `غلاطية ${Helpers.parseToArabic(3)}: غلاطية ${Helpers.parseToArabic(1)} - غلاطية ${Helpers.parseToArabic(14)}`
       }
     ]
   },
@@ -11909,7 +11909,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 15,
         endVerseNumber:29,
-        text: "غلاطية 3:15-29"
+        text: `غلاطية ${Helpers.parseToArabic(3)}: غلاطية ${Helpers.parseToArabic(15)} - غلاطية ${Helpers.parseToArabic(29)}`
   }
     ]
   },
@@ -11928,7 +11928,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 0,
         endVerseNumber:20,
-        text: "غلاطية 4:1-20"
+        text: `غلاطية ${Helpers.parseToArabic(4)}: غلاطية ${Helpers.parseToArabic(1)} - غلاطية ${Helpers.parseToArabic(20)}`
       }
     ]
   },
@@ -11948,7 +11948,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 21,
         endVerseNumber:31,
-        text: "غلاطية 4:21-31"
+        text: `غلاطية ${Helpers.parseToArabic(4)}: غلاطية ${Helpers.parseToArabic(21)} - غلاطية ${Helpers.parseToArabic(31)}`
   }
     ]
   },
@@ -11967,7 +11967,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:26,
-        text: "غلاطية 5"
+        text: `غلاطية ${Helpers.parseToArabic(5)}`
   }
     ]
   },
@@ -11986,7 +11986,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "غلاطية 6"
+        text: `غلاطية ${Helpers.parseToArabic(6)}`
   }
     ]
   },
@@ -12005,7 +12005,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:23,
-        text: "افسس 1"
+        text: `افسس ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12024,7 +12024,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "افسس 2"
+        text: `افسس ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12043,7 +12043,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:21,
-        text: "افسس 3"
+        text: `افسس ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12062,7 +12062,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "افسس 4:1-16"
+        text: `افسس ${Helpers.parseToArabic(4)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)} `
   }
     ]
   },
@@ -12081,7 +12081,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 17,
         endVerseNumber:32,
-        text: "افسس 4:17-32"
+        text: `افسس ${Helpers.parseToArabic(4)}: ${Helpers.parseToArabic(17)} - ${Helpers.parseToArabic(32)} `
       }
     ]
   },
@@ -12100,7 +12100,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "افسس 5:1-21"
+        text: `افسس ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)} `
   }
     ]
   },
@@ -12119,7 +12119,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 22,
         endVerseNumber:33,
-        text: "افسس 5:22-33"
+        text: `افسس ${Helpers.parseToArabic(5)}: ${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(33)} `
   }
     ]
   },
@@ -12138,7 +12138,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "افسس 6"
+        text: `افسس ${Helpers.parseToArabic(6)}`
   }
     ]
   },
@@ -12157,7 +12157,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:30,
-        text: "فيلبي 1"
+        text: `فيلبي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12176,7 +12176,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:30,
-        text: "فيلبي 2"
+        text: `فيلبي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12195,7 +12195,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:21,
-        text: "فيلبي 3"
+        text: `فيلبي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12214,7 +12214,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:23,
-        text: "فيلبي 4"
+        text: `فيلبي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -12233,7 +12233,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:29,
-        text: "كولوسي 1"
+        text: `كولوسي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12252,7 +12252,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:23,
-        text: "كولوسي 2"
+        text: `كولوسي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12271,7 +12271,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 0,
         endVerseNumber:25,
-        text: "كولوسي 3"
+        text: `كولوسي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12290,7 +12290,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "كولوسي 4"
+        text: `كولوسي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -12309,7 +12309,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:10,
-        text: "1 تسالونيكي 1"
+        text: `تسالونيكي الاولي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12328,7 +12328,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "1 تسالونيكي 2"
+        text: `تسالونيكي الاولي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12347,7 +12347,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "1 تسالونيكي 3"
+        text: `تسالونيكي الاولي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12366,7 +12366,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "1 تسالونيكي 4"
+        text: `تسالونيكي الاولي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -12385,7 +12385,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:28,
-        text: "1 تسالونيكي 5"
+        text: `تسالونيكي الاولي ${Helpers.parseToArabic(5)}`
   }
     ]
   },
@@ -12404,7 +12404,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:12,
-        text: "2 تسالونيكي 1"
+        text: `تسالونيكي الثانيه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12423,7 +12423,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "2 تسالونيكي 2"
+        text: `تسالونيكي الثانيه ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12442,7 +12442,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "2 تسالونيكي 3"
+        text: `تسالونيكي الثانيه ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12461,7 +12461,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:20,
-        text: "1 تيموثاوس 1"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12480,7 +12480,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "1 تيموثاوس 2"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12499,7 +12499,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "1 تيموثاوس 3"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12518,7 +12518,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "1 تيموثاوس 4"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -12537,7 +12537,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "1 تيموثاوس 5"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(5)}`
   }
     ]
   },
@@ -12556,7 +12556,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "1 تيموثاوس 6"
+        text: `تيموثاوس الاولي ${Helpers.parseToArabic(6)}`
     }
     ]
   },
@@ -12575,7 +12575,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:18,
-        text: "2 تيموثاوس 1"
+        text: `تيموثاوس الثانيه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12594,7 +12594,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:26,
-        text: "2 تيموثاوس 2"
+        text: `تيموثاوس الثانيه ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12613,7 +12613,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "2 تيموثاوس 3"
+        text: `تيموثاوس الثانيه ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12632,7 +12632,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "2 تيموثاوس 4"
+        text: `تيموثاوس الثانيه ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -12651,7 +12651,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:16,
-        text: "تيطس 1"
+        text: `تيطس ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12670,7 +12670,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "تيطس 2"
+        text: `تيطس ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12689,7 +12689,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "تيطس 3"
+        text: `تيطس ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12708,7 +12708,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:25,
-        text: "فليمون 1"
+        text: `فليمون ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12727,7 +12727,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:14,
-        text: "عبرانيين 1"
+        text: `عبرانيين ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -12746,7 +12746,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "عبرانيين 2"
+        text: `عبرانيين ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -12765,7 +12765,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:19,
-        text: "عبرانيين 3"
+        text: `عبرانيين ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -12784,7 +12784,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:16,
-        text: "عبرانيين 4"
+        text: `عبرانيين ${Helpers.parseToArabic(4)}`
       }
     ]
   },
@@ -12803,7 +12803,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:14,
-        text: "عبرانيين 5"
+        text: `عبرانيين ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -12822,7 +12822,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "عبرانيين 6"
+        text: `عبرانيين ${Helpers.parseToArabic(6)}`
       }
     ]
   },
@@ -12841,7 +12841,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 1,
         endVerseNumber:28,
-        text: "عبرانيين 7"
+        text: `عبرانيين ${Helpers.parseToArabic(7)}`
       }
     ]
   },
@@ -12860,7 +12860,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "عبرانيين 8"
+        text: `عبرانيين ${Helpers.parseToArabic(8)}`
       }
     ]
   },
@@ -12879,8 +12879,8 @@ export const ArabicContent = [
           chapterNumber: 9,
           startVerseNumber: 1,
           endVerseNumber:28,
-          text: "عبرانيين 9"
-      }
+          text: `عبرانيين ${Helpers.parseToArabic(9)}`
+        }
     ]
   },
   {
@@ -12898,7 +12898,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "عبرانيين 10:1-18"
+        text: `عبرانيين ${Helpers.parseToArabic(10)}:${Helpers.parseToArabic(1)}-${Helpers.parseToArabic(18)} `
       }
     ]
   },
@@ -12917,7 +12917,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 19,
         endVerseNumber:39,
-        text: "عبرانيين 10:19-39"
+        text: `عبرانيين ${Helpers.parseToArabic(10)}:${Helpers.parseToArabic(19)}-${Helpers.parseToArabic(39)} `
       }
     ]
   },
@@ -12936,7 +12936,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "عبرانيين 11:1-20"
+        text: `عبرانيين ${Helpers.parseToArabic(11)}:${Helpers.parseToArabic(1)}-${Helpers.parseToArabic(20)} `
       }
     ]
   },
@@ -12955,7 +12955,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 21,
         endVerseNumber:40,
-        text: "عبرانيين 11:21-40"
+        text: `عبرانيين ${Helpers.parseToArabic(11)}:${Helpers.parseToArabic(21)}-${Helpers.parseToArabic(40)} `
       }
     ]
   },
@@ -12974,7 +12974,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "عبرانيين 12:1-13"
+        text: `عبرانيين ${Helpers.parseToArabic(12)}:${Helpers.parseToArabic(1)}-${Helpers.parseToArabic(13)} `
       }
     ]
   },
@@ -12993,7 +12993,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 14,
         endVerseNumber:29,
-        text: "عبرانيين 12:14-29"
+        text: `عبرانيين ${Helpers.parseToArabic(12)}: ${Helpers.parseToArabic(14)} - ${Helpers.parseToArabic(29)}`
       }
     ]
   },
@@ -13012,7 +13012,7 @@ export const ArabicContent = [
         chapterNumber: 13,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "عبرانيين 13"
+        text: `عبرانيين ${Helpers.parseToArabic(13)}`
       }
     ]
   },
@@ -13031,7 +13031,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:27,
-        text: "يعقوب 1"
+        text: `يعقوب ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13050,7 +13050,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:26,
-        text: "يعقوب 2"
+        text: `يعقوب ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -13069,7 +13069,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "يعقوب 3"
+        text: `يعقوب ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -13088,7 +13088,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "يعقوب 4"
+        text: `يعقوب ${Helpers.parseToArabic(4)}`
       }
     ]
   },
@@ -13107,7 +13107,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "يعقوب 5"
+        text: `يعقوب ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -13126,7 +13126,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:25,
-        text: "1 بطرس 1"
+        text: `بطرس الاولي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13145,7 +13145,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:25,
-        text: "1 بطرس 2"
+        text: `بطرس الاولي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -13164,7 +13164,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "1 بطرس 3"
+        text: `بطرس الاولي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -13183,7 +13183,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:19,
-        text: "1 بطرس 4"
+        text: `بطرس الاولي ${Helpers.parseToArabic(4)}`
   }
     ]
   },
@@ -13202,7 +13202,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 0,
         endVerseNumber:14,
-        text: "1 بطرس 5"
+        text: `بطرس الاولي ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -13221,7 +13221,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:21,
-        text: "2 بطرس 1"
+        text: `بطرس الثانيه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13240,7 +13240,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "2 بطرس 2"
+        text: `بطرس الثانيه ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -13259,7 +13259,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "2 بطرس 3"
+        text: `بطرس الثانيه ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -13278,7 +13278,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:10,
-        text: "1 يوحنا 1"
+        text: `يوحنا الاولي ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13297,7 +13297,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 1,
         endVerseNumber:29,
-        text: "1 يوحنا 2"
+        text: `يوحنا الاولي ${Helpers.parseToArabic(2)}`
       }
     ]
   },
@@ -13316,7 +13316,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "1 يوحنا 3"
+        text: `يوحنا الاولي ${Helpers.parseToArabic(3)}`
       }
     ]
   },
@@ -13335,7 +13335,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "1 يوحنا 4"
+        text: `يوحنا الاولي ${Helpers.parseToArabic(4)}`
       }
     ]
   },
@@ -13354,7 +13354,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "1 يوحنا 5"
+        text: `يوحنا الاولي ${Helpers.parseToArabic(5)}`
       }
     ]
   },
@@ -13373,7 +13373,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:13,
-        text: "2 يوحنا 1"
+        text: `يوحنا الثانيه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13392,7 +13392,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:15,
-        text: "3 يوحنا 1"
+        text: `يوحنا الثالثه ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13411,7 +13411,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:25,
-        text: "يهوذا 1"
+        text: `يهوذا ${Helpers.parseToArabic(1)}`
       }
     ]
   },
@@ -13430,7 +13430,7 @@ export const ArabicContent = [
         chapterNumber: 1,
         startVerseNumber: 0,
         endVerseNumber:20,
-        text: "رؤيا 1"
+        text: `رؤيا ${Helpers.parseToArabic(1)}`
        }
     ]
   },
@@ -13449,7 +13449,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 0,
         endVerseNumber:17,
-        text: "رؤيا 2:1-17"
+        text: `رؤيا ${Helpers.parseToArabic(2)} : ${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(17)} `
        }
     ]
   },
@@ -13468,7 +13468,7 @@ export const ArabicContent = [
         chapterNumber: 2,
         startVerseNumber: 18,
         endVerseNumber:29,
-        text: "رؤيا 2:18-29"
+        text: `رؤيا ${Helpers.parseToArabic(2)} : ${Helpers.parseToArabic(18)} - ${Helpers.parseToArabic(29)} `
        }
     ]
   },
@@ -13487,7 +13487,7 @@ export const ArabicContent = [
         chapterNumber: 3,
         startVerseNumber: 1,
         endVerseNumber:22,
-        text: "رؤيا 3"
+        text: `رؤيا ${Helpers.parseToArabic(3)}`
        }
     ]
   },
@@ -13506,7 +13506,7 @@ export const ArabicContent = [
         chapterNumber: 4,
         startVerseNumber: 1,
         endVerseNumber:11,
-        text: "رؤيا 4"
+        text: `رؤيا ${Helpers.parseToArabic(4)}`
        }
     ]
   },
@@ -13525,7 +13525,7 @@ export const ArabicContent = [
         chapterNumber: 5,
         startVerseNumber: 1,
         endVerseNumber:14,
-        text: "رؤيا 5"
+        text: `رؤيا ${Helpers.parseToArabic(5)}`
    }
     ]
   },
@@ -13544,7 +13544,7 @@ export const ArabicContent = [
         chapterNumber: 6,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "رؤيا 6"
+        text: `رؤيا ${Helpers.parseToArabic(6)}`
    }
     ]
   },
@@ -13563,7 +13563,7 @@ export const ArabicContent = [
         chapterNumber: 7,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "رؤيا 7"
+        text: `رؤيا ${Helpers.parseToArabic(7)}`
    }
     ]
   },
@@ -13582,7 +13582,7 @@ export const ArabicContent = [
         chapterNumber: 8,
         startVerseNumber: 1,
         endVerseNumber:13,
-        text: "رؤيا 8"
+        text: `رؤيا ${Helpers.parseToArabic(8)}`
      }
     ]
   },
@@ -13601,7 +13601,7 @@ export const ArabicContent = [
         chapterNumber: 9,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "رؤيا 9"
+        text: `رؤيا ${Helpers.parseToArabic(9)}`
  }
     ]
   },
@@ -13620,7 +13620,7 @@ export const ArabicContent = [
         chapterNumber: 10,
         startVerseNumber: 1,
         endVerseNumber:11,
-        text: "رؤيا 10"
+        text: `رؤيا ${Helpers.parseToArabic(10)}`
      }
     ]
   },
@@ -13639,7 +13639,7 @@ export const ArabicContent = [
         chapterNumber: 11,
         startVerseNumber: 1,
         endVerseNumber:19,
-        text: "رؤيا 11"
+        text: `رؤيا ${Helpers.parseToArabic(11)}`
      }
     ]
   },
@@ -13658,7 +13658,7 @@ export const ArabicContent = [
         chapterNumber: 12,
         startVerseNumber: 1,
         endVerseNumber:17,
-        text: "رؤيا 12"
+        text: `رؤيا ${Helpers.parseToArabic(12)}`
  }
     ]
   },
@@ -13677,7 +13677,7 @@ export const ArabicContent = [
         chapterNumber: 13,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "رؤيا 13"
+        text: `رؤيا ${Helpers.parseToArabic(13)}`
      }
     ]
   },
@@ -13696,7 +13696,7 @@ export const ArabicContent = [
         chapterNumber: 14,
         startVerseNumber: 1,
         endVerseNumber:20,
-        text: "رؤيا 14"
+        text: `رؤيا ${Helpers.parseToArabic(14)}`
      }
     ]
   },
@@ -13715,7 +13715,7 @@ export const ArabicContent = [
         chapterNumber: 15,
         startVerseNumber: 1,
         endVerseNumber:8,
-        text: "رؤيا 15"
+        text: `رؤيا ${Helpers.parseToArabic(15)}`
      }
     ]
   },
@@ -13734,7 +13734,7 @@ export const ArabicContent = [
         chapterNumber: 16,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "رؤيا 16"
+        text: `رؤيا ${Helpers.parseToArabic(16)}`
      }
     ]
   },
@@ -13753,7 +13753,7 @@ export const ArabicContent = [
         chapterNumber: 17,
         startVerseNumber: 1,
         endVerseNumber:18,
-        text: "رؤيا 17"
+        text: `رؤيا ${Helpers.parseToArabic(17)}`
      }
     ]
   },
@@ -13772,7 +13772,7 @@ export const ArabicContent = [
         chapterNumber: 18,
         startVerseNumber: 1,
         endVerseNumber:24,
-        text: "رؤيا 18"
+        text: `رؤيا ${Helpers.parseToArabic(18)}`
      }
     ]
   },
@@ -13791,7 +13791,7 @@ export const ArabicContent = [
         chapterNumber: 19,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "رؤيا 19"
+        text: `رؤيا ${Helpers.parseToArabic(19)}`
      }
     ]
   },
@@ -13810,15 +13810,15 @@ export const ArabicContent = [
         chapterNumber: 20,
         startVerseNumber: 1,
         endVerseNumber:15,
-        text: "رؤيا 20"
+        text: `رؤيا ${Helpers.parseToArabic(20)}`
      },
      {
       bookName: "رؤيا",
       chapterNumber: 21,
       startVerseNumber: 1,
       endVerseNumber:27,
-      text: "رؤيا 21"
-   }
+      text: `رؤيا ${Helpers.parseToArabic(21)}`
+    }
     ]
   },
   {
@@ -13836,7 +13836,7 @@ export const ArabicContent = [
         chapterNumber: 22,
         startVerseNumber: 1,
         endVerseNumber:21,
-        text: "رؤيا 22"
+        text: `رؤيا ${Helpers.parseToArabic(22)}`
      }
       
     ]
@@ -13888,8 +13888,8 @@ export const enlglishContentUri = {
   Haggai: "https://www.dropbox.com/s/6lj6g5c3t0zsnlt/Haggai.json?dl=1",
   Zechariah  :"https://www.dropbox.com/s/waqomftmtq3b2tv/Zechariah.json?dl=1",
   Malachi: "https://www.dropbox.com/s/ro6ckcncatpw8y9/Malachi.json?dl=1",
-  متى: "https://www.dropbox.com/s/5ty8fk61vlsuz8n/متى.json?dl=1",
-  مرقس: "https://www.dropbox.com/s/qpmmmgk1qqm7bs6/مرقس.json?dl=1",
+  Matthew: "https://www.dropbox.com/s/5ty8fk61vlsuz8n/Matthew.json?dl=1",
+  Mark: "https://www.dropbox.com/s/qpmmmgk1qqm7bs6/Mark.json?dl=1",
   Luke: "https://www.dropbox.com/s/0x51go1ho2tdqn3/Luke.json?dl=1",
   John: "https://www.dropbox.com/s/em1z9gteq64lfin/John.json?dl=1",
   Acts: "https://www.dropbox.com/s/08l64hglzngyiei/Acts.json?dl=1",
@@ -13963,8 +13963,8 @@ export const bookNames = [
   "Haggai",
   "Zechariah",
   "Malachi",
-  "متى",
-  "مرقس",
+  "Matthew",
+  "Mark",
   "Luke",
   "John",
   "Acts",

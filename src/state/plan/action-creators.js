@@ -14,7 +14,7 @@ export async function loadPlan() {
 }
 export async function loadArabicPlan() {
   let payload = JSON.parse(await AsyncStorage.getItem("ArabicPlan"));
-  // console.log("from load arabic plan", payload)
+  //  console.log("from load arabic plan", payload)
   return {
     type: planActions.LOAD_ARABIC_PLAN_CHAPTERS,
     payload: payload
@@ -99,7 +99,7 @@ export function clearDayContentOfPlan(){
 
 export async function inializeArabicPlan(){
   return async () => {
-      alert("inializeArabicPlan")
+      // alert("inializeArabicPlan")
       await AsyncStorage.setItem("ArabicPlan" , JSON.stringify(ArabicContent));
   }
 }

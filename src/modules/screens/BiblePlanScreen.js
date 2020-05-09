@@ -11,7 +11,8 @@ import { loadChapterContent, selectBook, toggleLanguage } from "../../state/cont
 import { inializeArabicPlan, inializePlan, loadListOfCompletedDaysOfPlan,
    loadPlan, loadPlanCheckedList, makeChapterChecked, inializeEnglishCheckedList, 
    saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan, 
-   setCompletedDayPlan , loadArabicPlan} from "../../state/plan/action-creators";
+   setCompletedDayPlan , loadArabicPlan , inializeArabicCheckedList} from "../../state/plan/action-creators";
+import { Helpers } from './../../services/utilities/helpers';
 
 class BiblePlanScreenContainer extends Component {
   constructor() {
@@ -61,7 +62,8 @@ class BiblePlanScreenContainer extends Component {
         loadListOfCompletedDaysOfPlan,
         loadPlanCheckedList,
         loadPlan,
-        loadArabicPlan
+        loadArabicPlan,
+        inializeArabicCheckedList
       },
       dispatch
     );
@@ -70,6 +72,7 @@ class BiblePlanScreenContainer extends Component {
    async componentDidMount() {
   //  await this.props.inializePlan();
   if(this.props.isArabic){
+    await this.props.inializeArabicCheckedList();
     await this.props.inializeArabicPlan();
     await this.props.loadArabicPlan();
   }
@@ -179,7 +182,10 @@ class BiblePlanScreenContainer extends Component {
   render() {
     // console.log("from render" ,this.props.ArabicPlanContent)
     let { checkedList } = this.state;
-    const { selectedDayContent , selectChapterOfDayPlan , selectedChapterIndex , selectedDay , listOfCompletedDaysObj }  = this.props;
+    
+    const { selectedDayContent , selectChapterOfDayPlan , isArabic , selectedDay , listOfCompletedDaysObj }  = this.props;
+    // console.log("from render checkedList" ,checkedList);
+    // console.log("from render selectedDay" ,selectedDay)
     // console.log(selectedDayContent)
     // console.log("listOfCompletedDaysObj" ,listOfCompletedDaysObj);
     // console.log("selectedChapterIndex" , selectedChapterIndex)
@@ -191,11 +197,12 @@ class BiblePlanScreenContainer extends Component {
         <View>
           <View  style={{ flexDirection:'row', justifyContent:'center' ,marginTop:5 }}>
             <Text style={{ fontWeight:'bold' }}>
-               {365-Object.keys(listOfCompletedDaysObj).length} Days Left
+              {isArabic ? ` الايام المتبقيه ${Helpers.parseToArabic(365-Object.keys(listOfCompletedDaysObj).length)}` :
+              `Days Left ${365-Object.keys(listOfCompletedDaysObj).length}`}
             </Text>
           </View>
           <DaysToolBar
-            selectedDay ={this.props.selectedDay}
+            selectedDay ={selectedDay}
             isArabic ={this.props.isArabic} 
             selectDay={this.selectDay.bind(this)} 
             listOfCompletedDaysObj ={listOfCompletedDaysObj}

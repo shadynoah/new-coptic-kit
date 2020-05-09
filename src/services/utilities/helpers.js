@@ -54,6 +54,7 @@ let trimmed = bookName.replace(/\s/g, "");
      
   }
   static async downloadArabic() {
+    // alert("will start downlaod arabic")
     await Promise.all(
       _.map(arabicBookNames , async bookName => {
  let trimmed = bookName.replace(/\s/g, "");
