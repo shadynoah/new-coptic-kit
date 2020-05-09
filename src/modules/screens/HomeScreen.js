@@ -84,8 +84,8 @@ class HomeScreenContainer extends Component {
   }
   async downloadContent() {
     const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
-    inializeArabicCheckedList();
-    inializeEnglishCheckedList();
+    // inializeArabicCheckedList();
+    // inializeEnglishCheckedList();
     let keyOfContent = isArabic ? IS_ARABIC_CONTENT_DOWNLOADED : IS_ENGLISH_CONTENT_DOWNLOADED
     let isContentExist = await AsyncStorage.getItem(keyOfContent);
     if (isContentExist !== "true") {
@@ -96,9 +96,15 @@ class HomeScreenContainer extends Component {
       } else {
         toggleIsDownloading();
         if(isArabic)
-        await Helpers.downloadArabic();
+        {
+          await Helpers.downloadArabic();
+          inializeArabicCheckedList();
+        }
         else
-        await Helpers.downloadEnglish();
+        {
+          await Helpers.downloadEnglish();
+          inializeEnglishCheckedList();
+        }
         toggleIsDownloading();
       }
     }

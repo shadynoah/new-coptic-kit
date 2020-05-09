@@ -116,13 +116,35 @@ export function setCompletedDayPlan(dayNumber){
     })
  }
 }
-export function loadListOfCompletedDaysOfPlan(){
+export function loadListOfCompletedDaysOfPlan(isArabic){
  return async (dispatch, getState) => {
-  let res =  await AsyncStorage.getItem("listOfCompletedDaysObj");
-  // console.log("res" , res)
-   dispatch({
-    type: planActions.LOAD_LIST_OF_COMPLETED_DAYS_PLAN,
-    payload: JSON.parse(res) || {}
-   })
+  let res = isArabic ?  await AsyncStorage.getItem("arabicListOfCompletedDaysObj") :  await AsyncStorage.getItem("listOfCompletedDaysObj")
+   if(isArabic){
+    res = await AsyncStorage.getItem("arabicListOfCompletedDaysObj");
+    dispatch({
+      type: planActions.LOAD_ARABIC_LIST_COMPLETED_DAYS_PLAN,
+      payload: JSON.parse(res) || {}
+     })
+   }
+   else{
+     res =   await AsyncStorage.getItem("listOfCompletedDaysObj")
+    dispatch({
+      type: planActions.LOAD_LIST_OF_COMPLETED_DAYS_PLAN,
+      payload: JSON.parse(res) || {}
+     })
+   }
+   
   }
+}
+export function setArabicCompletedDayPlan(dayNumber){
+  return async (dispatch, getState) => {
+    let listOfCompletedDaysObj = getState().plan.arabicListOfCompletedDaysObj;
+    listOfCompletedDaysObj = {...listOfCompletedDaysObj,[dayNumber]:"true"};
+     console.log("before set setArabicCompletedDayPlan" , listOfCompletedDaysObj)
+    await AsyncStorage.setItem("arabicListOfCompletedDaysObj" , JSON.stringify(listOfCompletedDaysObj));
+    dispatch({
+      type: planActions.SET_ARABIC_COMPLETED_DAY_PLAN_FLAG,
+      payload:listOfCompletedDaysObj
+    })
+ }
 }

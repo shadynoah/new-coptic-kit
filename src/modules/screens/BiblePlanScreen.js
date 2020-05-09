@@ -11,7 +11,7 @@ import { loadChapterContent, selectBook, toggleLanguage } from "../../state/cont
 import { inializeArabicPlan, inializePlan, loadListOfCompletedDaysOfPlan,
    loadPlan, loadPlanCheckedList, makeChapterChecked, inializeEnglishCheckedList, 
    saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan, 
-   setCompletedDayPlan , loadArabicPlan , inializeArabicCheckedList} from "../../state/plan/action-creators";
+   setCompletedDayPlan , setArabicCompletedDayPlan, loadArabicPlan , inializeArabicCheckedList} from "../../state/plan/action-creators";
 import { Helpers } from './../../services/utilities/helpers';
 
 class BiblePlanScreenContainer extends Component {
@@ -47,7 +47,8 @@ class BiblePlanScreenContainer extends Component {
       selectedDayContent: state.plan.selectedDayContent,
       selectedChapterIndex: state.plan.selectedChapterIndex,
       ArabicPlanContent: state.plan.ArabicPlanContent,
-      listOfCompletedDaysObj: state.plan.listOfCompletedDaysObj
+      listOfCompletedDaysObj: state.plan.listOfCompletedDaysObj,
+      arabicListOfCompletedDaysObj: state.plan.arabicListOfCompletedDaysObj
       
     };
   }
@@ -63,7 +64,8 @@ class BiblePlanScreenContainer extends Component {
         loadPlanCheckedList,
         loadPlan,
         loadArabicPlan,
-        inializeArabicCheckedList
+        inializeArabicCheckedList,
+        setArabicCompletedDayPlan
       },
       dispatch
     );
@@ -72,7 +74,7 @@ class BiblePlanScreenContainer extends Component {
    async componentDidMount() {
   //  await this.props.inializePlan();
   if(this.props.isArabic){
-    await this.props.inializeArabicCheckedList();
+    // await this.props.inializeArabicCheckedList();
     await this.props.inializeArabicPlan();
     await this.props.loadArabicPlan();
   }
@@ -87,7 +89,7 @@ class BiblePlanScreenContainer extends Component {
   //  }
   //  else 
   //  await this.props.inializePlan();
-   this.props.loadListOfCompletedDaysOfPlan();
+   this.props.loadListOfCompletedDaysOfPlan(this.props.isArabic);
    this.props.loadPlanCheckedList();
   //  await AsyncStorage.removeItem("plan");
 
@@ -139,7 +141,7 @@ class BiblePlanScreenContainer extends Component {
   }
   setCheckedList(index , naviagtePlan = false){
     const { selectedDay , saveCheckedListIntoLocalStorage , isArabic ,selectedDayContent ,
-      setCompletedDayPlan } = this.props;
+      setCompletedDayPlan , setArabicCompletedDayPlan } = this.props;
     let copy = this.state.checkedList[selectedDay];
     if(copy[index] && !naviagtePlan)
      copy[index] = false;
@@ -152,6 +154,9 @@ class BiblePlanScreenContainer extends Component {
       if(filtered.length === selectedDayContent.length && index === filtered.length-1)
       {
         alert("you completed this day reading");
+        if(isArabic)
+        setArabicCompletedDayPlan(selectedDay)
+        else
         setCompletedDayPlan(selectedDay)
       }
      }
@@ -183,7 +188,8 @@ class BiblePlanScreenContainer extends Component {
     // console.log("from render" ,this.props.ArabicPlanContent)
     let { checkedList } = this.state;
     
-    const { selectedDayContent , selectChapterOfDayPlan , isArabic , selectedDay , listOfCompletedDaysObj }  = this.props;
+    const { selectedDayContent , selectChapterOfDayPlan , isArabic , selectedDay , listOfCompletedDaysObj ,
+      arabicListOfCompletedDaysObj }  = this.props;
     // console.log("from render checkedList" ,checkedList);
     // console.log("from render selectedDay" ,selectedDay)
     // console.log(selectedDayContent)
@@ -197,7 +203,7 @@ class BiblePlanScreenContainer extends Component {
         <View>
           <View  style={{ flexDirection:'row', justifyContent:'center' ,marginTop:5 }}>
             <Text style={{ fontWeight:'bold' }}>
-              {isArabic ? ` الايام المتبقيه ${Helpers.parseToArabic(365-Object.keys(listOfCompletedDaysObj).length)}` :
+              {isArabic ? ` الايام المتبقيه ${Helpers.parseToArabic(365-Object.keys(arabicListOfCompletedDaysObj).length)}` :
               `Days Left ${365-Object.keys(listOfCompletedDaysObj).length}`}
             </Text>
           </View>
@@ -206,6 +212,7 @@ class BiblePlanScreenContainer extends Component {
             isArabic ={this.props.isArabic} 
             selectDay={this.selectDay.bind(this)} 
             listOfCompletedDaysObj ={listOfCompletedDaysObj}
+            arabicListOfCompletedDaysObj={arabicListOfCompletedDaysObj}
             />
           <View>
             <FlatList

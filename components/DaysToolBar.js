@@ -13,6 +13,15 @@ export class DaysToolBar extends Component {
     {
       return true;
     }
+    if( (!_.isEqual(nextProps.arabicListOfCompletedDaysObj , this.props.arabicListOfCompletedDaysObj) ))
+    {
+      return true;
+    }
+    if(nextProps.isArabic !== this.props.isArabic)
+    {
+      // console.log("will rerender daysss toooooolbar");
+      return true;
+    }
     if(nextProps.selectedDay !== this.props.selectedDay)
     {
       // console.log("will rerender daysss toooooolbar");
@@ -21,8 +30,9 @@ export class DaysToolBar extends Component {
     return false
   }
   render() {
-    const {  listOfCompletedDaysObj , selectedDay ,selectDay } = this.props;
-    let isCompleted = listOfCompletedDaysObj[selectedDay] || false;
+    const {  listOfCompletedDaysObj , selectedDay ,selectDay, isArabic , arabicListOfCompletedDaysObj } = this.props;
+    const listOfDays = isArabic ?  arabicListOfCompletedDaysObj : listOfCompletedDaysObj
+    let isCompleted = listOfDays[selectedDay] || false;
     // console.log("is completed from daystoolbar listOfCompletedDaysObj" , listOfCompletedDaysObj);
     // console.log(" isCompleted from toooolbar" , isCompleted )
     // console.log(" selectedDay from toooolbar" , selectedDay )
@@ -46,11 +56,9 @@ export class DaysToolBar extends Component {
             item = {item}
             index = {index}
             selectDay ={selectDay}
-            listOfCompletedDaysObj ={listOfCompletedDaysObj}
+            listOfCompletedDaysObj ={ isArabic ? arabicListOfCompletedDaysObj : listOfCompletedDaysObj}
             isCompleted ={isCompleted}
             selectedDay={selectedDay}
-            
-
             />
             //  console.log("====render item====", item)
           )}

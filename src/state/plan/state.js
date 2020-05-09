@@ -5,7 +5,8 @@ selectedDayContent: Array,
 checkedListOfDays : Array,
 selectedChapterIndex: Number,
 ArabicPlanContent: {},
-listOfCompletedDaysObj:{}
+listOfCompletedDaysObj:{},
+arabicListOfCompletedDaysObj:{}
 }
 
 export const PlanInitialState: PlanState = {
@@ -15,5 +16,6 @@ export const PlanInitialState: PlanState = {
   checkedListOfDays:[],
   selectedChapterIndex : 0,
   ArabicPlanContent :{},
-  listOfCompletedDaysObj:{}
+  listOfCompletedDaysObj:{},
+  arabicListOfCompletedDaysObj:{}
 };

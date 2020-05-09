@@ -13,3 +13,7 @@ export const LOAD_ARABIC_PLAN_CHAPTERS = "[Plan] loading arabic plan chapters";
 export const SET_COMPLETED_DAY_PLAN_FLAG = "[Plan] set completed day flag";
 
 export const LOAD_LIST_OF_COMPLETED_DAYS_PLAN = "[Plan] load list of completed days plan"
+
+export const SET_ARABIC_COMPLETED_DAY_PLAN_FLAG = "[Plan] set Aarabic completed day flag";
+
+export const LOAD_ARABIC_LIST_COMPLETED_DAYS_PLAN = "[Plan] load arabic list of completed days plan"
