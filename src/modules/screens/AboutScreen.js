@@ -262,7 +262,7 @@ class AboutScreenContainer extends React.Component {
               in Egyptian in Christmas and Easter{" "}
             </Text>
           </View>
-          <View style={{
+          {/* <View style={{
                 flexDirection: "row",
                 justifyContent: "center",
           }}>
@@ -270,8 +270,8 @@ class AboutScreenContainer extends React.Component {
             Scripture taken from the New King James Version®.
             </Text>
           
-          </View>
-          <View style={{
+          </View> */}
+          {/* <View style={{
                 flexDirection: "row",
                 justifyContent: "center",
           }}>
@@ -286,7 +286,7 @@ class AboutScreenContainer extends React.Component {
             <Text>
             All rights reserved.           
              </Text>
-          </View>
+          </View> */}
         </View>
       </Content>
     );
