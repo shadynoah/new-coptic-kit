@@ -28,7 +28,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.newcoptickit.newcoptickit"
+      "bundleIdentifier": "com.newcoptickit.newcoptickit",
+      "icon":"./assets/images/appstore.png"
     },
     "android": {
       "package": "com.newcoptickit.newcoptickit"
