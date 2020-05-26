@@ -188,7 +188,7 @@ class HomeScreenContainer extends Component {
         <View
           style={{
             alignItems: "flex-end",
-            marginBottom: (Dimensions.get("window").height * 0.2)-60,
+            marginBottom: (Dimensions.get("window").height * 0.2)-80,
             marginLeft:10,
             flex: 1,
             flexDirection: "row"
@@ -257,8 +257,8 @@ class HomeScreenContainer extends Component {
             >
               <Image
                 style={{
-                  height: heightT + 0.3 * heightT,
-                  width: heightT + 0.3 * heightT
+                  height: heightT + 0.6 * heightT,
+                  width: heightT + 0.6 * heightT
                 }}
                 source={require("../../../assets/images/newbible.png")}
               />
@@ -272,8 +272,8 @@ class HomeScreenContainer extends Component {
             >
               <Image
                 style={{
-                  height: heightT + 0.3 * heightT,
-                  width: heightT + 0.3 * heightT
+                  height: heightT + 0.6 * heightT,
+                  width: heightT + 0.6 * heightT
                 }}
                 source={require("../../../assets/images/newbiblePlan.png")}
               />
