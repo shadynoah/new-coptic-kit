@@ -475,7 +475,7 @@ class verseScreenContainer extends Component {
             >
               <Text style={{ fontSize: 16, alignItems: "center" }}>
                 {" "}
-                {selectedBook.bookName}{" "}
+                { this.props.isArabic ? Helpers.getEquivalentArabicBookName(selectedBook.bookName) : selectedBook.bookName}{" "}
                 {numberOfSelectedChapter}
               </Text>
             </View>
