@@ -14060,7 +14060,7 @@ export const arabicBookNames = [
        "RevelationAr"
 ]
   export const arabicContentUri = {
-    GAr :"https://www.dropbox.com/s/fih1blx5kn1p94c/%D8%AA%D9%83%D9%88%D9%8A%D9%86.json?dl=1",
+    GAr :"https://www.dropbox.com/s/43rya2qqxtn91ui/%D8%AA%D9%83%D9%88%D9%8A%D9%862.json?dl=1",
     ExodusAr:"https://www.dropbox.com/s/1t35itdo0hinpze/%D8%AE%D8%B1%D9%88%D8%AC.json?dl=1",
     LeviticusAr:"https://www.dropbox.com/s/m7c4z595zsi0ox8/%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86.json?dl=1",
     NumbersAr:"https://www.dropbox.com/s/xxmixpaxbij1rmf/%D8%B9%D8%AF%D8%AF.json?dl=1",
