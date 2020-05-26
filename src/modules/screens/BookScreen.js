@@ -29,6 +29,7 @@ import { clearDayContentOfPlan } from '../../state/plan/action-creators'
 import { IBOOK } from "../../state/content/state";
 import { NotificationManager } from "../../services/utilities/pushNotification";
 import { OutOfEditorMenuOptionList } from "../components/OutMenuOptionList";
+import { Helpers } from './../../services/utilities/helpers';
 
 const customDataAr = require("../../data/data-structure-ar.json");
 var customDataEn = require("../../data/data-structure.json");
@@ -144,7 +145,7 @@ class BookScreenContainer extends Component {
                    
                   }}
                 >
-                  {item.bookName}
+                  {this.props.isArabic ? Helpers.getEquivalentArabicBookName( item.bookName) : item.bookName}
                 </Text>
               );
             }}

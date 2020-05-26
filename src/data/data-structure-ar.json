@@ -3,332 +3,332 @@
         {
             "key": "1",
             "numberOfChapters": 50,
-            "bookName": "تكوين"
+            "bookName": "GAr"
         },
         {
             "key": "2",
             "numberOfChapters": 40,
-            "bookName": "خروج"
+            "bookName": "ExodusAr"
         },
         {
             "key": "3",
             "numberOfChapters": 27,
-            "bookName": "لاويين"
+            "bookName": "LeviticusAr"
         },
         {
             "key": "4",
             "numberOfChapters": 36,
-            "bookName": "عدد"
+            "bookName": "NumbersAr"
         },
         {
             "key": "5",
             "numberOfChapters": 34,
-            "bookName": "تثنية"
+            "bookName": "DeuteronomyAr"
         },
         {
             "key": "6",
             "numberOfChapters": 24,
-            "bookName": "يشوع"
+            "bookName": "JoshuaAr"
         },
         {
             "key": "7",
             "numberOfChapters": 21,
-            "bookName": "قضاة"
+            "bookName": "JudgesAr"
         },
         {
             "key": "8",
             "numberOfChapters": 4,
-            "bookName": "راعوث"
+            "bookName": "RuthAr"
         },
         {
             "key": "9",
             "numberOfChapters": 31,
-            "bookName": "1 صموئيل"
+            "bookName": "1 SamuelAr"
         },
         {
             "key": "10",
             "numberOfChapters": 24,
-            "bookName": "2 صموئيل"
+            "bookName": "2 SamuelAr"
         },
         {
             "key": "11",
             "numberOfChapters": 22,
-            "bookName": "1 ملوك"
+            "bookName": "1 KingsAr"
         },
         {
             "key": "12",
             "numberOfChapters": 25,
-            "bookName": "2 ملوك"
+            "bookName": "2 KingsAr"
         },
         {
             "key": "13",
             "numberOfChapters": 29,
-            "bookName": "1 اخبار"
+            "bookName": "1 ChroniclesAr"
         },
         {
             "key": "14",
             "numberOfChapters": 36,
-            "bookName": "2 اخبار"
+            "bookName": "2 ChroniclesAr"
         },
         {
             "key": "15",
             "numberOfChapters": 10,
-            "bookName": "عزرا"
+            "bookName": "EzraAr"
         },
         {
             "key": "16",
             "numberOfChapters": 13,
-            "bookName": "نحميا"
+            "bookName": "NehemiahAr"
         },
         {
             "key": "17",
             "numberOfChapters": 10,
-            "bookName": "استير"
+            "bookName": "EstherAr"
         },
         {
             "key": "18",
             "numberOfChapters": 42,
-            "bookName": "ايوب"
+            "bookName": "JobAr"
         },
         {
             "key": "19",
             "numberOfChapters": 150,
-            "bookName": "مزامير"
+            "bookName": "PsalmAr"
         },
         {
             "key": "20",
             "numberOfChapters": 31,
-            "bookName": "امثال"
+            "bookName": "ProverbsAr"
         },
         {
             "key": "21",
             "numberOfChapters": 12,
-            "bookName": "جامعة"
+            "bookName": "EcclesiastesAr"
         },
         {
             "key": "22",
             "numberOfChapters": 8,
-            "bookName": "نشيد الانشاد"
+            "bookName": "Song of SolomonAr"
         },
         {
             "key": "23",
             "numberOfChapters": 66,
-            "bookName": "اشعياء"
+            "bookName": "IsaiahAr"
         },
         {
             "key": "24",
             "numberOfChapters": 52,
-            "bookName": "ارميا"
+            "bookName": "JeremiahAr"
         },
         {
             "key": "25",
             "numberOfChapters": 5,
-            "bookName": "مراثي"
+            "bookName": "LamentationsAr"
         },
         {
             "key": "26",
             "numberOfChapters": 48,
-            "bookName": "حزقيال"
+            "bookName": "EzekielAr"
         },
         {
             "key": "27",
             "numberOfChapters": 12,
-            "bookName": "دانيال"
+            "bookName": "DanielAr"
         },
         {
             "key": "28",
             "numberOfChapters": 14,
-            "bookName": "هوشع"
+            "bookName": "HoseaAr"
         },
         {
             "key": "29",
             "numberOfChapters": 3,
-            "bookName": "يوئيل"
+            "bookName": "JoelAr"
         },
         {
             "key": "30",
             "numberOfChapters": 9,
-            "bookName": "عاموس"
+            "bookName": "AmosAr"
         },
         {
             "key": "31",
             "numberOfChapters": 1,
-            "bookName": "عوبديا"
+            "bookName": "ObadiahAr"
         },
         {
             "key": "32",
             "numberOfChapters": 4,
-            "bookName": "يونان"
+            "bookName": "JonahAr"
         },
         {
             "key": "33",
             "numberOfChapters": 7,
-            "bookName": "ميخا"
+            "bookName": "MicahAr"
         },
         {
             "key": "34",
             "numberOfChapters": 3,
-            "bookName": "ناحوم"
+            "bookName": "NahumAr"
         },
         {
             "key": "35",
             "numberOfChapters": 3,
-            "bookName": "حبقوق"
+            "bookName": "HabakkukAr"
         },
         {
             "key": "36",
             "numberOfChapters": 3,
-            "bookName": "صفنيا"
+            "bookName": "ZephaniahAr"
         },
         {
             "key": "37",
             "numberOfChapters": 2,
-            "bookName": "حجى"
+            "bookName": "HaggaiAr"
         },
         {
             "key": "38",
             "numberOfChapters": 14,
-            "bookName": "زكريا"
+            "bookName": "ZechariahAr"
         },
         {
             "key": "39",
             "numberOfChapters": 4,
-            "bookName": "ملاخي"
+            "bookName": "MalachiAr"
         },
         {
             "key": "40",
             "numberOfChapters": 28,
-            "bookName": "متى"
+            "bookName": "MatthewAr"
         },
         {
             "key": "41",
             "numberOfChapters": 16,
-            "bookName": "مرقس"
+            "bookName": "MarkAr"
         },
         {
             "key": "42",
             "numberOfChapters": 24,
-            "bookName": "لوقا"
+            "bookName": "LukeAr"
         },
         {
             "key": "43",
             "numberOfChapters": 21,
-            "bookName": "يوحنا"
+            "bookName": "JohnAr"
         },
         {
             "key": "44",
             "numberOfChapters": 28,
-            "bookName": "اعمال"
+            "bookName": "ActsAr"
         },
         {
             "key": "45",
             "numberOfChapters": 16,
-            "bookName": "رومية"
+            "bookName": "RomansAr"
         },
         {
             "key": "46",
             "numberOfChapters": 16,
-            "bookName": "1 كورنثوس"
+            "bookName": "1 CorinthiansAr"
         },
         {
             "key": "47",
             "numberOfChapters": 13,
-            "bookName": "2 كورنثوس"
+            "bookName": "2 CorinthiansAr"
         },
         {
             "key": "48",
             "numberOfChapters": 6,
-            "bookName": "غلاطية"
+            "bookName": "GalatiansAr"
         },
         {
             "key": "49",
             "numberOfChapters": 6,
-            "bookName": "افسس"
+            "bookName": "EphesiansAr"
         },
         {
             "key": "50",
             "numberOfChapters": 4,
-            "bookName": "فيلبي"
+            "bookName": "PhilippiansAr"
         },
         {
             "key": "51",
             "numberOfChapters": 4,
-            "bookName": "كولوسي"
+            "bookName": "ColossiansAr"
         },
         {
             "key": "52",
             "numberOfChapters": 5,
-            "bookName": "1 تسالونيكي"
+            "bookName": "1 ThessaloniansAr"
         },
         {
             "key": "53",
             "numberOfChapters": 3,
-            "bookName": "2 تسالونيكي"
+            "bookName": "2 ThessaloniansAr"
         },
         {
             "key": "54",
             "numberOfChapters": 6,
-            "bookName": "1 تيموثاوس"
+            "bookName": "1 TimothyAr"
         },
         {
             "key": "55",
             "numberOfChapters": 4,
-            "bookName": "2 تيموثاوس"
+            "bookName": "2 TimothyAr"
         },
         {
             "key": "56",
             "numberOfChapters": 3,
-            "bookName": "تيطس"
+            "bookName": "TitusAr"
         },
         {
             "key": "57",
             "numberOfChapters": 1,
-            "bookName": "فليمون"
+            "bookName": "PhilemonAr"
         },
         {
             "key": "58",
             "numberOfChapters": 13,
-            "bookName": "عبرانيين"
+            "bookName": "HebrewsAr"
         },
         {
             "key": "59",
             "numberOfChapters": 5,
-            "bookName": "يعقوب"
+            "bookName": "JamesAr"
         },
         {
             "key": "60",
             "numberOfChapters": 5,
-            "bookName": "1 بطرس"
+            "bookName": "1 PeterAr"
         },
         {
             "key": "61",
             "numberOfChapters": 3,
-            "bookName": "2 بطرس"
+            "bookName": "2 PeterAr"
         },
         {
             "key": "62",
             "numberOfChapters": 5,
-            "bookName": "1 يوحنا"
+            "bookName": "1 JohnAr"
         },
         {
             "key": "63",
             "numberOfChapters": 1,
-            "bookName": "2 يوحنا"
+            "bookName": "2 JohnAr"
         },
         {
             "key": "64",
             "numberOfChapters": 1,
-            "bookName": "3 يوحنا"
+            "bookName": "3 JohnAr"
         },
         {
             "key": "65",
             "numberOfChapters": 1,
-            "bookName": "يهوذا"
+            "bookName": "JudeAr"
         },
         {
             "key": "66",
             "numberOfChapters": 22,
-            "bookName": "رؤيا"
+            "bookName": "RevelationAr"
         }
     ]
 }

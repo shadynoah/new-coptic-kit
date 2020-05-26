@@ -35,6 +35,7 @@ export async function loadChapterContent(
   chapterNumber,
   isArabicBookMark = false
 ) {
+  // alert("chapterNumber" + chapterNumber)
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
     let englishContent;
@@ -49,6 +50,7 @@ export async function loadChapterContent(
       for (let index = 0; index < arabicContent.chapters.length; index++) {
         let chapter = arabicContent.chapters[index];
         if (chapter.num == chapterNumber) {
+          // alert("got it")
           contentOfSelectedChapter = _.map(chapter.verses, verse => {
             return {
               key: verse.num,
