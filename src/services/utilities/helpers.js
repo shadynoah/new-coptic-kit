@@ -60,7 +60,7 @@ let trimmed = bookName.replace(/\s/g, "");
  let trimmed = bookName.replace(/\s/g, "");
        await FileSystem.downloadAsync(
          arabicContentUri[bookName],
-         FileSystem.documentDirectory + "trimmed"
+         FileSystem.documentDirectory + trimmed
        ).then(async ({ uri }) => {
          // let stringcontent = await FileSystem.readAsStringAsync(uri);
          // console.log("uri" , uri)
