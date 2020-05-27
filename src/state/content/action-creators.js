@@ -48,6 +48,9 @@ export async function loadChapterContent(
       );
       for (let index = 0; index < arabicContent.chapters.length; index++) {
         let chapter = arabicContent.chapters[index];
+        if(bookName ==='تكوين' && chapterNumber === 11){
+          chapter.verses =  _.filter(chapter.verses , verse => verse.book_number === 10)
+        }
         if (chapter.num == chapterNumber) {
           contentOfSelectedChapter = _.map(chapter.verses, verse => {
             return {
