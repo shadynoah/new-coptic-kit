@@ -65,7 +65,7 @@ export class Application {
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
-    await AsyncStorage.clear();
+    // await AsyncStorage.clear();
     NetInfo.isConnected.addEventListener(
       "connectionChange",
       this.networkConnectionChange
@@ -75,17 +75,17 @@ export class Application {
       if (isConnected) {
           let isEnglishContentDownloadedRes = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
           if(!isEnglishContentDownloadedRes){
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // await Helpers.downloadEnglish();
-            // Application.current.store.dispatch(toggleIsDownloading());
-            //  Application.current.store.dispatch(inializeEnglishCheckedList());
+            Application.current.store.dispatch(toggleIsDownloading());
+            await Helpers.downloadEnglish();
+            Application.current.store.dispatch(toggleIsDownloading());
+             Application.current.store.dispatch(inializeEnglishCheckedList());
           }
           let isArabicContentDownloadedRes = await AsyncStorage.getItem(IS_ARABIC_CONTENT_DOWNLOADED);
           if(!isArabicContentDownloadedRes){
-            Application.current.store.dispatch(toggleIsDownloading());
-            await this.downloadArabic();
-            Application.current.store.dispatch(toggleIsDownloading());
-            Application.current.store.dispatch(inializeArabicCheckedList());
+            // Application.current.store.dispatch(toggleIsDownloading());
+            // await this.downloadArabic();
+            // Application.current.store.dispatch(toggleIsDownloading());
+            // Application.current.store.dispatch(inializeArabicCheckedList());
 
           }
       }
