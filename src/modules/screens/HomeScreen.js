@@ -119,7 +119,9 @@ class HomeScreenContainer extends Component {
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
         isVisible={isDownloadling}
-        message="Loading data , please make sure you are connected to the internet..."
+        message = {
+          isArabic ? "  من فضلك انتظر تحميل البيانات وتاكد من اتصالك بالانترنت" : "Loading data , please make sure you are connected to the internet..."
+        }
       />
     ) : null;
     const warningLostConnectionModal =
@@ -166,12 +168,19 @@ class HomeScreenContainer extends Component {
         <View
           style={{
             flex: 0.8,
+            marginVertical:130,
             justifyContent: "flex-end",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
-         <View style={{ flexDirection: "row" }}>
-            <Text style={{ color: "white", fontWeight: "900" }}>English</Text>
+         <View style={{ flexDirection: "row"  }}>
+           <TouchableOpacity>
+           <Text onPress= {
+              ()=>{
+                toggleLanguage();
+              }
+            } style={{ color: "white", fontWeight: "900"  }}>English</Text>
+           </TouchableOpacity>
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
@@ -182,7 +191,13 @@ class HomeScreenContainer extends Component {
               }}
               value={isArabic}
             />
-            <Text style={{ color: "white", fontWeight: "900" }}>عربي</Text>
+            <TouchableOpacity>
+            <Text  onPress= {
+              ()=>{
+                toggleLanguage();
+              }
+            }  style={{ color: "white", fontWeight: "900" }}>عربي</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View
