@@ -8,7 +8,7 @@ import _ from "lodash";
 import { AsyncStorage } from "react-native";
 import * as types from "./actions";
 import { IBOOK } from "./state";
-
+import {bookNamesDictionary} from '../../constants'
 const db = SQLite.openDatabase("db.db");
 export function toggleLoading() {
   return { type: types.CONTENT_LOADING };
@@ -35,13 +35,13 @@ export async function loadChapterContent(
   chapterNumber,
   isArabicBookMark = false
 ) {
-  // alert("chapterNumber" + chapterNumber)
   return async (dispatch, getState) => {
     var isArabic = getState().content.isArabic;
     let englishContent;
     let arabicContent;
     let contentOfSelectedChapter = [];
     if (isArabic || isArabicBookMark == "true") {
+      bookName = _.invert(bookNamesDictionary)[bookName]
       arabicContent = JSON.parse(
         await FileSystem.readAsStringAsync(
           await AsyncStorage.getItem(bookName)
