@@ -41,12 +41,18 @@ export async function loadChapterContent(
     let arabicContent;
     let contentOfSelectedChapter = [];
     if (isArabic || isArabicBookMark == "true") {
-      bookName = _.invert(bookNamesDictionary)[bookName]
+      //  alert("bookName before" + bookName)
+      // bookName = _.invert(bookNamesDictionary)[bookName]
+      if(!await AsyncStorage.getItem(bookName))
+      {
+       bookName =  bookNamesDictionary[bookName]
+      //  alert("bookName"+bookName)
+      }
       arabicContent = JSON.parse(
         await FileSystem.readAsStringAsync(
           await AsyncStorage.getItem(bookName)
         )
-      );
+      )
       for (let index = 0; index < arabicContent.chapters.length; index++) {
         let chapter = arabicContent.chapters[index];
         if (chapter.num == chapterNumber) {

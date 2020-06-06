@@ -173,7 +173,7 @@ class HomeScreenContainer extends Component {
          <View style={{ flexDirection: "row" }}>
             <Text style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch
-              style={{ marginLeft: 20, marginRight: 20 }}
+              style={{ marginLeft: 20, marginRight: 20}}
               onValueChange={value => {
                navigation.setParams({
                   title: isArabic ? "الرئيسية" : "Home"

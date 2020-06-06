@@ -14,6 +14,7 @@ import { selectChapterOfDayPlan } from '../../state/plan/action-creators';
 import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
 import NavigatorService from "../../services/navigator.js";
+import { bookNamesDictionary } from "../../constants";
 
 const styles = StyleSheet.create({
   textinput: {
@@ -340,6 +341,8 @@ class verseScreenContainer extends Component {
                      selectChapterOfDayPlan(selectedChapterIndex - 1 );
                       const item = selectedDayContent[selectedChapterIndex - 1 ]
                       let bookName = item.bookName; 
+                      if(!await AsyncStorage.getItem(bookName))
+                      bookName = _.invert(bookNamesDictionary)[bookName]
                       let chapterNumber = item.chapterNumber;
                        this.isBookMarkedChapter(
                         bookName,
@@ -395,13 +398,15 @@ class verseScreenContainer extends Component {
               <Button
               black
                 transparent
-                onPress={() => {
+                onPress={async() => {
                   if(selectedDayContent.length >0) {
                     if(selectedChapterIndex + 1 < selectedDayContent.length)
                     {
                       selectChapterOfDayPlan(selectedChapterIndex + 1 )
                       const item = selectedDayContent[selectedChapterIndex + 1 ];
                       let bookName = item.bookName;
+                      if(!await AsyncStorage.getItem(bookName))
+                      bookName = _.invert(bookNamesDictionary)[bookName]
                       let chapterNumber = item.chapterNumber;
                        this.isBookMarkedChapter(
                          bookName,

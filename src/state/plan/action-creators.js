@@ -140,7 +140,6 @@ export function setArabicCompletedDayPlan(dayNumber){
   return async (dispatch, getState) => {
     let listOfCompletedDaysObj = getState().plan.arabicListOfCompletedDaysObj;
     listOfCompletedDaysObj = {...listOfCompletedDaysObj,[dayNumber]:"true"};
-     console.log("before set setArabicCompletedDayPlan" , listOfCompletedDaysObj)
     await AsyncStorage.setItem("arabicListOfCompletedDaysObj" , JSON.stringify(listOfCompletedDaysObj));
     dispatch({
       type: planActions.SET_ARABIC_COMPLETED_DAY_PLAN_FLAG,

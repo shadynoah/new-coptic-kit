@@ -81,6 +81,8 @@ let trimmed = bookName.replace(/\s/g, "");
      })
   }
   static getEquivalentArabicBookName(bookName){
+    if(!bookNamesDictionary[bookName])
+    return bookName;
     return bookNamesDictionary[bookName];
   }
 }

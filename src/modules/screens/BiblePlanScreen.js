@@ -13,7 +13,7 @@ import { inializeArabicPlan, inializePlan, loadListOfCompletedDaysOfPlan,
    saveCheckedListIntoLocalStorage, selectChapterOfDayPlan, selectDayOfPlan, 
    setCompletedDayPlan , setArabicCompletedDayPlan, loadArabicPlan , inializeArabicCheckedList} from "../../state/plan/action-creators";
 import { Helpers } from './../../services/utilities/helpers';
-
+import { bookNamesDictionary } from '../../constants'
 class BiblePlanScreenContainer extends Component {
   constructor() {
     super();
@@ -192,7 +192,7 @@ class BiblePlanScreenContainer extends Component {
       arabicListOfCompletedDaysObj }  = this.props;
     // console.log("from render checkedList" ,checkedList);
     // console.log("from render selectedDay" ,selectedDay)
-    // console.log(selectedDayContent)
+     console.log(selectedDayContent)
     // console.log("listOfCompletedDaysObj" ,listOfCompletedDaysObj);
     // console.log("selectedChapterIndex" , selectedChapterIndex)
     return (
@@ -240,10 +240,16 @@ class BiblePlanScreenContainer extends Component {
                   />
                   <Text key={index}
                   onPress = {
-                    () =>{
+                   async () =>{
                       // const splitted = selectedDayContent[index].split(" ");
                       // let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                      const bookName = item.bookName;
+                      // alert("before invert action creator" + item.bookName)
+                      let bookName = item.bookName;
+                      if(!await AsyncStorage.getItem(bookName))
+                      {
+                        bookName =  _.invert(bookNamesDictionary)[item.bookName]
+                      }
+                      // alert("from action creator" + bookName)
                        const chapterNumber = item.chapterNumber;
                       selectChapterOfDayPlan(index)
                       this.props.selectBook({
@@ -254,6 +260,7 @@ class BiblePlanScreenContainer extends Component {
                         chapterNumber,
                         true
                        );
+                      console.log("item from plan is" +  item)
                      NavigatorService.navigate("VerseScreen" , {
                        startVerseNumder: item.startVerseNumber,
                        endVerseNumber:item.endVerseNumber

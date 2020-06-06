@@ -875,7 +875,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 1,
         startVerseNumber: 29,
-        startVerseNumber:45,
+        endVerseNumber:45,
         text: "Mark 1:29-45"
       }
     ]
@@ -894,7 +894,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 2,
         startVerseNumber: 0,
-        startVerseNumber:28,
+        endVerseNumber:28,
         text: "Mark 2"
       }
     ]
@@ -913,7 +913,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 3,
         startVerseNumber: 0,
-        startVerseNumber:35,
+        endVerseNumber:35,
         text: "Mark 3"
   }
     ]
@@ -932,7 +932,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 4,
         startVerseNumber: 0,
-        startVerseNumber:25,
+        endVerseNumber:25,
         text: "Matthew 4:1-25"
       }
     ]
@@ -951,7 +951,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 5,
         startVerseNumber: 26,
-        startVerseNumber:41,
+        endVerseNumber:41,
         text: "Mark 4:26-41"
   }
     ]
@@ -970,7 +970,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 5,
         startVerseNumber: 1,
-        startVerseNumber:20,
+        endVerseNumber:20,
         text: "Mark 5:1-20"
       }
     ]
@@ -989,7 +989,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 5,
         startVerseNumber: 21,
-        startVerseNumber:43,
+        endVerseNumber:43,
         text: "Mark 5:21-43"
   }
     ]
@@ -1008,7 +1008,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 6,
         startVerseNumber: 1,
-        startVerseNumber:29,
+        endVerseNumber:29,
         text: "Mark 6:1-29"
   }
     ]
@@ -1027,7 +1027,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 6,
         startVerseNumber: 30,
-        startVerseNumber:56,
+        endVerseNumber:56,
         text: "Mark 6:30-56"
       }
     ]
@@ -1046,7 +1046,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 7,
         startVerseNumber: 1,
-        startVerseNumber:23,
+        endVerseNumber:23,
         text: "Mark 7:1-23"
       }
     ]
@@ -1065,7 +1065,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 7,
         startVerseNumber: 24,
-        startVerseNumber:37,
+        endVerseNumber:37,
         text: "Mark 7:24-37"
       }
     ]
@@ -1084,7 +1084,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 8,
         startVerseNumber: 1,
-        startVerseNumber:21,
+        endVerseNumber:21,
         text: "Mark 8:1-21"
   }
     ]
@@ -1103,7 +1103,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 8,
         startVerseNumber: 22,
-        startVerseNumber:38,
+        endVerseNumber:38,
         text: "Mark 8:22-38"
   }
     ]
@@ -1122,7 +1122,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 9,
         startVerseNumber: 1,
-        startVerseNumber:29,
+        endVerseNumber:29,
         text: "Mark 9:1-29"
   }
     ]
@@ -1141,7 +1141,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 9,
         startVerseNumber: 30,
-        startVerseNumber:50,
+        endVerseNumber:50,
         text: "Mark 9:30-50"
       }
     ]
@@ -1160,7 +1160,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 10,
         startVerseNumber: 1,
-        startVerseNumber:31,
+        endVerseNumber:31,
         text: "Mark 10:1-31"
       }
     ]
@@ -1179,7 +1179,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 10,
         startVerseNumber: 32,
-        startVerseNumber:52,
+        endVerseNumber:52,
         text: "Mark 10:32-52"
       }
     ]
@@ -1198,7 +1198,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 11,
         startVerseNumber: 1,
-        startVerseNumber:33,
+        endVerseNumber:33,
         text: "Mark 11"
       }
     ]
@@ -1217,7 +1217,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 12,
         startVerseNumber: 1,
-        startVerseNumber:27,
+        endVerseNumber:27,
         text: "Mark 12:1-27"
       }
     ]
@@ -1236,7 +1236,7 @@ export const content = [
         bookName: "Mark",
        chapterNumber: 12,
        startVerseNumber: 28,
-       startVerseNumber:44,
+       endVerseNumber:44,
        text: "Mark 12:28-44"
      }
     ]
@@ -1255,7 +1255,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 13,
         startVerseNumber: 1,
-        startVerseNumber:37,
+        endVerseNumber:37,
         text: "Mark 13"
   }
     ]
@@ -1274,7 +1274,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 14,
         startVerseNumber: 1,
-        startVerseNumber:21,
+        endVerseNumber:21,
         text: "Mark 14:1-21"
   }
     ]
@@ -1293,7 +1293,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 14,
         startVerseNumber: 22,
-        startVerseNumber:52,
+        endVerseNumber:52,
         text: "Mark 14:22-52"
   }
     ]
@@ -1312,7 +1312,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 14,
         startVerseNumber: 53,
-        startVerseNumber:72,
+        endVerseNumber:72,
         text: "Mark 14:53-72"
       }
     ]
@@ -1331,7 +1331,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 15,
         startVerseNumber: 1,
-        startVerseNumber:32,
+        endVerseNumber:32,
         text: "Mark 15:1-32"
       }
     ]
@@ -1350,7 +1350,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 15,
         startVerseNumber: 33,
-        startVerseNumber:47,
+        endVerseNumber:47,
         text: "Mark 15:33-47"
   }
     ]
@@ -1369,7 +1369,7 @@ export const content = [
         bookName: "Mark",
         chapterNumber: 16,
         startVerseNumber: 1,
-        startVerseNumber:20,
+        endVerseNumber:20,
         text: "Mark 16"
       }
     ]
@@ -7778,7 +7778,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 1,
         startVerseNumber: 0,
-        startVerseNumber:28,
+        endVerseNumber:28,
         text: `مرقس ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(28)}`
       }
     ]
@@ -7797,7 +7797,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 1,
         startVerseNumber: 29,
-        startVerseNumber:45,
+        endVerseNumber:45,
         text: `مرقس ${Helpers.parseToArabic(1)} :${Helpers.parseToArabic(29)} - ${Helpers.parseToArabic(45)}`
       }
     ]
@@ -7816,7 +7816,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 2,
         startVerseNumber: 0,
-        startVerseNumber:28,
+        endVerseNumber:28,
         text: `مرقس ${Helpers.parseToArabic(2)}`
       }
     ]
@@ -7835,7 +7835,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 3,
         startVerseNumber: 0,
-        startVerseNumber:35,
+        endVerseNumber:35,
         text: `مرقس ${Helpers.parseToArabic(3)}`
   }
     ]
@@ -7854,7 +7854,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 4,
         startVerseNumber: 0,
-        startVerseNumber:25,
+        endVerseNumber:25,
         text: `مرقس ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(25)}`
       }
     ]
@@ -7873,7 +7873,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 4,
         startVerseNumber: 26,
-        startVerseNumber:41,
+        endVerseNumber:41,
         text: `مرقس ${Helpers.parseToArabic(4)} :${Helpers.parseToArabic(26)} - ${Helpers.parseToArabic(41)}`
   }
     ]
@@ -7892,7 +7892,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 5,
         startVerseNumber: 1,
-        startVerseNumber:20,
+        endVerseNumber:20,
         text: `مرقس ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(20)}`
       }
     ]
@@ -7911,7 +7911,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 5,
         startVerseNumber: 21,
-        startVerseNumber:43,
+        endVerseNumber:43,
         text: `مرقس ${Helpers.parseToArabic(5)} :${Helpers.parseToArabic(21)} - ${Helpers.parseToArabic(43)}`
   }
     ]
@@ -7930,7 +7930,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 6,
         startVerseNumber: 1,
-        startVerseNumber:29,
+        endVerseNumber:29,
         text: `مرقس ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(29)}`
   }
     ]
@@ -7949,7 +7949,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 6,
         startVerseNumber: 30,
-        startVerseNumber:56,
+        endVerseNumber:56,
         text: `مرقس ${Helpers.parseToArabic(6)} :${Helpers.parseToArabic(30)} - ${Helpers.parseToArabic(56)}`
       }
     ]
@@ -7968,7 +7968,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 7,
         startVerseNumber: 1,
-        startVerseNumber:23,
+        endVerseNumber:23,
         text: `مرقس ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(23)}`
       }
     ]
@@ -7987,7 +7987,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 7,
         startVerseNumber: 24,
-        startVerseNumber:37,
+        endVerseNumber:37,
         text: `مرقس ${Helpers.parseToArabic(7)} :${Helpers.parseToArabic(24)} - ${Helpers.parseToArabic(37)}`
       }
     ]
@@ -8006,7 +8006,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 8,
         startVerseNumber: 1,
-        startVerseNumber:21,
+        endVerseNumber:21,
         text: `مرقس ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
   }
     ]
@@ -8025,7 +8025,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 8,
         startVerseNumber: 22,
-        startVerseNumber:38,
+        endVerseNumber:38,
         text: `مرقس ${Helpers.parseToArabic(8)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(38)}`
   }
     ]
@@ -8044,7 +8044,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 9,
         startVerseNumber: 1,
-        startVerseNumber:29,
+        endVerseNumber:29,
         text: `مرقس ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(29)}`
   }
     ]
@@ -8063,7 +8063,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 9,
         startVerseNumber: 30,
-        startVerseNumber:50,
+        endVerseNumber:50,
         text: `مرقس ${Helpers.parseToArabic(9)} :${Helpers.parseToArabic(30)} - ${Helpers.parseToArabic(50)}`
       }
     ]
@@ -8082,7 +8082,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 10,
         startVerseNumber: 1,
-        startVerseNumber:31,
+        endVerseNumber:31,
         text: `مرقس ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(31)}`
       }
     ]
@@ -8101,7 +8101,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 10,
         startVerseNumber: 32,
-        startVerseNumber:52,
+        endVerseNumber:52,
         text: `مرقس ${Helpers.parseToArabic(10)} :${Helpers.parseToArabic(32)} - ${Helpers.parseToArabic(52)}`
       }
     ]
@@ -8120,7 +8120,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 11,
         startVerseNumber: 1,
-        startVerseNumber:33,
+        endVerseNumber:33,
         text: `مرقس ${Helpers.parseToArabic(11)}`
       }
     ]
@@ -8139,7 +8139,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 12,
         startVerseNumber: 1,
-        startVerseNumber:27,
+        endVerseNumber:27,
         text: `مرقس ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(27)}`
       }
     ]
@@ -8158,7 +8158,7 @@ export const ArabicContent = [
         bookName: "مرقس",
        chapterNumber: 12,
        startVerseNumber: 28,
-       startVerseNumber:44,
+       endVerseNumber:44,
        text: `مرقس ${Helpers.parseToArabic(12)} :${Helpers.parseToArabic(28)} - ${Helpers.parseToArabic(44)}`
       }
     ]
@@ -8177,7 +8177,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 13,
         startVerseNumber: 1,
-        startVerseNumber:37,
+        endVerseNumber:37,
         text: `مرقس ${Helpers.parseToArabic(13)}`
   }
     ]
@@ -8196,7 +8196,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 14,
         startVerseNumber: 1,
-        startVerseNumber:21,
+        endVerseNumber:21,
         text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(21)}`
       }
     ]
@@ -8215,7 +8215,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 14,
         startVerseNumber: 22,
-        startVerseNumber:52,
+        endVerseNumber:52,
         text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(22)} - ${Helpers.parseToArabic(52)}`
   }
     ]
@@ -8234,7 +8234,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 14,
         startVerseNumber: 53,
-        startVerseNumber:72,
+        endVerseNumber:72,
         text: `مرقس ${Helpers.parseToArabic(14)} :${Helpers.parseToArabic(53)} - ${Helpers.parseToArabic(72)}`
       }
     ]
@@ -8253,7 +8253,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 15,
         startVerseNumber: 1,
-        startVerseNumber:32,
+        endVerseNumber:32,
         text: `مرقس ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(32)}`
       }
     ]
@@ -8272,7 +8272,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 15,
         startVerseNumber: 33,
-        startVerseNumber:47,
+        endVerseNumber:47,
         text: `مرقس ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(33)} - ${Helpers.parseToArabic(47)}`
   }
     ]
@@ -8291,7 +8291,7 @@ export const ArabicContent = [
         bookName: "مرقس",
         chapterNumber: 16,
         startVerseNumber: 1,
-        startVerseNumber:20,
+        endVerseNumber:20,
         text: `مرقس ${Helpers.parseToArabic(16)}`
       }
     ]
@@ -14151,66 +14151,66 @@ export const  bookNamesDictionary = {
   ExodusAr : "خروج",
   LeviticusAr: "لاويين",
   NumbersAr : "عدد" ,
-  "DeuteronomyAr":"تثنية",
-  "JoshuaAr" :"يشوع",
-  "JudgesAr" :"قضاة",
-  "RuthAr":"راعوث",
+  DeuteronomyAr:"تثنية",
+  JoshuaAr :"يشوع",
+  JudgesAr :"قضاة",
+  RuthAr:"راعوث",
   "1 SamuelAr" :"1 صموئيل",
   '2 SamuelAr':"2 صموئيل",
   "1 KingsAr" :"1 ملوك",
   "2 KingsAr":"2 ملوك",
   "1 ChroniclesAr" :"1 اخبار",
   "2 ChroniclesAr":"2 اخبار",
-  "EzraAr":"عزرا",
-  "NehemiahAr" :"نحميا",
-  "EstherAr":"استير",
-  "JobAr":"ايوب",
-  "PsalmAr":"مزامير",
-    "ProverbsAr":"امثال",
-    "EcclesiastesAr":"جامعة",
+  EzraAr:"عزرا",
+  NehemiahAr :"نحميا",
+  EstherAr:"استير",
+  JobAr:"ايوب",
+  PsalmAr:"مزامير",
+    ProverbsAr:"امثال",
+   EcclesiastesAr:"جامعة",
     "Song of SolomonAr":"نشيد الانشاد",
-    "IsaiahAr":"اشعياء",
-    "JeremiahAr":"ارميا",
-    "LamentationsAr":"مراثي",
-    "EzekielAr":"حزقيال",
-    "DanielAr":"دانيال",
-    "HoseaAr":"هوشع",
-    "JoelAr" :"يوئيل",
-    "AmosAr":"عاموس",
-    "ObadiahAr":"عوبديا",
-    "JonahAr":"يونان",
-    "MicahAr":"ميخا",
-    "NahumAr":"ناحوم",
-    "HabakkukAr":"حبقوق" ,
-    "ZephaniahAr":"صفنيا",
-    "HaggaiAr" :"حجى" ,
-    "ZechariahAr" :"زكريا",
-    "MalachiAr":"ملاخي",
-    "MatthewAr" :"متى",
-    "MarkAr":"مرقس" ,
-    "LukeAr":"لوقا",
-    "JohnAr":"يوحنا",
-    "ActsAr":"اعمال",
-    "RomansAr" :"رومية",
+    IsaiahAr:"اشعياء",
+    JeremiahAr:"ارميا",
+    LamentationsAr:"مراثي",
+   EzekielAr:"حزقيال",
+   DanielAr:"دانيال",
+    HoseaAr:"هوشع",
+    JoelAr :"يوئيل",
+    AmosAr:"عاموس",
+    ObadiahAr:"عوبديا",
+    JonahAr:"يونان",
+    MicahAr:"ميخا",
+    NahumAr:"ناحوم",
+    HabakkukAr:"حبقوق" ,
+    ZephaniahAr:"صفنيا",
+   HaggaiAr :"حجى" ,
+   ZechariahAr :"زكريا",
+   MalachiAr:"ملاخي",
+    MatthewAr :"متى",
+    MarkAr:"مرقس" ,
+    LukeAr:"لوقا",
+    JohnAr:"يوحنا",
+    ActsAr:"اعمال",
+    RomansAr :"رومية",
      "1 CorinthiansAr":"1 كورنثوس",
      "2 CorinthiansAr":"2 كورنثوس",
-     "GalatiansAr":"غلاطية",
-     "EphesiansAr":"افسس",
-     "PhilippiansAr":"فيلبي",
-     "ColossiansAr":"كولوسي",
+     GalatiansAr:"غلاطية",
+     EphesiansAr:"افسس",
+     PhilippiansAr:"فيلبي",
+     ColossiansAr:"كولوسي",
      "1 ThessaloniansAr":"1 تسالونيكي",
      "2 ThessaloniansAr":"2 تسالونيكي",
      "1 TimothyAr":"1 تيموثاوس",
      "2 TimothyAr":"2 تيموثاوس",
-     "TitusAr":"تيطس",
-      "PhilemonAr":"فليمون",
-      "HebrewsAr":"عبرانيين",
-      "JamesAr":"يعقوب",
+     TitusAr:"تيطس",
+     PhilemonAr:"فليمون",
+     HebrewsAr:"عبرانيين",
+     JamesAr:"يعقوب",
       "1 PeterAr":"1 بطرس",
       "2 PeterAr":"2 بطرس",
        "1 JohnAr":"1 يوحنا",
        "2 JohnAr":"2 يوحنا",
        "3 JohnAr":"3 يوحنا",
-       "JudeAr":"يهوذا",
-       "RevelationAr":"رؤيا"
+       JudeAr:"يهوذا",
+       RevelationAr:"رؤيا"
 }
