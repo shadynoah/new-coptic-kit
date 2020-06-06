@@ -14146,6 +14146,7 @@ export const arabicBookNames = [
   };
 export const IS_ENGLISH_CONTENT_DOWNLOADED = "english";
 export const IS_ARABIC_CONTENT_DOWNLOADED = "arabic";
+export const IS_FIRST_ARABIC_PLAN_DOWNLOADED  = "IsFirstAarabicPlanDownloaded"
 export const  bookNamesDictionary = {
   GAr: "تكوين",
   ExodusAr : "خروج",
@@ -14214,3 +14215,34 @@ export const  bookNamesDictionary = {
        JudeAr:"يهوذا",
        RevelationAr:"رؤيا"
 }
+export const booksOfFirstArabicPlan = [
+  "PsalmAr",
+  "ProverbsAr",
+  "MatthewAr",
+    "MarkAr" ,
+    "LukeAr",
+    "JohnAr",
+    "ActsAr",
+    "RomansAr",
+     "1 CorinthiansAr",
+     "2 CorinthiansAr",
+     "GalatiansAr",
+     "EphesiansAr",
+     "PhilippiansAr",
+     "ColossiansAr",
+     "1 ThessaloniansAr",
+     "2 ThessaloniansAr",
+     "1 TimothyAr",
+     "2 TimothyAr",
+     "TitusAr",
+      "PhilemonAr",
+      "HebrewsAr",
+      "JamesAr",
+      "1 PeterAr",
+      "2 PeterAr",
+       "1 JohnAr",
+       "2 JohnAr",
+       "3 JohnAr",
+       "JudeAr",
+       "RevelationAr"
+]

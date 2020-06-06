@@ -13,7 +13,8 @@ import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
-import {IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED} from '../../constants'
+import {IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED,
+   booksOfFirstArabicPlan , IS_FIRST_ARABIC_PLAN_DOWNLOADED} from '../../constants'
 import { Helpers } from './../../services/utilities/helpers';
 import { inializeArabicCheckedList , inializeEnglishCheckedList } from "../../state/plan/action-creators";
 
@@ -112,9 +113,38 @@ class HomeScreenContainer extends Component {
     //   NavigatorService.navigate("BookScreen");
     // }
   }
+  async downloadPlanContent() {
+    const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
+    // inializeArabicCheckedList();
+    // inializeEnglishCheckedList();
+    let keyOfContent = IS_FIRST_ARABIC_PLAN_DOWNLOADED || IS_ARABIC_CONTENT_DOWNLOADED
+    let isContentExist = await AsyncStorage.getItem(keyOfContent);
+    if (isContentExist !== "true") {
+      if (!isConnected) {
+        this.setState({
+          isWarningModalVisible: true
+        });
+      } else {
+        toggleIsDownloading();
+        if(isArabic)
+        {
+          await Helpers.downloadBooksOfPlan(booksOfFirstArabicPlan);
+          inializeArabicCheckedList();
+        }
+        else
+        {
+          await Helpers.downloadEnglish();
+          inializeEnglishCheckedList();
+        }
+        toggleIsDownloading();
+      }
+    }
+    // else{
+    //   NavigatorService.navigate("BookScreen");
+    // }
+  }
   render() {
     const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
-    console.log("is arabic " , isArabic)
     const { isDownloadling , isWarningModalVisible } = this.state;
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
@@ -266,7 +296,7 @@ class HomeScreenContainer extends Component {
             <TouchableOpacity
               style={{ marginLeft: 10 }}
               onPress={async () => {
-                await this.downloadContent();
+                await this.downloadPlanContent();
                 NavigatorService.navigate("BiblePlanScreen");
               }}
             >
