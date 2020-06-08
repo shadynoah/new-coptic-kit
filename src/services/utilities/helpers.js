@@ -1,6 +1,6 @@
 import _ from "lodash";
 import * as FileSystem from "expo-file-system";
-import { AsyncStorage } from "react-native";
+import { AsyncStorage   } from "react-native";
 import { bookNames, enlglishContentUri,IS_ENGLISH_CONTENT_DOWNLOADED ,
 arabicBookNames , arabicContentUri ,
  IS_ARABIC_CONTENT_DOWNLOADED , bookNamesDictionary ,
@@ -60,24 +60,33 @@ let trimmed = bookName.replace(/\s/g, "");
     await Promise.all(
       _.map(arabicBookNames , async bookName => {
  let trimmed = bookName.replace(/\s/g, "");
-       await FileSystem.downloadAsync(
-         arabicContentUri[bookName],
-         FileSystem.documentDirectory + trimmed
-       ).then(async ({ uri }) => {
-         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-         // console.log("uri" , uri)
-         // console.log("english done");
-         // console.log("before setimeeem" , bookName)
-         await AsyncStorage.setItem(bookName, uri);
-       })
-       .catch(error => {
-         alert("error");
-         console.error(error);
-       });
+   if( !await AsyncStorage.getItem(bookName))
+   {
+    await FileSystem.downloadAsync(
+      arabicContentUri[bookName],
+      FileSystem.documentDirectory + trimmed
+    ).then(async ({ uri }) => {
+      // let stringcontent = await FileSystem.readAsStringAsync(uri);
+      // console.log("uri" , uri)
+      // console.log("english done");
+      // console.log("before setimeeem" , bookName)
+      await AsyncStorage.setItem(bookName, uri);
+    })
+    .catch(error => {
+      alert("error");
+      console.error(error);
+    });
+   }
+   else 
+   {
+     alert("already exist"+bookName);
+    //  console.log("already exist" , bookName)
+   }
+    
       })
      ).then(async ()=>{
        await AsyncStorage.setItem(IS_ARABIC_CONTENT_DOWNLOADED, "true");
-      alert("finished donwload arabic content successfully");
+       Alert.alert("asd", "Asdasdasdasdasd")
      }).catch(()=>{
        console.log("error in download content")
      })
@@ -103,7 +112,6 @@ let trimmed = bookName.replace(/\s/g, "");
       })
      ).then(async ()=>{
        await AsyncStorage.setItem(IS_FIRST_ARABIC_PLAN_DOWNLOADED, "true");
-      alert("finished donwload books of arabic plan successfully");
      }).catch(()=>{
        console.log("error in download content")
      })

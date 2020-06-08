@@ -192,7 +192,7 @@ class BiblePlanScreenContainer extends Component {
       arabicListOfCompletedDaysObj }  = this.props;
     // console.log("from render checkedList" ,checkedList);
     // console.log("from render selectedDay" ,selectedDay)
-     console.log(selectedDayContent)
+    //  console.log(selectedDayContent)
     // console.log("listOfCompletedDaysObj" ,listOfCompletedDaysObj);
     // console.log("selectedChapterIndex" , selectedChapterIndex)
     return (
