@@ -14,7 +14,7 @@ import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, to
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
 import {IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED,
-   booksOfFirstArabicPlan , IS_FIRST_ARABIC_PLAN_DOWNLOADED} from '../../constants'
+   booksOfFirstArabicPlan , IS_FIRST_ARABIC_PLAN_DOWNLOADED, bookNames , arabicBookNames} from '../../constants'
 import { Helpers } from './../../services/utilities/helpers';
 import { inializeArabicCheckedList , inializeEnglishCheckedList } from "../../state/plan/action-creators";
 
@@ -85,11 +85,9 @@ class HomeScreenContainer extends Component {
   }
   async downloadContent() {
     const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
-    // inializeArabicCheckedList();
-    // inializeEnglishCheckedList();
-    let keyOfContent = isArabic ? IS_ARABIC_CONTENT_DOWNLOADED : IS_ENGLISH_CONTENT_DOWNLOADED
-    let isContentExist = await AsyncStorage.getItem(keyOfContent);
-    if (isContentExist !== "true") {
+    let isContentExist = await this.checkIsContetExist(isArabic);
+    console.log("checkIsContetExist from download content" ,isContentExist)
+    if (isContentExist !== true) {
       if (!isConnected) {
         this.setState({
           isWarningModalVisible: true
@@ -117,9 +115,8 @@ class HomeScreenContainer extends Component {
     const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
     // inializeArabicCheckedList();
     // inializeEnglishCheckedList();
-    let keyOfContent = IS_FIRST_ARABIC_PLAN_DOWNLOADED || IS_ARABIC_CONTENT_DOWNLOADED
-    let isContentExist = await AsyncStorage.getItem(keyOfContent);
-    if (isContentExist !== "true") {
+    let isContentExist = await this.checkIfPlanContentExist(isArabic);
+    if (isContentExist !== true) {
       if (!isConnected) {
         this.setState({
           isWarningModalVisible: true
@@ -142,6 +139,33 @@ class HomeScreenContainer extends Component {
     // else{
     //   NavigatorService.navigate("BookScreen");
     // }
+  }
+ async checkIsContetExist(isArabic){
+   let books = isArabic ? arabicBookNames : bookNames
+    let isExist = true;
+    for(const book of books){
+      isExist = await AsyncStorage.getItem(book)
+      if(!isExist)
+      break;
+    }
+    console.log("isExist is" , isExist)
+    if(isExist)
+    return true;
+    else 
+    return false;
+  }
+  async checkIfPlanContentExist(isArabic){
+    let books = isArabic ? booksOfFirstArabicPlan : bookNames
+    let isExist = true;
+    for(const book of books){
+      isExist = await AsyncStorage.getItem(book)
+      if(!isExist)
+      break;
+    }
+    if(isExist)
+    return true;
+    else 
+    return false;
   }
   render() {
     const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
@@ -201,9 +225,9 @@ class HomeScreenContainer extends Component {
           }}
         >
          <View style={{ flexDirection: "row" }}>
-            <Text style={{ color: "white", fontWeight: "900" }}>English</Text>
+            <Text style={{ color: "white", fontWeight: "900" , backgroundColor:'yellow' }}>English</Text>
             <Switch
-              style={{ marginLeft: 20, marginRight: 20}}
+              style={{ marginLeft: 20, marginRight: 20 , backgroundColor:'yellow'}}
               onValueChange={value => {
                navigation.setParams({
                   title: isArabic ? "الرئيسية" : "Home"
@@ -282,8 +306,20 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 10 }}
               onPress={async () => {
               await this.downloadContent();
-              NavigatorService.navigate("BookScreen");
-              }}
+              // NavigatorService.navigate("BookScreen");
+              let isExist = await this.checkIsContetExist(this.props.isArabic)
+              if(!isExist)
+              {
+                let message = isArabic ? "حاول مره اخري" : "try again"
+                setTimeout(() => {
+                  alert(message)
+                }, 1000);
+              }
+              else 
+              {
+                NavigatorService.navigate("BookScreen");
+              }
+            }}
             >
               <Image
                 style={{
@@ -297,8 +333,20 @@ class HomeScreenContainer extends Component {
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 await this.downloadPlanContent();
-                NavigatorService.navigate("BiblePlanScreen");
-              }}
+                // NavigatorService.navigate("BookScreen");
+                let isExist = await this.checkIfPlanContentExist(isArabic)
+                if(!isExist)
+                {
+                  let message = isArabic ? "حاول مره اخري" : "try again"
+                  setTimeout(() => {
+                    alert(message)
+                  }, 1000);
+                }
+                else 
+                {
+                  NavigatorService.navigate("BiblePlanScreen");
+                }
+               }}
             >
               <Image
                 style={{

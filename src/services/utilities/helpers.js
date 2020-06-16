@@ -36,59 +36,64 @@ export class Helpers {
     await Promise.all(
      _.map(bookNames , async bookName => {
 let trimmed = bookName.replace(/\s/g, "");
-      await FileSystem.downloadAsync(
+let isBookExists = await AsyncStorage.getItem(bookName);
+if(!isBookExists)
+{ 
+       await FileSystem.downloadAsync(
         enlglishContentUri[bookName],
         FileSystem.documentDirectory + trimmed
-      ).then(async ({ uri }) => {
+      ).then(async ({ uri , status }) => {
+        console.log("success book" ,bookName)
         await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {
-        alert("error");
-        console.error(error);
+        console.log("name of failed book", bookName)
+      //  throw "error in one book"
       });
+    }
+    else 
+    {
+      // alert("alreay exists")
+    }
      })
     ).then(async ()=>{
       await AsyncStorage.setItem(IS_ENGLISH_CONTENT_DOWNLOADED, "true");
       console.log("finished donwload english content successfully");
-    }).catch(()=>{
-      console.log("error in download content")
+    }).catch((error)=>{
+      console.log("error in download content" , error);
     })
-     
   }
   static async downloadArabic() {
     // alert("will start downlaod arabic")
     await Promise.all(
       _.map(arabicBookNames , async bookName => {
  let trimmed = bookName.replace(/\s/g, "");
-   if( !await AsyncStorage.getItem(bookName))
+ let isBookExists = await AsyncStorage.getItem(bookName);
+   if(!isBookExists)
    {
     await FileSystem.downloadAsync(
       arabicContentUri[bookName],
       FileSystem.documentDirectory + trimmed
     ).then(async ({ uri }) => {
-      // let stringcontent = await FileSystem.readAsStringAsync(uri);
-      // console.log("uri" , uri)
-      // console.log("english done");
-      // console.log("before setimeeem" , bookName)
+      console.log("success book" ,bookName)
       await AsyncStorage.setItem(bookName, uri);
     })
     .catch(error => {
-      alert("error");
-      console.error(error);
+      console.log("name of failed book", bookName)
     });
    }
    else 
    {
-     alert("already exist"+bookName);
+    //  alert("already exist"+bookName);
     //  console.log("already exist" , bookName)
    }
     
       })
      ).then(async ()=>{
        await AsyncStorage.setItem(IS_ARABIC_CONTENT_DOWNLOADED, "true");
-       Alert.alert("asd", "Asdasdasdasdasd")
-     }).catch(()=>{
-       console.log("error in download content")
+       console.log("finished donwload arabic content successfully");
+      }).catch(()=>{
+       console.log("error in download arabic content")
      })
   }
   static async downloadBooksOfPlan (booksOfFirstArabicPlan){
@@ -106,7 +111,7 @@ let trimmed = bookName.replace(/\s/g, "");
          await AsyncStorage.setItem(bookName, uri);
        })
        .catch(error => {
-         alert("error");
+        //  alert("error");
          console.error(error);
        });
       })
