@@ -173,7 +173,10 @@ class HomeScreenContainer extends Component {
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
         isVisible={isDownloadling}
-        message="Loading data , please make sure you are connected to the internet..."
+        message= {
+          isArabic ? "جاري تحميل البيانات , تأكد من اتصالك بالانترنت" :
+          "Loading data , please make sure you are connected to the internet..."
+        }
       />
     ) : null;
     const warningLostConnectionModal =
@@ -225,9 +228,11 @@ class HomeScreenContainer extends Component {
           }}
         >
          <View style={{ flexDirection: "row" }}>
-            <Text style={{ color: "white", fontWeight: "900" , backgroundColor:'yellow' }}>English</Text>
+            <Text onPress={
+              ()=> toggleLanguage()
+            } style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch
-              style={{ marginLeft: 20, marginRight: 20 , backgroundColor:'yellow'}}
+              style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
                navigation.setParams({
                   title: isArabic ? "الرئيسية" : "Home"
@@ -236,7 +241,9 @@ class HomeScreenContainer extends Component {
               }}
               value={isArabic}
             />
-            <Text style={{ color: "white", fontWeight: "900" }}>عربي</Text>
+            <Text onPress={
+              ()=> toggleLanguage()
+            } style={{ color: "white", fontWeight: "900" }}>عربي</Text>
           </View>
         </View>
         <View
