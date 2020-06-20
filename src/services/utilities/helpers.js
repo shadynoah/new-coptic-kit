@@ -43,7 +43,6 @@ if(!isBookExists)
         enlglishContentUri[bookName],
         FileSystem.documentDirectory + trimmed
       ).then(async ({ uri , status }) => {
-        console.log("success book" ,bookName)
         await AsyncStorage.setItem(bookName, uri);
       })
       .catch(error => {
@@ -75,7 +74,6 @@ if(!isBookExists)
       arabicContentUri[bookName],
       FileSystem.documentDirectory + trimmed
     ).then(async ({ uri }) => {
-      console.log("success book" ,bookName)
       await AsyncStorage.setItem(bookName, uri);
     })
     .catch(error => {

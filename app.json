@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "new-coptic-ket",
+    "name": "Coptic Kit",
     "slug": "new-coptic-ket",
     "privacy": "public",
     "platforms": [
@@ -8,7 +8,7 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "notification": {
       "icon": "./assets/images/newone.png",
@@ -32,7 +32,8 @@
       "icon":"./assets/images/appstore.png"
     },
     "android": {
-      "package": "com.newcoptickit.newcoptickit"
+      "package": "com.newcoptickit.newcoptickit",
+      "versionCode":3
     },
     "description": ""
   }
