@@ -67,6 +67,8 @@ export class Application {
   async onStart() {
 //     trial1507
 // Gobrail1@gmail.com
+// Fr.george.d.min@gmail.com
+// Trial@2013
     // await AsyncStorage.clear();
     NetInfo.isConnected.addEventListener(
       "connectionChange",
