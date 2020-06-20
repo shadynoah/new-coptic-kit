@@ -65,6 +65,8 @@ export class Application {
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };
   async onStart() {
+//     trial1507
+// Gobrail1@gmail.com
     // await AsyncStorage.clear();
     NetInfo.isConnected.addEventListener(
       "connectionChange",
