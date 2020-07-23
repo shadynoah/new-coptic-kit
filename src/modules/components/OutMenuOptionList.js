@@ -1,13 +1,22 @@
 import Constants from "expo-constants";
-import { Icon, Text } from "native-base";
+import {  Content, Form, Item, Input ,Icon, Text, Button } from 'native-base';
 import React, { PureComponent } from "react";
 import { View } from "react-native";
 import { Menu, MenuOption, MenuOptions, MenuTrigger } from "react-native-popup-menu";
 import NavigatorService from "../../services/navigator.js";
 
 export class OutOfEditorMenuOptionList extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      isModal: false,
+      userName:"",
+      password: ""
+    };
+  }
   render() {
     let { isArabic } = this.props;
+    console.log("isModal" , this.state.isModal)
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
       (Constants.platform.android &&
@@ -182,6 +191,19 @@ export class OutOfEditorMenuOptionList extends PureComponent {
                   black
                   transparent
                 />
+              </View>
+            </View>
+          </MenuOption>
+          <MenuOption
+            onSelect={() => {
+            this.props.toggleAdminModal();
+            }}
+          >
+            <View style={{ flexDirection: "row", flex: 1 }}>
+              <View style={{ flex: 0.7 }}>
+                <Text style={{ marginRight: 10 }}>
+                 Admin
+                </Text>
               </View>
             </View>
           </MenuOption>

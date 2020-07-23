@@ -1,32 +1,33 @@
-import _ from 'lodash';
-import { Linking } from "expo";
+import { Linking, Notifications } from "expo";
 import Constants from "expo-constants";
-import * as FileSystem from "expo-file-system";
 import { Switch } from "native-base";
 import React, { Component } from "react";
 import { AsyncStorage, Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
+import { arabicBookNames, bookNames, booksOfFirstArabicPlan } from '../../constants';
 import { ModalTypesEnum } from "../../enums";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
+import { inializeArabicCheckedList, inializeEnglishCheckedList } from "../../state/plan/action-creators";
 import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
-import {IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED,
-   booksOfFirstArabicPlan , IS_FIRST_ARABIC_PLAN_DOWNLOADED, bookNames , arabicBookNames} from '../../constants'
+import { UserAdmineModal } from "../components/user-admin-modal";
 import { Helpers } from './../../services/utilities/helpers';
-import { inializeArabicCheckedList , inializeEnglishCheckedList } from "../../state/plan/action-creators";
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
     super();
+    this.toggleAdminModal = this.toggleAdminModal.bind(this);
+    this.validateAdmin = this.validateAdmin.bind(this);
     this.state = {
       isDownloadling: false,
       isFinished: true,
       isWarningModalVisible: false,
-      isArabic: false
+      isArabic: false,
+      isAdminModal: false
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -167,6 +168,47 @@ class HomeScreenContainer extends Component {
     else 
     return false;
   }
+  sendPushNotification = async () => {
+    const message = {
+      to: 'ExponentPushToken[QzMu-2Ll3xAereX9d5bGCy]',
+      sound: 'default',
+      title: 'Original Titldasde',
+      body: 'And here is the body!',
+      data: { data: 'goes here' },
+    };
+    const response = await fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Accept-encoding': 'gzip, deflate',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+    const data = response._bodyInit;
+    console.log(`Status & Response ID-> ${data}`);
+  };
+  sendDaily = async () => {
+ Notifications.scheduleLocalNotificationAsync({
+   title:'ssss'
+ }, {
+   repeat: 'minute'
+ })
+  }
+  toggleAdminModal(){
+    this.setState({
+      isAdminModal: !this.state.isAdminModal
+    })
+  }
+  validateAdmin(user){
+    if(user.name === "shady" && user.password === "123")
+    {
+      this.toggleAdminModal();
+      NavigatorService.navigate("AdminScreen");
+    }
+    else 
+    alert("invalid credintials")
+  }
   render() {
     const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
     const { isDownloadling , isWarningModalVisible } = this.state;
@@ -218,6 +260,11 @@ class HomeScreenContainer extends Component {
         style={{ flex: 1 }}
         resizeMode="stretch"
       >
+           <UserAdmineModal
+              toggleAdminModal={this.toggleAdminModal}
+              isVisible={this.state.isAdminModal}
+              validateAdmin={this.validateAdmin}
+            />
         {loadingModal}
         {warningLostConnectionModal}
         <View
@@ -229,7 +276,9 @@ class HomeScreenContainer extends Component {
         >
          <View style={{ flexDirection: "row" }}>
             <Text onPress={
-              ()=> toggleLanguage()
+              ()=>  {
+                this.sendPushNotification()
+              } 
             } style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
@@ -311,6 +360,9 @@ class HomeScreenContainer extends Component {
         <View style={{ flexDirection: "row" , marginBottom:10 }}>
         <TouchableOpacity
               style={{ marginLeft: 10 }}
+              onLongPress = {
+                ()=>this.toggleAdminModal()
+              }
               onPress={async () => {
               await this.downloadContent();
               // NavigatorService.navigate("BookScreen");

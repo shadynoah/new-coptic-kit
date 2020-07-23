@@ -1,45 +1,27 @@
 import React, { Component } from "react";
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Button,
-  FlatList,
-  ImageBackground
-} from "react-native";
-import { WebBrowser } from "expo";
-
-import { MonoText } from "../../../components/StyledText";
+import { FlatList, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
 import NavigatorService from "../../services/navigator.js";
 import { State } from "../../state";
-import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
-import {
-  toggleLoading,
-  selectBook,
-  loadChapterContent,
-  increaseFontSize,
-  decreaseFontSize
-} from "../../state/content/action-creators";
-import { clearDayContentOfPlan } from '../../state/plan/action-creators'
-import { IBOOK } from "../../state/content/state";
-import { NotificationManager } from "../../services/utilities/pushNotification";
+import { decreaseFontSize, increaseFontSize, loadChapterContent, selectBook, toggleLoading } from "../../state/content/action-creators";
+import { clearDayContentOfPlan } from '../../state/plan/action-creators';
 import { OutOfEditorMenuOptionList } from "../components/OutMenuOptionList";
 import { Helpers } from './../../services/utilities/helpers';
 
+
+
 const customDataAr = require("../../data/data-structure-ar.json");
 var customDataEn = require("../../data/data-structure.json");
-var myArray = { matta: 5, loca: 20 };
 class BookScreenContainer extends Component {
   constructor() {
     super();
+    this.toggleAdminModal = this.toggleAdminModal.bind(this);
+    this.validateAdmin = this.validateAdmin.bind(this);
     this.state = {
       isArabic: false,
-      fontSizeOfText: 20
+      fontSizeOfText: 20,
+      isAdminModal: false
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -94,6 +76,7 @@ class BookScreenContainer extends Component {
     } else return null;
   }
   render() {
+    console.log("from bookscreen" , this.state.isAdminModal)
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -122,6 +105,7 @@ class BookScreenContainer extends Component {
               isArabic={this.props.isArabic}
               fontSizeOfText={this.props.fontSizeOfText}
               decreaseFontSize={this.props.decreaseFontSize}
+              toggleAdminModal={this.toggleAdminModal}
             />
           </View>
           <FlatList

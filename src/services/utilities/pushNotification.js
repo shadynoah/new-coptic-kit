@@ -38,6 +38,7 @@ type PushMessage = {
 
 export class NotificationManager {
     static async registerForPushNotifications() {
+        // alert("register")
         // console.log("registerForPushNotifications")
         const { status: existingStatus } = await Permissions.getAsync(
             Permissions.NOTIFICATIONS
@@ -63,8 +64,10 @@ export class NotificationManager {
         // })
    
         // Get the token that uniquely identifies this device
+        // alert("will get token")
         let token = await Notifications.getExpoPushTokenAsync();
-        // console.log("----token----" , token)
+        // alert("token"+ token)
+        console.log("----token----" , token)
         firebase.database().ref('test').on('value', function(snapshot) {
             // console.log("snapshot=====" ,snapshot)
             if(snapshot.forEach(a =>{
@@ -73,8 +76,8 @@ export class NotificationManager {
             alert(snapshot.hasChild("age").valueOf())
            
           });
-          var val = await AsyncStorage.getItem("expoKey" )
-          if( await AsyncStorage.getItem("expoKeyaa" ))
+          var val = await AsyncStorage.getItem("expoKeya" )
+          if(val &&(val === token))
           {
               console.log("don't pust in firebase")
           }
@@ -167,7 +170,7 @@ export class NotificationManager {
     const message = {
       to: 'ExponentPushToken[OKmMSEAgjlC_ZcljJSXpJT]',
       sound: 'default',
-      title: 'Original Titldasde',
+      title: 'Daily notification',
       body: 'And here is the body!',
       data: { data: 'goes here' },
     };

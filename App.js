@@ -1,20 +1,19 @@
-import React from "react";
-import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { AppLoading } from "expo";
-
+import { AppLoading, Notifications } from "expo";
 import { Asset } from "expo-asset";
-
-import NavigatorService from "./src/services/navigator.js";
-import Navigators from "./src/modules/routing";
+import * as Font from "expo-font";
+import * as firebase from 'firebase';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { MenuProvider } from "react-native-popup-menu";
 import { Provider } from "react-redux";
 import { Application } from "./src/application";
-import { MenuProvider } from "react-native-popup-menu";
-// import * as firebase from 'firebase';
-import { NotificationManager } from "./src/services/utilities/pushNotification";
-import { Notifications } from "expo";
-import * as Font from "expo-font";
-
 import "./src/fixtimerbug"; // <<<<<<<<<<<<<<<<<<
+import Navigators from "./src/modules/routing";
+import NavigatorService from "./src/services/navigator.js";
+import { NotificationManager } from "./src/services/utilities/pushNotification";
+
+
+
 
 export default class App extends React.Component {
   state = {
@@ -23,33 +22,43 @@ export default class App extends React.Component {
     notification: {}
   };
   async UNSAFE_componentWillMount() {
-    // var firebaseConfig = {
-    //   apiKey: "AIzaSyB7TYD3p-bgkkDrz2qXm82sCPQ_UWSThiQ",
-    //   authDomain: "pushnotification-d6a2c.firebaseapp.com",
-    //   databaseURL: "https://pushnotification-d6a2c.firebaseio.com",
-    //   projectId: "pushnotification-d6a2c",
-    //   storageBucket: "",
-    //   messagingSenderId: "508579199556",
-    //   appId: "1:508579199556:web:065baa5f4ffb91ca"
-    // };
-    // // Initialize Firebase
-    // firebase.initializeApp(firebaseConfig);
-    // NotificationManager.registerForPushNotifications();
-    await Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
-    });
+   
+    var firebaseConfig = {
+      apiKey: "AIzaSyB7TYD3p-bgkkDrz2qXm82sCPQ_UWSThiQ",
+      authDomain: "pushnotification-d6a2c.firebaseapp.com",
+      databaseURL: "https://pushnotification-d6a2c.firebaseio.com",
+      projectId: "pushnotification-d6a2c",
+      storageBucket: "",
+      messagingSenderId: "508579199556",
+      appId: "1:508579199556:web:065baa5f4ffb91ca"
+    };
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+  }
+   
+    
+    NotificationManager.registerForPushNotifications();
+
   }
   _handleNotification = notification => {
     this.setState({ notification: notification });
     //  console.log("=======notification recieved===" , notification)
     if (notification.origin == "received")
       alert(
-        "----hi it is recieved push notification (sent while I already open the app)"
+        "----new handleing"
       );
+      else 
+      {
+        alert("x")
+      }
   };
 
   async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
     await Application.run();
     this.setState({ isReady: true });
     this._notificationSubscription = Notifications.addListener(

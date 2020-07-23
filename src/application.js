@@ -6,10 +6,9 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import promiseMiddleware from "redux-promise";
 import thunkMiddleware from "redux-thunk";
-import { arabicBookNames, arabicContentUri, IS_ENGLISH_CONTENT_DOWNLOADED , IS_ARABIC_CONTENT_DOWNLOADED} from '../src/constants';
-import { Helpers } from './services/utilities/helpers';
-import { reducer, inializeEnglishCheckedList, toggleIsDownloading, 
-  updateConnectionStatus , inializeArabicCheckedList } from "./state";
+import { arabicBookNames, arabicContentUri } from '../src/constants';
+import { reducer, updateConnectionStatus } from "./state";
+
 export class Application {
   static current;
   static token;
@@ -74,32 +73,6 @@ export class Application {
       "connectionChange",
       this.networkConnectionChange
     );
-    NetInfo.isConnected.fetch().done(async isConnected => {
-      Application.current.store.dispatch(updateConnectionStatus(isConnected));
-      if (isConnected) {
-          let isEnglishContentDownloadedRes = await AsyncStorage.getItem(IS_ENGLISH_CONTENT_DOWNLOADED);
-          if(!isEnglishContentDownloadedRes){
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // await Helpers.downloadEnglish();
-            // Application.current.store.dispatch(toggleIsDownloading());
-            //  Application.current.store.dispatch(inializeEnglishCheckedList());
-          }
-          let isArabicContentDownloadedRes = await AsyncStorage.getItem(IS_ARABIC_CONTENT_DOWNLOADED);
-          if(!isArabicContentDownloadedRes){
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // await this.downloadArabic();
-            // Application.current.store.dispatch(toggleIsDownloading());
-            // Application.current.store.dispatch(inializeArabicCheckedList());
-
-          }
-      }
-    });
-
-    // await Font.loadAsync({
-    //     Roboto: require("native-base/Fonts/Roboto.ttf"),
-    //     Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-    //     Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
-    // });
   }
   async onInstall() {}
   async onUpdate() {}
