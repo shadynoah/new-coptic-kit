@@ -74,7 +74,6 @@ class BookScreenContainer extends Component {
     } else return null;
   }
   render() {
-    console.log("from bookscreen" , this.state.isAdminModal)
     const styles = StyleSheet.create({
       container: {
         flex: 1,

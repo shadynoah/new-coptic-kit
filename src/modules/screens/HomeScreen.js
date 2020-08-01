@@ -149,7 +149,6 @@ class HomeScreenContainer extends Component {
       if(!isExist)
       break;
     }
-    console.log("isExist is" , isExist)
     if(isExist)
     return true;
     else 
