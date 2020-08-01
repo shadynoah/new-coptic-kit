@@ -37,7 +37,7 @@ class HomeScreenContainer extends Component {
       header: <Text style={style.hideText}></Text>
     };
   };
-  static mapStatetToProps(state: State) {
+  static mapStatetToProps(state) {
     return {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
@@ -46,7 +46,7 @@ class HomeScreenContainer extends Component {
       isConnected: state.content.isConnected
     };
   }
-  static mapDispatchToProps(dispatch: Dispatch) {
+  static mapDispatchToProps(dispatch) {
     return bindActionCreators(
       {
         toggleLoading,
@@ -388,6 +388,11 @@ class HomeScreenContainer extends Component {
               />
             </TouchableOpacity>
             <TouchableOpacity
+              onLongPress={
+                async ()=> {
+                 await AsyncStorage.clear().then(()=>alert("data cleared")).catch(()=>alert("faield to clear data"))
+                }
+              }
               style={{ marginLeft: 10 }}
               onPress={async () => {
                 await this.downloadPlanContent();
