@@ -16,8 +16,6 @@ var customDataEn = require("../../data/data-structure.json");
 class BookScreenContainer extends Component {
   constructor() {
     super();
-    this.toggleAdminModal = this.toggleAdminModal.bind(this);
-    this.validateAdmin = this.validateAdmin.bind(this);
     this.state = {
       isArabic: false,
       fontSizeOfText: 20,
@@ -105,7 +103,6 @@ class BookScreenContainer extends Component {
               isArabic={this.props.isArabic}
               fontSizeOfText={this.props.fontSizeOfText}
               decreaseFontSize={this.props.decreaseFontSize}
-              toggleAdminModal={this.toggleAdminModal}
             />
           </View>
           <FlatList

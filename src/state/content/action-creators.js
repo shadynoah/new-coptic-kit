@@ -36,6 +36,11 @@ export async function loadChapterContent(
   isArabicBookMark = false
 ) {
   return async (dispatch, getState) => {
+    alert("bookname is" + bookName);
+    let realArabic = await AsyncStorage.getItem('لاويين');
+    let fakeArabic = await AsyncStorage.getItem('LeviticusAr');
+    alert("real local storage" + realArabic);
+    alert("fake local storage" + fakeArabic);
     var isArabic = getState().content.isArabic;
     let englishContent;
     let arabicContent;
