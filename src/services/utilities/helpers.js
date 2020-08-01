@@ -6,6 +6,8 @@ arabicBookNames , arabicContentUri ,
  IS_ARABIC_CONTENT_DOWNLOADED , bookNamesDictionary ,
    IS_FIRST_ARABIC_PLAN_DOWNLOADED
 } from '../../constants'
+import { Platform } from "react-native";
+
 export class Helpers {
   //choose action creators based on style of selectedNote
 
@@ -33,80 +35,95 @@ export class Helpers {
     return res;
   }
   static async downloadEnglish() {
-    try{
-      await Promise.all(
-        _.map(bookNames , async bookName => {
-   let trimmed = bookName.replace(/\s/g, "");
-   let isBookExists = await AsyncStorage.getItem(bookName);
-   if(!isBookExists)
-   { 
-          await FileSystem.downloadAsync(
-           enlglishContentUri[bookName],
-           FileSystem.documentDirectory + trimmed
-         ).then(async ({ uri , status ,headers }) => {
-          if( status === 200 && headers["content-length"])
-          await AsyncStorage.setItem(bookName, uri);
-         })
-         .catch(error => {
-           console.log("name of failed book", bookName)
-         //  throw "error in one book"
-         });
-       }
-       else 
-       {
-         // alert("alreay exists")
-       }
-        })
-       ).then(async ()=>{
-         await AsyncStorage.setItem(IS_ENGLISH_CONTENT_DOWNLOADED, "true");
-         console.log("finished donwload english content successfully");
-       }).catch((error)=>{
-         console.log("error in download content" , error);
-       })
-    }
-    catch(e){
-      alert("Failed to download english content");
-    }
-  }
-  static async downloadArabic() {
-    try{
-  // alert("will start downlaod arabic")
-  await Promise.all(
-    _.map(arabicBookNames , async bookName => {
+    await Promise.all(
+     _.map(bookNames , async bookName => {
 let trimmed = bookName.replace(/\s/g, "");
 let isBookExists = await AsyncStorage.getItem(bookName);
- if(!isBookExists)
- {
-  await FileSystem.downloadAsync(
-    arabicContentUri[bookName],
-    FileSystem.documentDirectory + trimmed
-  ).then(async ({ uri ,status , headers }) => {
-    if( status === 200 && headers["content-length"])
-    await AsyncStorage.setItem(bookName, uri);
-  })
-  .catch(error => {
-    alert("failed")
-    console.log("name of failed book", bookName)
-  });
- }
- else 
- {
-  //  alert("already exist"+bookName);
-  //  console.log("already exist" , bookName)
- }
-  
+if(!isBookExists)
+{ 
+  let contentLength;
+       await FileSystem.downloadAsync(
+        enlglishContentUri[bookName],
+        FileSystem.documentDirectory + trimmed
+      ).then(async ({ uri , status ,headers }) => {
+        if( status === 200)
+        {
+          if(Platform.OS ==='android')
+          {
+           contentLength = 'content-length';
+          }
+          else 
+          {
+            contentLength = 'Content-Length'
+          }
+          if(headers && headers[contentLength])
+          await AsyncStorage.setItem(bookName, uri);
+        }
+      })
+      .catch(error => {
+        console.log("name of failed book", bookName)
+      //  throw "error in one book"
+      });
+    }
+    else 
+    {
+      // alert("alreay exists")
+    }
+     })
+    ).then(async ()=>{
+      await AsyncStorage.setItem(IS_ENGLISH_CONTENT_DOWNLOADED, "true");
+      console.log("finished donwload english content successfully");
+    }).catch((error)=>{
+      console.log("error in download content" , error);
     })
-   ).then(async ()=>{
-     await AsyncStorage.setItem(IS_ARABIC_CONTENT_DOWNLOADED, "true");
-     console.log("finished donwload arabic content successfully");
-    }).catch(()=>{
-     console.log("error in download arabic content")
-   })
-    }
-    catch(ex){
-      alert("Failed to download arabic contnet")
-    }
-  
+  }
+  static async downloadArabic() {
+    // alert("will start downlaod arabic")
+    await Promise.all(
+      _.map(arabicBookNames , async bookName => {
+ let trimmed = bookName.replace(/\s/g, "");
+ let isBookExists = await AsyncStorage.getItem(bookName);
+   if(!isBookExists)
+   {
+     let contentLength;
+    await FileSystem.downloadAsync(
+      arabicContentUri[bookName],
+      FileSystem.documentDirectory + trimmed
+    ).then(async ({ uri,status , headers }) => {
+      console.log("headers is" , Object.keys(headers))
+      if(status === 200)
+        {
+         if(Platform.OS ==='android')
+         {
+          contentLength = 'content-length';
+         }
+         else 
+         {
+           contentLength = 'Content-Length'
+         }
+          if(headers && headers[contentLength])
+          {
+            await AsyncStorage.setItem(bookName, uri);
+          }
+        }
+    })
+    .catch(error => {
+      console.log("name of failed book", bookName)
+    });
+   }
+   else 
+   {
+    //  alert("already exist"+bookName);
+    //  console.log("already exist" , bookName)
+   }
+    
+      })
+     ).then(async ()=>{
+       await AsyncStorage.setItem(IS_ARABIC_CONTENT_DOWNLOADED, "true");
+       console.log("finished donwload arabic content successfully");
+      }).catch(()=>{
+       console.log("error in download arabic content")
+     })
   }
   static async downloadBooksOfPlan (booksOfFirstArabicPlan){
     await Promise.all(
