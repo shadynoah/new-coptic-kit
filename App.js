@@ -44,14 +44,14 @@ export default class App extends React.Component {
   _handleNotification = notification => {
     this.setState({ notification: notification });
     //  console.log("=======notification recieved===" , notification)
-    if (notification.origin == "received")
-      alert(
-        "----new handleing"
-      );
-      else 
-      {
-        alert("x")
-      }
+    // if (notification.origin == "received")
+    //   alert(
+    //     "----new handleing"
+    //   );
+    //   else 
+    //   {
+    //     alert("x")
+    //   }
   };
 
   async componentDidMount() {
