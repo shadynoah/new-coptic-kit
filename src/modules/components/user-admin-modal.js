@@ -87,6 +87,16 @@ export class UserAdmineModal extends PureComponent {
               >
                 <Text>Sign in</Text>
               </Button>
+              <Button
+                style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
+                full
+                rounded
+                onPress={() => {
+                  this.props.toggleAdminModal()
+                }}
+              >
+                <Text>Cancel</Text>
+              </Button>
             </Item>
             
           </Form>
