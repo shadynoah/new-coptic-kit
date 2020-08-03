@@ -34,7 +34,8 @@ class HomeScreenContainer extends Component {
     const params = navigation.state.params || {};
     return {
       title: params.title,
-      header: <Text style={style.hideText}></Text>
+      header: <Text style={style.hideText}></Text>,
+      gesturesEnabled: true, // this line
     };
   };
   static mapStatetToProps(state) {

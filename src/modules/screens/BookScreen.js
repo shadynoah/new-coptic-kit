@@ -26,10 +26,11 @@ class BookScreenContainer extends Component {
     const params = navigation.state.params || {};
     return {
       headerTitle: params.title,
-      title: params.title
+      title: params.title,
+      gesturesEnabled: true, // this line
     };
   };
-  static mapStatetToProps(state: State) {
+  static mapStatetToProps(state) {
     return {
       loading: state.content.loading,
       selectedBook: state.content.selectedBook,
@@ -37,7 +38,7 @@ class BookScreenContainer extends Component {
       fontSizeOfText: state.content.fontSizeOfText
     };
   }
-  static mapDispatchToProps(dispatch: Dispatch) {
+  static mapDispatchToProps(dispatch) {
     return bindActionCreators(
       {
         toggleLoading,
