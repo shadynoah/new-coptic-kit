@@ -15,6 +15,7 @@ import { BaseModal } from "../components/base-modal";
 import { LoadingContentModal } from "../components/loading-content-modal";
 import { UserAdmineModal } from "../components/user-admin-modal";
 import { Helpers } from './../../services/utilities/helpers';
+import * as Localization from 'expo-localization';
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -79,7 +80,7 @@ class HomeScreenContainer extends Component {
     } else return null;
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { navigation , isArabic } = this.props;
     navigation.setParams({
       title: isArabic ? "الرئيسية" : "Home"
@@ -88,7 +89,6 @@ class HomeScreenContainer extends Component {
   async downloadContent() {
     const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
     let isContentExist = await this.checkIsContetExist(isArabic);
-    console.log("checkIsContetExist from download content" ,isContentExist)
     if (isContentExist !== true) {
       if (!isConnected) {
         this.setState({
@@ -277,7 +277,7 @@ class HomeScreenContainer extends Component {
          <View style={{ flexDirection: "row" }}>
             <Text onPress={
               ()=>  {
-                this.sendPushNotification()
+                // this.sendPushNotification()
               } 
             } style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch

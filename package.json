@@ -37,7 +37,8 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "expo-localization": "~8.0.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^8.0.0",

@@ -3,7 +3,7 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import * as firebase from 'firebase';
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet , Platform } from "react-native";
 import { MenuProvider } from "react-native-popup-menu";
 import { Provider } from "react-redux";
 import { Application } from "./src/application";
@@ -43,15 +43,17 @@ export default class App extends React.Component {
   }
   _handleNotification = notification => {
     this.setState({ notification: notification });
-    //  console.log("=======notification recieved===" , notification)
-    // if (notification.origin == "received")
-    //   alert(
-    //     "----new handleing"
-    //   );
-    //   else 
-    //   {
-    //     alert("x")
-    //   }
+     console.log("=======notification recieved===" , notification)
+     //for ground
+    if (notification.origin == "received")
+    {
+      if(Platform.OS === 'ios')
+      alert(`${notification.data.data}`)
+    }
+      // else 
+      // {
+      //   alert("x")
+      // }
   };
 
   async componentDidMount() {

@@ -14246,3 +14246,4 @@ export const booksOfFirstArabicPlan = [
        "JudeAr",
        "RevelationAr"
 ]
+export const EXPO_PUSH_TOKEN_KEY='expoToken'

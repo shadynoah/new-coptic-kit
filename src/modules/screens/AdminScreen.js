@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
-import { Button, Input, Text } from "native-base";
+import { Button, Input, Text , Switch } from "native-base";
 import React from "react";
-import { Platform, StyleSheet, TextInput, View , KeyboardAvoidingView } from "react-native";
+import { Platform, StyleSheet, TextInput, View , KeyboardAvoidingView , ScrollView } from "react-native";
 import { connect } from "react-redux";
 
 const styles = StyleSheet.create({
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     borderColor: "#9E9E9E",
     borderRadius: 20,
     backgroundColor: "#FFFFFF",
-    height: "50%",
-    alignContent:'center'
+    alignContent:'center',
+    height:100
   },
   container: {
     flex: 1
@@ -52,7 +52,8 @@ class AdminScreenContainer extends React.Component {
     super();
     this.state = {
       title: 'title',
-      text: "notificaiton"
+      text: "notificaiton",
+      isArabicNotification: false
     };
   }
   static navigationOptions = ({ navigation }) => {
@@ -77,20 +78,32 @@ class AdminScreenContainer extends React.Component {
   }
   sendDaily = async () => {
     let tokens = [];
+    const { isArabicNotification } = this.state;
     firebase.database().ref('test').on('value', function(snapshot) {
-      // console.log("snapshot=====" ,snapshot)
+      // snapshot.val();
      snapshot.forEach(a =>{
-        console.log("item is====" , a.val().expoPushToken)
+      // tokens.push(a.val().expoPushToken);
+      //  console.log("expoPushToken of item====" , a.val().expoPushToken)
+      if(isArabicNotification === true)
+      {
+        if(a.val().language === 'arabic')
         tokens.push(a.val().expoPushToken);
+      }
+      if(isArabicNotification === false)
+      {
+        if(a.val().language === 'english')
+        tokens.push(a.val().expoPushToken);
+      }
       }) 
-      console.log("tokens is " , tokens)
+      console.log("tokens length " , tokens.length)
     });
     const message = {
       to:tokens,
       sound: 'default',
       title:  this.state.title,
       body: this.state.text,
-      data: { data: 'goes here' },
+      data: { data: this.state.text},
+      tag:'hi'
     };
     const response = await fetch('https://exp.host/--/api/v2/push/send', {
       method: 'POST',
@@ -106,16 +119,19 @@ class AdminScreenContainer extends React.Component {
     console.log(`Status & Response ID-> ${data}`);
      }
   render() {
+    const { isArabicNotification } = this.state;
     return (
       <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
     >
+      <ScrollView>
+
       <View style={{
         alignItems:'center',
         padding:10
       }}>
     
-      <Input
+      <TextInput
       placeholder="write your title"
        onChangeText={
         (text) => this.setState({
@@ -123,18 +139,17 @@ class AdminScreenContainer extends React.Component {
         })
       }   
       style={{
-        padding: 15,
-        textAlign: "center",
-        width: "70%",
-        borderWidth: 2,
-        borderColor: "#9E9E9E",
-        borderRadius: 20,
-        backgroundColor: "#FFFFFF",
-        height: "30%",
-        alignContent:'center',
-        marginBottom:10
+    textAlign: "center",
+    width: "70%",
+    borderWidth: 2,
+    borderColor: "#9E9E9E",
+    borderRadius: 20,
+    backgroundColor: "#FFFFFF",
+    alignContent:'center',
+    height:50,marginBottom:5
       }}
-      numberOfLines={2}
+      numberOfLines={4}
+      multiline={true}
 
  />
  <TextInput
@@ -155,13 +170,33 @@ class AdminScreenContainer extends React.Component {
                 style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
                 full
                 rounded
-                onPress={() => {
-                  this.sendDaily()
+                onPress={async () => {
+                 await this.sendDaily()
                 }}
               >
                 <Text>send</Text>
               </Button>
       </View>
+      <View style={{ flexDirection: "row" , justifyContent:'center'}}>
+            <Text onPress={
+              ()=>  {
+                this.sendPushNotification()
+              } 
+            } style={{ color: "black", fontWeight: "900" }}>English</Text>
+            <Switch
+              style={{ marginLeft: 20, marginRight: 20 }}
+              onValueChange={value => {
+                this.setState({
+                  isArabicNotification: !isArabicNotification
+                })
+              }}
+              value={isArabicNotification}
+            />
+            <Text onPress={
+              ()=> toggleLanguage()
+            } style={{ color: "black", fontWeight: "900" }}>عربي</Text>
+          </View>
+          </ScrollView>
       </KeyboardAvoidingView>
     );
   }
