@@ -132,12 +132,22 @@ if(!isBookExists)
        await FileSystem.downloadAsync(
          arabicContentUri[bookName],
          FileSystem.documentDirectory + trimmed
-       ).then(async ({ uri }) => {
-         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-         // console.log("uri" , uri)
-         // console.log("english done");
-         // console.log("before setimeeem" , bookName)
-         await AsyncStorage.setItem(bookName, uri);
+       ).then(async ({ uri ,status , headers }) => {
+        if(status === 200)
+        {
+         if(Platform.OS ==='android')
+         {
+          contentLength = 'content-length';
+         }
+         else 
+         {
+           contentLength = 'Content-Length'
+         }
+          if(headers && headers[contentLength])
+          {
+            await AsyncStorage.setItem(bookName, uri);
+          }
+        }
        })
        .catch(error => {
         //  alert("error");
