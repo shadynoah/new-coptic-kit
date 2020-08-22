@@ -11,9 +11,10 @@ import "./src/fixtimerbug"; // <<<<<<<<<<<<<<<<<<
 import Navigators from "./src/modules/routing";
 import NavigatorService from "./src/services/navigator.js";
 import { NotificationManager } from "./src/services/utilities/pushNotification";
-
-
-
+import * as Localization from 'expo-localization';
+import i18n from 'i18n-js';
+import { arabic } from './src/services/translations/arabic';
+import { english } from './src/services/translations/english';
 
 export default class App extends React.Component {
   state = {
@@ -66,6 +67,12 @@ export default class App extends React.Component {
     this._notificationSubscription = Notifications.addListener(
       this._handleNotification
     );
+    // i18n.locale = 'en';
+    console.log("Localization.locale", i18n.locale)
+    i18n.translations = {
+      en: english,
+      ar: arabic,
+    };
   }
   render() {
     if (!this.state.isReady || !Application.current) {

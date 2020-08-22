@@ -205,6 +205,7 @@ export class BaseModal extends PureComponent {
     return (
       <Modal
         animationType="slide"
+        avoidKeyboard 
         transparent={true}
         isVisible={this.props.isVisible}
         supportedOrientations={SUPPORTED_ORIENTATIONS}

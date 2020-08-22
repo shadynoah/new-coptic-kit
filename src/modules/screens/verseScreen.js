@@ -15,6 +15,7 @@ import { BaseModal } from "../components/base-modal";
 import { MenuOptionList } from "../components/MenuOptionList";
 import NavigatorService from "../../services/navigator.js";
 import { bookNamesDictionary } from "../../constants";
+import i18n from 'i18n-js';
 
 const styles = StyleSheet.create({
   textinput: {
@@ -307,16 +308,16 @@ class verseScreenContainer extends Component {
               baseModalProperties={{
                 hadCloseHeader: true,
                 hasHeaderTitle: true,
-                headerTitle: isArabic ? "مُلاحَظة" : "Note",
+                headerTitle: i18n.t("NoteModal.header"),
                 toggleModal: () => this.setState({ isVisible: false }),
                 modalText:
                   selectedBook.bookName +
                   numberOfSelectedChapter.toString(),
                 hasFirstButton: true,
                 hasSecondButton: true,
-                secondButtonText: isArabic ? "إلغاء" : "Cancel",
+                secondButtonText:  i18n.t("NoteModal.Btns.Cancel"),
                 onPressSecondBtn: () => this.setState({ isVisible: false }),
-                firstButtonText: isArabic ? "حفظ" : "Save",
+                firstButtonText: i18n.t("NoteModal.Btns.Save") ,
                 onPressFirstBtn: this.saveNote,
                 modalType: ModalTypesEnum.modalHasTwoButtons,
                 isArabic: isArabic

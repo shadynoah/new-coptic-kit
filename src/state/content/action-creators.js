@@ -9,6 +9,8 @@ import { AsyncStorage } from "react-native";
 import * as types from "./actions";
 import { IBOOK } from "./state";
 import {bookNamesDictionary} from '../../constants'
+import i18n from 'i18n-js';
+
 const db = SQLite.openDatabase("db.db");
 export function toggleLoading() {
   return { type: types.CONTENT_LOADING };
@@ -104,10 +106,15 @@ export async function loadChapterContent(
     });
   };
 }
-export function toggleLanguage() {
-  return {
-    type: types.TOGGLE_LANGUAGE_CONTENT
-  };
+export async function toggleLanguage() {
+  return async (dispatch, getState) => {
+    var isArabic = getState().content.isArabic;
+    i18n.locale = isArabic ? 'en' : 'ar';
+    dispatch({
+      type: types.TOGGLE_LANGUAGE_CONTENT
+    })
+  }
+  
 }
 
 export function loadNotes() {

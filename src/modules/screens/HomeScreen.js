@@ -16,6 +16,7 @@ import { LoadingContentModal } from "../components/loading-content-modal";
 import { UserAdmineModal } from "../components/user-admin-modal";
 import { Helpers } from './../../services/utilities/helpers';
 import * as Localization from 'expo-localization';
+import i18n from 'i18n-js';
 
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
@@ -152,7 +153,7 @@ class HomeScreenContainer extends Component {
     }
     if(isExist)
     return true;
-    else 
+    else
     return false;
   }
   async checkIfPlanContentExist(isArabic){
@@ -165,7 +166,7 @@ class HomeScreenContainer extends Component {
     }
     if(isExist)
     return true;
-    else 
+    else
     return false;
   }
   sendPushNotification = async () => {
@@ -206,7 +207,7 @@ class HomeScreenContainer extends Component {
       this.toggleAdminModal();
       NavigatorService.navigate("AdminScreen");
     }
-    else 
+    else
     alert("invalid credintials")
   }
   render() {
@@ -278,7 +279,7 @@ class HomeScreenContainer extends Component {
             <Text onPress={
               ()=>  {
                 // this.sendPushNotification()
-              } 
+              }
             } style={{ color: "white", fontWeight: "900" }}>English</Text>
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
@@ -287,6 +288,7 @@ class HomeScreenContainer extends Component {
                   title: isArabic ? "الرئيسية" : "Home"
                 });
                 toggleLanguage();
+                // i18n.locale = isArabic ? 'ar' : 'en';
               }}
               value={isArabic}
             />
@@ -374,7 +376,7 @@ class HomeScreenContainer extends Component {
                   alert(message)
                 }, 1000);
               }
-              else 
+              else
               {
                 NavigatorService.navigate("BookScreen");
               }
@@ -406,7 +408,7 @@ class HomeScreenContainer extends Component {
                     alert(message)
                   }, 1000);
                 }
-                else 
+                else
                 {
                   NavigatorService.navigate("BiblePlanScreen");
                 }

@@ -26,40 +26,6 @@ export class Application {
     }
   }
   //---------------------------------------
-  async IsContentDownloaded(languageKey) {
-    let res = await AsyncStorage.getItem(languageKey);
-    if (res) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  async downloadArabic() {
-    await Promise.all(
-      _.map(arabicBookNames , async bookName => {
- let trimmed = bookName.replace(/\s/g, "");
-       await FileSystem.downloadAsync(
-         arabicContentUri[bookName],
-         FileSystem.documentDirectory + trimmed
-       ).then(async ({ uri }) => {
-         // let stringcontent = await FileSystem.readAsStringAsync(uri);
-         // console.log("uri" , uri)
-         // console.log("english done");
-         // console.log("before setimeeem" , bookName)
-         await AsyncStorage.setItem(bookName, uri);
-       })
-       .catch(error => {
-         alert("error");
-         console.error(error);
-       });
-      })
-     ).then(async ()=>{
-       await AsyncStorage.setItem("arabic", "true");
-       console.log("finished");
-     }).catch(()=>{
-       console.log("error in download content")
-     })
-  }
   networkConnectionChange = isConnected => {
     Application.current.store.dispatch(updateConnectionStatus(isConnected));
   };

@@ -4,6 +4,7 @@ import React, { PureComponent } from "react";
 import { View } from "react-native";
 import { Menu, MenuOption, MenuOptions, MenuTrigger } from "react-native-popup-menu";
 import NavigatorService from "../../services/navigator.js";
+import i18n from 'i18n-js';
 
 export class OutOfEditorMenuOptionList extends PureComponent {
   constructor() {
@@ -49,7 +50,9 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "الرئيسية" : "Home"}
+                  {
+                    i18n.t("menuOptions.Home")
+                  }
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
@@ -74,7 +77,9 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "إشارات مرجعية" : "bookmarks"}
+                {
+                    i18n.t("menuOptions.BookMarks")
+                }
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
@@ -98,7 +103,9 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "ملاحظات" : "Notes"}
+                {
+                    i18n.t("menuOptions.Notes")
+                }
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
@@ -124,7 +131,9 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "تكبير" : "fontSize"}
+                {
+                   i18n.t("menuOptions.fontSizeP")
+                }
                 </Text>
               </View>
               <View style={{ flexDirection: "row", flex: 0.3 }}>
@@ -150,7 +159,9 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "تصغير" : "fontSize"}
+                {
+                    i18n.t("menuOptions.fontSizeM")
+                }
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
@@ -176,7 +187,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
             <View style={{ flexDirection: "row", flex: 1 }}>
               <View style={{ flex: 0.7 }}>
                 <Text style={{ marginRight: 10 }}>
-                  {isArabic ? "من نحن" : "about"}
+                  {i18n.t("menuOptions.About")}
                 </Text>
               </View>
               <View style={{ flex: 0.3 }}>
@@ -194,7 +205,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
               </View>
             </View>
           </MenuOption>
-          <MenuOption
+          {/* <MenuOption
             onSelect={() => {
             this.props.toggleAdminModal();
             }}
@@ -206,7 +217,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
                 </Text>
               </View>
             </View>
-          </MenuOption>
+          </MenuOption> */}
         </MenuOptions>
       </Menu>
     );
