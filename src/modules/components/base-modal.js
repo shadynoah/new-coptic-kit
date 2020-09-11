@@ -126,12 +126,29 @@ export class BaseModal extends PureComponent {
         return (
           <View
             style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
               marginTop: 30
             }}
           >
-            <View style={{ flex: 0.5 }}>
+             <TextInput
+            style={styles.TextInputStyleClass}
+            underlineColorAndroid="transparent"
+            placeholder={
+              this.props.baseModalProperties.isArabic
+                ? "اكتب ملاحظتك"
+                : "write your note"
+            }
+            placeholderTextColor={"#9E9E9E"}
+            numberOfLines={10}
+            multiline={true}
+            defaultValue=""
+            onChangeText={text => {
+              this.setState({
+                textOfTextInput: text
+              });
+            }}
+          />
+          <View style={{ flexDirection:'row' }}>
+          <View style={{ flex: 0.5 }}>
               <Button
                 style={{ margin: 10, paddingLeft: 30, paddingRight: 30 }}
                 full
@@ -159,6 +176,7 @@ export class BaseModal extends PureComponent {
                 <Text>{secondButtonText}</Text>
               </Button>
             </View>
+          </View>
           </View>
         );
       case ModalTypesEnum.warningModal:
@@ -214,8 +232,6 @@ export class BaseModal extends PureComponent {
           style={{
             padding: 10,
             backgroundColor: "white",
-            justifyContent: "center",
-            alignItems: "center",
             borderRadius: 4,
             borderColor: "rgba(0, 0, 0, 0.1)"
           }}
@@ -256,24 +272,7 @@ export class BaseModal extends PureComponent {
               {this.props.baseModalProperties.modalText}
             </Text>
           </View>
-          <TextInput
-            style={styles.TextInputStyleClass}
-            underlineColorAndroid="transparent"
-            placeholder={
-              this.props.baseModalProperties.isArabic
-                ? "اكتب ملاحظتك"
-                : "write your note"
-            }
-            placeholderTextColor={"#9E9E9E"}
-            numberOfLines={10}
-            multiline={true}
-            defaultValue=""
-            onChangeText={text => {
-              this.setState({
-                textOfTextInput: text
-              });
-            }}
-          />
+         
           {this.renderSwitch(
             this.props.baseModalProperties.modalType,
             firstButtonText,
