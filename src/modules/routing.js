@@ -14,6 +14,7 @@ import { BookMarkScreen } from "./screens/BookMarkScreen";
 import { AboutScreen } from "./screens/AboutScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { AdminScreen } from "./screens/AdminScreen";
+import { AboutScreena } from './screens/AgbyaSectionScreen'
 
 const Navigator = createStackNavigator(
   {
@@ -46,6 +47,9 @@ const Navigator = createStackNavigator(
     },
     AdminScreen: {
       screen: AdminScreen
+    },
+    AboutScreena: {
+      screen: AboutScreena
     }
   },
   {

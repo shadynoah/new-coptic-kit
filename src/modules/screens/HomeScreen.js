@@ -422,6 +422,23 @@ class HomeScreenContainer extends Component {
                 source={require("../../../assets/images/newbiblePlan.png")}
               />
             </TouchableOpacity>
+            <TouchableOpacity
+              style={{ marginLeft: 10 }}
+              onLongPress = {
+                ()=> NavigatorService.navigate("AboutScreena")
+              }
+              onPress={async () => {
+                NavigatorService.navigate("AboutScreena");
+            }}
+            >
+              <Image
+                style={{
+                  height: heightT + 0.95 * heightT,
+                  width: heightT + 0.95 * heightT
+                }}
+                source={require("../../../assets/images/agbya.jpg")}
+              />
+            </TouchableOpacity>
           </View>
       </ImageBackground>
     );

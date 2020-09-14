@@ -13,6 +13,17 @@ export const arabic = {
             Save: 'حفظ',
             Cancel: 'الغاء'
         }
+    },
+    agbyaSections:{
+        first: 'صلاه باكر',
+        second: 'صلاه الساعة التالته',
+        third: 'صلاه الساعه السادسه',
+        forth: 'صلاه الساعه التاسعه',
+        fivth:'صلاه الغروب',
+        sixth:'صلاه النوم',
+        seventh:'صلاه الستار',
+        eighth:'صلاه نصف الليل',
+        ninth:'صلوات اخري'
     }
   
 }

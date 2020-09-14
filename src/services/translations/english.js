@@ -13,5 +13,17 @@ export const english = {
             Save: 'Save',
             Cancel: 'Cancel'
         }
+    },
+    agbyaSections:{
+        first: 'The First Hour',
+        second:'The Third Hour',
+        third: 'The Sixth Hour',
+        forth: 'The Ninth Hour',
+        fivth:'The Eleventh Hour',
+        sixth:'The Twelfth Hour',
+        seventh:'The Veil Prayers',
+        eighth:'The MidNight Prayers',
+        ninth:'Other Prayers'
+
     }
 }
