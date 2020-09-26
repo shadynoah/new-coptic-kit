@@ -165,4 +165,32 @@ if(!isBookExists)
     return bookName;
     return bookNamesDictionary[bookName];
   }
+  static async downloadAgbya (){
+    let contentLength;
+    await FileSystem.downloadAsync(
+      "https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1",
+      FileSystem.documentDirectory + "lordPrayerAr"
+    ).then(async ({ uri ,status , headers }) => {
+      console.log("uri of agbya is" , uri)
+      if(status === 200)
+      {
+       if(Platform.OS ==='android')
+       {
+        contentLength = 'content-length';
+       }
+       else 
+       {
+         contentLength = 'Content-Length'
+       }
+        if(headers && headers[contentLength])
+        {
+          await AsyncStorage.setItem("lordPrayerAr", uri);
+        }
+      }
+     })
+     .catch(error => {
+      //  alert("error");
+       console.error(error);
+     });
+  }
 }

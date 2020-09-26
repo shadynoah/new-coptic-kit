@@ -27,8 +27,22 @@ import i18n from 'i18n-js';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export class AgbyaPraysList extends React.Component {
-  
+    constructor() {
+        super();
+        this.state = {
+          isArabic: false,
+          isPraySelected: false
+        };
+      }
+      static mapStatetToProps(state: State) {
+        return {
+          links : state.agbya.links
+          
+        };
+      }
+      
   render() {
+      console.log("links from prays" , this.props.links)
     return (
       <Container>
         {/* <Header>
@@ -40,7 +54,7 @@ export class AgbyaPraysList extends React.Component {
           <Card>
             <CardItem style={{ borderStartColor:'black', borderWidth:3,borderStyle:'solid' }}>
               <TouchableOpacity >
-              <Text style={{ textAlign:'center' }}>sd</Text>
+              <Text style={{ textAlign:'center' }}>{i18n.t("praysNames.first")}</Text>
               </TouchableOpacity>
              </CardItem>
            </Card>

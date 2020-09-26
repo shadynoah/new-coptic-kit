@@ -14,7 +14,7 @@ export const arabic = {
             Cancel: 'الغاء'
         }
     },
-    agbyaSections:{
+    praysNames:{
         first: 'صلاه باكر',
         second: 'صلاه الساعة التالته',
         third: 'صلاه الساعه السادسه',
@@ -24,6 +24,5 @@ export const arabic = {
         seventh:'صلاه الستار',
         eighth:'صلاه نصف الليل',
         ninth:'صلوات اخري'
-    }
-  
+    },
 }

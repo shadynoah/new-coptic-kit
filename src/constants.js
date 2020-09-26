@@ -14247,3 +14247,148 @@ export const booksOfFirstArabicPlan = [
        "RevelationAr"
 ]
 export const EXPO_PUSH_TOKEN_KEY='expoToken'
+export const agbyaKeys = [
+  {
+    id: 1,
+    name:  "first",
+    links: [
+    {
+      id:"1st-1",
+      name:"المزمور الاول"
+    },
+    
+    ]
+  },
+  {
+    id:2,
+    name:"second",
+    links: [
+      {
+        id:"3d-1",
+        name:"مقدمه كل ساعه"
+      },
+      {
+        id:"3d-2",
+        name:'الصلاه الربانيه'
+      },
+      {
+        id: "3d-3",
+        name: 'صلاه الشكر'
+      },
+      {
+        id: '3d-4',
+        name: 'المزمور الخمسين'
+      },
+      {
+        id:"3d-5",
+        name: 'بدء الصلاه'
+      },
+      {
+        id : "3d-6",
+        name : 'المزمور التاسع عشر'
+      },{
+        id : "3d-7",
+        name :  'المزمور الثاني والعشرون'
+      },
+      {
+        id : "3d-8",
+        name :  'المزمور الثالث والعشرون'
+      },
+      {
+        id : "3d-9",
+        name :  'المزمور الخامس والعشرون'
+      },
+      {
+        id : "3d-10",
+        name :  'المزمور الثامن والعشرون'
+      },
+      {
+        id : "3d-11",
+        name :  'المزمور الثامن والعشرون'
+      },
+      {
+        id : "3d-12",
+        name :  'المزمور التاسع والعشرون'
+      },
+      {
+        id : "3d-13",
+        name :  'المزمور الثالث و الثلاثون'
+      },
+      {
+        id : "3d-14",
+        name :  'المزمور الاربعون'
+      },
+      {
+        id : "3d-15",
+        name :  'المزمور الثاني والاربعون'
+      },
+      {
+        id : "3d-16",
+        name : 'المزمور الرابع والاربعون'
+      },
+      {
+        id : "3d-17",
+        name : 'المزمور الخامس والاربعون'
+      },
+      {
+        id : "3d-18",
+        name : 'المزمور السادس والاربعون'
+      },
+      {
+        id : "3d-19",
+        name : 'يوحنا 14 : 26-30'
+      },
+      {
+        id : "3d-20",
+        name : 'قدوس قدوس قدوس'
+      },
+      {
+        id : "3d-21",
+        name : 'التحليل'
+      },
+      {
+        id : "3d-22",
+        name : 'طلبه تصلي اخر كل ساعه'
+      },
+      ]
+  },
+  {
+    id:3,
+    name:"third",
+    links: [
+      ]
+  },
+  {
+    id:4,
+    name:"forth"
+  },
+  {
+    id:5,
+    name:"fivth"
+  },
+  {
+    id:6,
+    name: "sixth"
+  },
+  {
+    id:7,
+    name:"seventh"
+  },
+  {
+    id:8,
+    name:"eighth"
+  },
+  {
+    id:9,
+    name:"ninth"
+  }
+]
+export const arabicAgbyaNames = [
+  'lordPrayerAr'
+]
+export  const arabicAgbyaUril = {
+   lordPrayerAr: 'https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1'
+}
+export const  praysNamesDictionary = {
+  lordPrayerAr: "الصلاه الربانيه",
+}

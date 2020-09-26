@@ -263,7 +263,7 @@ class BiblePlanScreenContainer extends Component {
                       console.log("item from plan is" +  item)
                      NavigatorService.navigate("VerseScreen" , {
                        startVerseNumder: item.startVerseNumber,
-                       endVerseNumber:item.endVerseNumber
+                       endVerseNumber:0
                      });
                     }
                   }

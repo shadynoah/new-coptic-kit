@@ -15,6 +15,8 @@ import { AboutScreen } from "./screens/AboutScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { AdminScreen } from "./screens/AdminScreen";
 import { AboutScreena } from './screens/AgbyaSectionScreen'
+import { AgbyaPrayScreen } from './screens/AgbyaPrayScreen';
+import { AgbyaVersesScreen } from './screens/AgbyaVerses';
 
 const Navigator = createStackNavigator(
   {
@@ -50,6 +52,12 @@ const Navigator = createStackNavigator(
     },
     AboutScreena: {
       screen: AboutScreena
+    },
+    AgbyaPrayScreen: {
+      screen:AgbyaPrayScreen
+    },
+    AgbyaVersesScreen:{
+      screen: AgbyaVersesScreen
     }
   },
   {

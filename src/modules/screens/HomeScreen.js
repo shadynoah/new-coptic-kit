@@ -5,10 +5,10 @@ import React, { Component } from "react";
 import { AsyncStorage, Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { arabicBookNames, bookNames, booksOfFirstArabicPlan } from '../../constants';
+import { arabicBookNames, bookNames, booksOfFirstArabicPlan ,arabicAgbyaNames} from '../../constants';
 import { ModalTypesEnum } from "../../enums";
 import NavigatorService from "../../services/navigator.js";
-import { State } from "../../state";
+import { State, loadPray } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { inializeArabicCheckedList, inializeEnglishCheckedList } from "../../state/plan/action-creators";
 import { BaseModal } from "../components/base-modal";
@@ -17,7 +17,6 @@ import { UserAdmineModal } from "../components/user-admin-modal";
 import { Helpers } from './../../services/utilities/helpers';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
-
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
@@ -58,7 +57,8 @@ class HomeScreenContainer extends Component {
         toggleIsDownloading,
         toggleLanguage,
         inializeArabicCheckedList,
-        inializeEnglishCheckedList
+        inializeEnglishCheckedList,
+        loadPray
       },
       dispatch
     );
@@ -143,6 +143,31 @@ class HomeScreenContainer extends Component {
     //   NavigatorService.navigate("BookScreen");
     // }
   }
+  async downloadAgbyaContent() {
+    const { isArabic , toggleIsDownloading, isConnected  } = this.props;
+    let isContentExist = await this.checkIfAgbyaContentExist(isArabic);
+    if (isContentExist !== true) {
+      if (!isConnected) {
+        this.setState({
+          isWarningModalVisible: true
+        });
+      } else {
+        toggleIsDownloading();
+        if(isArabic)
+        {
+          await Helpers.downloadAgbya();
+        }
+        else
+        {
+          await Helpers.downloadAgbya();
+        }
+        toggleIsDownloading();
+      }
+    }
+    // else{
+    //   NavigatorService.navigate("BookScreen");
+    // }
+  }
  async checkIsContetExist(isArabic){
    let books = isArabic ? arabicBookNames : bookNames
     let isExist = true;
@@ -158,6 +183,19 @@ class HomeScreenContainer extends Component {
   }
   async checkIfPlanContentExist(isArabic){
     let books = isArabic ? booksOfFirstArabicPlan : bookNames
+    let isExist = true;
+    for(const book of books){
+      isExist = await AsyncStorage.getItem(book)
+      if(!isExist)
+      break;
+    }
+    if(isExist)
+    return true;
+    else
+    return false;
+  }
+  async checkIfAgbyaContentExist(isArabic){
+    let books = isArabic ? arabicAgbyaNames : arabicAgbyaNames
     let isExist = true;
     for(const book of books){
       isExist = await AsyncStorage.getItem(book)
@@ -211,7 +249,7 @@ class HomeScreenContainer extends Component {
     alert("invalid credintials")
   }
   render() {
-    const { isConnected , isArabic , navigation , toggleLanguage } = this.props;
+    const { isConnected , isArabic , navigation , toggleLanguage ,loadPray } = this.props;
     const { isDownloadling , isWarningModalVisible } = this.state;
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
@@ -428,7 +466,24 @@ class HomeScreenContainer extends Component {
                 ()=> NavigatorService.navigate("AboutScreena")
               }
               onPress={async () => {
-                NavigatorService.navigate("AboutScreena");
+                const {toggleIsDownloading ,isArabic } = this.props;
+                await  this.downloadAgbyaContent();
+                let isExist = await this.checkIfAgbyaContentExist(isArabic)
+                console.log("is exist agbya" , isExist)
+                if(!isExist)
+                {
+                  let message = isArabic ? "حاول مره اخري" : "try again"
+                  setTimeout(() => {
+                    alert(message)
+                  }, 1000);
+                }
+                else
+                {
+                  NavigatorService.navigate("AboutScreena");
+                }
+                // NavigatorService.navigate("AboutScreena");
+                // loadPray();
+              //  console.log("sss",await AsyncStorage.getItem("lordPrayerAr"));
             }}
             >
               <Image

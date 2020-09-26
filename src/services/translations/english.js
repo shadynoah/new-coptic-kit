@@ -14,7 +14,7 @@ export const english = {
             Cancel: 'Cancel'
         }
     },
-    agbyaSections:{
+    praysNames:{
         first: 'The First Hour',
         second:'The Third Hour',
         third: 'The Sixth Hour',
@@ -25,5 +25,5 @@ export const english = {
         eighth:'The MidNight Prayers',
         ninth:'Other Prayers'
 
-    }
+    },
 }

@@ -4,12 +4,12 @@ import { FlatList, StyleSheet, Text ,ImageBackground } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { agbyaKeys } from './../../constants';
-import { setPrays } from './../../state/agbya/action-creators';
+import { praysNamesDictionary } from './../../constants';
+import { setPrays , loadPray } from './../../state/agbya/action-creators';
 import { State } from "../../state";
 import NavigatorService from "../../services/navigator.js";
-
-class AgbyaScreenScreenContainer extends React.Component {
+import _ from 'lodash'
+class AgbyaPrayScreenContainer extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +19,6 @@ class AgbyaScreenScreenContainer extends React.Component {
   }
   static mapStatetToProps(state: State) {
     return {
-      isArabic: state.content.isArabic,
       links : state.agbya.links
       
     };
@@ -27,7 +26,8 @@ class AgbyaScreenScreenContainer extends React.Component {
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
       { 
-        setPrays
+        setPrays,
+        loadPray
       },
       dispatch
     );
@@ -65,19 +65,21 @@ class AgbyaScreenScreenContainer extends React.Component {
   handleclick = (r)=>{
   }
   renderItem(item) {
-    const { setPrays } = this.props;
+    const { setPrays ,loadPray } = this.props;
     return <TouchableOpacity onPress={
-     ()=> {
-      setPrays(item.links);
-      NavigatorService.navigate("AgbyaPrayScreen",{
-        links: item.links
-      })
-    }} style={{
+     async ()=> {
+      let bookName = _.invert(praysNamesDictionary)[item.name]
+      console.log("bookname inverted",bookName)
+     await  loadPray(bookName);
+      setPrays(item)
+      NavigatorService.navigate("AgbyaVersesScreen");
+     } 
+    } style={{
       borderColor:'black',
       padding:5,
       borderWidth:2
     }}>
-   <Text>{i18n.t(`praysNames.${item.name}`)}</Text>
+   <Text>{item.name}</Text>
     </TouchableOpacity>
   }
   render() {
@@ -86,13 +88,13 @@ class AgbyaScreenScreenContainer extends React.Component {
       source={require("../../../assets/images/background.jpg")}
       style={{ flex: 1 }}
     >
-      <FlatList
-      data={agbyaKeys}
-      keyExtractor={p => p.id.toString()}
-      renderItem={({ item }) => this.renderItem(item)}
-      initialNumToRender={12}
-    />
-    </ImageBackground>
+        <FlatList
+        data={this.props.navigation.state.params.links}
+        keyExtractor={p => p.id.toString()}
+        renderItem={({ item }) => this.renderItem(item)}
+        initialNumToRender={12}
+      />
+      </ImageBackground>
     );
   }
 }
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   }
 });
-export const AboutScreena = connect(
- AgbyaScreenScreenContainer.mapStatetToProps,
- AgbyaScreenScreenContainer.mapDispatchToProps
-)(AgbyaScreenScreenContainer);
+export const AgbyaPrayScreen = connect(
+    AgbyaPrayScreenContainer.mapStatetToProps,
+    AgbyaPrayScreenContainer.mapDispatchToProps
+)(AgbyaPrayScreenContainer);
