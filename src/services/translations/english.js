@@ -16,7 +16,7 @@ export const english = {
     },
     praysNames:{
         first: 'The First Hour',
-        second:'The Third Hour',
+        thirdPray:'The Third Hour',
         third: 'The Sixth Hour',
         forth: 'The Ninth Hour',
         fivth:'The Eleventh Hour',

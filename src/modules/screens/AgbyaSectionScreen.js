@@ -8,6 +8,10 @@ import { agbyaKeys } from './../../constants';
 import { setPrays } from './../../state/agbya/action-creators';
 import { State } from "../../state";
 import NavigatorService from "../../services/navigator.js";
+import { DrawerList } from '../components/drawerlist';
+import {Dashboard} from '../components/dashboard';
+
+import { Drawer } from 'native-base';
 
 class AgbyaScreenScreenContainer extends React.Component {
   constructor() {
@@ -80,19 +84,28 @@ class AgbyaScreenScreenContainer extends React.Component {
    <Text>{i18n.t(`praysNames.${item.name}`)}</Text>
     </TouchableOpacity>
   }
+  closeDrawer = () => {
+    this.drawer._root.close()
+  };
+  openDrawer = () => {
+    this.drawer._root.open()
+  };
+  openDrawer2 = () => {
+    this.drawer2._root.open()
+  };
   render() {
     return (
       <ImageBackground
       source={require("../../../assets/images/background.jpg")}
       style={{ flex: 1 }}
     >
-      <FlatList
+         <FlatList
       data={agbyaKeys}
       keyExtractor={p => p.id.toString()}
       renderItem={({ item }) => this.renderItem(item)}
       initialNumToRender={12}
     />
-    </ImageBackground>
+      </ImageBackground>
     );
   }
 }

@@ -45,9 +45,12 @@ class AgbyaPrayScreenContainer extends React.Component {
     };
   }
   componentDidMount() {
+    const {setPrays}= this.props;
     this.props.navigation.setParams({
-      title: this.props.isArabic ? "الصلوات" : "Sections"
+      title: this.props.isArabic ? "الصلوات" : "Sections",
+      links: this.props.navigation.state.params.links
     });
+    setPrays(this.props.navigation.state.params.links);
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
@@ -69,9 +72,8 @@ class AgbyaPrayScreenContainer extends React.Component {
     return <TouchableOpacity onPress={
      async ()=> {
       let bookName = _.invert(praysNamesDictionary)[item.name]
-      console.log("bookname inverted",bookName)
      await  loadPray(bookName);
-      setPrays(item)
+      // setPrays(item)
       NavigatorService.navigate("AgbyaVersesScreen");
      } 
     } style={{

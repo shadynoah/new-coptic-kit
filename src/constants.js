@@ -14254,30 +14254,213 @@ export const agbyaKeys = [
     links: [
     {
       id:"1st-1",
-      name:"المزمور الاول"
+      name:'مقدمه كل ساعه'
     },
-    
+    {
+      id: "1st-2",
+      name:'الصلاه الربانيه'
+    },
+    {
+      id: "1st-3",
+      name:'صلاه الشكر'
+    },
+    {
+      id: "1st-4",
+      name:'المزمور الخمسون',
+      bookName: 'PsalmAr',
+      chapterNumber: 50
+    },
+    {
+      id: "1st-5",
+      name:'البولس من رساله افسس'
+    },
+    {
+      id: "1st-6",
+      name:'البولس من رساله افسس'
+    },
+    {
+      id: "1st-7",
+      name:'من ايمان الكنيسه'
+    },
+    {
+      id: "1st-8",
+      name:'بدء صلاه باكر'
+    },
+    {
+      id: "1st-9",
+      name:'المزمور الاول',
+      bookName: 'PsalmAr',
+      chapterNumber: 1
+    },
+    {
+      id: "1st-10",
+      name:'المزمور الثاني',
+      bookName: 'PsalmAr',
+      chapterNumber: 2
+    },
+    {
+      id: "1st-11",
+      name:'المزمور الثالث',
+      bookName: 'PsalmAr',
+      chapterNumber: 3
+    },
+    {
+      id: "1st-12",
+      name:'المزمور الرابع',
+      bookName: 'PsalmAr',
+      chapterNumber: 4
+    },
+    {
+      id: "1st-13",
+      name:'المزمور الخامس',
+      bookName: 'PsalmAr',
+      chapterNumber: 5
+    },
+    {
+      id: "1st-14",
+      name:'المزمور السادس',
+      bookName: 'PsalmAr',
+      chapterNumber: 6
+    },
+    {
+      id: "1st-15",
+      name:'المزمور الثامن',
+      bookName: 'PsalmAr',
+      chapterNumber: 8
+    },
+    {
+      id: "1st-16",
+      name:'المزمور الحادي عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 11
+    },
+    {
+      id: "1st-17",
+      name:'المزمور الثاني عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 12
+    },
+    {
+      id: "1st-18",
+      name:'المزمور الرابع عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 14
+    },
+    {
+      id: "1st-19",
+      name:'المزمور الخامس عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 15
+    },
+    {
+      id: "1st-20",
+      name:'المزمور الثامن عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 18
+    },
+    {
+      id: "1st-21",
+      name:'المزمور الرابع والعشرون',
+      bookName: 'PsalmAr',
+      chapterNumber: 24
+    },
+    {
+      id: "1st-22",
+      name:'المزمور السادس والعشرون',
+      bookName: 'PsalmAr',
+      chapterNumber: 26
+    },
+    {
+      id: "1st-23",
+      name:'المزمور الثاني الستون',
+      bookName: 'PsalmAr',
+      chapterNumber: 62
+    },
+    {
+      id: "1st-24",
+      name:'المزمور السادس والستون',
+      bookName: 'PsalmAr',
+      chapterNumber: 66
+    },
+    {
+      id: "1st-25",
+      name:'المزمور التاسع والستون',
+      bookName: 'PsalmAr',
+      chapterNumber: 69
+    },
+    {
+      id: "1st-26",
+      name:'المزمور المائه والثاني عشر',
+      bookName: 'PsalmAr',
+      chapterNumber: 112
+    },
+     {
+      id: "1st-27",
+      name:'المزمور المائه الثاني والاربعون'
+    },
+    {
+      id: "1st-28",
+      name:'انجيل يوحنا'
+    },
+    {
+      id: "1st-29",
+      name:'القطع'
+    },
+    {
+      id: "1st-30",
+      name:'تسبحه الملائكه'
+    },
+    {
+      id: "1st-31",
+      name:'الثلاثه تقديسات'
+    },
+    {
+      id: "1st-32",
+      name:'السلام لك'
+    },
+    {
+      id: "1st-33",
+      name:'بدء قانون الايمان'
+    },
+    {
+      id: "1st-34",
+      name:'قانون الايمان'
+    },
+    {
+      id: "1st-35",
+      name:'قدوس قدوس قدوس'
+    },
+    {
+      id: "1st-36",
+      name:'التحليل'
+    },
+    {
+      id: "1st-37",
+      name:'طلبه تصلي اخر كل ساعه'
+    },
     ]
   },
   {
     id:2,
-    name:"second",
+    name:"thirdPray",
     links: [
       {
-        id:"3d-1",
+        id:"1d-1",
         name:"مقدمه كل ساعه"
       },
       {
-        id:"3d-2",
+        id:"1d-2",
         name:'الصلاه الربانيه'
       },
       {
-        id: "3d-3",
+        id: "1d-3",
         name: 'صلاه الشكر'
       },
       {
-        id: '3d-4',
-        name: 'المزمور الخمسين'
+        id: '1d-4',
+        name: 'المزمور الخمسين',
+        bookName: 'PsalmAr',
+        chapterNumber: 50
       },
       {
         id:"3d-5",
@@ -14285,69 +14468,89 @@ export const agbyaKeys = [
       },
       {
         id : "3d-6",
-        name : 'المزمور التاسع عشر'
+        name : 'المزمور التاسع عشر',
+        bookName: 'PsalmAr',
+        chapterNumber: 19
       },{
         id : "3d-7",
-        name :  'المزمور الثاني والعشرون'
+        name :  'المزمور الثاني والعشرون',
+        bookName: 'PsalmAr',
+        chapterNumber: 22
       },
       {
         id : "3d-8",
-        name :  'المزمور الثالث والعشرون'
+        name :  'المزمور الثالث والعشرون',
+        bookName: 'PsalmAr',
+        chapterNumber: 23
       },
       {
         id : "3d-9",
-        name :  'المزمور الخامس والعشرون'
+        name :  'المزمور الخامس والعشرون',
+        bookName: 'PsalmAr',
+        chapterNumber: 25
       },
       {
         id : "3d-10",
-        name :  'المزمور الثامن والعشرون'
+        name :  'المزمور الثامن والعشرون',
+        bookName: 'PsalmAr',
+        chapterNumber: 28
       },
       {
         id : "3d-11",
-        name :  'المزمور الثامن والعشرون'
+        name :  'المزمور التاسع والعشرون',
+        bookName: 'PsalmAr',
+        chapterNumber: 29
       },
       {
         id : "3d-12",
-        name :  'المزمور التاسع والعشرون'
+        name :  'المزمور الثالث و الثلاثون',
+        bookName: 'PsalmAr',
+        chapterNumber: 33
       },
       {
         id : "3d-13",
-        name :  'المزمور الثالث و الثلاثون'
+        name :  'المزمور الاربعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 40
       },
       {
         id : "3d-14",
-        name :  'المزمور الاربعون'
+        name :  'المزمور الثاني والاربعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 42
       },
       {
         id : "3d-15",
-        name :  'المزمور الثاني والاربعون'
+        name : 'المزمور الرابع والاربعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 44
       },
       {
         id : "3d-16",
-        name : 'المزمور الرابع والاربعون'
+        name : 'المزمور الخامس والاربعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 45
       },
       {
         id : "3d-17",
-        name : 'المزمور الخامس والاربعون'
+        name : 'المزمور السادس والاربعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 46
       },
       {
         id : "3d-18",
-        name : 'المزمور السادس والاربعون'
-      },
-      {
-        id : "3d-19",
         name : 'يوحنا 14 : 26-30'
       },
       {
-        id : "3d-20",
+        id : "3d-19",
         name : 'قدوس قدوس قدوس'
       },
       {
-        id : "3d-21",
+        id : "3d-20",
         name : 'التحليل'
       },
       {
-        id : "3d-22",
+        id : "3d-21",
         name : 'طلبه تصلي اخر كل ساعه'
       },
       ]
@@ -14356,11 +14559,127 @@ export const agbyaKeys = [
     id:3,
     name:"third",
     links: [
+      {
+        id:"6d-1",
+        name:"مقدمه كل ساعه"
+      },
+      {
+        id:"6d-2",
+        name:'الصلاه الربانيه'
+      },
+      {
+        id: "6d-3",
+        name: 'صلاه الشكر'
+      },
+      {
+        id: '6d-4',
+        name: 'المزمور الخمسين',
+        bookName: 'PsalmAr',
+        chapterNumber: 50
+      },
+      {
+        id:"6d-5",
+        name: 'بدء الصلاه'
+      },
+      {
+        id : "6d-6",
+        name : 'المزمور الثالث والخمسون',
+        bookName: 'PsalmAr',
+        chapterNumber: 53
+      },{
+        id : "6d-7",
+        name : 'المزمور السادس والخمسون',
+        bookName: 'PsalmAr',
+        chapterNumber: 56
+      },
+      {
+        id : "6d-8",
+        name :  'المزمور الستون',
+        bookName: 'PsalmAr',
+        chapterNumber: 60
+      },
+      {
+        id : "6d-9",
+        name :  'المزمور الثاني والستون',
+        bookName: 'PsalmAr',
+        chapterNumber: 62
+      },
+      {
+        id : "6d-10",
+        name :  'المزمور السادس  والستون',
+        bookName: 'PsalmAr',
+        chapterNumber: 66
+      },
+      {
+        id : "6d-11",
+        name :  'المزمور التاسع و الستون',
+        bookName: 'PsalmAr',
+        chapterNumber: 69
+      },
+      {
+        id : "6d-12",
+        name :  'المزمور الثالث و الثمانون',
+        bookName: 'PsalmAr',
+        chapterNumber: 83
+      },
+      {
+        id : "6d-13",
+        name :  'المزمور الرابع والثمانون',
+        bookName: 'PsalmAr',
+        chapterNumber: 84
+      },
+      {
+        id : "6d-14",
+        name :  'المزمور الخامس والثمانون',
+        bookName: 'PsalmAr',
+        chapterNumber: 84
+      },
+      {
+        id : "6d-15",
+        name : 'المزمور السادس والثمانون',
+        bookName: 'PsalmAr',
+        chapterNumber: 86
+      },
+      {
+        id : "6d-16",
+        name : 'المزمور التسعون ',
+        bookName: 'PsalmAr',
+        chapterNumber: 90
+      },
+      {
+        id : "6d-17",
+        name : 'المزمور الثاني والتسعون',
+        bookName: 'PsalmAr',
+        chapterNumber: 92
+      },
+      {
+        id : "6d-18",
+        bookName:'MatthewAr',
+        chapterNumber: 15,
+        startVerseNumber: 1,
+        endVerseNumber:16,
+        name: `متي ${Helpers.parseToArabic(15)} :${Helpers.parseToArabic(1)} - ${Helpers.parseToArabic(16)}`
+      },
+      {
+        id : "3d-19",
+        name : 'قدوس قدوس قدوس'
+      },
+      {
+        id : "3d-20",
+        name : 'التحليل'
+      },
+      {
+        id : "3d-21",
+        name : 'طلبه تصلي اخر كل ساعه'
+      },
       ]
   },
   {
     id:4,
-    name:"forth"
+    name:"forth",
+    links: [
+      
+    ]
   },
   {
     id:5,
@@ -14384,11 +14703,15 @@ export const agbyaKeys = [
   }
 ]
 export const arabicAgbyaNames = [
-  'lordPrayerAr'
+  'lordPrayerAr',
+  'thanksPrayerAr'
 ]
-export  const arabicAgbyaUril = {
-   lordPrayerAr: 'https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1'
+export  const arabicAgbyaUri = {
+   lordPrayerAr: 'https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1',
+   thanksPrayerAr : 'https://www.dropbox.com/s/oikffq3p99vwu0l/thanksPrayerAr.json?dl=1'
+   
 }
 export const  praysNamesDictionary = {
   lordPrayerAr: "الصلاه الربانيه",
+  thanksPrayerAr: 'صلاه الشكر'
 }

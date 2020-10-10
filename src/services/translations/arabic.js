@@ -16,7 +16,7 @@ export const arabic = {
     },
     praysNames:{
         first: 'صلاه باكر',
-        second: 'صلاه الساعة التالته',
+        thirdPray: 'صلاه الساعة التالته',
         third: 'صلاه الساعه السادسه',
         forth: 'صلاه الساعه التاسعه',
         fivth:'صلاه الغروب',

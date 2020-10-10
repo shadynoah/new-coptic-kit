@@ -1,11 +1,15 @@
 export interface AgbyaState {
    links: Array,
-   contentOfSelectedPray: String
+   contentOfSelectedPray: String,
+   contentOfAllPray: String,
+   titleOfPray: String
   }
   
   export const AgbyaInitialState : AgbyaState  = {
     links:[],
-    contentOfSelectedPray: ""
+    contentOfSelectedPray: "",
+    contentOfAllPray:  "",
+    titleOfPray: ""
   };
   
   

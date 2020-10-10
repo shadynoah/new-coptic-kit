@@ -17,9 +17,17 @@ export function agbyatReducer(
       };
     }
     case types.LOAD_AGBYA_CHAPTER_CONTENT:{
+      console.log("load chapter agbya",action.payload.titleOfPray)
       return {
         ...state,
-        contentOfSelectedPray: action.payload
+        contentOfSelectedPray: action.payload.content,
+        titleOfPray: action.payload.titleOfPray
+      }
+    }
+    case types.APPEND_PRAY:{
+      return {
+        ...state,
+        contentOfAllPray: action.payload
       }
     }
     default:

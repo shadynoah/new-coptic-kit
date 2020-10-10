@@ -4,7 +4,7 @@ import { AsyncStorage   } from "react-native";
 import { bookNames, enlglishContentUri,IS_ENGLISH_CONTENT_DOWNLOADED ,
 arabicBookNames , arabicContentUri ,
  IS_ARABIC_CONTENT_DOWNLOADED , bookNamesDictionary ,
-   IS_FIRST_ARABIC_PLAN_DOWNLOADED
+   IS_FIRST_ARABIC_PLAN_DOWNLOADED ,arabicAgbyaUri ,arabicAgbyaNames
 } from '../../constants'
 import { Platform } from "react-native";
 
@@ -86,10 +86,11 @@ if(!isBookExists)
    if(!isBookExists)
    {
      let contentLength;
-    await FileSystem.downloadAsync(
-      arabicContentUri[bookName],
+     await FileSystem.downloadAsync(
+      enlglishContentUri[bookName],
       FileSystem.documentDirectory + trimmed
-    ).then(async ({ uri,status , headers }) => {
+    )
+   .then(async ({ uri,status , headers }) => {
       console.log("headers is" , Object.keys(headers))
       if(status === 200)
         {
@@ -165,32 +166,38 @@ if(!isBookExists)
     return bookName;
     return bookNamesDictionary[bookName];
   }
-  static async downloadAgbya (){
-    let contentLength;
-    await FileSystem.downloadAsync(
-      "https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1",
-      FileSystem.documentDirectory + "lordPrayerAr"
-    ).then(async ({ uri ,status , headers }) => {
-      console.log("uri of agbya is" , uri)
-      if(status === 200)
-      {
-       if(Platform.OS ==='android')
-       {
-        contentLength = 'content-length';
-       }
-       else 
-       {
-         contentLength = 'Content-Length'
-       }
-        if(headers && headers[contentLength])
+  static async downloadAgbya(){
+    await Promise.all(
+      _.map(arabicAgbyaNames , async bookName => {
+ let trimmed = bookName.replace(/\s/g, "");
+       await FileSystem.downloadAsync(
+         arabicAgbyaUri[bookName],
+         FileSystem.documentDirectory + trimmed
+       ).then(async ({ uri ,status , headers }) => {
+        if(status === 200)
         {
-          await AsyncStorage.setItem("lordPrayerAr", uri);
+         if(Platform.OS ==='android')
+         {
+          contentLength = 'content-length';
+         }
+         else 
+         {
+           contentLength = 'Content-Length'
+         }
+          if(headers && headers[contentLength])
+          {
+            await AsyncStorage.setItem(bookName, uri);
+          }
         }
-      }
+       })
+       .catch(error => {
+        //  alert("error");
+         console.error(error);
+       });
+      })
+     ).then(async ()=>{
+     }).catch(()=>{
+       console.log("error in download content")
      })
-     .catch(error => {
-      //  alert("error");
-       console.error(error);
-     });
+    }
   }
-}

@@ -42,7 +42,7 @@ export class AgbyaPraysList extends React.Component {
       }
       
   render() {
-      console.log("links from prays" , this.props.links)
+      // console.log("links from prays" , this.props.links)
     return (
       <Container>
         {/* <Header>
