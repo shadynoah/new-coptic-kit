@@ -55,7 +55,6 @@ export async function loadChapterContent(
           await AsyncStorage.getItem(bookName)
         )
       )
-      console.log("arabic content from load chapter", arabicContent)
       for (let index = 0; index < arabicContent.chapters.length; index++) {
         let chapter = arabicContent.chapters[index];
         if (chapter.num == chapterNumber) {

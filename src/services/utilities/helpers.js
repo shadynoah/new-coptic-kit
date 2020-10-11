@@ -4,7 +4,8 @@ import { AsyncStorage   } from "react-native";
 import { bookNames, enlglishContentUri,IS_ENGLISH_CONTENT_DOWNLOADED ,
 arabicBookNames , arabicContentUri ,
  IS_ARABIC_CONTENT_DOWNLOADED , bookNamesDictionary ,
-   IS_FIRST_ARABIC_PLAN_DOWNLOADED ,arabicAgbyaUri ,arabicAgbyaNames
+ IS_FIRST_ARABIC_PLAN_DOWNLOADED ,arabicAgbyaUri ,arabicAgbyaNames
+
 } from '../../constants'
 import { Platform } from "react-native";
 
@@ -86,11 +87,10 @@ if(!isBookExists)
    if(!isBookExists)
    {
      let contentLength;
-     await FileSystem.downloadAsync(
-      enlglishContentUri[bookName],
+    await FileSystem.downloadAsync(
+      arabicContentUri[bookName],
       FileSystem.documentDirectory + trimmed
-    )
-   .then(async ({ uri,status , headers }) => {
+    ).then(async ({ uri,status , headers }) => {
       console.log("headers is" , Object.keys(headers))
       if(status === 200)
         {
