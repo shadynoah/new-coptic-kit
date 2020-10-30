@@ -15,14 +15,14 @@ export const arabic = {
         }
     },
     praysNames:{
-        first: 'صلاه باكر',
+        baker: 'صلاه باكر',
         thirdPray: 'صلاه الساعة التالته',
-        third: 'صلاه الساعه السادسه',
-        forth: 'صلاه الساعه التاسعه',
-        fivth:'صلاه الغروب',
-        sixth:'صلاه النوم',
-        seventh:'صلاه الستار',
-        eighth:'صلاه نصف الليل',
+        sixthPray: 'صلاه الساعه السادسه',
+        ninthPray: 'صلاه الساعه التاسعه',
+        eleventhPray:'صلاه الغروب',
+        twelvthPray:'صلاه النوم',
+        midnightPray:'صلاه نصف الليل',
+        darkPray:'صلاه الستار',
         ninth:'صلوات اخري'
     },
 }

@@ -5,7 +5,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { agbyaKeys } from './../../constants';
-import { setPrays } from './../../state/agbya/action-creators';
+import { setPrays, loadPray } from './../../state/agbya/action-creators';
 import { State } from "../../state";
 import NavigatorService from "../../services/navigator.js";
 import { DrawerList } from '../components/drawerlist';
@@ -31,7 +31,8 @@ class AgbyaScreenScreenContainer extends React.Component {
   static mapDispatchToProps(dispatch: Dispatch) {
     return bindActionCreators(
       { 
-        setPrays
+        setPrays,
+        loadPray
       },
       dispatch
     );
@@ -69,11 +70,12 @@ class AgbyaScreenScreenContainer extends React.Component {
   handleclick = (r)=>{
   }
   renderItem(item) {
-    const { setPrays } = this.props;
+    const { setPrays, loadPray } = this.props;
     return <TouchableOpacity onPress={
-     ()=> {
+     async ()=> {
+      await  loadPray(item.name);
       setPrays(item.links);
-      NavigatorService.navigate("AgbyaPrayScreen",{
+      NavigatorService.navigate("AgbyaVersesScreen",{
         links: item.links
       })
     }} style={{

@@ -43,12 +43,9 @@ export async function loadChapterContent(
     let arabicContent;
     let contentOfSelectedChapter = [];
     if (isArabic || isArabicBookMark == "true") {
-      //  alert("bookName before" + bookName)
-      // bookName = _.invert(bookNamesDictionary)[bookName]
       if(!await AsyncStorage.getItem(bookName))
       {
        bookName =  bookNamesDictionary[bookName]
-      //  alert("bookName"+bookName)
       }
       arabicContent = JSON.parse(
         await FileSystem.readAsStringAsync(
@@ -58,7 +55,6 @@ export async function loadChapterContent(
       for (let index = 0; index < arabicContent.chapters.length; index++) {
         let chapter = arabicContent.chapters[index];
         if (chapter.num == chapterNumber) {
-          // alert("got it")
           contentOfSelectedChapter = _.map(chapter.verses, verse => {
             return {
               key: verse.num,
@@ -70,16 +66,11 @@ export async function loadChapterContent(
         }
       }
     } else {
-      // console.time("timer")
-      // let start = Date.now();
-      // let start = Date.now();
             englishContent = JSON.parse(
         await FileSystem.readAsStringAsync(
           await AsyncStorage.getItem(bookName)
         )
       );
-      // let timer = Date.now() - start
-      // console.log("timer is" , timer)
       for (let index = 0; index < englishContent.chapters.length; index++) {
         let chapter = englishContent.chapters[index];
         if (chapter.num == chapterNumber) {
@@ -93,9 +84,7 @@ export async function loadChapterContent(
          break;
         }
       }
-        //  alert(Date.now() - start);
     }
-
     dispatch({
       type: types.LOAD_CHAPTER_CONTENT,
       payload: {
@@ -239,7 +228,6 @@ async function executeSql(sql, params = []) {
 }
 
 export function toggleIsDownloading() {
-  console.log("toggle")
   return {
     type: types.TOGGLE_IS_DOWNLOADING
   };

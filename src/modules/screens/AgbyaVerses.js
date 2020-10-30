@@ -13,7 +13,6 @@ import { bindActionCreators, Dispatch } from "redux";
 import { State, loadAbyaPart } from "../../state";
 import {
   setPrays,
-  appendPray,
   loadPray
 } from "./../../state/agbya/action-creators";
 import { Drawer } from "native-base";
@@ -36,7 +35,7 @@ class AgbyaVersesScreenContainer extends React.Component {
     return {
       links: state.agbya.links,
       contentOfSelectedPray: state.agbya.contentOfSelectedPray,
-      fontSizeOfText: state.content.fontSizeOfText,
+      fontSizeOfText: state.content,
       titleOfPray: state.agbya
     };
   }
@@ -44,7 +43,6 @@ class AgbyaVersesScreenContainer extends React.Component {
     return bindActionCreators(
       {
         setPrays,
-        appendPray,
         loadPray,
         loadAbyaPart
       },
@@ -63,36 +61,36 @@ class AgbyaVersesScreenContainer extends React.Component {
     return {
       headerTitle: params.title,
       title: params.title,
-      headerRight: (
-        <View style={{ flexDirection: "row" }}>
-          {/* <Button
-            style={{ marginRight: 20 }}
-            title={params.title == "Setting" ? "Home" : "الرئيسية"}
-            onPress={() => params.openDrawer()}
-            transparent
-          >
-            <Text>one</Text>
-          </Button> */}
-          <Button
-            style={{ marginRight: 20}}
-            title={params.title == "Setting" ? "Home" : "الرئيسية"}
-            onPress={() => params.openDrawer2()}
-            transparent
-          >
-            <Text>الاجزاء</Text>
-          </Button>
-        </View>
-      ),
-      headerLeft: (
-        <Button
-          title={params.title == "Setting" ? "Home" : "الرئيسية"}
-          onPress={() => params.openDrawer()}
-          transparent
-          style={{ marginLeft: 20 }}
-        >
-          <Text>الصلوات</Text>
-        </Button>
-      )
+      // headerRight: (
+      //   <View style={{ flexDirection: "row" }}>
+      //     {/* <Button
+      //       style={{ marginRight: 20 }}
+      //       title={params.title == "Setting" ? "Home" : "الرئيسية"}
+      //       onPress={() => params.openDrawer()}
+      //       transparent
+      //     >
+      //       <Text>one</Text>
+      //     </Button> */}
+      //     <Button
+      //       style={{ marginRight: 20}}
+      //       title={params.title == "Setting" ? "Home" : "الرئيسية"}
+      //       onPress={() => params.openDrawer2()}
+      //       transparent
+      //     >
+      //       <Text>الاجزاء</Text>
+      //     </Button>
+      //   </View>
+      // ),
+      // headerLeft: (
+      //   <Button
+      //     title={params.title == "Setting" ? "Home" : "الرئيسية"}
+      //     onPress={() => params.openDrawer()}
+      //     transparent
+      //     style={{ marginLeft: 20 }}
+      //   >
+      //     <Text>الصلوات</Text>
+      //   </Button>
+      // )
     };
   };
   static mapStatetToProps(state: State) {
@@ -100,7 +98,8 @@ class AgbyaVersesScreenContainer extends React.Component {
       isArabic: state.content.isArabic,
       contentOfSelectedPray: state.agbya.contentOfSelectedPray,
       links: state.agbya.links,
-      titleOfPray: state.agbya.titleOfPray
+      titleOfPray: state.agbya.titleOfPray,
+      fontSizeOfText: state.content.fontSizeOfText
     };
   }
   closeDrawer = () => {
@@ -165,64 +164,45 @@ class AgbyaVersesScreenContainer extends React.Component {
     );
   }
   render() {
-    const { contentOfSelectedPray, links, loadPray  , fontSizeOfText , titleOfPray} = this.props;
-    console.log("titleOfPray" , titleOfPray)
+    const { contentOfSelectedPray, links, loadPray  , fontSizeOfText , titleOfPray ,loadAbyaPart} = this.props;
+  console.log("fontSizeOfText" , fontSizeOfText)
     return (
-      <Drawer
-        type="displace"
-        ref={ref => {
-          this.drawer = ref;
-        }}
-        content={
-          <FlatList
-            data={agbyaKeys}
-            keyExtractor={p => p.id.toString()}
-            renderItem={({ item }) => this.renderItem(item)}
-            initialNumToRender={12}
-          />
-        }
-        panOpenMask={0.4}
-        onClose={this.closeDrawer}
-        onOpen={this.openDrawe}
-        captureGestures="open"
-        side={"left"}
-        openDrawerOffset={0.36}
-      >
-        <Drawer
-          type="displace"
-          ref={ref => {
-            this.drawer2 = ref;
-          }}
-          content={
-            <FlatList
-              data={links}
-              keyExtractor={p => p.id.toString()}
-              renderItem={({ item }) => this.renderItem2(item)}
-              initialNumToRender={12}
-            />
-          }
-          panOpenMask={0.4}
-          onClose={this.closeDrawer}
-          onOpen={this.openDrawe}
-          captureGestures="open"
-          side={"right"}
-          openDrawerOffset={0.36}
-        >
           <ImageBackground
             source={require("../../../assets/images/background.jpg")}
             style={{ flex: 1 }}
           >
-            <View>
-              <View style={{flexDirection: 'row' , justifyContent: 'center'}}>
-              <Text style={{marginTop:10 }}>{titleOfPray}</Text>
+            <ScrollView ref={ref => {this.scrollView = ref}}>
+                {
+               _.map(contentOfSelectedPray.agbya ,  (link, index) => {
+              //  loadAbyaPart(link.bookName,
+              //     link.chapterNumber
+              //   )
+               return  <View
+                 key={index} 
+                 style={{flexDirection:'row'}}
+                 onLayout={event =>{
+                   if(index === 3)
+                  this.layout = event.nativeEvent.layout
+                 }}
+               >
+                <ScrollView  contentContainerStyle={{ margin: 15, paddingBottom: 5,lineHeight: 30+fontSizeOfText*.3  }}>
+                <View style={{flexDirection: 'row' , justifyContent: 'center'}}>
+                <Text style={{fontSize: 16, alignItems: "center" , marginBottom:5}}>{link.name} </Text>
+                </View>
+                  <Text style={{fontSize: fontSizeOfText, textAlign:'right',lineHeight: 30+fontSizeOfText*.3 }}>{link.text}</Text>
+                </ScrollView>
               </View>
-              <ScrollView  contentContainerStyle={{ paddingBottom: 10  }}>
-                <Text style={{padding: 20 ,fontSize: 15 }}>{contentOfSelectedPray}</Text>
-              </ScrollView>
-            </View>
+               }) 
+               
+                }
+                <Button onPress={
+                  ()=> this.scrollView.scrollTo({
+                    x:this.layout.x , y: this.layout.y
+                     
+                  })
+                }><Text>sss</Text></Button>
+            </ScrollView>
           </ImageBackground>
-        </Drawer>
-      </Drawer>
     );
   }
 }

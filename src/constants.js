@@ -14250,7 +14250,7 @@ export const EXPO_PUSH_TOKEN_KEY='expoToken'
 export const agbyaKeys = [
   {
     id: 1,
-    name:  "first",
+    name:  "baker",
     links: [
     {
       id:"1st-1",
@@ -14557,7 +14557,7 @@ export const agbyaKeys = [
   },
   {
     id:3,
-    name:"third",
+    name:"sixthPray",
     links: [
       {
         id:"6d-1",
@@ -14678,7 +14678,7 @@ export const agbyaKeys = [
   },
   {
     id:4,
-    name:"forth",
+    name:"ninthPray",
     links: [
       {
         id:"9d-1",
@@ -14799,7 +14799,7 @@ export const agbyaKeys = [
   },
   {
     id:5,
-    name:"fivth",
+    name:"eleventhPray",
     links: [
       {
         id:"11d-1",
@@ -14920,7 +14920,7 @@ export const agbyaKeys = [
   },
   {
     id:6,
-    name: "sixth", // صلاه النوم
+    name: "twelvthPray", // صلاه النوم
     links: [
       {
         id:"slp-1",
@@ -15041,7 +15041,7 @@ export const agbyaKeys = [
   },
   {
     id:7,
-    name:"seventh", // صلاه نصف الليل
+    name:"midnightPray", // صلاه نصف الليل
    links: [
       {
         id:"mid-0",
@@ -15219,23 +15219,84 @@ export const agbyaKeys = [
   },
   {
     id:8,
-    name:"eighth"
+    name:"darkPray", // صلاه الستار
+    links: [
+      {
+        id : "mid-7",
+        name : 'المزمور الثالث',
+        bookName: 'PsalmAr',
+        chapterNumber: 3
+      },{
+        id : "mid-8",
+        name : 'المزمور السادس',
+        bookName: 'PsalmAr',
+        chapterNumber: 6
+      },
+      {
+        id : "mid-9",
+        name :  'المزمور الثاني عشر',
+        bookName: 'PsalmAr',
+        chapterNumber: 12
+      },
+    ]
   },
   {
     id:9,
-    name:"ninth"
+    name:"ninth",
+    links:   [
+      {
+        id : "mid-7",
+        name : 'المزمور الثالث',
+        bookName: 'PsalmAr',
+        chapterNumber: 3
+      },{
+        id : "mid-8",
+        name : 'المزمور السادس',
+        bookName: 'PsalmAr',
+        chapterNumber: 6
+      },
+      {
+        id : "mid-9",
+        name :  'المزمور الثاني عشر',
+        bookName: 'PsalmAr',
+        chapterNumber: 12
+      },
+    ]
   }
 ]
 export const arabicAgbyaNames = [
   'lordPrayerAr',
-  'thanksPrayerAr'
+  'thanksPrayerAr',
+  'baker',
+  'thirdPray',
+  'sixthPray',
+  'ninthPray',
+  'eleventhPray',
+  'twelvthPray',
+  'midnightPray',
+  'darkPray'
 ]
 export  const arabicAgbyaUri = {
    lordPrayerAr: 'https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1',
-   thanksPrayerAr : 'https://www.dropbox.com/s/oikffq3p99vwu0l/thanksPrayerAr.json?dl=1'
-   
+   thanksPrayerAr : 'https://www.dropbox.com/s/oikffq3p99vwu0l/thanksPrayerAr.json?dl=1',
+   baker: 'https://www.dropbox.com/s/gflmo1r1ra1v4hq/baker.json?dl=1',
+   thirdPray: 'https://www.dropbox.com/s/u1b6scotdy2nwhe/thirdPray.json?dl=1',
+   sixthPray:'https://www.dropbox.com/s/2c2jd5eshqibyls/sixthPray.json?dl=1',
+   ninthPray: 'https://www.dropbox.com/s/7cp4q4emgvxpwuh/ninthPray.json?dl=1',
+   eleventhPray : "https://www.dropbox.com/s/cq58ph64xfsx0sh/eleventhPray.json?dl=1",
+   twelvthPray: "https://www.dropbox.com/s/cv04d6i1kftz0lh/twelvthPray.json?dl=1",
+   midnightPray: "https://www.dropbox.com/s/h5uu7pm02owy5x0/midnightPray.json?dl=1",
+   darkPray: "https://www.dropbox.com/s/twy7whsz0vwp5b4/darkPray.json?dl=1"
 }
 export const  praysNamesDictionary = {
   lordPrayerAr: "الصلاه الربانيه",
-  thanksPrayerAr: 'صلاه الشكر'
+  thanksPrayerAr: 'صلاه الشكر',
+  baker: 'baker',
+  thirdPray: 'صلاه الساعه الثالثه',
+  sixthPray: 'صلاه الساعه السادسه',
+  ninthPray: 'صلاه الساعه التاسعه',
+  eleventhPray: 'صلاه الغروب',
+  twelvthPray: 'صلاه النوم',
+  midnightPray:"صلاه نصف الليل",
+  darkPray: 'صلاه الستار'
 }

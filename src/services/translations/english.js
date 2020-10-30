@@ -17,11 +17,11 @@ export const english = {
     praysNames:{
         first: 'The First Hour',
         thirdPray:'The Third Hour',
-        third: 'The Sixth Hour',
+        sixthPray: 'The Sixth Hour',
         forth: 'The Ninth Hour',
         fivth:'The Eleventh Hour',
         sixth:'The Twelfth Hour',
-        seventh:'The Veil Prayers',
+        midnightPray:'The Veil Prayers',
         eighth:'The MidNight Prayers',
         ninth:'Other Prayers'
 
