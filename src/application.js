@@ -35,10 +35,15 @@ export class Application {
 // Fr.george.d.min@gmail.com
 // Trial@2013
     // await AsyncStorage.clear();
-    NetInfo.isConnected.addEventListener(
-      "connectionChange",
-      this.networkConnectionChange
-    );
+    NetInfo.addEventListener(state => {
+      console.log("Connection type", state.type);
+      console.log("Is connected?", state.isConnected);
+      Application.current.isConnected = state.isConnected;
+    });
+    // NetInfo.isConnected.addEventListener(
+    //   "connectionChange",
+    //   this.networkConnectionChange
+    // );
   }
   async onInstall() {}
   async onUpdate() {}

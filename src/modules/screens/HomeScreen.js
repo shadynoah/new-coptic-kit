@@ -17,6 +17,7 @@ import { UserAdmineModal } from "../components/user-admin-modal";
 import { Helpers } from './../../services/utilities/helpers';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import { Application } from './../../application';
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
@@ -45,7 +46,6 @@ class HomeScreenContainer extends Component {
       selectedBook: state.content.selectedBook,
       isArabic: state.content.isArabic,
       isDownloadling: state.content.isDownloadling,
-      isConnected: state.content.isConnected
     };
   }
   static mapDispatchToProps(dispatch) {
@@ -88,7 +88,8 @@ class HomeScreenContainer extends Component {
     });
   }
   async downloadContent() {
-    const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
+    let {  isConnected } = Application.current;
+    const { isArabic , toggleIsDownloading , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
     let isContentExist = await this.checkIsContetExist(isArabic);
     if (isContentExist !== true) {
       if (!isConnected) {
@@ -115,7 +116,8 @@ class HomeScreenContainer extends Component {
     // }
   }
   async downloadPlanContent() {
-    const { isArabic , toggleIsDownloading, isConnected , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
+    let {  isConnected } = Application.current;
+    const { isArabic , toggleIsDownloading , inializeArabicCheckedList , inializeEnglishCheckedList } = this.props;
     // inializeArabicCheckedList();
     // inializeEnglishCheckedList();
     let isContentExist = await this.checkIfPlanContentExist(isArabic);
@@ -144,7 +146,8 @@ class HomeScreenContainer extends Component {
     // }
   }
   async downloadAgbyaContent() {
-    const { isArabic , toggleIsDownloading, isConnected  } = this.props;
+    let { isConnected } = Application.current;
+    const { isArabic , toggleIsDownloading  } = this.props;
     let isContentExist = await this.checkIfAgbyaContentExist(isArabic);
     if (isContentExist !== true) {
       if (!isConnected) {
@@ -249,7 +252,8 @@ class HomeScreenContainer extends Component {
     alert("invalid credintials")
   }
   render() {
-    const { isConnected , isArabic , navigation , toggleLanguage ,loadPray } = this.props;
+    let { isConnected } = Application.current;
+    const {  isArabic , navigation , toggleLanguage ,loadPray } = this.props;
     const { isDownloadling , isWarningModalVisible } = this.state;
     const loadingModal = isDownloadling ? (
       <LoadingContentModal
