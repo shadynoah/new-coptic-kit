@@ -21,6 +21,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import i18n from "i18n-js";
 import _ from "lodash";
 import NavigatorService from "../../services/navigator.js";
+import { CommonActions } from '@react-navigation/native';
 
 class AgbyaVersesScreenContainer extends React.Component {
   constructor() {
@@ -50,47 +51,19 @@ class AgbyaVersesScreenContainer extends React.Component {
     );
   }
   componentDidMount() {
-    const { navigation } = this.props;
-    navigation.setParams({
-      openDrawer: this.openDrawer,
-      openDrawer2: this.openDrawer2
-    });
+    const { navigation ,isArabic } = this.props;
+    // this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الصلوات" : "Sections" }));
+    navigation.setOptions({ title: isArabic ? "الايات" : "verses"  });
+    // navigation.setParams({
+    //   openDrawer: this.openDrawer,
+    //   openDrawer2: this.openDrawer2
+    // });
   }
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};
     return {
       headerTitle: params.title,
       title: params.title,
-      // headerRight: (
-      //   <View style={{ flexDirection: "row" }}>
-      //     {/* <Button
-      //       style={{ marginRight: 20 }}
-      //       title={params.title == "Setting" ? "Home" : "الرئيسية"}
-      //       onPress={() => params.openDrawer()}
-      //       transparent
-      //     >
-      //       <Text>one</Text>
-      //     </Button> */}
-      //     <Button
-      //       style={{ marginRight: 20}}
-      //       title={params.title == "Setting" ? "Home" : "الرئيسية"}
-      //       onPress={() => params.openDrawer2()}
-      //       transparent
-      //     >
-      //       <Text>الاجزاء</Text>
-      //     </Button>
-      //   </View>
-      // ),
-      // headerLeft: (
-      //   <Button
-      //     title={params.title == "Setting" ? "Home" : "الرئيسية"}
-      //     onPress={() => params.openDrawer()}
-      //     transparent
-      //     style={{ marginLeft: 20 }}
-      //   >
-      //     <Text>الصلوات</Text>
-      //   </Button>
-      // )
     };
   };
   static mapStatetToProps(state: State) {

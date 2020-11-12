@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { arabicBookNames, bookNames, booksOfFirstArabicPlan ,arabicAgbyaNames} from '../../constants';
 import { ModalTypesEnum } from "../../enums";
-import NavigatorService from "../../services/navigator.js";
+// import NavigatorService from "../../services/navigator.js";
 import { State, loadPray } from "../../state";
 import { loadChapterContent, selectBook, toggleIsDownloading, toggleLanguage, toggleLoading } from "../../state/content/action-creators";
 import { inializeArabicCheckedList, inializeEnglishCheckedList } from "../../state/plan/action-creators";
@@ -18,6 +18,8 @@ import { Helpers } from './../../services/utilities/helpers';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import { Application } from './../../application';
+import { CommonActions } from '@react-navigation/native';
+
 const style = StyleSheet.create({ hideText: { display: "none" } });
 class HomeScreenContainer extends Component {
   constructor() {
@@ -32,14 +34,14 @@ class HomeScreenContainer extends Component {
       isAdminModal: false
     };
   }
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
-    return {
-      title: params.title,
-      header: <Text style={style.hideText}></Text>,
-      gesturesEnabled: true, // this line
-    };
-  };
+  // static navigationOptions = ({ navigation ,route }) => {
+  //   const params = route.params || {};
+  //   return {
+  //     title: params.title,
+  //     gesturesEnabled: true, // this line
+  //     headerShown:false
+  //   };
+  // };
   static mapStatetToProps(state) {
     return {
       loading: state.content.loading,
@@ -65,9 +67,11 @@ class HomeScreenContainer extends Component {
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.isArabic !== prevState.isArabic) {
-      nextProps.navigation.setParams({
-        title: nextProps.isArabic ? "الرئيسية" : "Home"
-      });
+      nextProps.navigation.setOptions({ title:  nextProps.isArabic ? "الرئيسية" : "Home"  });
+      // nextProps.navigation.dispatch(CommonActions.setParams({  title: nextProps.isArabic ? "الرئيسية" : "Home" }));
+      // nextProps.navigation.setParams({
+      //   title: nextProps.isArabic ? "الرئيسية" : "Home"
+      // });
       return {
         isArabic: nextProps.isArabic
       };
@@ -82,10 +86,8 @@ class HomeScreenContainer extends Component {
   }
 
   async componentDidMount() {
-    const { navigation , isArabic } = this.props;
-    navigation.setParams({
-      title: isArabic ? "الرئيسية" : "Home"
-    });
+   const { navigation , isArabic } = this.props;
+    navigation.setOptions({ title: isArabic ? "الرئيسية" : "Home" ,headerShown:false });
   }
   async downloadContent() {
     let {  isConnected } = Application.current;
@@ -112,7 +114,7 @@ class HomeScreenContainer extends Component {
       }
     }
     // else{
-    //   NavigatorService.navigate("BookScreen");
+    //   this.props.navigation("BookScreen");
     // }
   }
   async downloadPlanContent() {
@@ -246,7 +248,7 @@ class HomeScreenContainer extends Component {
     if(user.name === "shady" && user.password === "123")
     {
       this.toggleAdminModal();
-      NavigatorService.navigate("AdminScreen");
+      this.props.navigation.navigate("AdminScreen");
     }
     else
     alert("invalid credintials")
@@ -326,9 +328,8 @@ class HomeScreenContainer extends Component {
             <Switch
               style={{ marginLeft: 20, marginRight: 20 }}
               onValueChange={value => {
-               navigation.setParams({
-                  title: isArabic ? "الرئيسية" : "Home"
-                });
+                this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الرئيسية" : "Home" }));
+
                 toggleLanguage();
                 // i18n.locale = isArabic ? 'ar' : 'en';
               }}
@@ -420,7 +421,7 @@ class HomeScreenContainer extends Component {
               }
               else
               {
-                NavigatorService.navigate("BookScreen");
+                this.props.navigation.navigate("BookScreen");
               }
             }}
             >
@@ -452,7 +453,7 @@ class HomeScreenContainer extends Component {
                 }
                 else
                 {
-                  NavigatorService.navigate("BiblePlanScreen");
+                 this.props.navigation.navigate("BiblePlanScreen");
                 }
                }}
             >
@@ -467,7 +468,7 @@ class HomeScreenContainer extends Component {
             <TouchableOpacity
               style={{ marginLeft: 10 }}
               onLongPress = {
-                ()=> NavigatorService.navigate("AboutScreena")
+                 ()=> this.props.navigation.navigate("AboutScreena")
               }
               onPress={async () => {
                 const {toggleIsDownloading ,isArabic } = this.props;
@@ -483,7 +484,7 @@ class HomeScreenContainer extends Component {
                 }
                 else
                 {
-                  NavigatorService.navigate("AboutScreena");
+                 this.props.navigation.navigate("AboutScreena");
                 }
                 // NavigatorService.navigate("AboutScreena");
                 // loadPray();

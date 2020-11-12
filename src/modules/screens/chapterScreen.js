@@ -35,12 +35,12 @@ class chapterScreenContainer extends Component {
       isArabic: false
     };
   }
-  static navigationOptions = ({ navigation }) => {
-    let params = navigation.state.params || {};
-    return {
-      headerTitle: params.title
-    };
-  };
+  // static navigationOptions = ({ navigation }) => {
+  //   let params = navigation.state.params || {};
+  //   return {
+  //     headerTitle: params.title
+  //   };
+  // };
   static mapStatetToProps(state: State) {
     return {
       loading: state.content.loading,
@@ -56,25 +56,18 @@ class chapterScreenContainer extends Component {
     );
   }
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.isArabic !== prevState.isArabic) {
-      nextProps.navigation.setParams({
-        title: nextProps.isArabic ? "الاناجيل" : "Books"
-      });
+    const { isArabic ,navigation} = nextProps;
+    if (isArabic !== prevState.isArabic) {
+      navigation.setOptions({ title:  isArabic ? "الاصحاحات" : "chapters"  });
       return {
-        isArabic: nextProps.isArabic
+        isArabic: isArabic
       };
     } else return null;
   }
   componentDidMount() {
     const { navigation, isArabic } = this.props;
-    navigation.setParams({
-      title: isArabic ? "الاصحاحات" : "chapters"
-    });
+    navigation.setOptions({ title:  isArabic ? "الاصحاحات" : "chapters"  });
   }
-
-  props: {
-    selectedBook: IBOOK
-  };
   render() {
     var x = [];
     for (
@@ -114,14 +107,12 @@ class chapterScreenContainer extends Component {
             renderItem={({ item }) => (
               <Text
                 onPress={() => {
-                  // this.props.selectChapter(item.number);
-                  // console.log("this.props.selectedBook.bookName", this.props.selectedBook.bookName);
-                  // console.log("item.number",  item.number)
+                  const { navigation } = this.props;
                   this.props.loadChapterContent(
                     this.props.selectedBook.bookName,
                     item.number
                   );
-                  NavigatorService.navigate("VerseScreen");
+                  navigation.navigate("VerseScreen");
                 }}
                 style={{
                   padding: 10,

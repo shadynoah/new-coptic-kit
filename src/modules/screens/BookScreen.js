@@ -22,14 +22,6 @@ class BookScreenContainer extends Component {
       isAdminModal: false
     };
   }
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
-    return {
-      headerTitle: params.title,
-      title: params.title,
-      gesturesEnabled: true, // this line
-    };
-  };
   static mapStatetToProps(state) {
     return {
       loading: state.content.loading,
@@ -52,18 +44,13 @@ class BookScreenContainer extends Component {
     );
   }
   componentDidMount() {
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? "الاناجيل" : "Books"
-    });
-    // console.log("-----Location------",Location)
-    //   console.log("homee")
-    // NotificationManager.registerForPushNotifications()
+    const { navigation , isArabic } = this.props;
+    navigation.setOptions({ title: isArabic ? "الاناجيل" : "Books"  });
   }
   static getDerivedStateFromProps(nextProps, prevState) {
+    const { navigation, isArabic } = nextProps;
     if (nextProps.isArabic !== prevState.isArabic) {
-      nextProps.navigation.setParams({
-        title: nextProps.isArabic ? "الاناجيل" : "Books"
-      });
+      navigation.setOptions({ title: isArabic ? "الاناجيل" : "Books"  });
       return {
         isArabic: nextProps.isArabic
       };
@@ -75,6 +62,7 @@ class BookScreenContainer extends Component {
     } else return null;
   }
   render() {
+    const { navigation } = this.props;
     const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -103,6 +91,7 @@ class BookScreenContainer extends Component {
               isArabic={this.props.isArabic}
               fontSizeOfText={this.props.fontSizeOfText}
               decreaseFontSize={this.props.decreaseFontSize}
+              navigation = {navigation}
             />
           </View>
           <FlatList
@@ -113,11 +102,11 @@ class BookScreenContainer extends Component {
               return (
                 <Text
                   onPress={() => {
-                    //   console.log("========data arabic ====", JSON.stringify(dataAr))
+                    const { navigation } = this.props;
                     this.props.clearDayContentOfPlan();
                     // console.log("item of select book" , item)
                     this.props.selectBook(item);
-                    NavigatorService.navigate("ChapterScreen");
+                    navigation.navigate("ChapterScreen");
                   }}
                   style={{
                     padding: 10,

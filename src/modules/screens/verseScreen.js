@@ -119,9 +119,8 @@ class verseScreenContainer extends Component {
   };
 
   async componentDidMount() {
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? "الايات" : "verses"
-    });
+    const { navigation,isArabic } = this.props;
+    navigation.setOptions({ title: isArabic ? "الايات" : "verses"  });
     this.isBookMarkedChapter();
     db.transaction(tx => {
       tx.executeSql(
@@ -141,7 +140,6 @@ class verseScreenContainer extends Component {
     );
   }
   async componentDidUpdate(prevProps) {
-    // console.log("next proooops" , nextProps.selectedBook.bookName);
     const { numberOfSelectedChapter , selectedBook } = this.props;
     if (
       (numberOfSelectedChapter != prevProps.numberOfSelectedChapter) ||
@@ -281,7 +279,8 @@ class verseScreenContainer extends Component {
       loadChapterContent,
       selectBook,
       contentOfSelectedChapter,
-      fontSizeOfText
+      fontSizeOfText,
+      navigation
     } = this.props;
     let {
       isbookmark,
@@ -335,6 +334,7 @@ class verseScreenContainer extends Component {
                 black
                 transparent
                 onPress={async () => {
+                  const { navigation } = this.props;
                   if(selectedDayContent.length >0)
                   {
                     if(selectedChapterIndex - 1 >= 0)
@@ -368,7 +368,7 @@ class verseScreenContainer extends Component {
                     }
                     else{
                       // alert("this is first chapter in this day");
-                      NavigatorService.navigate("BiblePlanScreen")
+                      navigation.navigate("BiblePlanScreen")
                     }
                   }
                   else {
@@ -400,6 +400,7 @@ class verseScreenContainer extends Component {
               black
                 transparent
                 onPress={async() => {
+                  const { navigation } = this.props;
                   if(selectedDayContent.length >0) {
                     if(selectedChapterIndex + 1 < selectedDayContent.length)
                     {
@@ -425,7 +426,7 @@ class verseScreenContainer extends Component {
                     else {
                      //  alert("this is last chapter in this day");
                      selectChapterOfDayPlan(selectedChapterIndex + 1 )
-                      NavigatorService.navigate("BiblePlanScreen")
+                     navigation.navigate("BiblePlanScreen")
                     }
                   }
                   else 
@@ -505,6 +506,7 @@ class verseScreenContainer extends Component {
                   disableIsBookMark={this.disableIsBookMark.bind(this)}
                   enableIsVisible={this.enableIsVisible.bind(this)}
                   onHighlight={this.onHighlight.bind(this)}
+                  navigation={navigation}
                 />
               </Button>
             </View>

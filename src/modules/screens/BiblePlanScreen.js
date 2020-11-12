@@ -24,21 +24,21 @@ class BiblePlanScreenContainer extends Component {
       refresh:false
     };
   }
-  static navigationOptions = ({ navigation }) => {
-    let params = navigation.state.params || {};
-    return {
-      title: params.title,
-      headerRight: (
-        <Button
-          title={params.title == "Setting" ? "Home" : "الرئيسية"}
-          onPress={() => NavigatorService.navigate("BookScreen")}
-          transparent
-        >
-          <Icon name="arrow-forward" />
-        </Button>
-      )
-    };
-  };
+  // static navigationOptions = ({ navigation }) => {
+  //   let params = navigation.state.params || {};
+  //   return {
+  //     title: params.title,
+  //     headerRight: (
+  //       <Button
+  //         title={params.title == "Setting" ? "Home" : "الرئيسية"}
+  //         onPress={() => navigation.navigate("BookScreen")}
+  //         transparent
+  //       >
+  //         <Icon name="arrow-forward" />
+  //       </Button>
+  //     )
+  //   };
+  // };
   static mapStatetToProps(state: State) {
     return {
       isArabic: state.content.isArabic,
@@ -72,6 +72,7 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
+     const { navigation } = this.props;
   //  await this.props.inializePlan();
   if(this.props.isArabic){
     // await this.props.inializeArabicCheckedList();
@@ -103,9 +104,11 @@ class BiblePlanScreenContainer extends Component {
        checkedList: await this.getCheckedList(this.props.isArabic)
     })
     this.selectDay(0);
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? " خطه القراءه" : "bible plan"
-    });
+    // this.props.navigation.setParams({
+    //   title: this.props.isArabic ? " خطه القراءه" : "bible plan"
+    // });
+    navigation.setOptions({  title: this.props.isArabic ? " خطه القراءه" : "bible plan"  });
+
   }
 
   componentDidUpdate(prevPros){
@@ -241,9 +244,7 @@ class BiblePlanScreenContainer extends Component {
                   <Text key={index}
                   onPress = {
                    async () =>{
-                      // const splitted = selectedDayContent[index].split(" ");
-                      // let isBookStartWithString =  isNaN(parseInt(splitted[0]));
-                      // alert("before invert action creator" + item.bookName)
+                      const { navigation } = this.props;
                       let bookName = item.bookName;
                       if(!await AsyncStorage.getItem(bookName))
                       {
@@ -260,8 +261,7 @@ class BiblePlanScreenContainer extends Component {
                         chapterNumber,
                         true
                        );
-                      console.log("item from plan is" +  item)
-                     NavigatorService.navigate("VerseScreen" , {
+                      navigation.navigate("VerseScreen" , {
                        startVerseNumder: item.startVerseNumber,
                        endVerseNumber:0
                      });

@@ -3,18 +3,20 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import * as firebase from 'firebase';
 import React from "react";
-import { StyleSheet , Platform } from "react-native";
+import { StyleSheet , Platform ,SafeAreaView } from "react-native";
 import { MenuProvider } from "react-native-popup-menu";
 import { Provider } from "react-redux";
 import { Application } from "./src/application";
 import "./src/fixtimerbug"; // <<<<<<<<<<<<<<<<<<
-import Navigators from "./src/modules/routing";
-import NavigatorService from "./src/services/navigator.js";
+// import Navigators from "./src/modules/routing";
+// import NavigatorService from "./src/services/navigator.js";
 import { NotificationManager } from "./src/services/utilities/pushNotification";
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import { arabic } from './src/services/translations/arabic';
 import { english } from './src/services/translations/english';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from  './src/navigation/AppNavigator';
 
 export default class App extends React.Component {
   state = {
@@ -87,11 +89,9 @@ export default class App extends React.Component {
       return (
         <Provider store={Application.current.store}>
           <MenuProvider>
-            <Navigators
-              ref={navigatorRef => {
-                NavigatorService.setContainer(navigatorRef);
-              }}
-            />
+          <NavigationContainer>
+             <AppNavigator />
+          </NavigationContainer>
           </MenuProvider>
         </Provider>
       );

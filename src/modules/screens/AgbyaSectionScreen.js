@@ -12,6 +12,7 @@ import { DrawerList } from '../components/drawerlist';
 import {Dashboard} from '../components/dashboard';
 
 import { Drawer } from 'native-base';
+import { CommonActions } from '@react-navigation/native';
 
 class AgbyaScreenScreenContainer extends React.Component {
   constructor() {
@@ -37,8 +38,8 @@ class AgbyaScreenScreenContainer extends React.Component {
       dispatch
     );
   }
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
+  static navigationOptions = ({ navigation , route }) => {
+   const params = route.params || {};
     return {
       headerTitle: params.title,
       title: params.title
@@ -50,9 +51,12 @@ class AgbyaScreenScreenContainer extends React.Component {
     };
   }
   componentDidMount() {
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? "الصلوات" : "Sections"
-    });
+    // this.props.navigation.setParams({
+    //   title: this.props.isArabic ? "الصلوات" : "Sections"
+    // });
+    const { isArabic } = this.props;
+    this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الصلوات" : "Sections" }));
+
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
@@ -70,12 +74,12 @@ class AgbyaScreenScreenContainer extends React.Component {
   handleclick = (r)=>{
   }
   renderItem(item) {
-    const { setPrays, loadPray } = this.props;
+    const { setPrays, loadPray , navigation } = this.props;
     return <TouchableOpacity onPress={
      async ()=> {
       await  loadPray(item.name);
       setPrays(item.links);
-      NavigatorService.navigate("AgbyaVersesScreen",{
+      navigation.navigate("AgbyaVersesScreen",{
         links: item.links
       })
     }} style={{

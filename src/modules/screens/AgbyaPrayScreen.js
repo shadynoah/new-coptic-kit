@@ -9,6 +9,8 @@ import { setPrays , loadPray } from './../../state/agbya/action-creators';
 import { State } from "../../state";
 import NavigatorService from "../../services/navigator.js";
 import _ from 'lodash'
+import { CommonActions } from '@react-navigation/native';
+
 class AgbyaPrayScreenContainer extends React.Component {
   constructor() {
     super();
@@ -45,12 +47,16 @@ class AgbyaPrayScreenContainer extends React.Component {
     };
   }
   componentDidMount() {
-    const {setPrays}= this.props;
-    this.props.navigation.setParams({
-      title: this.props.isArabic ? "الصلوات" : "Sections",
-      links: this.props.navigation.state.params.links
-    });
-    setPrays(this.props.navigation.state.params.links);
+    const {setPrays,navigation , route}= this.props;
+    navigation.dispatch(CommonActions.setParams({  
+      title: nextProps.isArabic ? "الصلوات" : "Sections",
+      links:route.params.links
+     }));
+    // this.props.navigation.setParams({
+    //   title: this.props.isArabic ? "الصلوات" : "Sections",
+    //   links: this.props.navigation.state.params.links
+    // });
+    setPrays(route.params.links);
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()
@@ -68,13 +74,13 @@ class AgbyaPrayScreenContainer extends React.Component {
   handleclick = (r)=>{
   }
   renderItem(item) {
-    const { setPrays ,loadPray } = this.props;
+    const { setPrays ,loadPray , navigation} = this.props;
     return <TouchableOpacity onPress={
      async ()=> {
       let bookName = _.invert(praysNamesDictionary)[item.name]
      await  loadPray(bookName);
       // setPrays(item)
-      NavigatorService.navigate("AgbyaVersesScreen");
+      navigation.navigate("AgbyaVersesScreen");
      } 
     } style={{
       borderColor:'black',

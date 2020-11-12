@@ -16,7 +16,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
     };
   }
   render() {
-    let { isArabic } = this.props;
+    let { isArabic , navigation } = this.props;
     console.log("isModal" , this.state.isModal)
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
@@ -44,7 +44,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
         >
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("HomeScreen");
+              navigation.navigate("HomeScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
@@ -71,7 +71,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("BookMarkScreen");
+              navigation.navigate("BookMarkScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
@@ -97,7 +97,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("NoteListScreen");
+              navigation.navigate("NoteListScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
@@ -181,7 +181,7 @@ export class OutOfEditorMenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("AboutScreen");
+              navigation.navigate("AboutScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>

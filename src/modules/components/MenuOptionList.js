@@ -22,7 +22,8 @@ export class MenuOptionList extends PureComponent {
       enableIsBookMark,
       disableIsBookMark,
       enableIsVisible,
-      onHighlight
+      onHighlight,
+      navigation
     } = this.props;
     const deviceType =
       (Constants.platform.ios && Constants.platform.ios.userInterfaceIdiom) ||
@@ -52,7 +53,7 @@ export class MenuOptionList extends PureComponent {
         >
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("HomeScreen");
+              navigation.navigate("HomeScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
@@ -160,7 +161,7 @@ export class MenuOptionList extends PureComponent {
           </MenuOption>
           <MenuOption
             onSelect={() => {
-              NavigatorService.navigate("AboutScreen");
+              navigation.navigate("AboutScreen");
             }}
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
