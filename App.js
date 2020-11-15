@@ -16,7 +16,7 @@ import i18n from 'i18n-js';
 import { arabic } from './src/services/translations/arabic';
 import { english } from './src/services/translations/english';
 import { NavigationContainer } from '@react-navigation/native';
-import AppNavigator from  './src/navigation/AppNavigator';
+import LeftDrawer from  './src/navigation/AppNavigator';
 
 export default class App extends React.Component {
   state = {
@@ -90,7 +90,7 @@ export default class App extends React.Component {
         <Provider store={Application.current.store}>
           <MenuProvider>
           <NavigationContainer>
-             <AppNavigator />
+             <LeftDrawer />
           </NavigationContainer>
           </MenuProvider>
         </Provider>

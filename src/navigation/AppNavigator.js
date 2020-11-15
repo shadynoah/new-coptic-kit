@@ -14,6 +14,7 @@ import { AdminScreen } from "../modules/screens/AdminScreen";
 import { AboutScreena } from '../modules/screens/AgbyaSectionScreen'
 import { AgbyaPrayScreen } from '../modules/screens/AgbyaPrayScreen';
 import { AgbyaVersesScreen } from '../modules/screens/AgbyaVerses';
+import { createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
 // const Navigator = createStackNavigator(
@@ -62,7 +63,35 @@ const Stack = createStackNavigator();
 //       initialRouteName: "HomeScreen"
 //     }
 //   );
+function CustomDrawerContent(props) {
+  return (
+    <DrawerContentScrollView {...props}>
+     <DrawerItem
+        label="Help"
+        onPress={() => alert("x")}
+      />
+    </DrawerContentScrollView>
+  );
+}
+const DrawerL = createDrawerNavigator();
+const DrawerR = createDrawerNavigator();
 
+function RightDrawer() {
+  return (
+    <DrawerR.Navigator initialRouteName="AgbyaVersesScreen" drawerPosition="right" drawerContent={(props) => <CustomDrawerContent {...props} />}>
+      <DrawerR.Screen name="AppNavigator" component={AppNavigator} />
+      <DrawerR.Screen name="AgbyaVersesScreen" component={AgbyaVersesScreen} />
+    </DrawerR.Navigator>
+  )
+}
+
+function LeftDrawer() {
+  return (
+    <DrawerL.Navigator initialRouteName="RightDrawer" drawerPosition="left" drawerContent={(props) => <CustomDrawerContent {...props} />}>
+      <DrawerL.Screen name="RightDrawer" component={RightDrawer} />
+    </DrawerL.Navigator>
+  );
+}
 const AppNavigator = () => {
  return (
    <Stack.Navigator initialRouteName="HomeScreen">
@@ -75,7 +104,7 @@ const AppNavigator = () => {
      <Stack.Screen name='BookMarkScreen' component={BookMarkScreen} />
      <Stack.Screen name='NoteListScreen' component={NoteListScreen} />
      <Stack.Screen name='AboutScreena' component={AboutScreena} options={AboutScreena.navigationOptions} />
-     <Stack.Screen name='AgbyaVersesScreen' component={AgbyaVersesScreen} />
+     <Stack.Screen name='AgbyaVersesScreen' component={LeftDrawer} />
      <Stack.Screen name='AgbyaPrayScreen' component={AgbyaPrayScreen} />
      <Stack.Screen name='BiblePlanScreen' component={BiblePlanScreen} />
    </Stack.Navigator>
