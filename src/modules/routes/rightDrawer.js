@@ -8,7 +8,10 @@ import {
 import LeftDrawer from "./LeftDrawer";
 import { useDispatch, useSelector } from "react-redux";
 import { DrawerActions, useRoute } from "@react-navigation/native";
-
+import { AgbyaVersesScreen } from '../screens/AgbyaVerses';
+import AppNavigator from '../../navigation/AppNavigator';
+import { BookScreen } from '../screens/BookScreen'
+import { RightDrawerContent } from '../components/right-drawer-content';
 // import {
 //   resetRightDrawer,
 //   toggleRightDrawer
@@ -16,31 +19,18 @@ import { DrawerActions, useRoute } from "@react-navigation/native";
 // import { SidebarDrawer } from "../notes/components/designer/stage/sidebar-notes-drawer";
 
 const Drawer = createDrawerNavigator();
+const DrawerR = createDrawerNavigator();
 
-export default ({ navigation }) => {
-  const { rightDrawerState } = useSelector((state) => state.drawer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (rightDrawerState === "toggle") {
-      Keyboard.dismiss();
-      // navigation.dispatch(DrawerActions.toggleDrawer());
-      // dispatch(resetRightDrawer());
-    }
-  }, [rightDrawerState === "toggle"]);
-
+export default (props) => {
   return (
-    <Drawer.Navigator
-      drawerStyle={{ width: "60%", backgroundColor: "#98c8f9" }}
-      drawerPosition="right"
-      screenOptions={{ swipeEnabled: false, gestureEnabled: false }}
-      drawerContent={(props) => <CustomDrawerComp {...props} />}
-    >
-      <Drawer.Screen name="LeftDrawer" component={LeftDrawer} />
-    </Drawer.Navigator>
+        <DrawerR.Navigator initialRouteName="AgbyaVersesScreen" drawerPosition="right" drawerContent={(props) => <CustomDrawerContent {...props} />}>
+          <DrawerR.Screen name="AppNavigator" component={AppNavigator} />
+          <DrawerR.Screen name="AgbyaVersesScreen" component={AgbyaVersesScreen} />
+        </DrawerR.Navigator>
   );
 };
 
-export const CustomDrawerComp = (props) => {
+const CustomDrawerContent = (props) => {
   const { navigation } = props;
   return (
     <DrawerContentScrollView {...props}>
@@ -53,18 +43,7 @@ export const CustomDrawerComp = (props) => {
 
 const RightDrawerComp = (props) => {
   const { navigation } = props;
-  const dispatch = useDispatch();
-  const route = useRoute();
-
   return (
-    <DrawerContentScrollView {...props}>
-      <View
-        style={{
-          flexGrow: 2
-        }}
-      >
-        {/* <SidebarDrawer navigation={navigation} route={route} /> */}
-      </View>
-    </DrawerContentScrollView>
+     <RightDrawerContent  navigation={navigation}  />
   );
 };

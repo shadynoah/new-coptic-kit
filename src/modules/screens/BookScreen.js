@@ -45,7 +45,10 @@ class BookScreenContainer extends Component {
   }
   componentDidMount() {
     const { navigation , isArabic } = this.props;
-    navigation.setOptions({ title: isArabic ? "الاناجيل" : "Books"  });
+    navigation.setOptions({ title: isArabic ? "الاناجيل" : "Books" ,
+    headerTitleStyle: {
+      alignSelf: 'center'
+    }  });
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     const { navigation, isArabic } = nextProps;

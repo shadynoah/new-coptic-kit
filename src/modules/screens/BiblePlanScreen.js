@@ -72,7 +72,8 @@ class BiblePlanScreenContainer extends Component {
   }
 
    async componentDidMount() {
-     const { navigation } = this.props;
+     const { navigation , isArabic} = this.props;
+     navigation.setOptions({ title: isArabic ? "الاناجيل" : "Books"  });
   //  await this.props.inializePlan();
   if(this.props.isArabic){
     // await this.props.inializeArabicCheckedList();
@@ -107,7 +108,10 @@ class BiblePlanScreenContainer extends Component {
     // this.props.navigation.setParams({
     //   title: this.props.isArabic ? " خطه القراءه" : "bible plan"
     // });
-    navigation.setOptions({  title: this.props.isArabic ? " خطه القراءه" : "bible plan"  });
+    navigation.setOptions({  title: this.props.isArabic ? " خطه القراءه" : "bible plan",
+    headerTitleStyle: { alignSelf: 'center' },
+    // headerBackTitle :   "sssssss"
+    });
 
   }
 

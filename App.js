@@ -70,7 +70,6 @@ export default class App extends React.Component {
       this._handleNotification
     );
     // i18n.locale = 'en';
-    console.log("Localization.locale", i18n.locale)
     i18n.translations = {
       en: english,
       ar: arabic,

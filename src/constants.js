@@ -15242,24 +15242,18 @@ export const agbyaKeys = [
   },
   {
     id:9,
-    name:"ninth",
+    name:"otherPray",
     links:   [
       {
-        id : "mid-7",
-        name : 'المزمور الثالث',
-        bookName: 'PsalmAr',
-        chapterNumber: 3
+        id : "ninth-1",
+        name : 'صلاه التوبه',
       },{
-        id : "mid-8",
-        name : 'المزمور السادس',
-        bookName: 'PsalmAr',
-        chapterNumber: 6
+        id : "ninth-2",
+        name : 'صلاة قبل الاعتراف',
       },
       {
-        id : "mid-9",
-        name :  'المزمور الثاني عشر',
-        bookName: 'PsalmAr',
-        chapterNumber: 12
+        id : "ninth-3",
+        name : 'صلاة بعد الاعتراف',
       },
     ]
   }
@@ -15274,7 +15268,8 @@ export const arabicAgbyaNames = [
   'eleventhPray',
   'twelvthPray',
   'midnightPray',
-  'darkPray'
+  'darkPray',
+  'otherPray'
 ]
 export  const arabicAgbyaUri = {
    lordPrayerAr: 'https://www.dropbox.com/s/l2tt7685mpccioa/lordPrayerAr.json?dl=1',
@@ -15286,17 +15281,19 @@ export  const arabicAgbyaUri = {
    eleventhPray : "https://www.dropbox.com/s/cq58ph64xfsx0sh/eleventhPray.json?dl=1",
    twelvthPray: "https://www.dropbox.com/s/cv04d6i1kftz0lh/twelvthPray.json?dl=1",
    midnightPray: "https://www.dropbox.com/s/h5uu7pm02owy5x0/midnightPray.json?dl=1",
-   darkPray: "https://www.dropbox.com/s/twy7whsz0vwp5b4/darkPray.json?dl=1"
+   darkPray: "https://www.dropbox.com/s/zewtpngpc3rxnbn/darkPray.json?dl=1",
+   otherPray : "https://www.dropbox.com/s/v0mpjj1lcdy1hjk/otherPrays.json?dl=1"
 }
 export const  praysNamesDictionary = {
   lordPrayerAr: "الصلاه الربانيه",
   thanksPrayerAr: 'صلاه الشكر',
-  baker: 'baker',
+  baker: 'صلاه باكر',
   thirdPray: 'صلاه الساعه الثالثه',
   sixthPray: 'صلاه الساعه السادسه',
   ninthPray: 'صلاه الساعه التاسعه',
   eleventhPray: 'صلاه الغروب',
   twelvthPray: 'صلاه النوم',
   midnightPray:"صلاه نصف الليل",
-  darkPray: 'صلاه الستار'
+  darkPray: 'صلاه الستار',
+  otherPrays: "صلوات اخري"
 }

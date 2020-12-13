@@ -157,16 +157,17 @@ class HomeScreenContainer extends Component {
           isWarningModalVisible: true
         });
       } else {
-        toggleIsDownloading();
         if(isArabic)
         {
+          toggleIsDownloading();
           await Helpers.downloadAgbya();
+          toggleIsDownloading();
         }
         else
         {
-          await Helpers.downloadAgbya();
+          alert("this is incoming feature")
+          // await Helpers.downloadAgbya();
         }
-        toggleIsDownloading();
       }
     }
     // else{
@@ -467,24 +468,36 @@ class HomeScreenContainer extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{ marginLeft: 10 }}
-              onLongPress = {
-                 ()=> this.props.navigation.navigate("AboutScreena")
-              }
+              // onLongPress = {
+              //    ()=> this.props.navigation.navigate("AboutScreena")
+              // }
+              // onLongPress={
+              //   async ()=> {
+              //    await Helpers.deleteAgbya();
+              //   }
+              // }
               onPress={async () => {
                 const {toggleIsDownloading ,isArabic } = this.props;
-                await  this.downloadAgbyaContent();
-                let isExist = await this.checkIfAgbyaContentExist(isArabic)
-                console.log("is exist agbya" , isExist)
-                if(!isExist)
+                if(!isArabic)
                 {
-                  let message = isArabic ? "حاول مره اخري" : "try again"
-                  setTimeout(() => {
-                    alert(message)
-                  }, 1000);
+                  alert("this is incoming faeture")
                 }
-                else
+                else 
                 {
-                 this.props.navigation.navigate("AboutScreena");
+                  await  this.downloadAgbyaContent();
+                  let isExist = await this.checkIfAgbyaContentExist(isArabic)
+                  console.log("is exist agbya" , isExist)
+                  if(!isExist)
+                  {
+                    let message = isArabic ? "حاول مره اخري" : "try again"
+                    setTimeout(() => {
+                      alert(message)
+                    }, 1000);
+                  }
+                  else
+                  {
+                   this.props.navigation.navigate("AboutScreena");
+                  }
                 }
                 // NavigatorService.navigate("AboutScreena");
                 // loadPray();

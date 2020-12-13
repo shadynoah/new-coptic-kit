@@ -18,17 +18,23 @@ export function setPrays(prays) {
 }
 export async  function loadPray(prayName){
   return async (dispatch, getState) => {
-  // console.log("prayName", prayName)
   let arabicContent = JSON.parse(
     await FileSystem.readAsStringAsync(
       await AsyncStorage.getItem(prayName)
     )
   )
+  let namesOfPray = arabicContent.agbya.map(a => {
+    return {
+      id: a.key,
+      name: a.name
+    }
+  } );
   dispatch({
     type: AgbyaActions.LOAD_AGBYA_CHAPTER_CONTENT,
     payload: {
       titleOfPray: prayName,
-      content: arabicContent
+      content: arabicContent,
+      namesOfPray
     }
   })
     }

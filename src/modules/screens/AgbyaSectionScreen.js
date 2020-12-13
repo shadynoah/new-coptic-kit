@@ -25,8 +25,8 @@ class AgbyaScreenScreenContainer extends React.Component {
   static mapStatetToProps(state: State) {
     return {
       isArabic: state.content.isArabic,
-      links : state.agbya.links
-      
+      links : state.agbya.links,
+      fontSizeOfText: state.content.fontSizeOfText,
     };
   }
   static mapDispatchToProps(dispatch: Dispatch) {
@@ -74,20 +74,20 @@ class AgbyaScreenScreenContainer extends React.Component {
   handleclick = (r)=>{
   }
   renderItem(item) {
-    const { setPrays, loadPray , navigation } = this.props;
+    const { setPrays, loadPray , navigation, fontSizeOfText } = this.props;
     return <TouchableOpacity onPress={
      async ()=> {
+       const {  isArabic } = this.props;
       await  loadPray(item.name);
       setPrays(item.links);
       navigation.navigate("AgbyaVersesScreen",{
-        links: item.links
+        links: item.links,
+        title: isArabic ? "ايات الاجبيه" : "verses agbya"
       })
     }} style={{
-      borderColor:'black',
-      padding:5,
-      borderWidth:2
+      padding:20,
     }}>
-   <Text>{i18n.t(`praysNames.${item.name}`)}</Text>
+   <Text style={{textAlign: 'center', fontSize:20}}>{i18n.t(`praysNames.${item.name}`)}</Text>
     </TouchableOpacity>
   }
   closeDrawer = () => {

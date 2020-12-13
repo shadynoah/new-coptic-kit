@@ -91,7 +91,6 @@ if(!isBookExists)
       arabicContentUri[bookName],
       FileSystem.documentDirectory + trimmed
     ).then(async ({ uri,status , headers }) => {
-      console.log("headers is" , Object.keys(headers))
       if(status === 200)
         {
          if(Platform.OS ==='android')
@@ -200,4 +199,19 @@ if(!isBookExists)
        console.log("error in download content")
      })
     }
+    // static async deleteAgbya() {
+    //   alert("delete agbya")
+    //   await Promise.all(
+    //     _.map(arabicAgbyaNames , async bookName => {
+    //       let prayUri = await  AsyncStorage.getItem(bookName);
+    //       console.log("pray uri",prayUri)
+    //        await  FileSystem.deleteAsync(prayUri);
+    //        await  AsyncStorage.removeItem(bookName);
+    //     })
+    //    ).then(async ()=>{
+    //      alert("finish delete agbya")
+    //    }).catch((error)=>{
+    //      console.log("error in delete agbya" , error);
+    //    })
+    // }
   }

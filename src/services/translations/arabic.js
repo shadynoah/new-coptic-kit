@@ -23,6 +23,6 @@ export const arabic = {
         twelvthPray:'صلاه النوم',
         midnightPray:'صلاه نصف الليل',
         darkPray:'صلاه الستار',
-        ninth:'صلوات اخري'
+        otherPray:'صلوات اخري'
     },
 }

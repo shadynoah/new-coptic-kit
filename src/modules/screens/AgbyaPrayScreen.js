@@ -49,7 +49,7 @@ class AgbyaPrayScreenContainer extends React.Component {
   componentDidMount() {
     const {setPrays,navigation , route}= this.props;
     navigation.dispatch(CommonActions.setParams({  
-      title: nextProps.isArabic ? "الصلوات" : "Sections",
+      title: nextProps.isArabic ? "الصلواتس" : "Sections",
       links:route.params.links
      }));
     // this.props.navigation.setParams({
