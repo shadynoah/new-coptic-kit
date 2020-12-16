@@ -15297,3 +15297,8 @@ export const  praysNamesDictionary = {
   darkPray: 'صلاه الستار',
   otherPrays: "صلوات اخري"
 }
+export const englishAgbyaNames = [
+  '1st Hour',
+  '3rd Hour',
+  '6th Hour',
+]

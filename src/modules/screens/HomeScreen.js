@@ -469,7 +469,7 @@ class HomeScreenContainer extends Component {
             <TouchableOpacity
               style={{ marginLeft: 10 }}
               // onLongPress = {
-              //    ()=> this.props.navigation.navigate("AboutScreena")
+              //    ()=> this.props.navigation.navigate("PraysScreen")
               // }
               // onLongPress={
               //   async ()=> {
@@ -496,10 +496,10 @@ class HomeScreenContainer extends Component {
                   }
                   else
                   {
-                   this.props.navigation.navigate("AboutScreena");
+                   this.props.navigation.navigate("PraysScreen");
                   }
                 }
-                // NavigatorService.navigate("AboutScreena");
+                // NavigatorService.navigate("PraysScreen");
                 // loadPray();
               //  console.log("sss",await AsyncStorage.getItem("lordPrayerAr"));
             }}

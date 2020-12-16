@@ -11,8 +11,7 @@ import { BookMarkScreen } from "../screens/BookScreen";
 import { AboutScreen } from "../screens/BookScreen";
 import { HomeScreen } from "../screens/BookScreen";
 import { AdminScreen } from "../screens/BookScreen";
-import { AboutScreena } from '../screens/BookScreen'
-import { AgbyaPrayScreen } from '../screens/BookScreen';
+import { PraysScreen } from '../screens/BookScreen'
 import { AgbyaVersesScreen } from '../screens/BookScreen';
 // import  RightDrawer from '../modules/routes/rightDrawer';
 import { createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem } from '@react-navigation/drawer';
@@ -46,9 +45,8 @@ export default ({ navigation }) => {
      <Stack.Screen name='AboutScreen' component={AboutScreen} />
      <Stack.Screen name='BookMarkScreen' component={BookMarkScreen} />
      <Stack.Screen name='NoteListScreen' component={NoteListScreen} />
-     <Stack.Screen name='AboutScreena' component={AboutScreena} options={AboutScreena.navigationOptions} />
+     <Stack.Screen name='PraysScreen' component={PraysScreen} options={PraysScreen.navigationOptions} />
      <Stack.Screen name='AgbyaVersesScreen' component={AgbyaVersesScreen}  />
-     <Stack.Screen name='AgbyaPrayScreen' component={AgbyaPrayScreen} />
      <Stack.Screen name='BiblePlanScreen' component={BiblePlanScreen} />
    </Stack.Navigator>
   );

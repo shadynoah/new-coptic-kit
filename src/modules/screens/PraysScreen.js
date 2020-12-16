@@ -1,20 +1,14 @@
 import i18n from 'i18n-js';
 import React from "react";
-import { FlatList, StyleSheet, Text ,ImageBackground } from "react-native";
+import { FlatList, ImageBackground, StyleSheet, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
-import { agbyaKeys } from './../../constants';
-import { setPrays, loadPray } from './../../state/agbya/action-creators';
-import { State } from "../../state";
-import NavigatorService from "../../services/navigator.js";
-import { DrawerList } from '../components/drawerlist';
-import {Dashboard} from '../components/dashboard';
+import { bindActionCreators } from "redux";
+import { agbyaKeys } from '../../constants';
+import { loadPray, setPrays } from '../../state/agbya/action-creators';
 
-import { Drawer } from 'native-base';
-import { CommonActions } from '@react-navigation/native';
 
-class AgbyaScreenScreenContainer extends React.Component {
+class PrayScreenContainer extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,14 +16,14 @@ class AgbyaScreenScreenContainer extends React.Component {
       isPraySelected: false
     };
   }
-  static mapStatetToProps(state: State) {
+  static mapStatetToProps(state) {
     return {
       isArabic: state.content.isArabic,
       links : state.agbya.links,
       fontSizeOfText: state.content.fontSizeOfText,
     };
   }
-  static mapDispatchToProps(dispatch: Dispatch) {
+  static mapDispatchToProps(dispatch) {
     return bindActionCreators(
       { 
         setPrays,
@@ -38,32 +32,16 @@ class AgbyaScreenScreenContainer extends React.Component {
       dispatch
     );
   }
-  // static navigationOptions = ({ navigation , route }) => {
-  //  const params = route.params || {};
-  //   return {
-  //     headerTitle: params.title,
-  //     title: params.title
-  //   };
-  // };
-  static mapStatetToProps(state: State) {
+  static mapStatetToProps(state) {
     return {
       isArabic: state.content.isArabic
     };
   }
   componentDidMount() {
-    // this.props.navigation.setParams({
-    //   title: this.props.isArabic ? "الصلوات" : "Sections"
-    // });
     const { isArabic ,navigation } = this.props;
-    // this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الصلوات" : "Sections", headerTitleStyle: {
-    //   alignSelf: 'center'
-    // } }));
     navigation.setOptions({ title:  isArabic ? "الصلوات" : "Sections" , headerTitleStyle: {
       alignSelf: 'center'
     }  });
-    // console.log("-----Location------",Location)
-    //   console.log("homee")
-    // NotificationManager.registerForPushNotifications()
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.isArabic !== prevState.isArabic) {
@@ -127,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   }
 });
-export const AboutScreena = connect(
- AgbyaScreenScreenContainer.mapStatetToProps,
- AgbyaScreenScreenContainer.mapDispatchToProps
-)(AgbyaScreenScreenContainer);
+export const PraysScreen = connect(
+ PrayScreenContainer.mapStatetToProps,
+ PrayScreenContainer.mapDispatchToProps
+)(PrayScreenContainer);
