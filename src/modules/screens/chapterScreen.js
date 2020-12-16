@@ -58,7 +58,9 @@ class chapterScreenContainer extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { isArabic ,navigation} = nextProps;
     if (isArabic !== prevState.isArabic) {
-      navigation.setOptions({ title:  isArabic ? "الاصحاحات" : "chapters"  });
+      navigation.setOptions({ title:  isArabic ? "الاصحاحات" : "chapters" , headerTitleStyle: {
+        alignSelf: 'center'
+      }  });
       return {
         isArabic: isArabic
       };

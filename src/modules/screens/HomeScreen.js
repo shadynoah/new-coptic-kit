@@ -509,7 +509,7 @@ class HomeScreenContainer extends Component {
                   height: heightT + 0.95 * heightT,
                   width: heightT + 0.95 * heightT
                 }}
-                source={require("../../../assets/images/agbya.jpg")}
+                source={require("../../../assets/images/agbya2.png")}
               />
             </TouchableOpacity>
           </View>

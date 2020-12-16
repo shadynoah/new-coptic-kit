@@ -24,8 +24,8 @@ const DrawerR = createDrawerNavigator();
 export default (props) => {
   return (
         <DrawerR.Navigator initialRouteName="AgbyaVersesScreen" drawerPosition="right" drawerContent={(props) => <CustomDrawerContent {...props} />}>
-          <DrawerR.Screen name="AppNavigator" component={AppNavigator} />
-          <DrawerR.Screen name="AgbyaVersesScreen" component={AgbyaVersesScreen} />
+          <DrawerR.Screen name="AppNavigator" component={AppNavigator}/>
+          <DrawerR.Screen name="AgbyaVersesScreen" component={AgbyaVersesScreen}  />
         </DrawerR.Navigator>
   );
 };

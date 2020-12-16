@@ -120,7 +120,9 @@ class verseScreenContainer extends Component {
 
   async componentDidMount() {
     const { navigation,isArabic } = this.props;
-    navigation.setOptions({ title: isArabic ? "الايات" : "verses"  });
+    navigation.setOptions({ title: isArabic ? "الايات" : "verses" , headerTitleStyle: {
+      alignSelf: 'center'
+    }  });
     this.isBookMarkedChapter();
     db.transaction(tx => {
       tx.executeSql(

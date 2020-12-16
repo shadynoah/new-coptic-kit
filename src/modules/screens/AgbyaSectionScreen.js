@@ -38,13 +38,13 @@ class AgbyaScreenScreenContainer extends React.Component {
       dispatch
     );
   }
-  static navigationOptions = ({ navigation , route }) => {
-   const params = route.params || {};
-    return {
-      headerTitle: params.title,
-      title: params.title
-    };
-  };
+  // static navigationOptions = ({ navigation , route }) => {
+  //  const params = route.params || {};
+  //   return {
+  //     headerTitle: params.title,
+  //     title: params.title
+  //   };
+  // };
   static mapStatetToProps(state: State) {
     return {
       isArabic: state.content.isArabic
@@ -54,9 +54,13 @@ class AgbyaScreenScreenContainer extends React.Component {
     // this.props.navigation.setParams({
     //   title: this.props.isArabic ? "الصلوات" : "Sections"
     // });
-    const { isArabic } = this.props;
-    this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الصلوات" : "Sections" }));
-
+    const { isArabic ,navigation } = this.props;
+    // this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الصلوات" : "Sections", headerTitleStyle: {
+    //   alignSelf: 'center'
+    // } }));
+    navigation.setOptions({ title:  isArabic ? "الصلوات" : "Sections" , headerTitleStyle: {
+      alignSelf: 'center'
+    }  });
     // console.log("-----Location------",Location)
     //   console.log("homee")
     // NotificationManager.registerForPushNotifications()

@@ -40,17 +40,21 @@ class AgbyaVersesScreenContainer extends React.Component {
   componentDidMount() {
     const { navigation ,isArabic } = this.props;
     // console.log("navigation", navigation)
-    // navigation.setOptions({  title: this.props.isArabic ? " خطه القراءه" : "bible plan"  });
-    this.props.navigation.dispatch(
-      CommonActions.setParams({ email: null })
-    );    // this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الرئيسية" : "Home" }));
+    navigation.setOptions({ title:  isArabic ? "الصلوات" : "Sections" , headerTitleStyle: {
+      alignSelf: 'center'
+    }  });
+    // this.props.navigation.dispatch(
+    //   CommonActions.setParams({ email: null })
+    // );    // this.props.navigation.dispatch(CommonActions.setParams({  title: isArabic ? "الرئيسية" : "Home" }));
     Application.current.scrollPositions  = []
     Application.current.scrollPositionsObj =  {}
   }
   static navigationOptions = ({ navigation , route  }) => {
   const params = route.params || {};
     return {
-      title: params.title
+      title: params.title,
+      headerTitleStyle: {
+        alignSelf: 'center'}
     };
   };
   static mapStatetToProps(state: State) {
